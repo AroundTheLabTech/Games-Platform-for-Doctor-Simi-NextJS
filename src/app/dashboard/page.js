@@ -10,6 +10,7 @@ import { db } from "../../../lib/firebase"; // Importar Firestore
 export default function Dashboard() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null); // Estado para los datos adicionales del usuario
+  const [selectedGame, setSelectedGame] = useState("juego1"); // Estado para el juego seleccionado
   const router = useRouter();
 
   useEffect(() => {
@@ -43,9 +44,40 @@ export default function Dashboard() {
     }
   };
 
+  const handlePlayGame = () => {
+    localStorage.setItem("selectedGame", selectedGame); // Guardar el juego seleccionado en localStorage
+    router.push('/game'); // Redirigir a la página del juego
+  };
+
   if (!user || !userData) {
     return <p>Cargando...</p>; // Mostrar un mensaje de carga mientras se verifica la autenticación y se obtienen los datos
   }
+
+  // Configuración de datos según el juego seleccionado
+  const gameData = {
+    juego1: {
+      imageSrc: "img/games/arcade/game-1.png",
+      titleSrc: "img/games/title/game-1.svg",
+      description: "¡Defiende el Centro a toda costa! Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! ¿Tienes lo necesario para proteger a los pacientes y salvar el día?! ¡Descúbrelo ahora!",
+    },
+    juego2: {
+      imageSrc: "img/games/arcade/game-2.png",
+      titleSrc: "img/games/title/game-2.svg",
+      description: "Esta es la descripcion de Simi Run",
+    },
+    juego3: {
+      imageSrc: "img/games/arcade/game-3.png",
+      titleSrc: "img/games/title/game-3.svg",
+      description: "Esta es la descripcion de Simi Ninja",
+    },
+    juego4: {
+      imageSrc: "img/games/arcade/game-4.png",
+      titleSrc: "img/games/title/game-4.svg",
+      description: "Esta es la descripción de SimiSpace",
+    },
+  };
+
+  const { imageSrc, titleSrc, description } = gameData[selectedGame];
 
   return (
     <main className="dashboard-container">
@@ -109,79 +141,57 @@ export default function Dashboard() {
 
         {/* Main Container */}
         <div className="main-container">
-            <div
-            className="games-container"
-            >
-
+            <div className="games-container">
               <div className="selector-games">
                 <div className="arcade-game">
-                  <img
-                    src="img/games/arcade/game-1.png"
-                  />
+                  {/* Arcade */}
+                  <img id="arcade" src={imageSrc} alt="Game Image" />
                 </div>
 
                 <div className="information-game">
-                  <img
-                  src="img/games/title/game-1.svg"
-                  />
-                  <p className="descripcion-juego">
-                  ¡Defiende el Centro a toda costa!  Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! 
-
-                  ¿Tienes lo necesario para proteger a los pacientes y salvar el día?! ¡Descúbrelo ahora!
+                  <img id="title-game" src={titleSrc} alt="Game Title" />
+                  <p id="descripcion-juego" className="descripcion-juego">
+                    {description}
                   </p>
 
                   <div className="container-boton-jugar">
-                  <button className="push--flat-blue" >
-                     <h3 className="text-boton-jugar">JUGAR</h3>
-                  </button>
+                    <button className="push--flat-blue" onClick={handlePlayGame}>
+                      <h3 className="text-boton-jugar">JUGAR</h3>
+                    </button>
                   </div>
-                 
                 </div>
               </div>
 
               <div className="catalog-games">
-
                   {/* Game 1 */}
                   <div className="game-selector">
-
-                    <button id="game-1" className="push--flat-small">
+                    <button id="game-1" className="push--flat-small" onClick={() => setSelectedGame("juego1")}>
                       <h3 className="text-boton game-selector-bottom"></h3>
                     </button>
-
-                    <img
-                      src="img/games/portada/game-1.png"
-                    />  
+                    <img src="img/games/portada/game-1.png" alt="Game 1" />  
                   </div>
-                    {/* Game */}
+                  {/* Game 2 */}
                   <div className="game-selector">
-                      <button id="game-2" className="push--flat-small">
-                        <h3 className="text-boton game-selector-bottom"></h3>
-                      </button>
-                       <img
-                        src="img/games/portada/game-2.png"
-                      />  
+                    <button id="game-2" className="push--flat-small" onClick={() => setSelectedGame("juego2")}>
+                      <h3 className="text-boton game-selector-bottom"></h3>
+                    </button>
+                    <img src="img/games/portada/game-2.png" alt="Game 2" />  
                   </div>
-                    {/* Game */}
+                  {/* Game 3 */}
                   <div className="game-selector">
-                      <button id="game-3" className="push--flat-small">
-                        <h3 className="text-boton game-selector-bottom"></h3>
-                      </button>
-                       <img
-                        src="img/games/portada/game-3.png"
-                      />  
+                    <button id="game-3" className="push--flat-small" onClick={() => setSelectedGame("juego3")}>
+                      <h3 className="text-boton game-selector-bottom"></h3>
+                    </button>
+                    <img src="img/games/portada/game-3.png" alt="Game 3" />  
                   </div>
-
-                  {/* Game */}
+                  {/* Game 4 */}
                   <div className="game-selector">
-                      <button id="game-4" className="push--flat-small">
-                        <h3 className="text-boton game-selector-bottom"></h3>
-                      </button>
-                       <img
-                        src="img/games/portada/game-4.png"
-                      />  
+                    <button id="game-4" className="push--flat-small" onClick={() => setSelectedGame("juego4")}>
+                      <h3 className="text-boton game-selector-bottom"></h3>
+                    </button>
+                    <img src="img/games/portada/game-4.png" alt="Game 4" />  
                   </div>
               </div>
-
             </div>
         </div>
     </main>

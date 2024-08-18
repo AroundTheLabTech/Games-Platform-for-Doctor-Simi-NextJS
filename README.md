@@ -27,6 +27,31 @@ git submodule add git submodule add https://github.com/usuario/repositorio-juego
 
 in the carpet of the submodule
 
+# Configuración de los Datos de Los Juegos 
+  // in src/app/dashboard-page.js
+  const gameData = {
+    juego1: {
+      imageSrc: "img/games/arcade/game-1.png",
+      titleSrc: "img/games/title/game-1.svg",
+      description: "¡Defiende el Centro a toda costa! Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! ¿Tienes lo necesario para proteger a los pacientes y salvar el día?! ¡Descúbrelo ahora!",
+    },
+    juego2: {
+      imageSrc: "img/games/arcade/game-2.png",
+      titleSrc: "img/games/title/game-2.svg",
+      description: "Esta es la descripcion de Simi Run",
+    },
+    juego3: {
+      imageSrc: "img/games/arcade/game-3.png",
+      titleSrc: "img/games/title/game-3.svg",
+      description: "Esta es la descripcion de Simi Ninja",
+    },
+    juego4: {
+      imageSrc: "img/games/arcade/game-4.png",
+      titleSrc: "img/games/title/game-4.svg",
+      description: "Esta es la descripción de SimiSpace",
+    },
+  };
+
 
 Game 3: https://github.com/IvanMarte2403/Fruit-Ninja-Game---For-DoctorSimi
 

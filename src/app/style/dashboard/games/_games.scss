@@ -1,11 +1,12 @@
 .games-container{
     padding: var(--spacing-md);
-
     background-image: url('/img/background/background-games.png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
     .selector-games{
         display: flex;
@@ -15,8 +16,12 @@
         margin-top: var(--spacing-md);
         .arcade-game{
             width: 47%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             img{
-                width: 100%;
+                width: 75%;
                 height: auto;
             }
         }
@@ -69,4 +74,29 @@
     align-items: center;
     width: 80%;
     margin-top: var(--spacing-md);
+}
+
+.catalog-games{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: var(--spacing-md);
+    background-color: var(--background-color-1);
+    border-radius: 10px;
+
+   
+
+    .game-selector{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        img{
+            width: 60%;
+        }
+    
+        
+    }
 }

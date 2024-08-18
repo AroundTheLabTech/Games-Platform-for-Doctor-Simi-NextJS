@@ -210,20 +210,46 @@ form .select-gender option {
   border-width: 0;
 }
 
+.push--flat-small {
+  width: 3em;
+  height: 3em;
+  background-color: hsl(10, 90%, 40%);
+  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3260869565em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.7), inset 0 0 0 0.5454545455em hsl(10, 90%, 40%), inset 0 1.2em 0.4em #aa2409, inset 0 0 0.3em 0.5em #911f08, 0 0.15em 0 rgba(0, 0, 0, 0.3);
+}
+.push--flat-small:after {
+  content: "";
+  position: absolute;
+  bottom: 0.15em;
+  left: 0.3em;
+  display: block;
+  width: 2.4em;
+  height: 2.4em;
+  border: 0.2em solid rgba(0, 0, 0, 0.3);
+  border-width: 0 0 0.2em;
+  border-radius: 50%;
+  transition-duration: 200ms;
+}
+.push--flat-small:active, .push--flat-small.is-pushed {
+  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3529411765em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.2), inset 0 0 0 0.5454545455em #b32609, inset 0 1.2em 0.4em #9b2108, inset 0 0 0.3em 0.5em #791a06, 0 0.15em 0 rgba(0, 0, 0, 0.3);
+  background-color: #b8270a;
+}
+.push--flat-small:active:after, .push--flat-small.is-pushed:after {
+  bottom: 0.35em;
+  border-width: 0;
+}
+
 .dashboard-container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   justify-content: space-between;
 }
 .dashboard-container .user-container {
-  width: 25%;
-  height: 100%;
+  width: 20%;
   background-color: var(--color-third);
 }
 .dashboard-container .main-container {
-  width: 75%;
+  width: 80%;
   height: 100%;
 }
 
@@ -332,7 +358,9 @@ form .select-gender option {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .games-container .selector-games {
   display: flex;
@@ -343,9 +371,13 @@ form .select-gender option {
 }
 .games-container .selector-games .arcade-game {
   width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .games-container .selector-games .arcade-game img {
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 .games-container .selector-games .information-game {
@@ -385,4 +417,24 @@ form .select-gender option {
   align-items: center;
   width: 80%;
   margin-top: var(--spacing-md);
+}
+
+.catalog-games {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--background-color-1);
+  border-radius: 10px;
+}
+.catalog-games .game-selector {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.catalog-games .game-selector img {
+  width: 60%;
 }/*# sourceMappingURL=style.css.map */

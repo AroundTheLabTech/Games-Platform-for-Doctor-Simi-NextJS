@@ -139,6 +139,49 @@ export default function Dashboard() {
                 </div>
               </div>
 
+              <div className="catalog-games">
+
+                  {/* Game 1 */}
+                  <div className="game-selector">
+
+                    <button id="game-1" className="push--flat-small">
+                      <h3 className="text-boton game-selector-bottom"></h3>
+                    </button>
+
+                    <img
+                      src="img/games/portada/game-1.png"
+                    />  
+                  </div>
+                    {/* Game */}
+                  <div className="game-selector">
+                      <button id="game-2" className="push--flat-small">
+                        <h3 className="text-boton game-selector-bottom"></h3>
+                      </button>
+                       <img
+                        src="img/games/portada/game-2.png"
+                      />  
+                  </div>
+                    {/* Game */}
+                  <div className="game-selector">
+                      <button id="game-3" className="push--flat-small">
+                        <h3 className="text-boton game-selector-bottom"></h3>
+                      </button>
+                       <img
+                        src="img/games/portada/game-3.png"
+                      />  
+                  </div>
+
+                  {/* Game */}
+                  <div className="game-selector">
+                      <button id="game-4" className="push--flat-small">
+                        <h3 className="text-boton game-selector-bottom"></h3>
+                      </button>
+                       <img
+                        src="img/games/portada/game-4.png"
+                      />  
+                  </div>
+              </div>
+
             </div>
         </div>
     </main>

@@ -4,13 +4,14 @@ import styles from "./page.module.css";
 import Image from 'next/image';
 import { auth } from "../../lib/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore"; // Importar Firestore
+import { doc, setDoc, updateDoc, serverTimestamp } from "firebase/firestore"; // Importar Firestore
 import { db } from "../../lib/firebase"; // Importar la instancia de Firestore configurada en firebase.js
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState(""); // Nuevo estado para el nombre
   const [location, setLocation] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
@@ -24,6 +25,12 @@ export default function Home() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log('User logged in:', userCredential.user);
+      
+      // Actualizar last_session en Firestore
+      await updateDoc(doc(db, "users", userCredential.user.uid), {
+        last_session: serverTimestamp(), // Guardar la fecha y hora actual
+      });
+
       setShowModal(true);
       setModalMessage("Inicio de sesión exitoso. ¡Bienvenido de nuevo!");
     } catch (error) {
@@ -37,21 +44,15 @@ export default function Home() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       console.log('User registered:', userCredential.user);
-      
-          // Aquí agregamos el console.log para ver los datos que se guardarán
-    console.log("Datos que se enviarán a Firestore:", {
-      email,
-      gender,
-      ubication: location, // o location, dependiendo de cómo quieras llamarlo
-      age,
-    });
 
       // Guardar los datos adicionales en Firestore
       await setDoc(doc(db, "users", userCredential.user.uid), {
         email: email,
+        display_name: name, // Guardar el nombre bajo el campo display_name
         ubication: location,
         gender: gender,
         age: age,
+        last_session: serverTimestamp(), // Guardar la fecha y hora actual
       });
 
       setShowModal(true);
@@ -178,6 +179,12 @@ export default function Home() {
                     <h2>Registro</h2>
                     <div className="inputs-container">
                       <input
+                        type="text"
+                        placeholder="Nombre"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      <input
                         type="email"
                         placeholder="Email"
                         value={email}
@@ -195,8 +202,11 @@ export default function Home() {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                       />
-                      <select value={gender} onChange={(e) => setGender(e.target.value)}>
-                        <option value="" disabled>Género</option>
+                      <select 
+                      className="select-gender"
+                      value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option  disabled value="">Seleccionar</option>
+
                         <option value="male">Masculino</option>
                         <option value="female">Femenino</option>
                         <option value="other">Otro</option>
@@ -249,5 +259,3 @@ export default function Home() {
     </main>
   );
 }
-
-

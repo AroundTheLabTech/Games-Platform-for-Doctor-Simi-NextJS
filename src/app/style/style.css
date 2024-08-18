@@ -1,0 +1,128 @@
+@charset "UTF-8";
+.container-login {
+  width: 100%;
+  overflow-y: hidden;
+}
+.container-login header {
+  width: 100%;
+}
+.container-login header img {
+  width: 100%;
+}
+
+.container-login-game {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.container-login-game .columna {
+  background-color: var(--color-crema);
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-login-game .medal {
+  width: 50%;
+}
+.container-login-game .login-center {
+  width: 70%;
+}
+
+.container-center {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: double var(--color-blue);
+  border-width: 0.6rem; /* Ajusta el grosor del borde según sea necesario */
+  margin-top: var(--spacing-xl);
+  margin-right: var(--spacing-xl);
+  margin-left: var(--spacing-xl);
+}
+.container-center h1 {
+  font-family: var(--font-press);
+  text-align: center;
+  font-size: var(--font-size-xxxxl);
+  width: 80%;
+}
+
+.bottoms-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--spacing-xxxl);
+}
+
+.text-boton-2 {
+  font-family: var(--font-press);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+[class*=push] {
+  position: relative;
+  display: inline-block;
+  width: 8rem;
+  height: 8rem;
+  border: 0;
+  margin: 1em;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 200ms;
+}
+
+.push--flat {
+  background-color: hsl(10, 90%, 40%);
+  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.7), inset 0 0 0 1.4545454545rem hsl(10, 90%, 40%), inset 0 3.2rem 1.0666666667rem #aa2409, inset 0 0 0.8rem 1.3333333333rem #911f08, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+}
+.push--flat:after {
+  content: "";
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.8rem;
+  display: block;
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 0.5333333333rem solid rgba(0, 0, 0, 0.3);
+  border-width: 0 0 0.5333333333rem;
+  border-radius: 50%;
+  transition-duration: 200ms;
+}
+.push--flat:active, .push--flat.is-pushed {
+  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.2), inset 0 0 0 1.4545454545rem #b32609, inset 0 3.2rem 1.0666666667rem #9b2108, inset 0 0 0.8rem 1.3333333333rem #791a06, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: #b8270a;
+}
+.push--flat:active:after, .push--flat.is-pushed:after {
+  bottom: 0.9333333333rem;
+  border-width: 0;
+}
+
+.push--flat-blue {
+  background-color: hsl(210, 90%, 40%);
+  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.7), inset 0 0 0 1.4545454545rem hsl(210, 90%, 40%), inset 0 3.2rem 1.0666666667rem #0959aa, inset 0 0 0.8rem 1.3333333333rem #084d91, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+}
+.push--flat-blue:after {
+  content: "";
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.8rem;
+  display: block;
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 0.5333333333rem solid rgba(0, 0, 0, 0.3);
+  border-width: 0 0 0.5333333333rem;
+  border-radius: 50%;
+  transition-duration: 200ms;
+}
+.push--flat-blue:active, .push--flat-blue.is-pushed {
+  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.2), inset 0 0 0 1.4545454545rem #095eb3, inset 0 3.2rem 1.0666666667rem #08529b, inset 0 0 0.8rem 1.3333333333rem #064079, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: #0a61b8;
+}
+.push--flat-blue:active:after, .push--flat-blue.is-pushed:after {
+  bottom: 0.9333333333rem;
+  border-width: 0;
+}/*# sourceMappingURL=style.css.map */

@@ -1,95 +1,107 @@
-import Image from "next/image";
+"use client";
+
+
 import styles from "./page.module.css";
+import Image from 'next/image';
+import {auth} from "../../lib/firebase";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+import {useState, useEffect, useRef} from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log('User signed up:', userCredential.user);
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
+  };
+
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio('/sound/bottom.m4a');
+  }, []);
+
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+    <main className='container-login'>  
+        {/* <form onSubmit={handleSignUp}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+          
+          <button type="submit">Sign Up</button>
+          
+        </form> */}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        {/* <header>
+          <img 
+            src="img/login/header.svg"
+          />
+        </header> */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <div className="container-login-game"> 
+            <div className="columna">
+              <img 
+              className="medal"
+              src="img/medallas/medal-1.svg">
+              </img>   
+              <img 
+              className="medal"
+              src="img/medallas/medal-2.svg">
+              </img>   
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+            <div className="login-center">
+              <div className="container-center">
+                <h1 className="title-login">
+                ¡GANAR NUNCA FUE MÁS DIVERTIDO!
+                </h1>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+                <div className="bottoms-container">
+                <button className="push--flat"
+                onClick={playSound}
+                ><h3 className="text-boton">LOGIN</h3></button>
+                <button className="push--flat-blue"
+                onClick={playSound}
+                ><h3 className="text-boton-2">REGISTER</h3></button>
+                </div>
+              </div>
+            </div>
+            <div className="columna">
+              <img 
+              className="medal"
+              src="img/medallas/medal-3.svg">
+              </img>   
+              <img 
+              className="medal"
+              src="img/medallas/medal-4.svg">
+              </img>   
+            </div>        
+            
+            </div>
     </main>
   );
 }

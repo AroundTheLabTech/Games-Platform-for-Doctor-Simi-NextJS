@@ -109,7 +109,37 @@ export default function Dashboard() {
 
         {/* Main Container */}
         <div className="main-container">
+            <div
+            className="games-container"
+            >
 
+              <div className="selector-games">
+                <div className="arcade-game">
+                  <img
+                    src="img/games/arcade/game-1.png"
+                  />
+                </div>
+
+                <div className="information-game">
+                  <img
+                  src="img/games/title/game-1.svg"
+                  />
+                  <p className="descripcion-juego">
+                  ¡Defiende el Centro a toda costa!  Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! 
+
+                  ¿Tienes lo necesario para proteger a los pacientes y salvar el día?! ¡Descúbrelo ahora!
+                  </p>
+
+                  <div className="container-boton-jugar">
+                  <button className="push--flat-blue" >
+                     <h3 className="text-boton-jugar">JUGAR</h3>
+                  </button>
+                  </div>
+                 
+                </div>
+              </div>
+
+            </div>
         </div>
     </main>
   );

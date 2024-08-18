@@ -38,7 +38,7 @@ export default function Game() {
        
 
         <div className="game-center">
-            <iframe src="games/game-1/index.html">
+            <iframe src="games/game-1/public-game/index.html">
 
             </iframe>
         </div>

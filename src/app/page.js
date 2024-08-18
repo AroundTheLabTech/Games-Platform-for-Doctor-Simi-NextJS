@@ -1,7 +1,6 @@
 "use client";
 
-import styles from "./page.module.css";
-import Image from 'next/image';
+import { useRouter } from 'next/navigation'; // Importa useRouter para la redirección
 import { auth } from "../../lib/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, updateDoc, serverTimestamp } from "firebase/firestore"; // Importar Firestore
@@ -20,6 +19,8 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
+  const router = useRouter(); // Inicializa useRouter para redireccionar
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -31,8 +32,9 @@ export default function Home() {
         last_session: serverTimestamp(), // Guardar la fecha y hora actual
       });
 
-      setShowModal(true);
-      setModalMessage("Inicio de sesión exitoso. ¡Bienvenido de nuevo!");
+      // Redirigir a /dashboard después de iniciar sesión exitosamente
+      router.push('/dashboard');
+
     } catch (error) {
       console.error('Error logging in:', error);
       handleAuthError(error);

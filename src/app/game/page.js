@@ -26,6 +26,7 @@ export default function Game() {
         if (userDoc.exists() && userDoc.data()[game]) {
           const initialScore = Number(userDoc.data()[game]) || 0;
           setCurrentScore(initialScore);
+          console.log("Puntaje inicial desde la base de datos:", initialScore); // Imprimir el número de la base de datos que recibe
         }
       } else {
         router.push('/');
@@ -33,9 +34,24 @@ export default function Game() {
     });
 
     const handlePostMessage = (event) => {
-      if (event.data && typeof event.data.score !== 'undefined') {
-        setCurrentScore((prevScore) => prevScore + Number(event.data.score));
-        setIframeVisible(false);
+      console.log("Mensaje recibido:", event.data); // Verificar si los mensajes están llegando
+
+      // Filtrar los mensajes que contienen el campo `number`
+      if (event.data && typeof event.data.number !== 'undefined') {
+        const newScore = Number(event.data.number);
+
+        if (selectedGame === "juego3") {
+          // Para juego 3, sumar el puntaje recibido al puntaje actual y actualizar el h3 inmediatamente
+          setCurrentScore((prevScore) => {
+            const updatedScore = prevScore + newScore;
+            console.log("Suma del puntaje actual + postMessage:", updatedScore); // Imprimir la suma de lo que recibe del postMessage y la base de datos
+            return updatedScore;
+          });
+        } else {
+          // Para otros juegos, simplemente actualizar el puntaje y ocultar el iframe
+          setCurrentScore((prevScore) => prevScore + newScore);
+          setIframeVisible(false);
+        }
       }
     };
 
@@ -50,6 +66,8 @@ export default function Game() {
   const handleExit = async () => {
     if (user) {
       try {
+        console.log("Puntaje que se sube a la base de datos:", currentScore); // Imprimir la variable que se sube a la base de datos
+        // Guardar el score actualizado en Firestore según el juego seleccionado
         await setDoc(doc(db, "scores", user.uid), {
           [selectedGame]: currentScore,
         }, { merge: true });
@@ -82,13 +100,13 @@ export default function Game() {
   const getGameInstructions = (game) => {
     switch (game) {
       case "juego1":
-        return "¡No permitas que lleguen al centro! </br>Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos, para subir los niveles de ataque, defensa y velocidad.";
+        return "¡No permitas que lleguen al centro! Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos, para subir los niveles de ataque, defensa y velocidad.";
       case "juego2":
         return "¡No Ganas Hasta Llegar al Zócalo de CDMX!, salta, esquiva y recolecta monedas para llegar al final del nivel. Y obtendrás una medalla de oro";
       case "juego3":
-        return "¡No Cortes al Simi! Cortas las roscas de reyes los mas rápido posible ";
+        return "¡No Cortes al Simi! Cortas las roscas de reyes lo más rápido posible.";
       case "juego4":
-        return "Instrucciones para Simi Space: Próximamente disponible.";
+        return "¡Lanzamiento 01/Septiembre/2024! & más sorpresas";
       default:
         return "Instrucciones no disponibles.";
     }

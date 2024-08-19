@@ -68,12 +68,12 @@ export default function Dashboard() {
     juego3: {
       imageSrc: "img/games/arcade/game-3.png",
       titleSrc: "img/games/title/game-3.svg",
-      description: "Esta es la descripcion de Simi Ninja",
+      description: "¡No dejes caer ninguna Rosca de Reyes! Corta todos los objetos y evita encender la mecha del simi. Acumula puntos por cada Rosca de Reyes que logres cortar. ¿Sabías que tenemos el Record a la Rosca de Reyes mas grande del mundo",
     },
     juego4: {
       imageSrc: "img/games/arcade/game-4.png",
       titleSrc: "img/games/title/game-4.svg",
-      description: "Esta es la descripción de SimiSpace",
+      description: "Lanzamiento el 01/Sep/2024 ",
     },
   };
 

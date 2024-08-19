@@ -26,7 +26,7 @@ export default function Game() {
         if (userDoc.exists() && userDoc.data()[game]) {
           const initialScore = Number(userDoc.data()[game]) || 0;
           setCurrentScore(initialScore);
-          console.log("Puntaje inicial desde la base de datos:", initialScore); // Imprimir el número de la base de datos que recibe
+          console.log("Puntaje inicial desde la base de datos:", initialScore);
         }
       } else {
         router.push('/');
@@ -34,19 +34,24 @@ export default function Game() {
     });
 
     const handlePostMessage = (event) => {
-      console.log("Mensaje recibido:", event.data); // Verificar si los mensajes están llegando
+      console.log("Mensaje recibido:", event.data);
 
-      // Filtrar los mensajes que contienen el campo `number`
       if (event.data && typeof event.data.number !== 'undefined') {
-        // Sumar +1 al puntaje actual por cada mensaje recibido
-        setCurrentScore((prevScore) => {
-          const updatedScore = prevScore + 1;
-          console.log("Suma de +1 al puntaje actual:", updatedScore); // Imprimir la suma de lo que recibe del postMessage y la base de datos
-          return updatedScore;
-        });
-
-        if (selectedGame !== "juego3") {
-          setIframeVisible(false); // Cerrar el iframe si no es juego 3
+        if (selectedGame === "juego3") {
+          // En juego3, sumamos +1 por cada postMessage recibido
+          setCurrentScore((prevScore) => {
+            const updatedScore = prevScore + 1;
+            console.log("Suma de +1 al puntaje actual:", updatedScore);
+            return updatedScore;
+          });
+        } else if (selectedGame === "juego1") {
+          // En juego1, sumamos el valor recibido del postMessage y cerramos el iframe
+          setCurrentScore((prevScore) => {
+            const updatedScore = prevScore + Number(event.data.number);
+            console.log("Suma del valor recibido al puntaje actual:", updatedScore);
+            setIframeVisible(false); // Cerrar el iframe
+            return updatedScore;
+          });
         }
       }
     };
@@ -62,8 +67,7 @@ export default function Game() {
   const handleExit = async () => {
     if (user) {
       try {
-        console.log("Puntaje que se sube a la base de datos:", currentScore); // Imprimir la variable que se sube a la base de datos
-        // Guardar el score actualizado en Firestore según el juego seleccionado
+        console.log("Puntaje que se sube a la base de datos:", currentScore);
         await setDoc(doc(db, "scores", user.uid), {
           [selectedGame]: currentScore,
         }, { merge: true });
@@ -182,3 +186,4 @@ export default function Game() {
     </main>
   );
 }
+  

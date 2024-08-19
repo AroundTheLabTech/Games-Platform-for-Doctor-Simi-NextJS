@@ -7,3 +7,6 @@
 [submodule "public/games/game-1"]
 	path = public/games/game-1
 	url = https://github.com/IvanMarte2403/SimiInvade---for-DoctorSimi
+[submodule "public/games/game-2"]
+	path = public/games/game-2
+	url = https://github.com/IvanMarte2403/PlatformGame-for-DoctorSimi

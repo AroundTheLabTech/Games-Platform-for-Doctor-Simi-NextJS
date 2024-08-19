@@ -38,19 +38,15 @@ export default function Game() {
 
       // Filtrar los mensajes que contienen el campo `number`
       if (event.data && typeof event.data.number !== 'undefined') {
-        const newScore = Number(event.data.number);
+        // Sumar +1 al puntaje actual por cada mensaje recibido
+        setCurrentScore((prevScore) => {
+          const updatedScore = prevScore + 1;
+          console.log("Suma de +1 al puntaje actual:", updatedScore); // Imprimir la suma de lo que recibe del postMessage y la base de datos
+          return updatedScore;
+        });
 
-        if (selectedGame === "juego3") {
-          // Para juego 3, sumar el puntaje recibido al puntaje actual y actualizar el h3 inmediatamente
-          setCurrentScore((prevScore) => {
-            const updatedScore = prevScore + newScore;
-            console.log("Suma del puntaje actual + postMessage:", updatedScore); // Imprimir la suma de lo que recibe del postMessage y la base de datos
-            return updatedScore;
-          });
-        } else {
-          // Para otros juegos, simplemente actualizar el puntaje y ocultar el iframe
-          setCurrentScore((prevScore) => prevScore + newScore);
-          setIframeVisible(false);
+        if (selectedGame !== "juego3") {
+          setIframeVisible(false); // Cerrar el iframe si no es juego 3
         }
       }
     };
@@ -104,7 +100,7 @@ export default function Game() {
       case "juego2":
         return "¡No Ganas Hasta Llegar al Zócalo de CDMX!, salta, esquiva y recolecta monedas para llegar al final del nivel. Y obtendrás una medalla de oro";
       case "juego3":
-        return "¡No Cortes al Simi! Cortas las roscas de reyes lo más rápido posible.";
+        return "¡No Cortes al Simi! Corta las roscas de reyes lo más rápido posible.";
       case "juego4":
         return "¡Lanzamiento 01/Septiembre/2024! & más sorpresas";
       default:

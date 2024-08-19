@@ -36,23 +36,32 @@ export default function Game() {
     const handlePostMessage = (event) => {
       console.log("Mensaje recibido:", event.data);
 
-      if (event.data && typeof event.data.number !== 'undefined') {
-        if (selectedGame === "juego3") {
-          // En juego3, sumamos +1 por cada postMessage recibido
-          setCurrentScore((prevScore) => {
-            const updatedScore = prevScore + 1;
-            console.log("Suma de +1 al puntaje actual:", updatedScore);
-            return updatedScore;
-          });
-        } else if (selectedGame === "juego1") {
-          // En juego1, sumamos el valor recibido del postMessage y cerramos el iframe
-          setCurrentScore((prevScore) => {
-            const updatedScore = prevScore + Number(event.data.number);
-            console.log("Suma del valor recibido al puntaje actual:", updatedScore);
-            setIframeVisible(false); // Cerrar el iframe
-            return updatedScore;
-          });
+      if (selectedGame === "juego1") {
+        // Verificamos si el evento contiene el campo 'score'
+        if (event.data && typeof event.data.score !== 'undefined') {
+          const scoreValue = Number(event.data.score);
+          if (!isNaN(scoreValue)) {
+            console.log("Valor recibido desde el postMessage (juego1):", scoreValue);
+
+            setCurrentScore((prevScore) => {
+              const updatedScore = prevScore + scoreValue;
+              console.log("Nuevo puntaje acumulado (juego1):", updatedScore);
+              setIframeVisible(false); // Cerrar el iframe
+              return updatedScore;
+            });
+          } else {
+            console.warn("El valor recibido no es un número válido:", event.data.score);
+          }
+        } else {
+          console.warn("El mensaje recibido no contiene un campo 'score' válido para juego1.");
         }
+      } else if (selectedGame === "juego3" && event.data && typeof event.data.number !== 'undefined') {
+        // Para juego 3: Sumar +1 por cada postMessage recibido
+        setCurrentScore((prevScore) => {
+          const updatedScore = prevScore + 1;
+          console.log("Suma de +1 al puntaje actual (juego3):", updatedScore);
+          return updatedScore;
+        });
       }
     };
 
@@ -186,4 +195,3 @@ export default function Game() {
     </main>
   );
 }
-  

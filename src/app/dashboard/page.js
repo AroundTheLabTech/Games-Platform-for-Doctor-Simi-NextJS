@@ -63,7 +63,7 @@ export default function Dashboard() {
     juego2: {
       imageSrc: "img/games/arcade/game-2.png",
       titleSrc: "img/games/title/game-2.svg",
-      description: "Esta es la descripcion de Simi Run",
+      description: "¡Ayuda a Simi a recolectar todas las monedas y evitar los obstáculos! ¡Diviértete en este juego de plataformas y demuestra tus habilidades! ¡Juega ahora y desbloquea nuevos niveles!",
     },
     juego3: {
       imageSrc: "img/games/arcade/game-3.png",

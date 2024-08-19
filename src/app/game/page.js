@@ -1,55 +1,46 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation'; // Importar useRouter para manejar la navegación
-import { auth } from "../../../lib/firebase"; // Importar Firebase Auth
-import { doc, getDoc, setDoc } from "firebase/firestore"; // Importar funciones de Firestore
-import { db } from "../../../lib/firebase"; // Importar Firestore
+import { useRouter } from 'next/navigation';
+import { auth } from "../../../lib/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../../../lib/firebase";
 
 export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
-  const [initialScore, setInitialScore] = useState(0); // Score inicial desde Firestore
   const [currentScore, setCurrentScore] = useState(0); // Score acumulado
   const [iframeVisible, setIframeVisible] = useState(true); // Estado para controlar la visibilidad del iframe
+  const [showModal, setShowModal] = useState(true); // Estado para controlar la visibilidad del modal de instrucciones
   const router = useRouter(); // Inicializa useRouter para redireccionar
   const [user, setUser] = useState(null); // Estado para el usuario autenticado
 
   useEffect(() => {
-    // Leer la variable del juego seleccionado desde localStorage
     const game = localStorage.getItem("selectedGame");
     setSelectedGame(game);
 
-    // Verificar si el usuario está autenticado
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
 
-        // Obtener el puntaje inicial de Firestore
         const userDoc = await getDoc(doc(db, "scores", user.uid));
-        if (userDoc.exists() && userDoc.data()[selectedGame]) {
-          const initialScore = Number(userDoc.data()[selectedGame]) || 0;
-          setInitialScore(initialScore);
-          setCurrentScore(initialScore); // Establecer el score inicial como el score actual
+        if (userDoc.exists() && userDoc.data()[game]) {
+          const initialScore = Number(userDoc.data()[game]) || 0;
+          setCurrentScore(initialScore);
         }
       } else {
-        router.push('/'); // Redirigir al login si no está autenticado
+        router.push('/');
       }
     });
 
-    // Escuchar mensajes desde el iframe
     const handlePostMessage = (event) => {
       if (event.data && typeof event.data.score !== 'undefined') {
-        setCurrentScore((prevScore) => {
-          const newScore = prevScore + Number(event.data.score); // Sumar el nuevo score al actual
-          setIframeVisible(false); // Cerrar el iframe (ocultarlo)
-          return newScore; // Actualizar el score acumulado
-        });
+        setCurrentScore((prevScore) => prevScore + Number(event.data.score));
+        setIframeVisible(false);
       }
     };
 
     window.addEventListener("message", handlePostMessage);
 
-    // Limpiar el listener cuando el componente se desmonta
     return () => {
       window.removeEventListener("message", handlePostMessage);
       unsubscribe();
@@ -59,15 +50,18 @@ export default function Game() {
   const handleExit = async () => {
     if (user) {
       try {
-        // Guardar el score actualizado en Firestore usando setDoc con merge
         await setDoc(doc(db, "scores", user.uid), {
-          [selectedGame]: currentScore, // Guardar el score acumulado
+          [selectedGame]: currentScore,
         }, { merge: true });
-        router.push('/dashboard'); // Redirigir al usuario al dashboard
+        router.push('/dashboard');
       } catch (error) {
         console.error("Error al guardar el score en Firestore", error);
       }
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const getGameTitle = (game) => {
@@ -85,6 +79,36 @@ export default function Game() {
     }
   };
 
+  const getGameInstructions = (game) => {
+    switch (game) {
+      case "juego1":
+        return "¡No permitas que lleguen al centro! </br>Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos, para subir los niveles de ataque, defensa y velocidad.";
+      case "juego2":
+        return "¡No Ganas Hasta Llegar al Zócalo de CDMX!, salta, esquiva y recolecta monedas para llegar al final del nivel. Y obtendrás una medalla de oro";
+      case "juego3":
+        return "¡No Cortes al Simi! Cortas las roscas de reyes los mas rápido posible ";
+      case "juego4":
+        return "Instrucciones para Simi Space: Próximamente disponible.";
+      default:
+        return "Instrucciones no disponibles.";
+    }
+  };
+
+  const getIframeSrc = (game) => {
+    switch (game) {
+      case "juego1":
+        return "games/game-1/public-game/index.html";
+      case "juego2":
+        return "games/game-2/public/index.html";
+      case "juego3":
+        return "games/game-3/release/index.html";
+      case "juego4":
+        return null; // Para el juego 4 no mostramos el iframe
+      default:
+        return "";
+    }
+  };
+
   if (!selectedGame) {
     return <p>Cargando juego...</p>;
   }
@@ -92,8 +116,20 @@ export default function Game() {
   return (
     <main className="container-game">
       <div className="container-interface-game">
+        {showModal && (
+          <div className="modal">
+            <div className="modal-content">
+              <h2>Instrucciones</h2>
+              <p>{getGameInstructions(selectedGame)}</p>
+              <button className="push--flat-blue" onClick={handleCloseModal}>
+                <h3>JUGAR</h3>
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="columna">
-          <h3>Points: {currentScore}</h3> {/* Mostrar la variable currentScore */}
+          <h3>Points: {currentScore}</h3>
           <img 
             className="medal"
             src="img/medallas/medal-1.svg"
@@ -108,8 +144,12 @@ export default function Game() {
         </div>
 
         <div className="game-center">
-          {iframeVisible && (
-            <iframe src="games/game-1/public-game/index.html"></iframe>
+          {selectedGame === "juego4" ? (
+            <p>Actualizando pronto</p>
+          ) : (
+            iframeVisible && (
+              <iframe src={getIframeSrc(selectedGame)}></iframe>
+            )
           )}
         </div>
 

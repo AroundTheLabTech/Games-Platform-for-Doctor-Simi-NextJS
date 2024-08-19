@@ -67,3 +67,16 @@
         height: 100%;
     }
 }
+
+
+//Modal
+
+.modal-content{
+    p{
+        font-family: var(--font-press);
+        font-size: var(--font-size-xl);
+        text-align: center;
+        color: var(--color-secondary);
+        line-height: 2;
+    }
+}

@@ -100,3 +100,16 @@
         
     }
 }
+
+
+@media only screen and (max-width: 620px){
+    .rotate-screen{
+        width: 100%;
+
+        img{
+            color:  var(--font)
+        }
+    }
+
+}
+

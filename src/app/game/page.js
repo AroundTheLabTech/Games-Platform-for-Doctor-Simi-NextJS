@@ -8,11 +8,12 @@ import { db } from "../../../lib/firebase";
 
 export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
-  const [currentScore, setCurrentScore] = useState(0); // Score acumulado
-  const [iframeVisible, setIframeVisible] = useState(true); // Estado para controlar la visibilidad del iframe
-  const [showModal, setShowModal] = useState(true); // Estado para controlar la visibilidad del modal de instrucciones
-  const router = useRouter(); // Inicializa useRouter para redireccionar
-  const [user, setUser] = useState(null); // Estado para el usuario autenticado
+  const [currentScore, setCurrentScore] = useState(0); 
+  const [iframeVisible, setIframeVisible] = useState(true); 
+  const [showModal, setShowModal] = useState(true);
+  const [showRotateScreen, setShowRotateScreen] = useState(false); // Estado para mostrar la pantalla de rotación
+  const router = useRouter(); 
+  const [user, setUser] = useState(null); 
 
   useEffect(() => {
     const game = localStorage.getItem("selectedGame");
@@ -37,26 +38,18 @@ export default function Game() {
       console.log("Mensaje recibido:", event.data);
 
       if (selectedGame === "juego1") {
-        // Verificamos si el evento contiene el campo 'score'
         if (event.data && typeof event.data.score !== 'undefined') {
           const scoreValue = Number(event.data.score);
-          if (!isNaN(scoreValue)) {
-            console.log("Valor recibido desde el postMessage (juego1):", scoreValue);
+          console.log("Valor recibido desde el postMessage (juego1):", scoreValue);
 
-            setCurrentScore((prevScore) => {
-              const updatedScore = prevScore + scoreValue;
-              console.log("Nuevo puntaje acumulado (juego1):", updatedScore);
-              setIframeVisible(false); // Cerrar el iframe
-              return updatedScore;
-            });
-          } else {
-            console.warn("El valor recibido no es un número válido:", event.data.score);
-          }
-        } else {
-          console.warn("El mensaje recibido no contiene un campo 'score' válido para juego1.");
+          setCurrentScore((prevScore) => {
+            const updatedScore = prevScore + scoreValue;
+            console.log("Nuevo puntaje acumulado (juego1):", updatedScore);
+            setIframeVisible(false); // Cerrar el iframe
+            return updatedScore;
+          });
         }
       } else if (selectedGame === "juego3" && event.data && typeof event.data.number !== 'undefined') {
-        // Para juego 3: Sumar +1 por cada postMessage recibido
         setCurrentScore((prevScore) => {
           const updatedScore = prevScore + 1;
           console.log("Suma de +1 al puntaje actual (juego3):", updatedScore);
@@ -67,8 +60,22 @@ export default function Game() {
 
     window.addEventListener("message", handlePostMessage);
 
+    // Detectar la orientación del dispositivo
+    const handleOrientationChange = () => {
+      if (window.innerWidth < window.innerHeight) {
+        setShowRotateScreen(true);
+      } else {
+        setShowRotateScreen(false);
+      }
+    };
+
+    // Agregar listener para detectar cambios en la orientación
+    window.addEventListener("resize", handleOrientationChange);
+    handleOrientationChange(); // Comprobar la orientación inicial
+
     return () => {
       window.removeEventListener("message", handlePostMessage);
+      window.removeEventListener("resize", handleOrientationChange);
       unsubscribe();
     };
   }, [selectedGame]);
@@ -130,7 +137,7 @@ export default function Game() {
       case "juego3":
         return "games/game-3/release/index.html";
       case "juego4":
-        return null; // Para el juego 4 no mostramos el iframe
+        return null; 
       default:
         return "";
     }
@@ -155,42 +162,54 @@ export default function Game() {
           </div>
         )}
 
-        <div className="columna">
-          <h3>Points: {currentScore}</h3>
-          <img 
-            className="medal"
-            src="img/medallas/medal-1.svg"
-          />
-          <button className="push--flat" onClick={handleExit}>
-            <h3 className="text-boton">
-              Guardar <br />
-              y <br />
-              Salir
-            </h3>
-          </button>
-        </div>
+        {showRotateScreen && (
+          <div className="rotate-screen">
+            <img src="img/icons/mobile.svg" alt="Mobile Icon" />
+            <p>Por favor, rota tu dispositivo</p>
+            <img src="img/icons/rotate.svg" alt="Rotate Icon" />
+          </div>
+        )}
 
-        <div className="game-center">
-          {selectedGame === "juego4" ? (
-            <p>Actualizando pronto</p>
-          ) : (
-            iframeVisible && (
-              <iframe src={getIframeSrc(selectedGame)}></iframe>
-            )
-          )}
-        </div>
+        {!showRotateScreen && (
+          <>
+            <div className="columna">
+              <h3>Points: {currentScore}</h3>
+              <img 
+                className="medal"
+                src="img/medallas/medal-1.svg"
+              />
+              <button className="push--flat" onClick={handleExit}>
+                <h3 className="text-boton">
+                  Guardar <br />
+                  y <br />
+                  Salir
+                </h3>
+              </button>
+            </div>
 
-        <div className="columna">
-          <h3>{getGameTitle(selectedGame)}</h3>
-          <img 
-            className="medal"
-            src="img/medallas/medal-3.svg"
-          />
-          <img 
-            className="medal"
-            src="img/medallas/medal-4.svg"
-          />
-        </div> 
+            <div className="game-center">
+              {selectedGame === "juego4" ? (
+                <p>Actualizando pronto</p>
+              ) : (
+                iframeVisible && (
+                  <iframe src={getIframeSrc(selectedGame)}></iframe>
+                )
+              )}
+            </div>
+
+            <div className="columna">
+              <h3>{getGameTitle(selectedGame)}</h3>
+              <img 
+                className="medal"
+                src="img/medallas/medal-3.svg"
+              />
+              <img 
+                className="medal"
+                src="img/medallas/medal-4.svg"
+              />
+            </div> 
+          </>
+        )}
       </div>
     </main>
   );

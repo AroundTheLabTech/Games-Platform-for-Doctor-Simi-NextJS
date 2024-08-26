@@ -242,6 +242,7 @@ form .select-gender option {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   justify-content: space-between;
 }
 .dashboard-container .user-container {
@@ -359,6 +360,7 @@ form .select-gender option {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -436,14 +438,10 @@ form .select-gender option {
   align-items: center;
 }
 .catalog-games .game-selector img {
+  color: #fff !important;
   width: 60%;
 }
 
-@media only screen and (max-width: 620px) {
-  .rotate-screen {
-    width: 100%;
-  }
-}
 .container-game {
   width: 100%;
   height: 100%;
@@ -512,4 +510,25 @@ form .select-gender option {
   text-align: center;
   color: var(--color-secondary);
   line-height: 2;
+}
+
+@media only screen and (max-width: 970px) {
+  .columna h3 {
+    font-size: var(--font-size-md) !important;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .rotate-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .rotate-screen p {
+    font-size: var(--font-size-xxl);
+  }
+  .rotate-screen img {
+    color: var(--font);
+  }
 }/*# sourceMappingURL=style.css.map */

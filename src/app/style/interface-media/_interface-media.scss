@@ -80,3 +80,30 @@
         line-height: 2;
     }
 }
+
+@media only screen and (max-width: 970px){
+    .columna{
+        h3{
+            font-size: var(--font-size-md) !important;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 620px){
+    .rotate-screen{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p{
+            font-size: var(--font-size-xxl);
+        }
+        img{
+            color:  var(--font)
+        }
+    }
+
+}
+

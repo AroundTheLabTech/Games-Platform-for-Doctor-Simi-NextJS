@@ -164,10 +164,8 @@ export default function Game() {
 
         {showRotateScreen && (
           <div className="rotate-screen">
-            <img src="img/icons/mobile.svg" alt="Mobile Icon" />
             <p>Por favor, rota tu dispositivo</p>
-            <img src="img/icons/rotate.svg" alt="Rotate Icon" />
-          </div>
+           </div>
         )}
 
         {!showRotateScreen && (

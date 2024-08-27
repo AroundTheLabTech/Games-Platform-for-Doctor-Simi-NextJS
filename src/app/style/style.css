@@ -309,6 +309,13 @@ form .select-gender option {
   flex-direction: row;
   width: 100%;
 }
+.user-container .nav-container ul li button {
+  background: none;
+  border: none;
+  font-size: var(--spacing-md);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+}
 .user-container .nav-container ul li img {
   width: 10%;
   margin-right: var(--spacing-md);

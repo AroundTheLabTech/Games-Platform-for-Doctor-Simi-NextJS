@@ -614,10 +614,6 @@ form .select-gender option {
   font-size: var(--font-size-xxl);
 }
 
-.graft-ranking svg {
-  color: var(--color-third) !important;
-}
-
-.MuiChartsAxis-root {
-  color: var(--color-third) !important;
+.graft-ranking {
+  margin-top: var(--spacing-xl);
 }/*# sourceMappingURL=style.css.map */

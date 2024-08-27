@@ -91,11 +91,5 @@
 // Score
 
 .graft-ranking{
-    svg{
-        color: var(--color-third) !important;
-    }
-}
-
-.MuiChartsAxis-root{
-    color: var(--color-third) !important; 
+    margin-top: var(--spacing-xl);
 }

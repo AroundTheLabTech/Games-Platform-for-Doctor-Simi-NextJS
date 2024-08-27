@@ -2,19 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-import { auth, db } from "../../../lib/firebase"; // Importar Firebase Auth
-import { onAuthStateChanged, signOut } from "firebase/auth"; // Importar funciones de Auth
-import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore"; // Importar funciones de Firestore
-import dayjs from 'dayjs'; // Importar dayjs para manejar fechas
+import { auth, db } from "../../../lib/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { doc, getDoc, setDoc, updateDoc, collection } from "firebase/firestore";
+import dayjs from 'dayjs';
 import Games from "../../components/Game";
-import DashboardContent from "../../components/DashboardComponent"; // Importar componente de DashboardContent
+import DashboardContent from "../../components/DashboardComponent";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
-  const [userData, setUserData] = useState(null); // Estado para los datos adicionales del usuario
-  const [selectedView, setSelectedView] = useState("games"); // Estado para la vista seleccionada (games o dashboard)
-  const [selectedGame, setSelectedGame] = useState("juego1"); // Estado para el juego seleccionado
-  const [streak, setStreak] = useState(0); // Estado para manejar la racha de inicio de sesión
+  const [userData, setUserData] = useState(null);
+  const [selectedView, setSelectedView] = useState("games");
+  const [selectedGame, setSelectedGame] = useState("juego1");
+  const [streak, setStreak] = useState(0);
   const router = useRouter();
 
   useEffect(() => {
@@ -22,9 +22,32 @@ export default function Dashboard() {
       if (user) {
         setUser(user);
 
-        const userDoc = await getDoc(doc(db, "users", user.uid));
+        const userDocRef = doc(db, "users", user.uid);
+        const userDoc = await getDoc(userDocRef);
         if (userDoc.exists()) {
           setUserData(userDoc.data());
+
+          // Sumar todos los campos en la colección scores
+          const scoresDocRef = doc(db, "scores", user.uid);
+          const scoresDoc = await getDoc(scoresDocRef);
+          let totalScore = 0;
+
+          if (scoresDoc.exists()) {
+            const scoreData = scoresDoc.data();
+            totalScore = Object.values(scoreData).reduce(
+              (acc, curr) => acc + (typeof curr === "number" ? curr : 0),
+              0
+            );
+          }
+
+          console.log("Total Score calculado:", totalScore); // Log para verificar la suma
+
+          // Actualizar el campo score_total en la colección users
+          await updateDoc(userDocRef, {
+            score_total: totalScore,
+          });
+
+          console.log("Campo score_total actualizado en Firebase"); // Log para verificar la actualización
 
           // Lógica de racha diaria
           const lastSession = dayjs(userDoc.data().last_session?.toDate());
@@ -46,6 +69,8 @@ export default function Dashboard() {
             await updateDoc(stadisticsDocRef, {
               score_racha: newStreak,
             });
+
+            console.log("Racha actualizada en Firebase:", newStreak); // Log para verificar la racha
           } else {
             const initialStreak = differenceInDays === 1 ? 1 : 0;
             setStreak(initialStreak);
@@ -53,6 +78,8 @@ export default function Dashboard() {
             await setDoc(stadisticsDocRef, {
               score_racha: initialStreak,
             });
+
+            console.log("Documento de racha creado en Firebase:", initialStreak); // Log para verificar la creación
           }
         }
       } else {

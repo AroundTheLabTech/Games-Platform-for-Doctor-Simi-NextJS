@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { auth } from "../../../lib/firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, collection, addDoc, serverTimestamp } from "firebase/firestore"; // Importar funciones necesarias
 import { db } from "../../../lib/firebase";
 
 export default function Game() {
@@ -11,7 +11,7 @@ export default function Game() {
   const [currentScore, setCurrentScore] = useState(0); 
   const [iframeVisible, setIframeVisible] = useState(true); 
   const [showModal, setShowModal] = useState(true);
-  const [showRotateScreen, setShowRotateScreen] = useState(false); // Estado para mostrar la pantalla de rotación
+  const [showRotateScreen, setShowRotateScreen] = useState(false); 
   const router = useRouter(); 
   const [user, setUser] = useState(null); 
 
@@ -60,7 +60,6 @@ export default function Game() {
 
     window.addEventListener("message", handlePostMessage);
 
-    // Detectar la orientación del dispositivo
     const handleOrientationChange = () => {
       if (window.innerWidth < window.innerHeight) {
         setShowRotateScreen(true);
@@ -69,9 +68,8 @@ export default function Game() {
       }
     };
 
-    // Agregar listener para detectar cambios en la orientación
     window.addEventListener("resize", handleOrientationChange);
-    handleOrientationChange(); // Comprobar la orientación inicial
+    handleOrientationChange(); 
 
     return () => {
       window.removeEventListener("message", handlePostMessage);
@@ -84,9 +82,19 @@ export default function Game() {
     if (user) {
       try {
         console.log("Puntaje que se sube a la base de datos:", currentScore);
+
+        // Guardar el score actualizado en la colección scores
         await setDoc(doc(db, "scores", user.uid), {
           [selectedGame]: currentScore,
         }, { merge: true });
+
+        // Guardar el puntaje y la hora en la subcolección sessions
+        const sessionRef = collection(db, "scores", user.uid, "sessions");
+        await addDoc(sessionRef, {
+          score: currentScore,
+          timestamp: serverTimestamp()
+        });
+
         router.push('/dashboard');
       } catch (error) {
         console.error("Error al guardar el score en Firestore", error);

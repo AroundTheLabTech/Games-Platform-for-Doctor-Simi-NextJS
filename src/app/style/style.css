@@ -538,4 +538,78 @@ form .select-gender option {
   .rotate-screen img {
     color: var(--font);
   }
+}
+.dashboard-user-container {
+  padding: var(--spacing-md);
+  background-image: url("/img/background/background-games.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard-user-container .header {
+  display: flex;
+  flex-direction: row;
+  padding: var(--spacing-md);
+  justify-content: space-between;
+  font-family: var(--font-secondary);
+  width: 100%;
+}
+.dashboard-user-container .header h2 {
+  font-size: var(--font-size-xl);
+}
+.dashboard-user-container .header div {
+  padding: var(--spacing-md);
+}
+.dashboard-user-container .header .container-racha {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--spacing-md);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 23%;
+  align-items: center;
+}
+.dashboard-user-container .header .container-racha img {
+  margin-right: var(--spacing-md);
+  width: 10%;
+}
+.dashboard-user-container .header .container-racha p {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  width: 76%;
+  text-align: right;
+  font-size: var(--font-size-lg);
+}
+.dashboard-user-container .dashboard-if-container {
+  padding: var(--spacing-md);
+}
+.dashboard-user-container .dashboard-if-container .if-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 35%;
+  padding: var(--spacing-md);
+  border-radius: 10px;
+}
+.dashboard-user-container .dashboard-if-container .if-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboard-user-container .dashboard-if-container .if-1 .ranking-level {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 10px;
+  background-color: var(--color-third);
+}
+.dashboard-user-container .dashboard-if-container .if-1 .ranking-level p {
+  font-family: var(--font-secondary);
+  font-weight: 800;
+  font-size: var(--font-size-xxl);
+}
+.dashboard-user-container .dashboard-if-container .total-score h3 {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-xxl);
 }/*# sourceMappingURL=style.css.map */

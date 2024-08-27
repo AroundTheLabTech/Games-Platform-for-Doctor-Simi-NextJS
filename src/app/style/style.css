@@ -612,4 +612,12 @@ form .select-gender option {
 .dashboard-user-container .dashboard-if-container .total-score h3 {
   margin-top: var(--spacing-sm);
   font-size: var(--font-size-xxl);
+}
+
+.graft-ranking svg {
+  color: var(--color-third) !important;
+}
+
+.MuiChartsAxis-root {
+  color: var(--color-third) !important;
 }/*# sourceMappingURL=style.css.map */

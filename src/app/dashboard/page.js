@@ -125,6 +125,9 @@ export default function Dashboard() {
                     <p>
                         {userData.display_name}
                     </p>
+                    <button onClick={handleLogout} className="logout-button">
+                        Cerrar Sesión
+                    </button>
                 </div>
             </div>
 
@@ -139,6 +142,12 @@ export default function Dashboard() {
                     <li>
                         <img src="img/icons/dashboard.svg" />
                         <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
+                    </li>
+                    <li>
+                        <img
+                        src="img/icons/user.svg"
+                        />
+                        <a href="/user">USER</a>
                     </li>
                 </ul>
             </div>

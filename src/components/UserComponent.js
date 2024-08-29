@@ -1,14 +1,17 @@
 "use client";
 
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
+import { auth, db } from "../../lib/firebase";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-import { auth } from "../../../lib/firebase"; 
 import { onAuthStateChanged, signOut } from "firebase/auth"; 
-import { doc, getDoc, updateDoc } from "firebase/firestore"; 
-import { db } from "../../../lib/firebase"; 
+import { doc, getDoc, updateDoc } from "firebase/firestore";  
 
-export default function Dashboard() {
-  const [user, setUser] = useState(null);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
+export default function UserComponent() {
+    const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null); 
   const [selectedGame, setSelectedGame] = useState("juego1"); 
   const router = useRouter();
@@ -94,54 +97,6 @@ export default function Dashboard() {
 
   return (
     <main className="dashboard-container">
-        <div className="user-container">
-            <div className="card-user">
-                <div className="container-photo">
-                    <img  src="img/perfil/default.png" className="img-photo"/>
-                </div>
-
-                <div className="text-user">
-                    <h3>
-                        ¡HOLA! 
-                    </h3>
-                    <p>
-                        {userData.display_name}
-                    </p>
-                    <button onClick={handleLogout} className="logout-button">
-                        Cerrar Sesión
-                    </button>
-                </div>
-            </div>
-
-            <div className="nav-container">
-                <ul>
-                    <li>
-                        <img src="img/icons/game.svg" />
-                        <a href="/games">GAMES</a>
-                    </li>
-                    <li>
-                        <img src="img/icons/dashboard.svg" />
-                        <a href="/dashboard">DASHBOARD</a>
-                    </li>
-                    <li>
-                        <img src="img/icons/user.svg" />
-                        <a href="/user">USER</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div className="invite-container">
-                <h3>¡Invita y Gana!</h3>
-                <button>
-                  <img src="img/icons/invite.svg" className="icon-invite"></img>
-                  Invitar
-                </button>
-            </div>
-
-            <div className="objetivo-container">
-                <h3>Objetivo Semanal</h3>
-            </div>
-        </div>
 
         <div className="main-container bgcolors">
           <form onSubmit={handleFormSubmit}>

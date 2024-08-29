@@ -8,6 +8,7 @@ import { doc, getDoc, setDoc, updateDoc, collection } from "firebase/firestore";
 import dayjs from 'dayjs';
 import Games from "../../components/Game";
 import DashboardContent from "../../components/DashboardComponent";
+import UserComponent from "../../components/UserComponent";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -115,7 +116,7 @@ export default function Dashboard() {
             {/* Card User */}
             <div className="card-user">
                 <div className="container-photo">
-                    <img  src="img/perfil/default.png" className="img-photo"/>
+                    <img  src="img/perfil/img1.png" className="img-photo"/>
                 </div>
 
                 <div className="text-user">
@@ -147,7 +148,7 @@ export default function Dashboard() {
                         <img
                         src="img/icons/user.svg"
                         />
-                        <a href="/user">USER</a>
+                        <button onClick={() => setSelectedView("user")}>USER</button>
                     </li>
                 </ul>
             </div>
@@ -170,11 +171,29 @@ export default function Dashboard() {
         </div>
 
         {/* Main Container */}
-        {selectedView === "games" ? (
-          <Games selectedGame={selectedGame} setSelectedGame={setSelectedGame} handlePlayGame={handlePlayGame} />
-        ) : (
+        {(() => {
+     if (selectedView === "games") {
+        return (
+          <Games
+            selectedGame={selectedGame}
+            setSelectedGame={setSelectedGame}
+            handlePlayGame={handlePlayGame}
+          />
+        );
+      } else if (selectedView === "user") {
+        return (
+          <UserComponent />
+        );
+      } else if (selectedView === "dashboard") {
+        return (
           <DashboardContent streak={streak} />
-        )}
+        );
+      } else {
+        return (
+          <DefaultComponent />
+        );
+      }
+    })()}
     </main>
   );
 }

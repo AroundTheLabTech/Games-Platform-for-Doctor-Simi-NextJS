@@ -35,6 +35,7 @@
 }
 
 .bgcolors{
+  width: 100% !important;
   background: #291f5b;
 }
 
@@ -46,6 +47,28 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilos para el formulario */
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el selector de imagen de perfil */
+.profile-image-selector {
+  margin-top: 20px;
+}
+
+.profile-image-selector img {
+  width: 10%;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.profile-image-selector .selected {
+  border: 5px solid blue; /* Agrega un borde o un efecto de selección */
 }
 
 .logout-button:hover {

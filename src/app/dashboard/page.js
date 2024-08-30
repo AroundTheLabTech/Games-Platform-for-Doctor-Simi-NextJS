@@ -9,6 +9,9 @@ import dayjs from 'dayjs';
 import Games from "../../components/Game";
 import DashboardContent from "../../components/DashboardComponent";
 import UserComponent from "../../components/UserComponent";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -116,7 +119,7 @@ export default function Dashboard() {
             {/* Card User */}
             <div className="card-user">
                 <div className="container-photo">
-                    <img  src="img/perfil/img1.png" className="img-photo"/>
+                    <img  src= {userData.profileImage} className="img-photo"/>
                 </div>
 
                 <div className="text-user">

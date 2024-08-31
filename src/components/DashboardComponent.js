@@ -3,14 +3,17 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import { auth, db } from "../../lib/firebase";
 import { doc, getDocs, collection, query, where } from "firebase/firestore";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function DashboardComponent() {
   const [racha, setRacha] = useState(0);
   const [user, setUser] = useState(null);
-  const [chartData, setChartData] = useState({ labels: [], datasets: [] }); // Estado para los datos de la gráfica
-  const [totalScore, setTotalScore] = useState(0); // Estado para el total de puntos
+  const [chartData, setChartData] = useState({ labels: [], datasets: [] });
+  const [totalScore, setTotalScore] = useState(0);
+  const [progressGames,setTotalProgress] = useState(0);
 
   useEffect(() => {
     const fetchScoresAndRacha = async () => {
@@ -18,11 +21,9 @@ export default function DashboardComponent() {
         if (user) {
           setUser(user);
 
-          const scoresDocRef = doc(db, "scores", user.uid);
           const scoresDoc = await getDocs(collection(db, "scores", user.uid, "sessions"));
 
           let sumScore = 0;
-
           if (!scoresDoc.empty) {
             scoresDoc.forEach((doc) => {
               sumScore += Object.values(doc.data()).reduce((acc, curr) => acc + (typeof curr === "number" ? curr : 0), 0);
@@ -30,6 +31,7 @@ export default function DashboardComponent() {
           }
 
           setTotalScore(sumScore);
+          setTotalProgress((sumScore *100)/2000)
 
           const sessionsCollectionRef = collection(db, "scores", user.uid, "sessions");
           const today = new Date();
@@ -101,44 +103,71 @@ export default function DashboardComponent() {
         }
       });
 
-      return () => unsubscribe(); // Desuscribirse cuando el componente se desmonta
+      return () => unsubscribe();
     };
 
     fetchScoresAndRacha();
-  }, []); // Asegúrate de que las dependencias necesarias se agreguen aquí
-
+  }, []);
   return (
     <div className="dashboard-user-container">
       <div className="header">
-        <div>
-          <h2>DASHBOARD</h2>
-        </div>
-
+        <h2>DASHBOARD</h2>
         <div className="container-racha">
           <img src="img/icons/calendar.svg" alt="Calendar Icon" />
           <p>{racha} Días de Racha</p>
         </div>
       </div>
 
-      <div className="dashboard-if-container">
-        <div className="if-container">
-          <div className="if-1">
-            <h3>Total Score</h3>
+      <div className="dashboard-content">
+        <div className="dashboard-item total-score">
+        <p className="score-ranking">#1</p>
+          <h3>Total Score</h3>
+          <h1>{totalScore !== null ? totalScore : 0}</h1>
+          
+        </div>
 
-            <div className="ranking-level">
-              <p>#1</p>
+        <div className="dashboard-item">
+          <h3>Rendimiento Mensual</h3>
+          <div className="monthly-performance">
+            <div className="performance-chart">
+                
+
+              <CircularProgressbar value={progressGames} text={`${progressGames}%`} />
             </div>
           </div>
+        </div>
 
-          <div className="total-score">
-            <h3>{totalScore !== null ? totalScore : 0}</h3> {/* Mostrar el total del puntaje sumado */}
-          </div>
-
+        <div className="dashboard-item weekly-goal">
+          <h3>Meta Semanal</h3>
+          <p>20000</p>
           <div className="graft-ranking">
             <Line data={chartData} options={{ scales: { x: { grid: { color: '#ffffff' } }, y: { grid: { color: '#ffffff' } } } }} />
+          </div>
+        </div>
+
+        <div className="dashboard-item knowledge-level">
+          <h3>Conocedor</h3>
+          <p>Eres es una persona que tiene gran cultura general, conoces sobre varios temas</p>
+          <img src="img/conocedor-placeholder.png" alt="Conocedor" />
+        </div>
+
+        <div className="dashboard-item top-game">
+          <h3>Top Game</h3>
+          <img src="img/game-piechart-placeholder.png" alt="Top Game Pie Chart" />
+        </div>
+
+        <div className="dashboard-item score-coins">
+          <h3>{totalScore}</h3>
+          <div className="coin-icons">
+            <img src="img/coin.png" alt="Coin Icon" />
+            <img src="img/coin.png" alt="Coin Icon" />
+            <img src="img/coin.png" alt="Coin Icon" />
+            <img src="img/coin.png" alt="Coin Icon" />
+            <img src="img/coin.png" alt="Coin Icon" />
           </div>
         </div>
       </div>
     </div>
   );
 }
+

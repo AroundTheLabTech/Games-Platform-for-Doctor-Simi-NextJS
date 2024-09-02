@@ -43,7 +43,7 @@
   margin: auto;
   height:max-content;
   border-radius: 100%;
-  background-color: #053361
+
 }
 
 .dashboard-item.knowledge-level {
@@ -52,7 +52,7 @@
 }
 
 .knowledge-level-image {
-  max-width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+  max-width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
   margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
@@ -730,6 +730,18 @@ form .select-gender option {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.dashboard-content2 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.dashboard-content1 {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
 
 .dashboard-item {
   background-color: #393d5b;
@@ -754,6 +766,7 @@ form .select-gender option {
   padding: 5px 10px;
   display: inline-block;
   margin-bottom: 10px;
+  font-size: 30pt;
 }
 
 .monthly-performance {

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
+import { Line, Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import { auth, db } from "../../lib/firebase";
 import { doc, getDocs, collection, query, where } from "firebase/firestore";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
+
+
+ChartJS.register(ArcElement,CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function DashboardComponent() {
   const [racha, setRacha] = useState(0);
@@ -104,38 +107,43 @@ export default function DashboardComponent() {
       });
 
       return () => unsubscribe();
+
+
+
+      
     };
 
     fetchScoresAndRacha();
   }, []);
 
+  
 
   const getKnowledgeLevelInfo = () => {
-    if (totalScore >= 50000) {
+    if (totalScore >= 20000) {
       return {
         imagePath: "img/levels/level5.png",
         title: "Gran Maestro",
         description: "Has alcanzado el nivel más alto de conocimiento, dominando múltiples áreas del saber."
       };
-    } else if (totalScore >= 40000) {
+    } else if (totalScore >= 10000) {
       return {
         imagePath: "img/levels/level4.png",
         title: "Erudito",
         description: "Tienes un amplio conocimiento en varios campos y sigues creciendo en sabiduría."
       };
-    } else if (totalScore >= 30000) {
+    } else if (totalScore >= 7500) {
       return {
         imagePath: "img/levels/level3.png",
         title: "Experto",
         description: "Tu conocimiento es profundo en muchas áreas, siendo una referencia para los demás."
       };
-    } else if (totalScore >= 20000) {
+    } else if (totalScore >= 5000) {
       return {
         imagePath: "img/levels/level2.png",
         title: "Aficionado",
         description: "Has demostrado un buen nivel de conocimiento en temas variados, pero aún hay espacio para aprender."
       };
-    } else if (totalScore >= 10000) {
+    } else if (totalScore >= 2500) {
       return {
         imagePath: "img/levels/level1.png",
         title: "Estudiante",
@@ -151,6 +159,31 @@ export default function DashboardComponent() {
   };
   const { imagePath, title, description } = getKnowledgeLevelInfo();
 
+
+
+  const pieChartData = {
+    
+    labels: ["SIMI INVADE", "SIMI RUN", "SIMI SLASH", "SIMI SPACE"], // Nombres de los juegos
+    datasets: [
+      {
+        data: [3000, 5000, 2000, 10000], // Puntos de ejemplo por juego
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
+        hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
+      },
+    ],
+  };
+
+  const pieChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "right",
+      },
+    },
+  };
+
+
   return (
     <div className="dashboard-user-container">
       <div className="header">
@@ -164,7 +197,7 @@ export default function DashboardComponent() {
       <div className="dashboard-content">
         <div className="dashboard-item total-score">
         <p className="score-ranking">#1</p>
-          <h3>Total Score</h3>
+          <h1>Total Score</h1>
           <div className="score-banner "> 
             <h1>{totalScore !== null ? totalScore : 0}</h1>
           </div>
@@ -188,6 +221,8 @@ export default function DashboardComponent() {
             <Line data={chartData} options={{ scales: { x: { grid: { color: '#ffffff' } }, y: { grid: { color: '#ffffff' } } } }} />
           </div>
         </div>
+      </div>
+      <div className="dashboard-content2">
 
         <div className="dashboard-item knowledge-level">
           <img src={imagePath} alt={title} className="knowledge-level-image" />
@@ -197,13 +232,16 @@ export default function DashboardComponent() {
           </div>
         </div>
 
-        <div className="dashboard-item top-game">
-          <h3>Top Game</h3>
-          <img src="img/game-piechart-placeholder.png" alt="Top Game Pie Chart" />
+        <div className="knowledge-level-chart dashboard-item">
+            <h4>Distribución de puntos por juego</h4>
+            <div className="pie-chart-container">
+            <Doughnut data={pieChartData} options={pieChartOptions} />
+            </div>
         </div>
-
-        <div className="dashboard-item score-coins">
-          <h3>{totalScore}</h3>
+      </div>
+      <div className="dashboard-content1">
+      <div className="dashboard-item score-coins">
+          <h3>Points: {totalScore}</h3>
           <div className="coin-icons">
             <img src="img/coin.png" alt="Coin Icon" />
             <img src="img/coin.png" alt="Coin Icon" />

@@ -39,6 +39,40 @@
   background: #291f5b;
 }
 
+.score-banner{
+  margin: auto;
+  height:max-content;
+  border-radius: 100%;
+  background-color: #053361
+}
+
+.dashboard-item.knowledge-level {
+  display: flex;
+  align-items: center;
+}
+
+.knowledge-level-image {
+  max-width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+  margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.knowledge-level-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.knowledge-level-text h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.knowledge-level-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555; /* Color de texto opcional */
+}
+
 .logout-button {
   background-color: white;
   color: black;

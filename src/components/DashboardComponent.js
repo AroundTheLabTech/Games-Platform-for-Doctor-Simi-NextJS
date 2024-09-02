@@ -31,7 +31,7 @@ export default function DashboardComponent() {
           }
 
           setTotalScore(sumScore);
-          setTotalProgress((sumScore *100)/2000)
+          setTotalProgress((sumScore *100)/20000)
 
           const sessionsCollectionRef = collection(db, "scores", user.uid, "sessions");
           const today = new Date();
@@ -108,6 +108,49 @@ export default function DashboardComponent() {
 
     fetchScoresAndRacha();
   }, []);
+
+
+  const getKnowledgeLevelInfo = () => {
+    if (totalScore >= 50000) {
+      return {
+        imagePath: "img/levels/level5.png",
+        title: "Gran Maestro",
+        description: "Has alcanzado el nivel más alto de conocimiento, dominando múltiples áreas del saber."
+      };
+    } else if (totalScore >= 40000) {
+      return {
+        imagePath: "img/levels/level4.png",
+        title: "Erudito",
+        description: "Tienes un amplio conocimiento en varios campos y sigues creciendo en sabiduría."
+      };
+    } else if (totalScore >= 30000) {
+      return {
+        imagePath: "img/levels/level3.png",
+        title: "Experto",
+        description: "Tu conocimiento es profundo en muchas áreas, siendo una referencia para los demás."
+      };
+    } else if (totalScore >= 20000) {
+      return {
+        imagePath: "img/levels/level2.png",
+        title: "Aficionado",
+        description: "Has demostrado un buen nivel de conocimiento en temas variados, pero aún hay espacio para aprender."
+      };
+    } else if (totalScore >= 10000) {
+      return {
+        imagePath: "img/levels/level1.png",
+        title: "Estudiante",
+        description: "Estás en el camino del aprendizaje, adquiriendo conocimientos nuevos cada día."
+      };
+    } else {
+      return {
+        imagePath: "img/levels/level0.png",
+        title: "Principiante",
+        description: "Estás comenzando tu viaje en el conocimiento. ¡Sigue adelante y aprenderás mucho más!"
+      };
+    }
+  };
+  const { imagePath, title, description } = getKnowledgeLevelInfo();
+
   return (
     <div className="dashboard-user-container">
       <div className="header">
@@ -122,8 +165,9 @@ export default function DashboardComponent() {
         <div className="dashboard-item total-score">
         <p className="score-ranking">#1</p>
           <h3>Total Score</h3>
-          <h1>{totalScore !== null ? totalScore : 0}</h1>
-          
+          <div className="score-banner "> 
+            <h1>{totalScore !== null ? totalScore : 0}</h1>
+          </div>
         </div>
 
         <div className="dashboard-item">
@@ -132,7 +176,7 @@ export default function DashboardComponent() {
             <div className="performance-chart">
                 
 
-              <CircularProgressbar value={progressGames} text={`${progressGames}%`} />
+              <CircularProgressbar value={progressGames } text={`${progressGames}%`} />
             </div>
           </div>
         </div>
@@ -146,9 +190,11 @@ export default function DashboardComponent() {
         </div>
 
         <div className="dashboard-item knowledge-level">
-          <h3>Conocedor</h3>
-          <p>Eres es una persona que tiene gran cultura general, conoces sobre varios temas</p>
-          <img src="img/conocedor-placeholder.png" alt="Conocedor" />
+          <img src={imagePath} alt={title} className="knowledge-level-image" />
+          <div className="knowledge-level-text">
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
         </div>
 
         <div className="dashboard-item top-game">

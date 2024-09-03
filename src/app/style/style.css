@@ -2,7 +2,7 @@
 .container-login {
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  flex: 1;
 }
 .container-login header {
   width: 100%;
@@ -17,6 +17,7 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  flex: 1;
 }
 .container-login-game .columna {
   background-color: var(--color-crema);
@@ -26,6 +27,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex: 1;
 }
 .container-login-game .medal {
   width: 50%;

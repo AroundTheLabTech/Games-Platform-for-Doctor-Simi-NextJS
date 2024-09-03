@@ -3,7 +3,8 @@
 .container-login {
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
+    flex: 1;
+
     header {
         width: 100%;
         img {
@@ -18,6 +19,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    flex: 1;
 
     .columna {
         background-color: var(--color-crema);
@@ -27,6 +29,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        flex: 1;
     }
     .medal {
         width: 50%;

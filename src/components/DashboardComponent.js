@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import { auth, db } from "../../lib/firebase";
-import { doc, getDocs, collection, query, where } from "firebase/firestore";
+import { doc, getDocs, collection, query, where, getDoc, setDoc, orderBy } from "firebase/firestore";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -14,14 +14,26 @@ export default function DashboardComponent() {
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [totalScore, setTotalScore] = useState(0);
   const [progressGames, setTotalProgress] = useState(0);
+  const [trofeos, setTrofeos] = useState([]); // Estado para los trofeos del usuario
+  const [rankingPosition, setRankingPosition] = useState(0); // Estado para la posición en el ranking
 
   useEffect(() => {
-
-    // Datos de La Racha
     const fetchScoresAndRacha = async () => {
       const unsubscribe = auth.onAuthStateChanged(async (user) => {
         if (user) {
           setUser(user);
+
+          // Verificar y actualizar el campo "trofeos" en Firebase
+          const stadisticsDocRef = doc(db, "stadistics", user.uid);
+          const stadisticsDoc = await getDoc(stadisticsDocRef);
+
+          if (!stadisticsDoc.exists() || !stadisticsDoc.data().trofeos) {
+            const initialTrofeos = ["medal1"];
+            await setDoc(stadisticsDocRef, { trofeos: initialTrofeos }, { merge: true });
+            setTrofeos(initialTrofeos);
+          } else {
+            setTrofeos(stadisticsDoc.data().trofeos);
+          }
 
           const scoresDoc = await getDocs(collection(db, "scores", user.uid, "sessions"));
 
@@ -33,10 +45,22 @@ export default function DashboardComponent() {
           }
 
           setTotalScore(sumScore);
-          
-          // Actualización para que progressGames tenga solo un decimal
           const calculatedProgress = parseFloat(((sumScore * 100) / 20000).toFixed(1));
           setTotalProgress(calculatedProgress);
+
+          // Calcular la posición en el ranking
+          const usersCollectionRef = collection(db, "users");
+          const usersQuery = query(usersCollectionRef, orderBy("score_total", "desc"));
+          const usersSnapshot = await getDocs(usersQuery);
+
+          let position = 1;
+          usersSnapshot.forEach((doc) => {
+            if (doc.id === user.uid) {
+              setRankingPosition(position);
+            } else {
+              position++;
+            }
+          });
 
           const sessionsCollectionRef = collection(db, "scores", user.uid, "sessions");
           const today = new Date();
@@ -114,8 +138,6 @@ export default function DashboardComponent() {
     fetchScoresAndRacha();
   }, []);
 
-  
-  // Saber el Nivel de Info
   const getKnowledgeLevelInfo = () => {
     if (totalScore >= 20000) {
       return {
@@ -157,20 +179,17 @@ export default function DashboardComponent() {
   };
   const { imagePath, title, description } = getKnowledgeLevelInfo();
 
-
-  // Informacion de Pastel
   const pieChartData = {
-    
-    labels: ["SIMI INVADE", "SIMI RUN", "SIMI SLASH", "SIMI SPACE"], // Nombres de los juegos
+    labels: ["SIMI INVADE", "SIMI RUN", "SIMI SLASH", "SIMI SPACE"],
     datasets: [
       {
-        data: [3000, 5000, 2000, 10000], // Puntos de ejemplo por juego
+        data: [3000, 5000, 2000, 10000],
         backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
         hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
       },
     ],
   };
-  
+
   const pieChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -180,7 +199,6 @@ export default function DashboardComponent() {
       },
     },
   };
-
 
   return (
     <div className="dashboard-user-container">
@@ -194,30 +212,22 @@ export default function DashboardComponent() {
 
       <div className="dashboard-content">
         <div className="total-score-container">
-          {/* Title Total Score */}
           <div>
-              {/* Title */}
-              <div>
-                <h1>Total Score</h1>
-              </div>
-              {/* Score Ranking */}
-          
+            <div>
+              <h1>Total Score</h1>
+            </div>
           </div>
-              <h2>{totalScore !== null ? totalScore : 0}</h2>
+          <h2>{totalScore !== null ? totalScore : 0}</h2>
 
           <div>
-
-            <p className="score-ranking">#1</p>             
-
+            <p className="score-ranking">#{rankingPosition}</p>             
           </div>
         </div>
-
 
         <div className="dashboard-item-mensual">
           <h3>Rendimiento Mensual</h3>
           <div className="monthly-performance">
             <div className="performance-chart">
-              {/* Mostrar progressGames con un decimal en el texto */}
               <CircularProgressbar 
                 value={progressGames} 
                 text={`${progressGames.toFixed(1)}%`} 
@@ -235,79 +245,37 @@ export default function DashboardComponent() {
         </div>
       </div>
 
-      {/* Dashboard Contenet  2 */}
-
       <div className="dashboard-content2">
-
         <div className="dashboard-item knowledge-level">
-        
           <div className="knowledge-level-text">
             <h3>{title}</h3>
             <p>{description}</p>
           </div>
-
           <img src={imagePath} alt={title} className="knowledge-level-image" />
         </div>
 
         <div className="knowledge-level-chart dashboard-item">
-            <h4>Distribución de puntos por juego</h4>
-            <div className="pie-chart-container">
+          <h4>Distribución de puntos por juego</h4>
+          <div className="pie-chart-container">
             <Doughnut data={pieChartData} options={pieChartOptions} />
-            </div>
+          </div>
         </div>
       </div>
-      
-      Dashboard Content 3
-      <div className="dashboard-content3">
-      <div className="dashboard-item score-coins">
-          <div className="score-title">
-            <img
-              src="img/icons/trofeo.svg"
-            />
 
+      <div className="dashboard-content3">
+        <div className="dashboard-item score-coins">
+          <div className="score-title">
+            <img src="img/icons/trofeo.svg" />
             <p>10,000</p>
           </div>
-          
-          {/* Seccion de Trofeos */}
 
           <div className="trofeos-container">
-
-              {/* Trofeo */}
-              <div className="trofeo">
-                  <img
-                  src="img/medallas/medal-1.svg"
-                  />
-                  <h3>...</h3>
+            {trofeos.map((trofeo, index) => (
+              <div key={index} className="trofeo">
+                <img src={`img/medallas/${trofeo}.svg`} alt={`Trofeo ${index + 1}`} />
+                <h3>...</h3>
               </div>
-              {/* Trofeo */}
-              <div className="trofeo">
-                  <img
-                  src="img/medallas/medal-1.svg"
-                  />
-                  <h3>...</h3>
-              </div>
-              {/* Trofeo */}
-              <div className="trofeo">
-                  <img
-                  src="img/medallas/medal-1.svg"
-                  />
-                  <h3>...</h3>
-              </div>
-              {/* Trofeo */}
-              <div className="trofeo">
-                  <img
-                  src="img/medallas/medal-1.svg"
-                  />
-                  <h3>...</h3>
-              </div>
-              {/* Trofeo */}
-              <div className="trofeo">
-                  <img
-                  src="img/medallas/medal-1.svg"
-                  />
-                  <h3>...</h3>
-              </div>
-              
+            ))}
           </div>
         </div>
       </div>

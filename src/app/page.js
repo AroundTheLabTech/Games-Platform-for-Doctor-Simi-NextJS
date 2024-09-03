@@ -117,11 +117,11 @@ export default function Home() {
             <div className="columna">
               <img 
               className="medal"
-              src="img/medallas/medal-1.svg">
+              src="img/medallas/medal1.svg">
               </img>   
               <img 
               className="medal"
-              src="img/medallas/medal-2.svg">
+              src="img/medallas/medal2.svg">
               </img>   
             </div>
 
@@ -237,11 +237,11 @@ export default function Home() {
             <div className="columna">
               <img 
               className="medal"
-              src="img/medallas/medal-3.svg">
+              src="img/medallas/medal3.svg">
               </img>   
               <img 
               className="medal"
-              src="img/medallas/medal-4.svg">
+              src="img/medallas/medal4.svg">
               </img>   
             </div>        
 

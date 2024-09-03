@@ -160,12 +160,12 @@ export default function Dashboard() {
                         <img src="img/icons/dashboard.svg" />
                         <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
                     </li>
-                    <li>
+                    {/* <li>
                         <img
                         src="img/icons/user.svg"
                         />
                         <button onClick={() => setSelectedView("user")}>USER</button>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
 
@@ -180,10 +180,7 @@ export default function Dashboard() {
                   Invitar</button>
             </div>
 
-            {/* Objetivo Semanal */}
-            <div className="objetivo-container">
-                <h3>Objetivo Semanal</h3>
-            </div>
+        
         </div>
 
         {/* Main Container */}

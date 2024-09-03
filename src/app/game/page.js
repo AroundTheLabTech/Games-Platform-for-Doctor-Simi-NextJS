@@ -182,7 +182,7 @@ export default function Game() {
               <h3>Points: {currentScore}</h3>
               <img 
                 className="medal"
-                src="img/medallas/medal-1.svg"
+                src="img/medallas/medal1.svg"
               />
               <button className="push--flat" onClick={handleExit}>
                 <h3 className="text-boton">
@@ -207,11 +207,11 @@ export default function Game() {
               <h3>{getGameTitle(selectedGame)}</h3>
               <img 
                 className="medal"
-                src="img/medallas/medal-3.svg"
+                src="img/medallas/medal3.svg"
               />
               <img 
                 className="medal"
-                src="img/medallas/medal-4.svg"
+                src="img/medallas/medal4.svg"
               />
             </div> 
           </>

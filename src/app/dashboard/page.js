@@ -204,7 +204,7 @@ export default function Dashboard() {
         );
       } else {
         return (
-          <DefaultComponent />
+          <div>Vista no válida seleccionada</div> 
         );
       }
     })()}

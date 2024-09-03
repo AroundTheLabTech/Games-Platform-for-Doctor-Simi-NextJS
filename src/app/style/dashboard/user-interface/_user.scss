@@ -131,11 +131,13 @@
 
 .container-logout{
     display: flex;
+    
     flex-direction: column;
     width: 100% !important;
     justify-items: flex-end;
     align-items: flex-end;
     margin-bottom: var(--spacing-xs);
+    margin-top: var(--spacing-xxl);
     div{
         width: 10%;
     }

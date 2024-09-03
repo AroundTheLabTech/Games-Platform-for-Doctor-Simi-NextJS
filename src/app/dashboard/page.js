@@ -118,15 +118,6 @@ export default function Dashboard() {
         <div className="user-container">
             {/* Card User */}
             <div className="card-user">
-              <div className="container-logout ">
-                <div> 
-                  <img
-                  onClick={handleLogout} 
-                  src="img/icons/logout.svg"
-                  />
-                </div>
-            
-              </div>
 
               <div className="perfil-container">
 
@@ -180,7 +171,17 @@ export default function Dashboard() {
                   Invitar</button>
             </div>
 
-        
+            {/* Configuration Footer */}
+
+            <div className="container-logout ">
+                <div> 
+                  <img
+                  onClick={handleLogout} 
+                  src="img/icons/logout.svg"
+                  />
+                </div>
+            
+              </div>
         </div>
 
         {/* Main Container */}

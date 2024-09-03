@@ -204,7 +204,7 @@ export default function Dashboard() {
         );
       } else {
         return (
-          <div>Vista no válida seleccionada</div> 
+              <div>Vista no válida seleccionada</div> 
         );
       }
     })()}

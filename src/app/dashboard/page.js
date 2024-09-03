@@ -118,7 +118,19 @@ export default function Dashboard() {
         <div className="user-container">
             {/* Card User */}
             <div className="card-user">
-                <div className="container-photo">
+              <div className="container-logout ">
+                <div> 
+                  <img
+                  onClick={handleLogout} 
+                  src="img/icons/logout.svg"
+                  />
+                </div>
+            
+              </div>
+
+              <div className="perfil-container">
+
+              <div className="container-photo">
                     <img  src= {userData.profileImage} className="img-photo"/>
                 </div>
 
@@ -129,10 +141,11 @@ export default function Dashboard() {
                     <p>
                         {userData.display_name}
                     </p>
-                    <button onClick={handleLogout} className="logout-button">
-                        Cerrar Sesión
-                    </button>
+                  
                 </div>
+
+              </div>
+              
             </div>
 
             {/* Nav Container */}

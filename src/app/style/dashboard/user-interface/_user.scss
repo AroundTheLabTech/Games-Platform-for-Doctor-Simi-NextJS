@@ -7,8 +7,9 @@
         background-color: var(--background-color-2);
         border-radius: var(--border-radius);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         color: var(--color-secondary);
+            
         
         .container-photo{
             width: 30%;
@@ -119,3 +120,24 @@
     }
 }
 
+
+.perfil-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.container-logout{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    justify-items: flex-end;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-xs);
+    div{
+        width: 10%;
+    }
+    img{
+        width: 100%;
+        cursor: pointer;
+    }
+}

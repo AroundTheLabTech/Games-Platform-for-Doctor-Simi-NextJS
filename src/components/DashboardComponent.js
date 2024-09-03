@@ -6,19 +6,18 @@ import { doc, getDocs, collection, query, where } from "firebase/firestore";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-
-
-
-ChartJS.register(ArcElement,CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(ArcElement, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function DashboardComponent() {
   const [racha, setRacha] = useState(0);
   const [user, setUser] = useState(null);
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [totalScore, setTotalScore] = useState(0);
-  const [progressGames,setTotalProgress] = useState(0);
+  const [progressGames, setTotalProgress] = useState(0);
 
   useEffect(() => {
+
+    // Datos de La Racha
     const fetchScoresAndRacha = async () => {
       const unsubscribe = auth.onAuthStateChanged(async (user) => {
         if (user) {
@@ -34,7 +33,10 @@ export default function DashboardComponent() {
           }
 
           setTotalScore(sumScore);
-          setTotalProgress((sumScore *100)/20000)
+          
+          // Actualización para que progressGames tenga solo un decimal
+          const calculatedProgress = parseFloat(((sumScore * 100) / 20000).toFixed(1));
+          setTotalProgress(calculatedProgress);
 
           const sessionsCollectionRef = collection(db, "scores", user.uid, "sessions");
           const today = new Date();
@@ -107,17 +109,13 @@ export default function DashboardComponent() {
       });
 
       return () => unsubscribe();
-
-
-
-      
     };
 
     fetchScoresAndRacha();
   }, []);
 
   
-
+  // Saber el Nivel de Info
   const getKnowledgeLevelInfo = () => {
     if (totalScore >= 20000) {
       return {
@@ -160,7 +158,7 @@ export default function DashboardComponent() {
   const { imagePath, title, description } = getKnowledgeLevelInfo();
 
 
-
+  // Informacion de Pastel
   const pieChartData = {
     
     labels: ["SIMI INVADE", "SIMI RUN", "SIMI SLASH", "SIMI SPACE"], // Nombres de los juegos
@@ -172,7 +170,7 @@ export default function DashboardComponent() {
       },
     ],
   };
-
+  
   const pieChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -195,21 +193,35 @@ export default function DashboardComponent() {
       </div>
 
       <div className="dashboard-content">
-        <div className="dashboard-item total-score">
-        <p className="score-ranking">#1</p>
-          <h1>Total Score</h1>
-          <div className="score-banner "> 
-            <h1>{totalScore !== null ? totalScore : 0}</h1>
+        <div className="total-score-container">
+          {/* Title Total Score */}
+          <div>
+              {/* Title */}
+              <div>
+                <h1>Total Score</h1>
+              </div>
+              {/* Score Ranking */}
+          
+          </div>
+              <h2>{totalScore !== null ? totalScore : 0}</h2>
+
+          <div>
+
+            <p className="score-ranking">#1</p>             
+
           </div>
         </div>
 
-        <div className="dashboard-item">
+
+        <div className="dashboard-item-mensual">
           <h3>Rendimiento Mensual</h3>
           <div className="monthly-performance">
             <div className="performance-chart">
-                
-
-              <CircularProgressbar value={progressGames } text={`${progressGames}%`} />
+              {/* Mostrar progressGames con un decimal en el texto */}
+              <CircularProgressbar 
+                value={progressGames} 
+                text={`${progressGames.toFixed(1)}%`} 
+              />
             </div>
           </div>
         </div>
@@ -222,14 +234,19 @@ export default function DashboardComponent() {
           </div>
         </div>
       </div>
+
+      {/* Dashboard Contenet  2 */}
+
       <div className="dashboard-content2">
 
         <div className="dashboard-item knowledge-level">
-          <img src={imagePath} alt={title} className="knowledge-level-image" />
+        
           <div className="knowledge-level-text">
             <h3>{title}</h3>
             <p>{description}</p>
           </div>
+
+          <img src={imagePath} alt={title} className="knowledge-level-image" />
         </div>
 
         <div className="knowledge-level-chart dashboard-item">
@@ -239,19 +256,61 @@ export default function DashboardComponent() {
             </div>
         </div>
       </div>
-      <div className="dashboard-content1">
+      
+      Dashboard Content 3
+      <div className="dashboard-content3">
       <div className="dashboard-item score-coins">
-          <h3>Points: {totalScore}</h3>
-          <div className="coin-icons">
-            <img src="img/coin.png" alt="Coin Icon" />
-            <img src="img/coin.png" alt="Coin Icon" />
-            <img src="img/coin.png" alt="Coin Icon" />
-            <img src="img/coin.png" alt="Coin Icon" />
-            <img src="img/coin.png" alt="Coin Icon" />
+          <div className="score-title">
+            <img
+              src="img/icons/trofeo.svg"
+            />
+
+            <p>10,000</p>
+          </div>
+          
+          {/* Seccion de Trofeos */}
+
+          <div className="trofeos-container">
+
+              {/* Trofeo */}
+              <div className="trofeo">
+                  <img
+                  src="img/medallas/medal-1.svg"
+                  />
+                  <h3>...</h3>
+              </div>
+              {/* Trofeo */}
+              <div className="trofeo">
+                  <img
+                  src="img/medallas/medal-1.svg"
+                  />
+                  <h3>...</h3>
+              </div>
+              {/* Trofeo */}
+              <div className="trofeo">
+                  <img
+                  src="img/medallas/medal-1.svg"
+                  />
+                  <h3>...</h3>
+              </div>
+              {/* Trofeo */}
+              <div className="trofeo">
+                  <img
+                  src="img/medallas/medal-1.svg"
+                  />
+                  <h3>...</h3>
+              </div>
+              {/* Trofeo */}
+              <div className="trofeo">
+                  <img
+                  src="img/medallas/medal-1.svg"
+                  />
+                  <h3>...</h3>
+              </div>
+              
           </div>
         </div>
       </div>
     </div>
   );
 }
-

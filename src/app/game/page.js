@@ -139,11 +139,11 @@ export default function Game() {
   const getIframeSrc = (game) => {
     switch (game) {
       case "juego1":
-        return "Games/game-1/public-game/index.html";
+        return "source-game/game-1/public-game/index.html";
       case "juego2":
-        return "Games/game-2/public/index.html";
+        return "source-game/game-2/public/index.html";
       case "juego3":
-        return "Games/game-3/release/index.html";
+        return "soruce-game/game-3/release/index.html";
       case "juego4":
         return null; 
       default:

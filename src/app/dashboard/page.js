@@ -122,8 +122,8 @@ export default function Dashboard() {
               <div className="perfil-container">
 
               <div className="container-photo">
-                    <img  src= {userData.profileImage} className="img-photo"/>
-                </div>
+              <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
+            </div>
 
                 <div className="text-user">
                     <h3>

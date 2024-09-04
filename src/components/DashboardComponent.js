@@ -141,31 +141,31 @@ export default function DashboardComponent() {
   const getKnowledgeLevelInfo = () => {
     if (totalScore >= 20000) {
       return {
-        imagePath: "img/levels/level5.png",
+        imagePath: "img/levels/Level5.png",
         title: "Gran Maestro",
         description: "Has alcanzado el nivel más alto de conocimiento, dominando múltiples áreas del saber."
       };
     } else if (totalScore >= 10000) {
       return {
-        imagePath: "img/levels/level4.png",
+        imagePath: "img/levels/Level4.png",
         title: "Erudito",
         description: "Tienes un amplio conocimiento en varios campos y sigues creciendo en sabiduría."
       };
     } else if (totalScore >= 7500) {
       return {
-        imagePath: "img/levels/level3.png",
+        imagePath: "img/levels/Level3.png",
         title: "Experto",
         description: "Tu conocimiento es profundo en muchas áreas, siendo una referencia para los demás."
       };
     } else if (totalScore >= 5000) {
       return {
-        imagePath: "img/levels/level2.png",
+        imagePath: "img/levels/Level2.png",
         title: "Aficionado",
         description: "Has demostrado un buen nivel de conocimiento en temas variados, pero aún hay espacio para aprender."
       };
     } else if (totalScore >= 2500) {
       return {
-        imagePath: "img/levels/level1.png",
+        imagePath: "img/levels/Level1.png",
         title: "Estudiante",
         description: "Estás en el camino del aprendizaje, adquiriendo conocimientos nuevos cada día."
       };

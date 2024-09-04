@@ -59,14 +59,14 @@ export default function Dashboard() {
 
           if (stadisticsDoc.exists()) {
             const trofeos = stadisticsDoc.data().trofeos || [];
-            if (!trofeos.includes("medalla1")) {
-              trofeos.push("medalla1");
+            if (!trofeos.includes("medal1")) {
+              trofeos.push("medal1");
               await updateDoc(stadisticsDocRef, { trofeos });
               console.log("¡ Trofeo de Inicio Sesión! Tu aventura comienza aquí ");
               setShowMedalModal(true); // Mostrar el modal
             }
           } else {
-            await setDoc(stadisticsDocRef, { trofeos: ["medalla1"] });
+            await setDoc(stadisticsDocRef, { trofeos: ["medal1"] });
             console.log("Documento de trofeos creado y Medalla 1 asignada en Firebase");
             setShowMedalModal(true); // Mostrar el modal
           }

@@ -371,6 +371,9 @@ form .select-gender option {
 
 .container-logout {
   display: flex;
+  border-radius: 1rem;
+  padding: var(--spacing-md);
+  background: rgba(217, 217, 217, 0.1);
   flex-direction: column;
   width: 100% !important;
   justify-items: flex-end;
@@ -690,7 +693,6 @@ form .select-gender option {
   padding: var(--spacing-md);
   font-size: var(--font-size-xxl);
   font-weight: 700;
-  height: 7vh;
 }
 
 .monthly-performance {

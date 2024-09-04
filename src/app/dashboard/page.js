@@ -122,7 +122,9 @@ export default function Dashboard() {
               <div className="perfil-container">
 
               <div className="container-photo">
-                    <img  src= {userData.profileImage} className="img-photo"/>
+              {console.log("Profile Image URL:", userData.profileImage)}
+
+                  <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
                 </div>
 
                 <div className="text-user">
@@ -162,7 +164,7 @@ export default function Dashboard() {
 
             {/* Invita y Gana */}
             <div className="invite-container">
-                <h3>¡Invita y Gana!</h3>
+                <h3>¡Compite ahora!</h3>
                 <button>
                   <img
                   src="img/icons/invite.svg"

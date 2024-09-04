@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { auth, db } from "../../../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc, collection } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import dayjs from 'dayjs';
 import Games from "../../components/Game";
 import DashboardContent from "../../components/DashboardComponent";
@@ -12,13 +12,13 @@ import UserComponent from "../../components/UserComponent";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-
 export default function Dashboard() {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [selectedView, setSelectedView] = useState("games");
   const [selectedGame, setSelectedGame] = useState("juego1");
   const [streak, setStreak] = useState(0);
+  const [showMedalModal, setShowMedalModal] = useState(false); // Estado para controlar el modal
   const router = useRouter();
 
   useEffect(() => {
@@ -44,22 +44,37 @@ export default function Dashboard() {
             );
           }
 
-          console.log("Total Score calculado:", totalScore); // Log para verificar la suma
+          console.log("Total Score calculado:", totalScore);
 
           // Actualizar el campo score_total en la colección users
           await updateDoc(userDocRef, {
             score_total: totalScore,
           });
 
-          console.log("Campo score_total actualizado en Firebase"); // Log para verificar la actualización
+          console.log("Campo score_total actualizado en Firebase");
+
+          // Verificar y actualizar trofeos
+          const stadisticsDocRef = doc(db, "stadistics", user.uid);
+          const stadisticsDoc = await getDoc(stadisticsDocRef);
+
+          if (stadisticsDoc.exists()) {
+            const trofeos = stadisticsDoc.data().trofeos || [];
+            if (!trofeos.includes("medalla1")) {
+              trofeos.push("medalla1");
+              await updateDoc(stadisticsDocRef, { trofeos });
+              console.log("¡ Trofeo de Inicio Sesión! Tu aventura comienza aquí ");
+              setShowMedalModal(true); // Mostrar el modal
+            }
+          } else {
+            await setDoc(stadisticsDocRef, { trofeos: ["medalla1"] });
+            console.log("Documento de trofeos creado y Medalla 1 asignada en Firebase");
+            setShowMedalModal(true); // Mostrar el modal
+          }
 
           // Lógica de racha diaria
           const lastSession = dayjs(userDoc.data().last_session?.toDate());
           const today = dayjs();
           const differenceInDays = today.diff(lastSession, 'day');
-
-          const stadisticsDocRef = doc(db, "stadistics", user.uid);
-          const stadisticsDoc = await getDoc(stadisticsDocRef);
 
           if (stadisticsDoc.exists()) {
             let newStreak = 0;
@@ -74,7 +89,7 @@ export default function Dashboard() {
               score_racha: newStreak,
             });
 
-            console.log("Racha actualizada en Firebase:", newStreak); // Log para verificar la racha
+            console.log("Racha actualizada en Firebase:", newStreak);
           } else {
             const initialStreak = differenceInDays === 1 ? 1 : 0;
             setStreak(initialStreak);
@@ -83,7 +98,7 @@ export default function Dashboard() {
               score_racha: initialStreak,
             });
 
-            console.log("Documento de racha creado en Firebase:", initialStreak); // Log para verificar la creación
+            console.log("Documento de racha creado en Firebase:", initialStreak);
           }
         }
       } else {
@@ -108,108 +123,102 @@ export default function Dashboard() {
     router.push('/game'); // Redirigir a la página del juego
   };
 
+  const closeModal = () => {
+    setShowMedalModal(false);
+  };
+
   if (!user || !userData) {
     return <p>Cargando...</p>; // Mostrar un mensaje de carga mientras se verifica la autenticación y se obtienen los datos
   }
 
   return (
     <main className="dashboard-container">
-        {/* User Container */}
-        <div className="user-container">
-            {/* Card User */}
-            <div className="card-user">
+      {showMedalModal && (
+        <div className="medal-modal">
+          <div className="medal-modal-content">
+            <img src="img/medallas/medal1.svg" alt="Medal 1" />
+            <p>¡Trofeo! Por inicio de sesión . Tu Aventura comienza aquí</p>
+            <button onClick={closeModal}>Cerrar</button>
+          </div>
+        </div>
+      )}
 
-              <div className="perfil-container">
+      {/* User Container */}
+      <div className="user-container">
+        {/* Card User */}
+        <div className="card-user">
+          <div className="perfil-container">
+            <div className="container-photo">
+            <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
 
-              <div className="container-photo">
-              {console.log("Profile Image URL:", userData.profileImage)}
-
-                  <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
-                </div>
-
-                <div className="text-user">
-                    <h3>
-                        ¡HOLA! 
-                    </h3>
-                    <p>
-                        {userData.display_name}
-                    </p>
-                  
-                </div>
-
-              </div>
-              
+          </div>
+            <div className="text-user">
+              <h3>
+                ¡HOLA!
+              </h3>
+              <p>
+                {userData.display_name}
+              </p>
             </div>
-
-            {/* Nav Container */}
-            <div className="nav-container">
-                <ul>
-                    <li>
-                        <img src="img/icons/game.svg" />
-                        <button onClick={() => setSelectedView("games")}>GAMES</button>
-                    </li>
-
-                    <li>
-                        <img src="img/icons/dashboard.svg" />
-                        <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
-                    </li>
-                    {/* <li>
-                        <img
-                        src="img/icons/user.svg"
-                        />
-                        <button onClick={() => setSelectedView("user")}>USER</button>
-                    </li> */}
-                </ul>
-            </div>
-
-            {/* Invita y Gana */}
-            <div className="invite-container">
-                <h3>¡Compite ahora!</h3>
-                <button>
-                  <img
-                  src="img/icons/invite.svg"
-                  className="icon-invite"
-                  ></img>
-                  Invitar</button>
-            </div>
-
-            {/* Configuration Footer */}
-
-            <div className="container-logout ">
-                <div> 
-                  <img
-                  onClick={handleLogout} 
-                  src="img/icons/logout.svg"
-                  />
-                </div>
-            
-              </div>
+          </div>
         </div>
 
-        {/* Main Container */}
-        {(() => {
-     if (selectedView === "games") {
-        return (
-          <Games
-            selectedGame={selectedGame}
-            setSelectedGame={setSelectedGame}
-            handlePlayGame={handlePlayGame}
-          />
-        );
-      } else if (selectedView === "user") {
-        return (
-          <UserComponent />
-        );
-      } else if (selectedView === "dashboard") {
-        return (
-          <DashboardContent streak={streak} />
-        );
-      } else {
-        return (
-              <div>Vista no válida seleccionada</div> 
-        );
-      }
-    })()}
+        {/* Nav Container */}
+        <div className="nav-container">
+          <ul>
+            <li>
+              <img src="img/icons/game.svg" />
+              <button onClick={() => setSelectedView("games")}>GAMES</button>
+            </li>
+            <li>
+              <img src="img/icons/dashboard.svg" />
+              <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Invita y Gana */}
+        <div className="invite-container">
+          <h3>¡Invita y Gana!</h3>
+          <button>
+            <img
+              src="img/icons/invite.svg"
+              className="icon-invite"
+            ></img>
+            Invitar</button>
+        </div>
+
+        {/* Configuration Footer */}
+        <div className="container-logout ">
+          <div>
+            <img
+              onClick={handleLogout}
+              src="img/icons/logout.svg"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Main Container */}
+      {(() => {
+        if (selectedView === "games") {
+          return (
+            <Games
+              selectedGame={selectedGame}
+              setSelectedGame={setSelectedGame}
+              handlePlayGame={handlePlayGame}
+            />
+          );
+        } else if (selectedView === "dashboard") {
+          return (
+            <DashboardContent streak={streak} />
+          );
+        } else {
+          return (
+            <DefaultComponent />
+          );
+        }
+      })()}
     </main>
   );
 }

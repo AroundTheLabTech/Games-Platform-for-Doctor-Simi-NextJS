@@ -10,8 +10,9 @@ export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
   const [currentScore, setCurrentScore] = useState(0); 
   const [iframeVisible, setIframeVisible] = useState(true); 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(true); // Mostrar modal de instrucciones
   const [showRotateScreen, setShowRotateScreen] = useState(false); 
+  const [medalModal, setMedalModal] = useState(null); // Estado para el modal de medalla
   const router = useRouter(); 
   const [user, setUser] = useState(null); 
 
@@ -22,6 +23,9 @@ export default function Game() {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
+
+        // Obtener la información del usuario y verificar medallas
+        await checkForMedals(user.uid, game);
 
         const userDoc = await getDoc(doc(db, "scores", user.uid));
         if (userDoc.exists() && userDoc.data()[game]) {
@@ -103,7 +107,35 @@ export default function Game() {
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    setShowModal(false); // Cerrar el modal de instrucciones
+  };
+
+  const checkForMedals = async (userId, game) => {
+    const stadisticsDocRef = doc(db, "stadistics", userId);
+    const stadisticsDoc = await getDoc(stadisticsDocRef);
+
+    if (stadisticsDoc.exists()) {
+      const trofeos = stadisticsDoc.data().trofeos || [];
+
+      let newMedal = null;
+      if (game === "juego1" && !trofeos.includes("medal9")) {
+        newMedal = "medal9";
+      } else if (game === "juego2" && !trofeos.includes("medal10")) {
+        newMedal = "medal10";
+      } else if (game === "juego3" && !trofeos.includes("medal11")) {
+        newMedal = "medal11";
+      }
+
+      if (newMedal) {
+        trofeos.push(newMedal);
+        await setDoc(stadisticsDocRef, { trofeos }, { merge: true });
+        setMedalModal(newMedal); // Mostrar modal de medalla
+      }
+    }
+  };
+
+  const closeMedalModal = () => {
+    setMedalModal(null); // Cerrar el modal de medalla
   };
 
   const getGameTitle = (game) => {
@@ -170,10 +202,20 @@ export default function Game() {
           </div>
         )}
 
+        {medalModal && (
+          <div className="medal-modal">
+            <div className="medal-modal-content">
+              <img src={`img/medallas/${medalModal}.svg`} alt={medalModal} />
+              <p>¡Felicidades! Has ganado una nueva medalla: {medalModal}</p>
+              <button onClick={closeMedalModal}>Cerrar</button>
+            </div>
+          </div>
+        )}
+
         {showRotateScreen && (
           <div className="rotate-screen">
             <p>Por favor, rota tu dispositivo</p>
-           </div>
+          </div>
         )}
 
         {!showRotateScreen && (

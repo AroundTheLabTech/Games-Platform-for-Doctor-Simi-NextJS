@@ -215,7 +215,7 @@ export default function Dashboard() {
           );
         } else {
           return (
-            <DefaultComponent />
+            <div>No se encuentra nada</div>
           );
         }
       })()}

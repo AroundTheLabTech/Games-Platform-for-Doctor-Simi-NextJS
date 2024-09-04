@@ -175,7 +175,7 @@ export default function Game() {
       case "juego2":
         return "source-game/game-2/public/index.html";
       case "juego3":
-        return "soruce-game/game-3/release/index.html";
+        return "source-game/game-3/release/index.html";
       case "juego4":
         return null; 
       default:
@@ -206,7 +206,7 @@ export default function Game() {
           <div className="medal-modal">
             <div className="medal-modal-content">
               <img src={`img/medallas/${medalModal}.svg`} alt={medalModal} />
-              <p>¡Felicidades! Has ganado una nueva medalla: {medalModal}</p>
+              <p>¡Felicidades! Has ganado una nueva  {medalModal}</p>
               <button onClick={closeMedalModal}>Cerrar</button>
             </div>
           </div>

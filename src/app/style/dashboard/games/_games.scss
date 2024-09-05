@@ -106,3 +106,37 @@
 #arcade {
     filter: drop-shadow( 0px 0px 10px rgba(0, 255, 255, 0.5));
   }
+
+
+@media only screen and (max-width:600px){
+    .games-container{
+        flex-direction: column;
+
+        .selector-games{
+            flex-direction: column;
+
+            .arcade-game{
+                width: 100%;
+            }
+            
+            .information-game{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    margin-bottom: var(--spacing-md);
+                }
+            }
+        }
+
+        .catalog-games{
+            flex-direction: column;
+            div{
+                width: 100%;
+            }
+        }
+    }
+}

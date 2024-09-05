@@ -162,3 +162,47 @@ form{
         font-size: var(--font-size-xs);
     }
   }
+
+  @media only screen and (max-width:620px){
+    .container-login{
+        flex-direction: column;
+    
+        .container-login-game{
+            flex-direction: column;
+            
+            .columna{
+                width: 100%;
+                flex-direction: row;
+                height: 50% !important;
+                flex:0;
+                .medal{
+                    width: 10%;
+                }
+            }
+
+            .login-center{
+                width: 100%;
+                height: 100%;
+
+                .container-center{
+                    margin: 0;
+                    height: 100%;
+
+                    .title-login{
+                        width: 90%;
+                        font-size: var(--font-size-xxl);
+                        line-height: 1.5;
+                    }
+
+                    form{
+                        h2{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+    
+  }

@@ -335,3 +335,78 @@
     }
   }
 }
+
+@media screen and (max-width: 600px){
+    .header{
+      flex-direction: column !important;
+
+      h2{
+        text-align: center;
+      }
+
+      .container-racha{
+        margin-top: var(--spacing-md);
+        width: 100% !important;
+      }
+    }
+
+    .dashboard-content{
+      flex-direction: column;
+
+      .total-score-container{
+        width: 100%;
+        h2{
+          margin-top: var(--spacing-md);
+          margin-bottom: var(--spacing-md);
+        }
+      }
+
+      .dashboard-item-mensual{
+        width: 100%;
+      }
+      
+      .dashboard-item{
+          width: 100%;
+          margin-top: var(--spacing-md);
+
+          .graft-ranking{
+            canvas{
+              width: 100% !important;
+              height: 20vh !important;
+            }
+          }
+      }
+
+
+    }
+
+    .dashboard-content2{
+      flex-direction: column;
+
+      .dashboard-item{
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+      }
+    }
+    
+    .dashboard-content-3{
+    
+      .score-icons{
+        width: 100%;
+     
+      }
+    }
+   
+
+    .score-title{
+      width: 100% !important;
+
+      .trofeos-container{
+        flex-direction: column;
+        
+      }
+    }
+
+}
+
+

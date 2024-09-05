@@ -113,7 +113,7 @@ export default function Game() {
       case "juego2":
         return "Doctor Simi Run";
       case "juego3":
-        return "Simi Ninja";
+        return "Simi Slash";   
       case "juego4":
         return "Simi Space";
       default:
@@ -143,7 +143,7 @@ export default function Game() {
       case "juego2":
         return "source-game/game-2/public/index.html";
       case "juego3":
-        return "soruce-game/game-3/release/index.html";
+        return "source-game/game-3/release/index.html";
       case "juego4":
         return null; 
       default:

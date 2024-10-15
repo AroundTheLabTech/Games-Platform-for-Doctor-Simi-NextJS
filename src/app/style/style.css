@@ -382,8 +382,38 @@ form .select-gender option {
 .user-container .invite-container h3 {
   text-align: center;
   font-weight: 600;
-  font-family: var(--font-family-third);
+  font-family: var(--font-secondary);
   margin-bottom: var(--spacing-xl);
+}
+.user-container .invite-container .container-toggle-score {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+.user-container .invite-container .container-toggle-score .score-apuesta {
+  width: 35%;
+  background-color: var(--background-color-2);
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+}
+.user-container .invite-container .container-toggle-score .score-apuesta p {
+  color: var(--color-secondary);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+.user-container .invite-container .container-toggle-score .bottom-score p {
+  font-weight: 400;
+  font-family: var(--font-secondary);
+  cursor: pointer;
+}
+.user-container .invite-container .container-toggle-score .bottom-competir {
+  cursor: pointer;
 }
 .user-container .invite-container button {
   background-color: var(--background-color-2);
@@ -396,6 +426,7 @@ form .select-gender option {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 }
 .user-container .invite-container button img {
   margin-right: var(--spacing-md);
@@ -1036,4 +1067,122 @@ form .select-gender option {
   .right, .container-landing .container-info-home .left {
     width: 100% !important;
   }
+}
+.modal-overlay-competition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-competition {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content-competition h2 {
+  color: var(--color-secondary);
+  font-family: var(--font-secondary);
+  width: 70%;
+  margin-bottom: var(--spacing-md);
+}
+.modal-content-competition p {
+  color: var(--color-secondary);
+}
+.modal-content-competition .nav-competition {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.modal-content-competition .nav-competition img {
+  width: 5%;
+}
+.modal-content-competition .container-email-competencia {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: var(--spacing-xl);
+}
+.modal-content-competition .container-email-competencia h3 {
+  color: var(--color-secondary);
+  font-family: var(--font-press);
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-md);
+}
+.modal-content-competition .container-email-competencia input {
+  all: unset;
+  border: 2px #000 solid;
+  width: 100%;
+  border-radius: 0.3rem;
+  color: var(--color-secondary);
+  display: flex;
+  padding: var(--spacing-sm);
+  font-family: var(--font-secondary);
+  text-align: left;
+}
+.modal-content-competition .container-toggle-score {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+}
+.modal-content-competition .container-toggle-score .bottom-score {
+  background-color: var(--background-color-1);
+  border-radius: 0.4rem;
+  padding: var(--spacing-sm);
+  font-family: var(--font-secondary);
+}
+.modal-content-competition .container-toggle-score .bottom-score p {
+  color: var(--color-primary);
+}
+.modal-content-competition .container-toggle-score .score-apuesta {
+  display: flex;
+  flex-direction: row;
+  padding: var(--spacing-sm);
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px #000 solid;
+  border-radius: 0.3rem;
+}
+
+.modal-content-competition button {
+  padding: 0.6rem 2rem;
+  background-color: var(--background-color-1);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  margin-top: var(--spacing-xl);
+  font-family: var(--font-press);
+  font-size: var(--font-size-sm);
+}
+
+.modal-content-competition button:hover {
+  background-color: #0056b3;
+}
+
+.correo-valido input {
+  border: 2px solid green !important;
+}
+
+.correo-invalido input {
+  border: 2px solid red !important;
 }/*# sourceMappingURL=style.css.map */

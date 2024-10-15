@@ -90,8 +90,44 @@
         h3{
             text-align: center;
             font-weight: 600;
-            font-family: var(--font-family-third);
+            font-family: var(--font-secondary);
             margin-bottom: var(--spacing-xl);
+        }
+
+        .container-toggle-score{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+
+            .score-apuesta{
+                width: 35%;
+                background-color: var(--background-color-2);
+                border-radius: 0.8rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: var(--spacing-sm); 
+                p{
+                    color: var(--color-secondary);
+                    font-family: var(--font-secondary);
+                    font-weight: 600;
+                }
+            }
+
+            .bottom-score{
+                p{
+                    font-weight: 400;
+                    font-family: var(--font-secondary);
+                    cursor: pointer;
+                }
+            }
+
+            .bottom-competir{
+                cursor: pointer;
+            }
         }
 
         button{
@@ -105,6 +141,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            cursor: pointer;
             img{
                 margin-right: var(--spacing-md);
             }

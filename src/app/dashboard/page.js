@@ -11,6 +11,14 @@ import DashboardContent from "../../components/DashboardComponent";
 import UserComponent from "../../components/UserComponent";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+//Services 
+import { FetchScoreTotal } from '../../services/FetchScoreTotal'; // Importa el servicio de Consulta de total de Puntaje
+
+//Modal 
+
+import BetModal from '../../components/modal/ModalCompetition';
+
+
 
 
 export default function Dashboard() {
@@ -20,6 +28,45 @@ export default function Dashboard() {
   const [selectedGame, setSelectedGame] = useState("juego1");
   const [streak, setStreak] = useState(0);
   const router = useRouter();
+
+  const [betScore, setBetScore] = useState(100); // Inicializamos la apuesta con un valor de 1000
+  const [totalScore, setTotalScore] = useState(0);
+
+
+  //--- Apuesta ---
+
+    //Mostrar Modal de Competencia: 
+    const [showModal, setShowModal] = useState(false); // Controlamos la visibilidad del modal
+
+    // Función para aumentar o disminuir el betScore
+    const updateBetScore = (change) => {
+  setBetScore((prevBet) => {
+    const newBet = prevBet + change;
+
+        // Log para depurar
+        console.log("Apuesta anterior (prevBet):", prevBet);
+        console.log("Cambio (change):", change);
+        console.log("Nueva apuesta (newBet):", newBet);
+        console.log("Total Score permitido:", totalScore);
+        
+    
+    // Condiciones: No menor a 100 y no mayor a totalScore
+    if (newBet < 100) return 100; 
+    return newBet;
+  });
+    };
+
+    // -- Modal --
+
+    const handleShowModal = () => {
+      setShowModal(true); // Mostrar modal al hacer clic en Competir
+    };
+
+    const handleCloseModal = () => {
+      setShowModal(false); // Cerrar modal
+    };
+  
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -162,13 +209,33 @@ export default function Dashboard() {
 
             {/* Invita y Gana */}
             <div className="invite-container">
-                <h3>¡Invita y Gana!</h3>
-                <button>
+                <h3>COMPITE CON TU COMPAÑERO</h3>
+                <div className="container-toggle-score">
+                      <div className="bottom-score">
+                        <p
+                        onClick={() => updateBetScore(-100)}
+                        >-100</p>
+                      </div>
+                      <div className="score-apuesta">
+                        <p>{betScore}</p>
+                        <img 
+                          src="img/icons/monedaScore.svg"
+                        />
+                      </div>
+                      <div className="bottom-score">
+                        <p
+                          onClick={() => updateBetScore(+100)}
+                        >+100</p>
+                      </div>
+                </div>
+                <button 
+                onClick={handleShowModal}
+                className="bottom-competir">
                   <img
                   src="img/icons/invite.svg"
                   className="icon-invite"
                   ></img>
-                  Invitar</button>
+                  Competir</button>
             </div>
 
             {/* Configuration Footer */}
@@ -181,8 +248,12 @@ export default function Dashboard() {
                   />
                 </div>
             
-              </div>
+            </div>
         </div>
+
+        {/* //Modal de Competicion */}
+        {showModal && <BetModal betScore={betScore} updateBetScore={updateBetScore} onClose={handleCloseModal} userUID={user.uid} />}
+
 
         {/* Main Container */}
         {(() => {

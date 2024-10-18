@@ -1081,7 +1081,7 @@ form .select-gender option {
   z-index: 1000;
 }
 
-.modal-content-competition {
+.modal-content-competition, .modal-content-notificaciones {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -1093,25 +1093,26 @@ form .select-gender option {
   justify-content: center;
   align-items: center;
 }
-.modal-content-competition h2 {
+.modal-content-competition h2, .modal-content-notificaciones h2 {
   color: var(--color-secondary);
   font-family: var(--font-secondary);
   width: 70%;
   margin-bottom: var(--spacing-md);
 }
-.modal-content-competition p {
+.modal-content-competition p, .modal-content-notificaciones p {
   color: var(--color-secondary);
 }
-.modal-content-competition .nav-competition {
+.modal-content-competition .nav-competition, .modal-content-notificaciones .nav-competition {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
-.modal-content-competition .nav-competition img {
+.modal-content-competition .nav-competition img, .modal-content-notificaciones .nav-competition img {
   width: 5%;
+  cursor: pointer;
 }
-.modal-content-competition .container-email-competencia {
+.modal-content-competition .container-email-competencia, .modal-content-notificaciones .container-email-competencia {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -1119,13 +1120,13 @@ form .select-gender option {
   align-items: flex-start;
   margin-top: var(--spacing-xl);
 }
-.modal-content-competition .container-email-competencia h3 {
+.modal-content-competition .container-email-competencia h3, .modal-content-notificaciones .container-email-competencia h3 {
   color: var(--color-secondary);
   font-family: var(--font-press);
   font-size: var(--font-size-xs);
   margin-bottom: var(--spacing-md);
 }
-.modal-content-competition .container-email-competencia input {
+.modal-content-competition .container-email-competencia input, .modal-content-notificaciones .container-email-competencia input {
   all: unset;
   border: 2px #000 solid;
   width: 100%;
@@ -1136,7 +1137,7 @@ form .select-gender option {
   font-family: var(--font-secondary);
   text-align: left;
 }
-.modal-content-competition .container-toggle-score {
+.modal-content-competition .container-toggle-score, .modal-content-notificaciones .container-toggle-score {
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -1144,16 +1145,17 @@ form .select-gender option {
   align-items: center;
   margin-top: var(--spacing-lg);
 }
-.modal-content-competition .container-toggle-score .bottom-score {
+.modal-content-competition .container-toggle-score .bottom-score, .modal-content-notificaciones .container-toggle-score .bottom-score {
   background-color: var(--background-color-1);
   border-radius: 0.4rem;
   padding: var(--spacing-sm);
   font-family: var(--font-secondary);
+  cursor: pointer;
 }
-.modal-content-competition .container-toggle-score .bottom-score p {
+.modal-content-competition .container-toggle-score .bottom-score p, .modal-content-notificaciones .container-toggle-score .bottom-score p {
   color: var(--color-primary);
 }
-.modal-content-competition .container-toggle-score .score-apuesta {
+.modal-content-competition .container-toggle-score .score-apuesta, .modal-content-notificaciones .container-toggle-score .score-apuesta {
   display: flex;
   flex-direction: row;
   padding: var(--spacing-sm);
@@ -1163,7 +1165,7 @@ form .select-gender option {
   border-radius: 0.3rem;
 }
 
-.modal-content-competition button {
+.modal-content-competition button, .modal-content-notificaciones button {
   padding: 0.6rem 2rem;
   background-color: var(--background-color-1);
   color: var(--color-primary);
@@ -1175,7 +1177,7 @@ form .select-gender option {
   font-size: var(--font-size-sm);
 }
 
-.modal-content-competition button:hover {
+.modal-content-competition button:hover, .modal-content-notificaciones button:hover {
   background-color: #0056b3;
 }
 
@@ -1185,4 +1187,62 @@ form .select-gender option {
 
 .correo-invalido input {
   border: 2px solid red !important;
+}
+
+.modal-content-notificaciones h2 {
+  font-family: var(--font-secondary);
+}
+.modal-content-notificaciones .notificacion-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .image-notificacion {
+  width: 10%;
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .image-notificacion img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .informacion-notificacion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .informacion-notificacion h3 {
+  color: var(--color-secondary);
+  font-size: var(--font-size-md);
+  font-family: var(--font-secondary);
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .informacion-notificacion p {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-sm);
+}
+.modal-content-notificaciones .notificacion-container .row-notificacion .action-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.container-message-competition {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-competition-creada h3 {
+  color: var(--color-secondary);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }/*# sourceMappingURL=style.css.map */

@@ -13,11 +13,17 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin); // Registra TextPlugin
 
 
 export default function Landing(){
+
+    
     // Referencias a los elementos del DOM
     const intervenirTextRef = useRef(null);
     const bombaVidaRef = useRef(null);
     const simpleIdeaRef = useRef(null); 
+
+
     useEffect(() => {
+        const isMobile = window.innerWidth <= 768; // Ajustar el tamaño según el diseño
+            if (!isMobile) {
 
         if (bombaVidaRef.current) {
         // Posiciona la imagen inicialmente arriba del viewport
@@ -331,7 +337,7 @@ export default function Landing(){
             
   
         
-        
+            }
 
       }, []); // Cierre del useEffect
       

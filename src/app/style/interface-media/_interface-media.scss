@@ -71,16 +71,6 @@
 
 //Modal
 
-.modal-content{
-    p{
-        font-family: var(--font-press);
-        font-size: var(--font-size-xl);
-        text-align: center;
-        color: var(--color-secondary);
-        line-height: 2;
-    }
-}
-
 @media only screen and (max-width: 970px){
     .columna{
         h3{

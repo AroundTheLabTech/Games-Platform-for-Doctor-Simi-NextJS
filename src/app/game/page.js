@@ -184,7 +184,7 @@ export default function Game() {
                 className="medal"
                 src="img/medallas/medal1.svg"
               />
-              <button className="push--flat" onClick={handleExit}>
+              <button className="push--flat boton-guardar" onClick={handleExit}>
                 <h3 className="text-boton">
                   Guardar <br />
                   y <br />

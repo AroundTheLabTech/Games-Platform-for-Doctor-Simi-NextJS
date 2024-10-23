@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { auth, db } from "../../../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, getDoc, setDoc, updateDoc, collection } from "firebase/firestore";
+import { doc, getDoc, updateDoc, setDoc, arrayUnion } from "firebase/firestore";
 import dayjs from 'dayjs';
 import Games from "../../components/Game";
 import DashboardContent from "../../components/DashboardComponent";
@@ -17,6 +17,7 @@ import { FetchScoreTotal } from '../../services/FetchScoreTotal'; // Importa el 
 //Modal 
 
 import BetModal from '../../components/modal/ModalCompetition';
+import ModalPremios from "@/components/modal/ModalPremios";
 
 
 
@@ -32,6 +33,10 @@ export default function Dashboard() {
   const [betScore, setBetScore] = useState(100); // Inicializamos la apuesta con un valor de 1000
   const [totalScore, setTotalScore] = useState(0);
 
+  //--- Premios---
+
+  const [showPremiosModal, setShowPremiosModal] = useState(false);
+  const [activeMedal, setActiveMedal] = useState(null);
 
   //--- Apuesta ---
 
@@ -40,7 +45,7 @@ export default function Dashboard() {
 
     // Función para aumentar o disminuir el betScore
     const updateBetScore = (change) => {
-  setBetScore((prevBet) => {
+    setBetScore((prevBet) => {
     const newBet = prevBet + change;
 
         // Log para depurar
@@ -68,78 +73,94 @@ export default function Dashboard() {
   
 
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        setUser(user);
-
-        const userDocRef = doc(db, "users", user.uid);
-        const userDoc = await getDoc(userDocRef);
-        if (userDoc.exists()) {
-          setUserData(userDoc.data());
-
-          // Sumar todos los campos en la colección scores
-          const scoresDocRef = doc(db, "scores", user.uid);
-          const scoresDoc = await getDoc(scoresDocRef);
-          let totalScore = 0;
-
-          if (scoresDoc.exists()) {
-            const scoreData = scoresDoc.data();
-            totalScore = Object.values(scoreData).reduce(
-              (acc, curr) => acc + (typeof curr === "number" ? curr : 0),
-              0
-            );
-          }
-
-          console.log("Total Score calculado:", totalScore); // Log para verificar la suma
-
-          // Actualizar el campo score_total en la colección users
-          await updateDoc(userDocRef, {
-            score_total: totalScore,
-          });
-
-          console.log("Campo score_total actualizado en Firebase"); // Log para verificar la actualización
-
-          // Lógica de racha diaria
-          const lastSession = dayjs(userDoc.data().last_session?.toDate());
-          const today = dayjs();
-          const differenceInDays = today.diff(lastSession, 'day');
-
-          const stadisticsDocRef = doc(db, "stadistics", user.uid);
-          const stadisticsDoc = await getDoc(stadisticsDocRef);
-
-          if (stadisticsDoc.exists()) {
-            let newStreak = 0;
-            if (differenceInDays === 1) {
-              newStreak = stadisticsDoc.data().score_racha + 1;
-            } else if (differenceInDays > 1) {
-              newStreak = 0;
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          setUser(user);
+    
+          const userDocRef = doc(db, "users", user.uid);
+          const userDoc = await getDoc(userDocRef);
+          if (userDoc.exists()) {
+            setUserData(userDoc.data());
+    
+            // Sumar todos los campos en la colección scores
+            const scoresDocRef = doc(db, "scores", user.uid);
+            const scoresDoc = await getDoc(scoresDocRef);
+            let totalScore = 0;
+    
+            if (scoresDoc.exists()) {
+              const scoreData = scoresDoc.data();
+              totalScore = Object.values(scoreData).reduce(
+                (acc, curr) => acc + (typeof curr === "number" ? curr : 0),
+                0
+              );
             }
-            setStreak(newStreak);
-
-            await updateDoc(stadisticsDocRef, {
-              score_racha: newStreak,
+    
+            console.log("Total Score calculado:", totalScore); // Log para verificar la suma
+    
+            // Actualizar el campo score_total en la colección users
+            await updateDoc(userDocRef, {
+              score_total: totalScore,
             });
-
-            console.log("Racha actualizada en Firebase:", newStreak); // Log para verificar la racha
-          } else {
-            const initialStreak = differenceInDays === 1 ? 1 : 0;
-            setStreak(initialStreak);
-
-            await setDoc(stadisticsDocRef, {
-              score_racha: initialStreak,
-            });
-
-            console.log("Documento de racha creado en Firebase:", initialStreak); // Log para verificar la creación
+    
+            console.log("Campo score_total actualizado en Firebase"); // Log para verificar la actualización
+    
+            // Lógica de racha diaria
+            const lastSession = dayjs(userDoc.data().last_session?.toDate());
+            const today = dayjs();
+            const differenceInDays = today.diff(lastSession, 'day');
+    
+            const stadisticsDocRef = doc(db, "stadistics", user.uid);
+            const stadisticsDoc = await getDoc(stadisticsDocRef);
+    
+            if (stadisticsDoc.exists()) {
+              let newStreak = 0;
+              if (differenceInDays === 1) {
+                newStreak = stadisticsDoc.data().score_racha + 1;
+              } else if (differenceInDays > 1) {
+                newStreak = 0;
+              }
+              setStreak(newStreak);
+    
+              await updateDoc(stadisticsDocRef, {
+                score_racha: newStreak,
+              });
+    
+              console.log("Racha actualizada en Firebase:", newStreak); // Log para verificar la racha
+            } else {
+              const initialStreak = differenceInDays === 1 ? 1 : 0;
+              setStreak(initialStreak);
+    
+              await setDoc(stadisticsDocRef, {
+                score_racha: initialStreak,
+              });
+    
+              console.log("Documento de racha creado en Firebase:", initialStreak); // Log para verificar la creación
+            }
+    
+            // --- Lógica para verificar el campo trofeos[] y mostrar el modal de medal1 ---
+            const stadisticsData = stadisticsDoc.data() || {};
+            if (!stadisticsData.trofeos || !stadisticsData.trofeos.includes('medal1')) {
+              // Si trofeos[] no existe o no contiene 'medal1', se crea o se actualiza
+              await updateDoc(stadisticsDocRef, {
+                trofeos: arrayUnion('medal1'),
+              });
+    
+              console.log("Medalla 'medal1' agregada a trofeos"); // Log para verificar la adición de la medalla
+    
+              // Mostrar el modal de premios
+              setActiveMedal('medal1'); // Establece la medalla activa
+              setShowPremiosModal(true); // Muestra el modal
+            }
           }
+        } else {
+          router.push('/');
         }
-      } else {
-        router.push('/');
-      }
-    });
-
-    return () => unsubscribe();
-  }, [router]);
+      });
+    
+      return () => unsubscribe();
+    }, [router]);
+    
 
   const handleLogout = async () => {
     try {
@@ -254,6 +275,15 @@ export default function Dashboard() {
         {/* //Modal de Competicion */}
         {showModal && <BetModal betScore={betScore} updateBetScore={updateBetScore} onClose={handleCloseModal} userUID={user.uid} />}
 
+        {/* Modal de Premios */}
+        {showPremiosModal && (
+          <ModalPremios
+            medal={activeMedal}
+            rewardText="¡Tu aventura comienza aqui!"
+            userUID={auth.currentUser?.uid}
+            onClose={() => setShowPremiosModal(false)}
+          />
+        )}
 
         {/* Main Container */}
         {(() => {

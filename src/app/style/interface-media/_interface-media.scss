@@ -72,6 +72,10 @@
 //Modal
 
 @media only screen and (max-width: 970px){
+
+    .game-center{
+        margin: 0.5rem;
+    }
     .columna{
         h3{
             font-size: var(--font-size-md) !important;
@@ -96,4 +100,5 @@
     }
 
 }
+
 

@@ -287,6 +287,11 @@ form .select-gender option {
   height: 100%;
 }
 
+@media only screen and (max-width: 970px) {
+  .dashboard-container .user-container {
+    width: 25%;
+  }
+}
 @media only screen and (max-width: 600px) {
   .dashboard-container {
     flex-direction: column;
@@ -461,6 +466,41 @@ form .select-gender option {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 970px) {
+  .user-container {
+    padding: 1rem;
+  }
+  .user-container .card-user {
+    width: 100%;
+  }
+  .user-container .text-user h3 {
+    font-size: 2.3vh;
+  }
+  .user-container .text-user p {
+    font-size: 2vh;
+  }
+  .user-container .nav-container {
+    margin-top: 0;
+  }
+  .user-container .invite-container {
+    margin-top: 1vh;
+    padding: 1rem;
+  }
+  .user-container .invite-container h3 {
+    font-size: 2vh;
+  }
+  .user-container .invite-container .container-toggle-score .bottom-score p {
+    font-size: 2.6vh;
+  }
+  .user-container .invite-container .container-toggle-score .score-apuesta p {
+    font-size: 2.8vh;
+  }
+  .user-container .invite-container .bottom-competir {
+    padding: var(--spacing-sm);
+    font-size: 2.5vh;
+    font-family: var(--font-primary);
+  }
+}
 @media only screen and (max-width: 600px) {
   .invite-container {
     display: none !important;
@@ -559,6 +599,18 @@ form .select-gender option {
   filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 0.5));
 }
 
+@media only screen and (max-width: 970px) {
+  .games-container .selector-games .information-game p {
+    font-size: var(--font-size-sm);
+  }
+  .responsive-mobile {
+    width: 5rem;
+    height: 5rem;
+  }
+  .responsive-mobile h3 {
+    font-size: 0.4rem !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .games-container {
     flex-direction: column;
@@ -649,6 +701,9 @@ form .select-gender option {
 }
 
 @media only screen and (max-width: 970px) {
+  .game-center {
+    margin: 0.5rem;
+  }
   .columna h3 {
     font-size: var(--font-size-md) !important;
   }
@@ -1589,7 +1644,7 @@ form .select-gender option {
     width: 100%;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
   .container-game .modal-content h2 {
     font-size: var(--font-size-lg) !important;
   }

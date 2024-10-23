@@ -124,7 +124,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
             </p>
 
             <div className="container-boton-jugar">
-              <button className="push--flat-blue" onClick={handlePlayGame}>
+              <button className="push--flat-blue responsive-mobile" onClick={handlePlayGame}>
                 <h3 className="text-boton-jugar">JUGAR</h3>
               </button>
             </div>

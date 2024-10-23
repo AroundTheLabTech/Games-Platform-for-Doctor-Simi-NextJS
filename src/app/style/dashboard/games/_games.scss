@@ -106,7 +106,25 @@
 #arcade {
     filter: drop-shadow( 0px 0px 10px rgba(0, 255, 255, 0.5));
   }
+@media only screen and (max-width: 970px){
+    .games-container{
+        .selector-games{
+            .information-game{
+                p{
+                    font-size: var(--font-size-sm);
+                }
+            }
+        }
+    }
 
+    .responsive-mobile{
+        width: 5rem;
+        height: 5rem;
+        h3{
+            font-size: 0.4rem !important;
+        }
+    }
+}
 
 @media only screen and (max-width:600px){
     .games-container{

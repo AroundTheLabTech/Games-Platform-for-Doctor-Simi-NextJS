@@ -184,7 +184,55 @@
     }
 }
 
+@media only screen and (max-width: 970px){
+    
+    .user-container{
+        padding: 1rem;
+        .card-user{
+            width: 100%;
+        }
 
+        .text-user{
+            h3{
+                font-size: 2.3vh;
+            }
+            p{
+                font-size: 2vh;
+            }
+        }
+
+        .nav-container{
+            margin-top: 0;
+        }
+
+        .invite-container{
+            margin-top: 1vh;
+            padding: 1rem;
+            h3{
+                font-size: 2vh;
+            }
+
+            .container-toggle-score{
+                .bottom-score{
+                    p{
+                        font-size: 2.6vh;
+                    }
+                }
+                .score-apuesta{
+                    p{
+                        font-size: 2.8vh;
+                    }
+                }
+            }
+
+            .bottom-competir{
+                padding: var(--spacing-sm);
+                font-size: 2.5vh;
+                font-family: var(--font-primary);
+            }
+        }
+    }
+}
 @media only screen and (max-width: 600px){
     .invite-container{
         display: none !important;

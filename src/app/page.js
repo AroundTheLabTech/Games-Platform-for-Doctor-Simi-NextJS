@@ -7,6 +7,10 @@ import { doc, setDoc, updateDoc, serverTimestamp } from "firebase/firestore"; //
 import { db } from "../../lib/firebase"; // Importar la instancia de Firestore configurada en firebase.js
 import { useState, useEffect, useRef } from "react";
 
+// --Animations--
+import gsap from "gsap";
+
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +22,11 @@ export default function Home() {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+
+  const [showAvionImage, setShowAvionImage] = useState(true);
+
+
+
 
   const router = useRouter(); // Inicializa useRouter para redireccionar
 
@@ -108,6 +117,28 @@ export default function Home() {
       setShowLoginForm(true);
     }
   };
+
+  // -- Animation Anuncio -- 
+
+  useEffect(() => {
+    if (showAvionImage) {
+      gsap.fromTo(
+        "#fotoAvionImg",  
+        { scale: 0, rotation: -90, opacity: 0, x: 100, y: -100 },
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 1.5,
+          ease: "back.out(1.7)",
+        }
+      );
+    }
+  }, [showAvionImage]);
+  
+
 
   return (
     <main className='container-login'>  
@@ -258,6 +289,18 @@ export default function Home() {
               </div>
             )}
         </div>
+
+        {showAvionImage && (
+            <img
+              id="fotoAvionImg"
+              src="anuncios/anuncio-simifest.svg" // Cambia la ruta a tu imagen real
+              alt="Anuncio de Avión"
+              className="avion-img"
+              onClick={() => setShowAvionImage(false)} // Oculta la imagen al hacer clic
+
+            />
+          )}
+
     </main>
   );
 }

@@ -66,8 +66,6 @@ export default function Landing(){
           { filter: "blur(0px)", opacity: 1, duration: 1.5, delay: 1, ease: "power2.out" }
         );
       
-     
-      
         // Animación para avionCircle
         gsap.fromTo(
           "#avionCircle",

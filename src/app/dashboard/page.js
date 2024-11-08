@@ -186,25 +186,35 @@ export default function Dashboard() {
         <div className="user-container">
             {/* Card User */}
             <div className="card-user">
-
               <div className="perfil-container">
 
-              <div className="container-photo">
-              <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
-            </div>
+                <div className="container-photo">
+                <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
+                </div>
 
                 <div className="text-user">
-                    <h3>
-                        ¡HOLA! 
-                    </h3>
                     <p>
-                        {userData.display_name}
+                        @{userData.display_name}
                     </p>
                   
                 </div>
 
-              </div>
-              
+                <div className="container-user-trofeos">
+                  <img src="img/medallas/medal1.svg" alt="" />
+                  <img src="img/medallas/medal2.svg" alt="" />
+                  <img src="img/medallas/medal3.svg" alt="" />
+                  <img src="img/medallas/medal4.svg" alt="" />
+                </div>
+{/* 
+                <div className="container-user-total">
+                  <p>
+                    1,524
+                  </p>
+                  
+                  <img src="img/icons/monedaScore.svg" alt="" />
+                </div> */}
+
+              </div>    
             </div>
 
             {/* Nav Container */}
@@ -262,13 +272,12 @@ export default function Dashboard() {
             {/* Configuration Footer */}
 
             <div className="container-logout ">
-                <div> 
-                  <img
-                  onClick={handleLogout} 
-                  src="img/icons/logout.svg"
-                  />
-                </div>
-            
+                  <button
+                    onClick={handleLogout} 
+
+                  >
+                    Cerrar Sesión
+                  </button>            
             </div>
         </div>
 

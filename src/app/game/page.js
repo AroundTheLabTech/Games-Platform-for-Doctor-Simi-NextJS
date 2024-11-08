@@ -115,7 +115,7 @@ export default function Game() {
       case "juego3":
         return "Simi Slash";   
       case "juego4":
-        return "Simi Space";
+        return "Simi Life";
       default:
         return "Juego Desconocido";
     }
@@ -132,7 +132,7 @@ export default function Game() {
       case "juego4":
         return "¡Lanzamiento 01/Septiembre/2024! & más sorpresas";
       default:
-        return "Instrucciones no disponibles.";
+        return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
     }
   };
 
@@ -145,7 +145,7 @@ export default function Game() {
       case "juego3":
         return "source-game/game-3/release/index.html";
       case "juego4":
-        return null; 
+        return "source-game/game-4/index.html"; 
       default:
         return "";
     }
@@ -192,14 +192,9 @@ export default function Game() {
                 </h3>
               </button>
             </div>
-
             <div className="game-center">
-              {selectedGame === "juego4" ? (
-                <p>Actualizando pronto</p>
-              ) : (
-                iframeVisible && (
-                  <iframe src={getIframeSrc(selectedGame)}></iframe>
-                )
+              {iframeVisible && (
+                <iframe src={getIframeSrc(selectedGame)} title="Juego" allowFullScreen></iframe>
               )}
             </div>
 

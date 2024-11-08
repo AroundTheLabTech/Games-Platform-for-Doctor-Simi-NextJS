@@ -1,7 +1,7 @@
 .user-container{
     padding: var(--spacing-xl);
     color: var(--color-secondary);
-
+    padding-top: 7vh;
     .card-user{
         padding: var(--spacing-md);
         background-color: var(--background-color-2);
@@ -12,18 +12,24 @@
             
         
         .container-photo{
-            width: 30%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5vh;
           
             img{
-                width: 100%;
+                width: 50%;
                 padding: var(--spacing-xs);
                 border-radius: 10rem;
-                border: 1px solid var(--color-secondary);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+                position: relative;
+                top: -4vh; 
             }
         }
 
         .text-user{
-            width: 70%;
+            width: 100%;
             padding: var(--spacing-md);
             h3{
                 color: var(--color-secondary);
@@ -35,6 +41,32 @@
                 color: var(--color-secondary);
                 text-align: center;
                 font-family: var(--font-press);
+            }
+        }
+
+        .container-user-trofeos{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgba(106, 90, 224, 0.5);
+            border-radius: 0.4rem;
+            padding: var(--spacing-sm);
+            img{
+                width: 15%;
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); 
+            }
+        }
+
+        .container-user-total{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-top: var(--spacing-md);
+            p{
+                color: var(--color-secondary);
+                font-family: var(--font-press);
+                margin-right: var(--spacing-md);
             }
         }
     }
@@ -148,8 +180,6 @@
         }
     }
 
-
-
     .objetivo-container{
         padding: var(--spacing-md);
         margin-top: var(--spacing-xl);
@@ -163,7 +193,7 @@
 
 .perfil-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .container-logout{
@@ -175,12 +205,18 @@
     align-items: flex-end;
     margin-bottom: var(--spacing-xs);
     margin-top: var(--spacing-xxl);
-    div{
-        width: 10%;
-    }
-    img{
-        width: 100%;
+    
+
+    button{
+        all: unset;
         cursor: pointer;
+        background-color: var(--background-color-2);
+        border-radius: 0.4rem;
+        font-size: var(--font-size-sm);
+        color: var(--color-secondary);
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+        font-weight: 600;
+        font-family: var(--font-secondary);
     }
 }
 

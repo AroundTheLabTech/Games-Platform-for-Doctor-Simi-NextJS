@@ -317,6 +317,7 @@ form .select-gender option {
 .user-container {
   padding: var(--spacing-xl);
   color: var(--color-secondary);
+  padding-top: 7vh;
 }
 .user-container .card-user {
   padding: var(--spacing-md);
@@ -327,16 +328,22 @@ form .select-gender option {
   color: var(--color-secondary);
 }
 .user-container .card-user .container-photo {
-  width: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
 }
 .user-container .card-user .container-photo img {
-  width: 100%;
+  width: 50%;
   padding: var(--spacing-xs);
   border-radius: 10rem;
-  border: 1px solid var(--color-secondary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+  position: relative;
+  top: -4vh;
 }
 .user-container .card-user .text-user {
-  width: 70%;
+  width: 100%;
   padding: var(--spacing-md);
 }
 .user-container .card-user .text-user h3 {
@@ -349,6 +356,30 @@ form .select-gender option {
   color: var(--color-secondary);
   text-align: center;
   font-family: var(--font-press);
+}
+.user-container .card-user .container-user-trofeos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(106, 90, 224, 0.5);
+  border-radius: 0.4rem;
+  padding: var(--spacing-sm);
+}
+.user-container .card-user .container-user-trofeos img {
+  width: 15%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+.user-container .card-user .container-user-total {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-md);
+}
+.user-container .card-user .container-user-total p {
+  color: var(--color-secondary);
+  font-family: var(--font-press);
+  margin-right: var(--spacing-md);
 }
 .user-container .nav-container {
   padding: var(--spacing-md);
@@ -456,7 +487,7 @@ form .select-gender option {
 
 .perfil-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .container-logout {
@@ -468,12 +499,16 @@ form .select-gender option {
   margin-bottom: var(--spacing-xs);
   margin-top: var(--spacing-xxl);
 }
-.container-logout div {
-  width: 10%;
-}
-.container-logout img {
-  width: 100%;
+.container-logout button {
+  all: unset;
   cursor: pointer;
+  background-color: var(--background-color-2);
+  border-radius: 0.4rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-secondary);
 }
 
 @media only screen and (max-width: 970px) {

@@ -127,7 +127,7 @@ export default function Home() {
         { scale: 0, rotation: -90, opacity: 0, x: 100, y: -100 },
         {
           scale: 1,
-          rotation: 0,
+          rotation: 0,  
           opacity: 1,
           x: 0,
           y: 0,

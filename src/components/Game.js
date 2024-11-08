@@ -102,8 +102,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego4: {
       imageSrc: "img/games/arcade/game-4.png",
       titleSrc: "img/games/title/game-4.svg",
-      description: "Lanzamiento el 01/Sep/2024 ",
-    },
+      description: "¡Pilota el avión del SimiFest y lanza Bombas de Vida! Estas bolas de tierra están repletas de semillas listas para transformar el mundo. ¡Conviértete en un héroe ecológico y haz florecer la vida a tu paso!",    },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];

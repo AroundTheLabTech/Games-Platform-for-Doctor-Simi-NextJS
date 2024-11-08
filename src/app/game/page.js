@@ -55,6 +55,13 @@ export default function Game() {
           console.log("Suma de +1 al puntaje actual (juego3):", updatedScore);
           return updatedScore;
         });
+      } else if (selectedGame === "juego4") {
+        if (event.data && typeof event.data.score !== 'undefined') {
+          const scoreValue = Number(event.data.score);
+          console.log("Valor recibido desde el postMessage (juego4):", scoreValue);
+  
+          setCurrentScore(scoreValue); // Actualiza el puntaje actual
+        }
       }
     };
 
@@ -130,9 +137,9 @@ export default function Game() {
       case "juego3":
         return "¡No Cortes al Simi! Corta las roscas de reyes lo más rápido posible.";
       case "juego4":
-        return "¡Lanzamiento 01/Septiembre/2024! & más sorpresas";
-      default:
         return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
+      default:
+        return "Pronto vendras más";
     }
   };
 

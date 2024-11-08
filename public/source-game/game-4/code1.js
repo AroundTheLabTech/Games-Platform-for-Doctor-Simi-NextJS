@@ -270,7 +270,7 @@ if (isConditionTrue_0) {
 
 };gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDNewSpriteObjects1Objects = Hashtable.newFrom({"NewSprite": gdjs.GameCode.GDNewSpriteObjects1});
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDBloque_95959595TierraObjects1Objects = Hashtable.newFrom({"Bloque_Tierra": gdjs.GameCode.GDBloque_9595TierraObjects1});
-gdjs.GameCode.userFunc0x924968 = function GDJSInlineCode(runtimeScene) {
+gdjs.GameCode.userFunc0x97e630 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 
 var variables = runtimeScene.getVariables();
@@ -285,7 +285,7 @@ gdjs.GameCode.eventsList2 = function(runtimeScene) {
 {
 
 
-gdjs.GameCode.userFunc0x924968(runtimeScene);
+gdjs.GameCode.userFunc0x97e630(runtimeScene);
 
 }
 

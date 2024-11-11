@@ -26,10 +26,15 @@ export default function Home() {
     const [showModal, setShowModal] = useState(false);
     const [modalMessage, setModalMessage] = useState("");
     const [showAvionImage, setShowAvionImage] = useState(true);
-
     // --Login Session--
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+      audioRef.current = new Audio('/sound/bottom.m4a');
+    }, []);
 
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -50,11 +55,33 @@ export default function Home() {
       });
     
       return () => unsubscribe();
-    }, []);
+    }, [router]);
+
+    // -- Animation Anuncio -- 
+
+    useEffect(() => {
+      if (showAvionImage) {
+        gsap.fromTo(
+          "#fotoAvionImg",  
+          { scale: 0, rotation: -90, opacity: 0, x: 100, y: -100 },
+          {
+            scale: 1,
+            rotation: 0,  
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 1.5,
+            ease: "back.out(1.7)",
+          }
+        );
+      }
+    }, [showAvionImage]);
+  
 
     if (loading) {
       return null; // O puedes mostrar un componente de carga si lo prefieres
     }
+
     
 
 
@@ -113,14 +140,6 @@ export default function Home() {
       setShowModal(true);
     };
 
-    const audioRef = useRef(null);
-
-    
-
-    useEffect(() => {
-      audioRef.current = new Audio('/sound/bottom.m4a');
-    }, []);
-
     const playSound = () => {
       if (audioRef.current) {
         audioRef.current.play();
@@ -148,26 +167,6 @@ export default function Home() {
       }
     };
 
-    // -- Animation Anuncio -- 
-
-    useEffect(() => {
-      if (showAvionImage) {
-        gsap.fromTo(
-          "#fotoAvionImg",  
-          { scale: 0, rotation: -90, opacity: 0, x: 100, y: -100 },
-          {
-            scale: 1,
-            rotation: 0,  
-            opacity: 1,
-            x: 0,
-            y: 0,
-            duration: 1.5,
-            ease: "back.out(1.7)",
-          }
-        );
-      }
-    }, [showAvionImage]);
-  
 
 
   return (

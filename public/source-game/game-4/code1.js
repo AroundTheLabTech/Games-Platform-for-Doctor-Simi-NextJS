@@ -90,7 +90,7 @@ gdjs.GameCode.GDCuadro_9595BlancoObjects3= [];
 gdjs.GameCode.GDCuadro_9595BlancoObjects4= [];
 
 
-gdjs.GameCode.asyncCallback9677020 = function (runtimeScene, asyncObjectsList) {
+gdjs.GameCode.asyncCallback11478316 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 {gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "04 - castle nosferatu.aac", 1, true, 50, 1);
 }gdjs.GameCode.localVariables.length = 0;
@@ -104,7 +104,7 @@ gdjs.GameCode.eventsList0 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(10), (runtimeScene) => (gdjs.GameCode.asyncCallback9677020(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(10), (runtimeScene) => (gdjs.GameCode.asyncCallback11478316(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -343,7 +343,7 @@ if (isConditionTrue_0) {
 
 };gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDNewSpriteObjects1Objects = Hashtable.newFrom({"NewSprite": gdjs.GameCode.GDNewSpriteObjects1});
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDBloque_95959595TierraObjects1Objects = Hashtable.newFrom({"Bloque_Tierra": gdjs.GameCode.GDBloque_9595TierraObjects1});
-gdjs.GameCode.userFunc0xaab248 = function GDJSInlineCode(runtimeScene) {
+gdjs.GameCode.userFunc0xbd7bd0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 var variables = runtimeScene.getVariables();
 var score = variables.get("score_escena").getAsString();
@@ -357,7 +357,7 @@ gdjs.GameCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameCode.userFunc0xaab248(runtimeScene);
+gdjs.GameCode.userFunc0xbd7bd0(runtimeScene);
 
 }
 

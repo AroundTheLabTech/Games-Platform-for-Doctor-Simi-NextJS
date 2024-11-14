@@ -87,13 +87,13 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego1: {
       imageSrc: "img/games/arcade/game-1.png",
       titleSrc: "img/games/title/game-1.svg",
-      description: "¡Defiende el Centro a toda costa! Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! ¿Tienes lo necesario para proteger a los pacientes y salvar el día?! ¡Descúbrelo ahora!",
+      description: "¡Defiende el Centro a toda costa! Acumula puntos para mejorar tu ataque, defensa y velocidad. Cada ola de bacterias será más desafiante, ¡prepárate para detenerlas a todas! ¿Tienes lo necesario para proteger a los pacientes y salvar el día? ¡Descúbrelo ahora!",    
     },
     juego2: {
       imageSrc: "img/games/arcade/game-2.png",
       titleSrc: "img/games/title/game-2.svg",
-      description: "¡Ayuda a Simi a recolectar todas las monedas y evitar los obstáculos! ¡Diviértete en este juego de plataformas y demuestra tus habilidades! ¡Juega ahora y desbloquea nuevos niveles!",
-    },
+      description: "¡Ayuda a Simi a recolectar todas las monedas y a evitar los obstáculos! ¡Diviértete en este emocionante juego de plataformas y demuestra tus habilidades! ¡Juega ahora y desbloquea nuevos niveles!",
+        },
     juego3: {
       imageSrc: "img/games/arcade/game-3.png",
       titleSrc: "img/games/title/game-3.svg",
@@ -102,7 +102,8 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego4: {
       imageSrc: "img/games/arcade/game-4.png",
       titleSrc: "img/games/title/game-4.svg",
-      description: "¡Pilota el avión del SimiFest y lanza Bombas de Vida! Estas bolas de tierra están repletas de semillas listas para transformar el mundo. ¡Conviértete en un héroe ecológico y haz florecer la vida a tu paso!",    },
+      description: "¡Pilota el avión del SimiFest y lanza Bombas de Vida! Estas bolas de tierra están repletas de semillas listas para transformar el mundo. ¡Conviértete en un héroe ecológico y haz florecer la vida a tu paso!",
+       },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];

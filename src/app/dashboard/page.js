@@ -13,12 +13,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 //Services 
 import { FetchScoreTotal } from '../../services/FetchScoreTotal'; // Importa el servicio de Consulta de total de Puntaje
+import { GetTrophiesService } from '../../services/GetTrofiesService'; // Servicio para obtener trofeos
+import { GetScoreTotalService } from '../../services/GetScoreTotalService'; // Servicio para obtener el puntaje total
 
 //Modal 
 
 import BetModal from '../../components/modal/ModalCompetition';
 import ModalPremios from "@/components/modal/ModalPremios";
-
 
 
 
@@ -31,12 +32,14 @@ export default function Dashboard() {
   const router = useRouter();
 
   const [betScore, setBetScore] = useState(100); // Inicializamos la apuesta con un valor de 1000
-  const [totalScore, setTotalScore] = useState(0);
+  const [totalScore, setTotalScore] = useState(0); // Almacena el puntaje Total
 
   //--- Premios---
 
   const [showPremiosModal, setShowPremiosModal] = useState(false);
   const [activeMedal, setActiveMedal] = useState(null);
+  const [trophies, setTrophies] = useState([]); // Almacena las medallas del usuario
+  
 
   //--- Apuesta ---
 
@@ -80,6 +83,13 @@ export default function Dashboard() {
     
           const userDocRef = doc(db, "users", user.uid);
           const userDoc = await getDoc(userDocRef);
+          // Obtener las medallas del usuario
+          const userTrophies = await GetTrophiesService(user.uid);
+          setTrophies(userTrophies);
+
+          // Obtener el puntaje total del usuario
+          const userScoreTotal = await GetScoreTotalService(user.uid);
+          setTotalScore(userScoreTotal);
           if (userDoc.exists()) {
             setUserData(userDoc.data());
     
@@ -200,19 +210,26 @@ export default function Dashboard() {
                 </div>
 
                 <div className="container-user-trofeos">
-                  <img src="img/medallas/medal1.svg" alt="" />
-                  <img src="img/medallas/medal2.svg" alt="" />
-                  <img src="img/medallas/medal3.svg" alt="" />
-                  <img src="img/medallas/medal4.svg" alt="" />
+                  {trophies.length > 0 ? (
+                    trophies.map((medal) => (
+                      <img
+                        key={medal}
+                        src={`img/medallas/${medal}.svg`}
+                        alt={`Medalla ${medal}`}
+                        className="medal-icon"
+                      />
+                    ))
+                  ) : (
+                    <p>No hay medallas</p>
+                  )}
                 </div>
-{/* 
+
+
                 <div className="container-user-total">
-                  <p>
-                    1,524
-                  </p>
-                  
-                  <img src="img/icons/monedaScore.svg" alt="" />
-                </div> */}
+                  <p>{totalScore.toLocaleString()}</p> {/* Muestra el puntaje total con formato */}
+                  <img src="img/icons/monedaScore.svg" alt="Moneda" />
+                </div>
+
 
               </div>    
             </div>

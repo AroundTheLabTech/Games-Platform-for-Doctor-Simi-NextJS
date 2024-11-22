@@ -1,0 +1,80 @@
+.profile-container{
+    padding: var(--spacing-md);
+    background-image: url('/img/background/background-games.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;      
+    flex-direction: column;
+    .container-information-app{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        // Card Game
+
+        .card-game{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            background-color: #6A5AE0;
+            padding: var(--spacing-md);
+            border-radius: 1rem;
+            // Header Card
+            .header-card{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h3{
+                    font-family: var(--font-press);
+                }
+
+                img{
+                    width: 15%;
+                }
+            }
+            // Nombre Usuario
+            .user-info{
+                p{
+                    font-size: var(--font-size-xl);
+                    font-weight: 600;
+                }
+            }
+
+            // Número Tarjeta - Puntaje
+
+            .number-card{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: var(--spacing-lg);
+                h3{
+                    font-size: var(--font-size-md);
+                }
+
+                div{
+                    display: flex;
+                    padding: var(--spacing-md);
+                    background-color: var(--background-color-2);
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 0.4rem;
+                    p{
+                        color: var(--color-secondary);
+                        font-family: var(--font-press);
+                        font-size: var(--font-size-sm);
+                    }
+                }
+            }
+        }
+
+        //Personalidad
+
+        .personalidad{
+            
+        }
+    }
+
+}

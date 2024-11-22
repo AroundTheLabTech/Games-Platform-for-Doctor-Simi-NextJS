@@ -246,12 +246,12 @@ export default function Dashboard() {
                         <img src="img/icons/dashboard.svg" />
                         <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
                     </li>
-                    {/* <li>
+                    <li>
                         <img
                         src="img/icons/user.svg"
                         />
-                        <button onClick={() => setSelectedView("user")}>USER</button>
-                    </li> */}
+                        <button onClick={() => setSelectedView("user")}>PERFIL</button>
+                    </li>
                 </ul>
             </div>
 

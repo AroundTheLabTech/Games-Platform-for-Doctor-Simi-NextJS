@@ -38,7 +38,6 @@ export async function fetchCompetitions(userUID) {
 }
 
 // Función para actualizar el estado de reto_status
-// Función para actualizar el estado de reto_status
 export async function updateCompetitionStatus(userUID, competitionUID, newStatus) { // Cambiar 'friendUID' por 'competitionUID'
     try {
       const userDocRef = doc(db, "users", userUID);

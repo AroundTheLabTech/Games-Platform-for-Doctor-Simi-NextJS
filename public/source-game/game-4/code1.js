@@ -80,6 +80,10 @@ gdjs.GameCode.GDtemporizadorObjects1= [];
 gdjs.GameCode.GDtemporizadorObjects2= [];
 gdjs.GameCode.GDtemporizadorObjects3= [];
 gdjs.GameCode.GDtemporizadorObjects4= [];
+gdjs.GameCode.GDShadedDarkJoystickObjects1= [];
+gdjs.GameCode.GDShadedDarkJoystickObjects2= [];
+gdjs.GameCode.GDShadedDarkJoystickObjects3= [];
+gdjs.GameCode.GDShadedDarkJoystickObjects4= [];
 gdjs.GameCode.GDNewPanelSpriteObjects1= [];
 gdjs.GameCode.GDNewPanelSpriteObjects2= [];
 gdjs.GameCode.GDNewPanelSpriteObjects3= [];
@@ -90,7 +94,7 @@ gdjs.GameCode.GDCuadro_9595BlancoObjects3= [];
 gdjs.GameCode.GDCuadro_9595BlancoObjects4= [];
 
 
-gdjs.GameCode.asyncCallback11478316 = function (runtimeScene, asyncObjectsList) {
+gdjs.GameCode.asyncCallback11666900 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 {gdjs.evtTools.sound.playMusicOnChannel(runtimeScene, "04 - castle nosferatu.aac", 1, true, 50, 1);
 }gdjs.GameCode.localVariables.length = 0;
@@ -104,7 +108,7 @@ gdjs.GameCode.eventsList0 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(10), (runtimeScene) => (gdjs.GameCode.asyncCallback11478316(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(10), (runtimeScene) => (gdjs.GameCode.asyncCallback11666900(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -191,15 +195,107 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down");
 if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() + (0));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(180, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() - (20));
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Down", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() + (0));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(180, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() - (20));
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() + (0));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(90, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() - (20));
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Up", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() - (0));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(0, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() + (20));
+}
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
 /* Reuse gdjs.GameCode.GDNewSpriteObjects1 */
 {for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects1[i].setY(gdjs.GameCode.GDNewSpriteObjects1[i].getY() + (0));
+    gdjs.GameCode.GDNewSpriteObjects1[i].setX(gdjs.GameCode.GDNewSpriteObjects1[i].getX() - (0));
 }
 }{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects1[i].rotateTowardAngle(180, 0, runtimeScene);
+    gdjs.GameCode.GDNewSpriteObjects1[i].rotateTowardAngle(270, 0, runtimeScene);
 }
 }{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects1[i].setY(gdjs.GameCode.GDNewSpriteObjects1[i].getY() - (20));
+    gdjs.GameCode.GDNewSpriteObjects1[i].setX(gdjs.GameCode.GDNewSpriteObjects1[i].getX() + (20));
 }
 }}
 
@@ -215,46 +311,13 @@ gdjs.GameCode.eventsList2 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down"));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Left"));
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up"));
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down"));
-}
-}
-}
-if (isConditionTrue_0) {
-gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
-
-{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() + (1));
-}
-}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(90, 0, runtimeScene);
-}
-}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
-}}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Left");
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up"));
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down"));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right"));
@@ -265,10 +328,10 @@ if (isConditionTrue_0) {
 gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
 
 {for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(270, 0, runtimeScene);
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() - (1));
 }
 }{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() - (1));
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(0, 0, runtimeScene);
 }
 }{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
 }}
@@ -314,16 +377,181 @@ gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjec
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Left");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up"));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down"));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right"));
+}
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(270, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() - (1));
+}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Left"));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Right"));
+isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up"));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down"));
+}
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() + (1));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(90, 0, runtimeScene);
+}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Up", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Down", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+}
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() + (1));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(90, 0, runtimeScene);
+}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Up", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Down", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+}
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(270, 0, runtimeScene);
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setX(gdjs.GameCode.GDNewSpriteObjects2[i].getX() - (1));
+}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Down", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Up", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+}
+}
+}
+if (isConditionTrue_0) {
+gdjs.copyArray(gdjs.GameCode.GDNewSpriteObjects1, gdjs.GameCode.GDNewSpriteObjects2);
+
+{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].setY(gdjs.GameCode.GDNewSpriteObjects2[i].getY() + (1));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDNewSpriteObjects2.length ;i < len;++i) {
+    gdjs.GameCode.GDNewSpriteObjects2[i].rotateTowardAngle(180, 0, runtimeScene);
+}
+}{gdjs.evtTools.sound.playSound(runtimeScene, "Aircraft-sound.mp3", false, 5, 1);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Up", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Down", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = !(gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)));
 }
 }
 }
@@ -343,7 +571,7 @@ if (isConditionTrue_0) {
 
 };gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDNewSpriteObjects1Objects = Hashtable.newFrom({"NewSprite": gdjs.GameCode.GDNewSpriteObjects1});
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDBloque_95959595TierraObjects1Objects = Hashtable.newFrom({"Bloque_Tierra": gdjs.GameCode.GDBloque_9595TierraObjects1});
-gdjs.GameCode.userFunc0xbd7bd0 = function GDJSInlineCode(runtimeScene) {
+gdjs.GameCode.userFunc0xa1b040 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 var variables = runtimeScene.getVariables();
 var score = variables.get("score_escena").getAsString();
@@ -357,7 +585,7 @@ gdjs.GameCode.eventsList3 = function(runtimeScene) {
 {
 
 
-gdjs.GameCode.userFunc0xbd7bd0(runtimeScene);
+gdjs.GameCode.userFunc0xa1b040(runtimeScene);
 
 }
 
@@ -4401,6 +4629,10 @@ gdjs.GameCode.GDtemporizadorObjects1.length = 0;
 gdjs.GameCode.GDtemporizadorObjects2.length = 0;
 gdjs.GameCode.GDtemporizadorObjects3.length = 0;
 gdjs.GameCode.GDtemporizadorObjects4.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects1.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects2.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects3.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects4.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects1.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects2.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects3.length = 0;
@@ -4491,6 +4723,10 @@ gdjs.GameCode.GDtemporizadorObjects1.length = 0;
 gdjs.GameCode.GDtemporizadorObjects2.length = 0;
 gdjs.GameCode.GDtemporizadorObjects3.length = 0;
 gdjs.GameCode.GDtemporizadorObjects4.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects1.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects2.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects3.length = 0;
+gdjs.GameCode.GDShadedDarkJoystickObjects4.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects1.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects2.length = 0;
 gdjs.GameCode.GDNewPanelSpriteObjects3.length = 0;

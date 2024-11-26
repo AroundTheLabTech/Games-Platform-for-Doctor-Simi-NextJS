@@ -204,7 +204,7 @@ form .select-gender option {
 
 .push--flat {
   background-color: hsl(10, 90%, 40%);
-  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.7), inset 0 0 0 1.4545454545rem hsl(10, 90%, 40%), inset 0 3.2rem 1.0666666667rem #aa2409, inset 0 0 0.8rem 1.3333333333rem #911f08, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.25rem 0 hsl(10, 90%, 45%), inset 0 -0.25rem 0 hsl(10, 90%, 35%), inset 0 0 0 0.25rem hsl(10, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem hsl(10, 90%, 20%), inset 0 0 0 0.8695652174rem hsl(10, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(10, 90%, 70%, 0.7), inset 0 0 0 1.4545454545rem hsl(10, 90%, 40%), inset 0 3.2rem 1.0666666667rem hsl(10, 90%, 35%), inset 0 0 0.8rem 1.3333333333rem hsl(10, 90%, 30%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat:after {
   content: "";
@@ -220,8 +220,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat:active, .push--flat.is-pushed {
-  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.2), inset 0 0 0 1.4545454545rem #b32609, inset 0 3.2rem 1.0666666667rem #9b2108, inset 0 0 0.8rem 1.3333333333rem #791a06, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
-  background-color: #b8270a;
+  box-shadow: inset 0 0.25rem 0 hsl(10, 90%, 45%), inset 0 -0.25rem 0 hsl(10, 90%, 35%), inset 0 0 0 0.25rem hsl(10, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem hsl(10, 90%, 20%), inset 0 0 0 0.9411764706rem hsl(10, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(10, 90%, 70%, 0.2), inset 0 0 0 1.4545454545rem hsl(10, 90%, 37%), inset 0 3.2rem 1.0666666667rem hsl(10, 90%, 32%), inset 0 0 0.8rem 1.3333333333rem hsl(10, 90%, 25%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(10, 90%, 38%);
 }
 .push--flat:active:after, .push--flat.is-pushed:after {
   bottom: 0.9333333333rem;
@@ -230,7 +230,7 @@ form .select-gender option {
 
 .push--flat-blue {
   background-color: hsl(210, 90%, 40%);
-  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.7), inset 0 0 0 1.4545454545rem hsl(210, 90%, 40%), inset 0 3.2rem 1.0666666667rem #0959aa, inset 0 0 0.8rem 1.3333333333rem #084d91, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.25rem 0 hsl(210, 90%, 45%), inset 0 -0.25rem 0 hsl(210, 90%, 35%), inset 0 0 0 0.25rem hsl(210, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem hsl(210, 90%, 20%), inset 0 0 0 0.8695652174rem hsl(210, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(210, 90%, 70%, 0.7), inset 0 0 0 1.4545454545rem hsl(210, 90%, 40%), inset 0 3.2rem 1.0666666667rem hsl(210, 90%, 35%), inset 0 0 0.8rem 1.3333333333rem hsl(210, 90%, 30%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat-blue:after {
   content: "";
@@ -246,8 +246,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat-blue:active, .push--flat-blue.is-pushed {
-  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.2), inset 0 0 0 1.4545454545rem #095eb3, inset 0 3.2rem 1.0666666667rem #08529b, inset 0 0 0.8rem 1.3333333333rem #064079, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
-  background-color: #0a61b8;
+  box-shadow: inset 0 0.25rem 0 hsl(210, 90%, 45%), inset 0 -0.25rem 0 hsl(210, 90%, 35%), inset 0 0 0 0.25rem hsl(210, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem hsl(210, 90%, 20%), inset 0 0 0 0.9411764706rem hsl(210, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(210, 90%, 70%, 0.2), inset 0 0 0 1.4545454545rem hsl(210, 90%, 37%), inset 0 3.2rem 1.0666666667rem hsl(210, 90%, 32%), inset 0 0 0.8rem 1.3333333333rem hsl(210, 90%, 25%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(210, 90%, 38%);
 }
 .push--flat-blue:active:after, .push--flat-blue.is-pushed:after {
   bottom: 0.9333333333rem;
@@ -258,7 +258,7 @@ form .select-gender option {
   width: 3em;
   height: 3em;
   background-color: hsl(10, 90%, 40%);
-  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3260869565em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.7), inset 0 0 0 0.5454545455em hsl(10, 90%, 40%), inset 0 1.2em 0.4em #aa2409, inset 0 0 0.3em 0.5em #911f08, 0 0.15em 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.09375em 0 hsl(10, 90%, 45%), inset 0 -0.09375em 0 hsl(10, 90%, 35%), inset 0 0 0 0.09375em hsl(10, 90%, 37%), inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em hsl(10, 90%, 20%), inset 0 0 0 0.3260869565em hsl(10, 90%, 0%), inset 0 0 0 0.4em hsla(10, 90%, 70%, 0.7), inset 0 0 0 0.5454545455em hsl(10, 90%, 40%), inset 0 1.2em 0.4em hsl(10, 90%, 35%), inset 0 0 0.3em 0.5em hsl(10, 90%, 30%), 0 0.15em 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat-small:after {
   content: "";
@@ -274,8 +274,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat-small:active, .push--flat-small.is-pushed {
-  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3529411765em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.2), inset 0 0 0 0.5454545455em #b32609, inset 0 1.2em 0.4em #9b2108, inset 0 0 0.3em 0.5em #791a06, 0 0.15em 0 rgba(0, 0, 0, 0.3);
-  background-color: #b8270a;
+  box-shadow: inset 0 0.09375em 0 hsl(10, 90%, 45%), inset 0 -0.09375em 0 hsl(10, 90%, 35%), inset 0 0 0 0.09375em hsl(10, 90%, 37%), inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em hsl(10, 90%, 20%), inset 0 0 0 0.3529411765em hsl(10, 90%, 0%), inset 0 0 0 0.4em hsla(10, 90%, 70%, 0.2), inset 0 0 0 0.5454545455em hsl(10, 90%, 37%), inset 0 1.2em 0.4em hsl(10, 90%, 32%), inset 0 0 0.3em 0.5em hsl(10, 90%, 25%), 0 0.15em 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(10, 90%, 38%);
 }
 .push--flat-small:active:after, .push--flat-small.is-pushed:after {
   bottom: 0.35em;
@@ -592,8 +592,7 @@ form .select-gender option {
   color: #fff;
   padding: 2ch;
   position: relative;
-  -o-border-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23FFFFFF'/%3E%3C/svg%3E") 8 stretch;
-     border-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23FFFFFF'/%3E%3C/svg%3E") 8 stretch;
+  border-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23FFFFFF'/%3E%3C/svg%3E") 8 stretch;
 }
 .games-container .selector-games .information-game .descripcion-juego:before {
   content: "";
@@ -683,6 +682,152 @@ form .select-gender option {
     width: 100%;
   }
 }
+.profile-container {
+  padding: var(--spacing-md);
+  background-image: url("/img/background/background-games.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+.profile-container .container-information-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile-container .container-information-app .card-game {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background-color: #6A5AE0;
+  padding: var(--spacing-md);
+  border-radius: 1rem;
+}
+.profile-container .container-information-app .card-game .header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-container .container-information-app .card-game .header-card h3 {
+  font-family: var(--font-press);
+}
+.profile-container .container-information-app .card-game .header-card img {
+  width: 15%;
+}
+.profile-container .container-information-app .card-game .user-info p {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+.profile-container .container-information-app .card-game .number-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-lg);
+}
+.profile-container .container-information-app .card-game .number-card h3 {
+  font-size: var(--font-size-md);
+}
+.profile-container .container-information-app .card-game .number-card div {
+  display: flex;
+  padding: var(--spacing-md);
+  background-color: var(--background-color-2);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.4rem;
+}
+.profile-container .container-information-app .card-game .number-card div p {
+  color: var(--color-secondary);
+  font-family: var(--font-press);
+  font-size: var(--font-size-sm);
+}
+.profile-container .container-information-app .personality {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background-color: #ffffff;
+  padding: var(--spacing-md);
+  border-radius: 1rem;
+}
+.profile-container .container-information-app .personality .title-personality h3 {
+  color: black;
+}
+.profile-container .container-information-app .personality .container-personality-information {
+  display: flex;
+  flex-direction: row;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-personality-image {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-personality-image img {
+  width: 50%;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality .sub-title-personality h3 {
+  color: black;
+  font-family: var(--font-press);
+  font-size: var(--font-size-sm);
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality .personality-description-container p {
+  color: black;
+}
+.profile-container .personal-information {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  gap: 10px;
+}
+.profile-container .personal-information .personal-information-title h3 {
+  color: black;
+}
+.profile-container .personal-information .information-table tr th {
+  color: black;
+  font-weight: normal;
+  text-align: start;
+  padding-right: 10px;
+}
+.profile-container .personal-information .information-table tr td {
+  color: black;
+  font-weight: bold;
+  padding-right: 10px;
+}
+.profile-container .personal-pictures {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  gap: 10px;
+}
+.profile-container .personal-pictures .pictures-title h3 {
+  color: black;
+}
+.profile-container .personal-pictures .pictures-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.profile-container .personal-pictures .pictures-list-container .picture-container img {
+  width: 80px;
+}
+
 .container-game {
   width: 100%;
   height: 100%;
@@ -1108,6 +1253,7 @@ form .select-gender option {
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-md);
 }
 .profile-container .container-information-app {
   display: flex;
@@ -1158,6 +1304,89 @@ form .select-gender option {
   color: var(--color-secondary);
   font-family: var(--font-press);
   font-size: var(--font-size-sm);
+}
+.profile-container .container-information-app .personality {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background-color: #ffffff;
+  padding: var(--spacing-md);
+  border-radius: 1rem;
+}
+.profile-container .container-information-app .personality .title-personality h3 {
+  color: black;
+}
+.profile-container .container-information-app .personality .container-personality-information {
+  display: flex;
+  flex-direction: row;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-personality-image {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-personality-image img {
+  width: 50%;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality .sub-title-personality h3 {
+  color: black;
+  font-family: var(--font-press);
+  font-size: var(--font-size-sm);
+}
+.profile-container .container-information-app .personality .container-personality-information .container-description-personality .personality-description-container p {
+  color: black;
+}
+.profile-container .personal-information {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  gap: 10px;
+}
+.profile-container .personal-information .personal-information-title h3 {
+  color: black;
+}
+.profile-container .personal-information .information-table tr th {
+  color: black;
+  font-weight: normal;
+  text-align: start;
+  padding-right: 10px;
+}
+.profile-container .personal-information .information-table tr td {
+  color: black;
+  font-weight: bold;
+  padding-right: 10px;
+}
+.profile-container .personal-pictures {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  gap: 10px;
+}
+.profile-container .personal-pictures .pictures-title h3 {
+  color: black;
+}
+.profile-container .personal-pictures .pictures-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.profile-container .personal-pictures .pictures-list-container .picture-container img {
+  width: 80px;
 }
 
 .container-landing {
@@ -1767,4 +1996,4 @@ form .select-gender option {
   .boton-guardar .text-boton {
     font-size: 1.6vh !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}

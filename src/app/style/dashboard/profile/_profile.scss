@@ -1,67 +1,72 @@
-.profile-container{
+.profile-container {
     padding: var(--spacing-md);
     background-image: url('/img/background/background-games.png');
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    display: flex;      
+    display: flex;
     flex-direction: column;
-    .container-information-app{
+    gap: var(--spacing-md);
+
+    .container-information-app {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
 
         // Card Game
-
-        .card-game{
+        .card-game {
             display: flex;
             flex-direction: column;
             width: 45%;
             background-color: #6A5AE0;
             padding: var(--spacing-md);
             border-radius: 1rem;
+
             // Header Card
-            .header-card{
+            .header-card {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                h3{
+
+                h3 {
                     font-family: var(--font-press);
                 }
 
-                img{
+                img {
                     width: 15%;
                 }
             }
+
             // Nombre Usuario
-            .user-info{
-                p{
+            .user-info {
+                p {
                     font-size: var(--font-size-xl);
                     font-weight: 600;
                 }
             }
 
             // Número Tarjeta - Puntaje
-
-            .number-card{
+            .number-card {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-top: var(--spacing-lg);
-                h3{
+
+                h3 {
                     font-size: var(--font-size-md);
                 }
 
-                div{
+                div {
                     display: flex;
                     padding: var(--spacing-md);
                     background-color: var(--background-color-2);
                     justify-content: space-between;
                     align-items: center;
                     border-radius: 0.4rem;
-                    p{
+
+                    p {
                         color: var(--color-secondary);
                         font-family: var(--font-press);
                         font-size: var(--font-size-sm);
@@ -71,10 +76,120 @@
         }
 
         //Personalidad
+        .personality {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            background-color: #ffffff;
+            padding: var(--spacing-md);
+            border-radius: 1rem;
 
-        .personalidad{
-            
+            .title-personality {
+
+                h3 {
+                    color: black;
+                }
+            }
+
+            .container-personality-information {
+                display: flex;
+                flex-direction: row;
+
+                .container-personality-image {
+                    flex: 1;
+                    width: 100%;
+                    display: flex;
+                    align-self: center;
+                    justify-content: center;
+
+                    img {
+                        width: 50%;
+                    }
+                }
+
+                .container-description-personality {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-items: center;
+                    width: 100%;
+                    gap: 10px;
+
+                    .sub-title-personality {
+                        h3 {
+                            color: black;
+                            font-family: var(--font-press);
+                            font-size: var(--font-size-sm);
+                        }
+                    }
+
+                    .personality-description-container {
+                        p {
+                            color: black;
+                        }
+                    }
+                }
+            }
         }
     }
 
+    .personal-information {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        gap: 10px;
+
+        .personal-information-title {
+            h3 {
+                color: black;
+            }
+        }
+
+        .information-table {
+            tr {
+                th {
+                    color: black;
+                    font-weight: normal;
+                    text-align: start;
+                    padding-right: 10px;
+                }
+
+                td {
+                    color: black;
+                    font-weight: bold;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+
+    .personal-pictures {
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 15px 20px;
+        gap: 10px;
+
+        .pictures-title {
+            h3 {
+                color: black;
+            }
+        }
+
+        .pictures-list-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .picture-container {
+                img {
+                    width: 80px;
+                }
+            }
+        }
+    }
 }

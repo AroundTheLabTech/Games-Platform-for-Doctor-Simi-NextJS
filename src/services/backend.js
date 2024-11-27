@@ -1,5 +1,5 @@
-// const BACKEND_BASE_URL = 'https://gametropolis-back-api-214230919331.us-central1.run.app'
-const BACKEND_BASE_URL = 'http://localhost:8080'
+const BACKEND_BASE_URL = 'https://gametropolis-back-api-214230919331.us-central1.run.app'
+// const BACKEND_BASE_URL = 'http://localhost:8080'
 
 export const getGameCard = async (uid) => {
   try {

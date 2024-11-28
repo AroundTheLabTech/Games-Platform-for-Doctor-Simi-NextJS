@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run build:scss",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:scss": "sass src/app/style/style.scss src/app/style/style.css --no-source-map"
+    "lint": "next lint"
   },
   "dependencies": {
     "@mui/x-charts": "^7.14.0",
@@ -22,7 +21,7 @@
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
-    "sass": "^1.81.0",
+    "sass": "^1.77.8",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
@@ -30,3 +29,4 @@
     "eslint-config-next": "14.2.5"
   }
 }
+  

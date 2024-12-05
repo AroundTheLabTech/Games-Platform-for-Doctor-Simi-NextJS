@@ -73,8 +73,6 @@ export default function Dashboard() {
     const handleCloseModal = () => {
       setShowModal(false); // Cerrar modal
     };
-  
-
 
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -171,7 +169,17 @@ export default function Dashboard() {
       return () => unsubscribe();
     }, [router]);
     
+  // -- DropDown---
 
+    // Estado para manejar si el dropdown está abierto o cerrado
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Función para alternar el estado
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -193,8 +201,16 @@ export default function Dashboard() {
   return (
     <main className="dashboard-container">
         {/* User Container */}
-        <div className="user-container">
-            {/* Card User */}
+          <div
+              className={`user-container ${isDropdownOpen ? "expanded" : ""}`}
+              onClick={toggleDropdown}
+          >
+          {/* Card User */}
+
+            <div className="dropdown-indicator">
+                {isDropdownOpen ? "▲" : "▼"}
+            </div>`
+
             <div className="card-user">
               <div className="perfil-container">
 
@@ -287,7 +303,6 @@ export default function Dashboard() {
             </div>
 
             {/* Configuration Footer */}
-
             <div className="container-logout ">
                   <button
                     onClick={handleLogout} 
@@ -295,8 +310,10 @@ export default function Dashboard() {
                   >
                     Cerrar Sesión
                   </button>            
-            </div>
-        </div>
+            </div>`
+            
+       
+          </div>
 
         {/* //Modal de Competicion */}
         {showModal && <BetModal betScore={betScore} updateBetScore={updateBetScore} onClose={handleCloseModal} userUID={user.uid} />}

@@ -82,9 +82,6 @@ export default function Home() {
       return null; // O puedes mostrar un componente de carga si lo prefieres
     }
 
-    
-
-
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
@@ -319,7 +316,7 @@ export default function Home() {
             )}
         </div>
 
-            {showAvionImage && (
+            {/* {showAvionImage && (
                 <img
                   id="fotoAvionImg"
                   src="anuncios/anuncio-simifest.svg" // Cambia la ruta a tu imagen real
@@ -328,7 +325,7 @@ export default function Home() {
                   onClick={() => setShowAvionImage(false)} // Oculta la imagen al hacer clic
 
                 />
-              )}
+              )} */}
 
     </main>
   );

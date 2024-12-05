@@ -511,6 +511,10 @@ form .select-gender option {
   font-family: var(--font-secondary);
 }
 
+.dropdown-indicador {
+  display: none;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 970px) {
   .user-container {
     padding: 1rem;

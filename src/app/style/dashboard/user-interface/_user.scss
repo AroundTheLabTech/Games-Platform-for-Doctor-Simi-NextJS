@@ -187,7 +187,7 @@
             font-family: var(--font-secondary);
         }
     }
-}
+    }
     .perfil-container{
         display: flex;
         flex-direction: column;
@@ -216,9 +216,11 @@
         }
     }
 
-    .dropdown-indicador{
+    .dropdown-indicator{
         display: none;
     }
+    
+
     
     @media only screen and (min-width:600px) and (max-width: 970px){
         
@@ -272,6 +274,11 @@
 
     // Telefonos
     @media only screen and (max-width: 600px){
+
+        .dropdown-indicator{
+            display: flex;
+            justify-content: flex-end;
+        }
         .invite-container{
             display: none !important;
         }
@@ -306,7 +313,7 @@
           }
         
           .user-container.expanded {
-            max-height: 60vh;
+            min-height: 115vh;
             .nav-container{
                 display: block !important;
             }
@@ -319,8 +326,9 @@
                 display: block !important;
             }
 
-            .container-photoñ{
-                display: block !important;
+            .container-photo{
+                display: flex !important; 
+
             }
 
             .text-user{

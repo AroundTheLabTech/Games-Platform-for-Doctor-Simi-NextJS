@@ -171,7 +171,7 @@ export default function Dashboard() {
     
   // -- DropDown---
 
-    // Estado para manejar si el dropdown está abierto o cerrado
+  // Estado para manejar si el dropdown está abierto o cerrado
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Función para alternar el estado

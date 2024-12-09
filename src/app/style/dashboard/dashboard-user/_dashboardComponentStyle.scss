@@ -257,88 +257,88 @@
         }
       }
     }
-
-
-
-
 }
 
 
 
 
-
+// Celulares
 
 @media screen and (max-width: 600px){
+  .dashboard-user-container 
+  
     .header{
-      flex-direction: column !important;
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
       h2{
+        width: 100%;
         text-align: center;
+        margin-bottom: var(--spacing-md);
       }
 
       .container-racha{
-        margin-top: var(--spacing-md);
-        width: 100% !important;
+        width: 100%;
       }
     }
 
-    .dashboard-content{
+    // Container General Dashboard
+    .container-general-dashboard{
       flex-direction: column;
+      // Container Info Dashboard
 
-      .total-score-container{
+      .container-info-dashboard{
         width: 100%;
-        h2{
-          margin-top: var(--spacing-md);
-          margin-bottom: var(--spacing-md);
-        }
-      }
 
-      .dashboard-item-mensual{
-        width: 100%;
-      }
-      
-      .dashboard-item{
-          width: 100%;
-          margin-top: var(--spacing-md);
+        // Container News
+        .container-news{
+          flex-direction: column;
 
-          .graft-ranking{
-            canvas{
-              width: 100% !important;
-              height: 20vh !important;
+          // Left
+          .left-news{
+            width: 100%;
+
+            .title-news{
+              h3{
+                span{
+                  font-size: 3vh;
+                }
+                font-size: 2.2vh;
+              }
+            }
+            margin-bottom: var(--spacing-lg);
+          }
+
+          .right-news{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+              position: static;
             }
           }
-      }
-
-
-    }
-
-    .dashboard-content2{
-      flex-direction: column;
-
-      .dashboard-item{
-        width: 100%;
-        margin-bottom: var(--spacing-md);
-      }
-    }
-    
-    .dashboard-content-3{
-    
-      .score-icons{
-        width: 100%;
-     
-      }
-    }
-   
-
-    .score-title{
-      width: 100% !important;
-
-      .trofeos-container{
-        flex-direction: column;
+        }
         
+        // Block Dashboard
+        .block-dashboard{
+          .pointer-block{
+            display: flex;
+            justify-content: flex-end;
+            p{
+              text-align: right;
+            }
+          }
+        }
       }
     }
 
+    // Ranking-Mundial
+
+    .ranking-mundial{
+      width: 100% !important;
+    }
+  
 }
 
 

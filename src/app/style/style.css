@@ -1185,52 +1185,56 @@ form .select-gender option {
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    flex-direction: column !important;
+  .dashboard-user-container .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-  .header h2 {
+  .dashboard-user-container .header h2 {
+    width: 100%;
     text-align: center;
-  }
-  .header .container-racha {
-    margin-top: var(--spacing-md);
-    width: 100% !important;
-  }
-  .dashboard-content {
-    flex-direction: column;
-  }
-  .dashboard-content .total-score-container {
-    width: 100%;
-  }
-  .dashboard-content .total-score-container h2 {
-    margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-md);
   }
-  .dashboard-content .dashboard-item-mensual {
+  .dashboard-user-container .header .container-racha {
     width: 100%;
   }
-  .dashboard-content .dashboard-item {
-    width: 100%;
-    margin-top: var(--spacing-md);
-  }
-  .dashboard-content .dashboard-item .graft-ranking canvas {
-    width: 100% !important;
-    height: 20vh !important;
-  }
-  .dashboard-content2 {
+  .container-general-dashboard {
     flex-direction: column;
   }
-  .dashboard-content2 .dashboard-item {
-    width: 100%;
-    margin-bottom: var(--spacing-md);
-  }
-  .dashboard-content-3 .score-icons {
+  .container-general-dashboard .container-info-dashboard {
     width: 100%;
   }
-  .score-title {
-    width: 100% !important;
-  }
-  .score-title .trofeos-container {
+  .container-general-dashboard .container-info-dashboard .container-news {
     flex-direction: column;
+  }
+  .container-general-dashboard .container-info-dashboard .container-news .left-news {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+  }
+  .container-general-dashboard .container-info-dashboard .container-news .left-news .title-news h3 {
+    font-size: 2.2vh;
+  }
+  .container-general-dashboard .container-info-dashboard .container-news .left-news .title-news h3 span {
+    font-size: 3vh;
+  }
+  .container-general-dashboard .container-info-dashboard .container-news .right-news {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-general-dashboard .container-info-dashboard .container-news .right-news img {
+    position: static;
+  }
+  .container-general-dashboard .container-info-dashboard .block-dashboard .pointer-block {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .container-general-dashboard .container-info-dashboard .block-dashboard .pointer-block p {
+    text-align: right;
+  }
+  .ranking-mundial {
+    width: 100% !important;
   }
 }
 .profile-container {

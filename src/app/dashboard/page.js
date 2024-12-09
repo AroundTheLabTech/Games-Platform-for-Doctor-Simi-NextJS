@@ -7,7 +7,6 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc, updateDoc, setDoc, arrayUnion } from "firebase/firestore";
 import dayjs from 'dayjs';
 import Games from "../../components/Game";
-import DashboardContent from "../../components/DashboardComponent";
 import UserComponent from "../../components/UserComponent";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,6 +20,9 @@ import { GetScoreTotalService } from '../../services/GetScoreTotalService'; // S
 import BetModal from '../../components/modal/ModalCompetition';
 import ModalPremios from "@/components/modal/ModalPremios";
 
+//View 
+
+import DashboardContent from "../../views/Dashboard/DashboardView";
 
 
 export default function Dashboard() {
@@ -344,7 +346,7 @@ export default function Dashboard() {
         );
       } else if (selectedView === "dashboard") {
         return (
-          <DashboardContent streak={streak} />
+          <DashboardContent streak={streak} userUID={user.uid} />
         );
       } else {
         return (

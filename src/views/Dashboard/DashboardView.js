@@ -30,10 +30,6 @@ export default function DashboardComponent({userUID}) {
     setTotalPartidas(total);
     setTopUsers(top7);
   }
-  
-
-  
-
   useEffect(() => {
     const competitionService = new CompetitionService();
 

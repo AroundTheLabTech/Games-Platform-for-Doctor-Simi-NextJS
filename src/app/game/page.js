@@ -115,7 +115,7 @@ export default function Game() {
         console.error("Error al guardar el score en Firestore", error);
       }
     }
-  };
+  };''
 
   const handleCloseModal = () => {
     setShowModal(false);

@@ -1,12 +1,15 @@
 .container-game{
     width: 100%;
     height: 100%;
+    flex: 1;
     header {
         width: 100%;
         img {
             width: 100%;
         }
     }
+    touch-action: none; 
+    overflow: hidden;
 }
 
 .container-interface-game{

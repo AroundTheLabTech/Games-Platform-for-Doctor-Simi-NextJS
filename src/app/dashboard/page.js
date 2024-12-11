@@ -6,7 +6,7 @@ import { auth, db } from "../../../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc, updateDoc, setDoc, arrayUnion } from "firebase/firestore";
 import dayjs from 'dayjs';
-import Games from "../../components/Game";
+import Games from "../../views/GamesSection/Game";
 import UserComponent from "../../components/UserComponent";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

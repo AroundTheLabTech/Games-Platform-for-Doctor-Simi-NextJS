@@ -95,7 +95,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   font-family: var(--font-primary);
-
+  scroll-behavior: smooth;
 }
 
 body {

@@ -1,3 +1,5 @@
+@use '../../mixins' as *;
+
 .games-container{
     background-image: url('/img/background/background-games.png');
     background-size: cover; 
@@ -43,6 +45,9 @@
                 padding-top: var(--spacing-md);
                 padding-bottom: var(--spacing-md);
                 align-items: center;
+                @include responsive-spacing(padding, 2rem, 0.5rem, 0.8rem, 1rem, 1.5rem);
+                @include responsive-spacing(padding-top, 2rem, 0.8rem, 1rem, 1.5rem, 1.8rem);
+                @include responsive-spacing(gap, 5px, 10px, 13px, 15px, 18px);
                 // Container Puntos
                 .container-puntos{
                     background-color: var(--background-color-2);
@@ -52,13 +57,17 @@
                     justify-content: space-between;
                     align-items: center;
                     width: 40%;
+                    @include responsive-spacing(padding, 1rem, 0.5rem, 0.8rem, 1rem, 1.5rem);
+                    align-items: center;
+
                     img{
                         width: 40%;
+                        @include responsive-spacing(margin-bottom, 0, 0, 0, 0, 0);
                     }
                     p{
                         color: var(--color-secondary);
                         font-family: var(--font-press);
-                        font-size: 1.2vh;
+                        @include responsive-text-size(font-size, 2vh, 1.2vh, 1.5vh, 1.8vh, 2vh);
                     }
                 }
                 // Container Saber Más
@@ -70,6 +79,7 @@
                         font-family: var(--font-press);
                         color: #2D96FF;
                         font-size: 1.2vh;
+                        @include responsive-text-size(font-size, 2vh, 1.2vh, 1.5vh, 1.8vh, 2vh);
                     }
                 }
             }    
@@ -83,10 +93,12 @@
                 padding-top: var(--spacing-lg);
                 padding-bottom: var(--spacing-lg);
                 margin-bottom: var(--spacing-xxl);
+                @include responsive-spacing(padding, 2rem, 1rem, 1.5rem, 1.2rem, 2.5rem);
                 p{
                     font-family: var(--font-press);
                     line-height: 1.7rem;
                     font-size: 1.4vh;
+                    @include responsive-spacing(line-height, 1rem, 1rem, 1.2rem, 1.5rem, 1.8rem);
                 }
             }
             

@@ -1,0 +1,109 @@
+@mixin responsive-spacing($property, $space-sm, $space-md, $space-ls, $width-lg, $width-xl) {
+  & {
+    #{$property}: $space-sm;
+  }
+
+  @media (min-width: 600px) {
+    #{$property}: $space-md;
+  }
+
+  @media (min-width: 768px) {
+    #{$property}: $space-ls;
+  }
+
+  @media (min-width: 972px) {
+    #{$property}: $width-lg;
+  }
+
+  @media (min-width: 1200px) {
+    #{$property}: $width-xl;
+  }
+}
+
+@mixin responsive-width(
+  $property,
+  $width-xs,
+  $width-sm,
+  $width-md,
+  $width-lg,
+  $width-xl
+) {
+  & {
+    #{$property}: $width-xs;
+  }
+
+  @media (min-width: 576px) {
+    #{$property}: $width-sm;
+  }
+
+  @media (min-width: 768px) {
+    #{$property}: $width-md;
+  }
+
+  @media (min-width: 992px) {
+    #{$property}: $width-lg;
+  }
+
+  @media (min-width: 1200px) {
+    #{$property}: $width-xl;
+  }
+}
+
+@mixin responsive-height(
+  $property,
+  $height-xs,
+  $height-sm,
+  $height-md,
+  $height-lg,
+  $height-xl
+) {
+  & {
+    #{$property}: $height-xs;
+  }
+
+  @media (min-width: 576px) {
+    #{$property}: $height-sm;
+  }
+
+  @media (min-width: 768px) {
+    #{$property}: $height-md;
+  }
+
+  @media (min-width: 992px) {
+    #{$property}: $height-lg;
+  }
+
+  @media (min-width: 1200px) {
+    #{$property}: $height-xl;
+  }
+}
+
+
+@mixin responsive-text-size(
+  $property, 
+  $font-size-1, 
+  $font-size-2, 
+  $font-size-3, 
+  $font-size-4, 
+  $font-size-5
+) {
+  & {
+    #{$property}: $font-size-1;
+  }
+
+  @media (min-width: 576px) {
+    #{$property}: $font-size-2;
+  }
+
+  @media (min-width: 768px) {
+    #{$property}: $font-size-3;
+  }
+
+  @media (min-width: 992px) {
+    #{$property}: $font-size-4;
+  }
+
+  @media (min-width: 1200px) {
+    #{$property}: $font-size-5;
+  }
+}

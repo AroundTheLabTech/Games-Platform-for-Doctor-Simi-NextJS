@@ -14,12 +14,14 @@
 
   --color-primary: #fff;
   --color-secondary: #000;
-  --color-third: #6A5AE0;
+  /* --color-third: #6A5AE0; */
+  --color-third: #000E41;
   --color-blue: #00A8DB;  
   --color-crema: #F8FBE8;
   --background-color-1: #000;
   --background-color-2: #ffff;
   --background-color-3: #000;
+  --background-color-4: #000E41;
 
       /* Tamaños de fuente */
       --font-size-xs: 0.75rem; /* 12px */

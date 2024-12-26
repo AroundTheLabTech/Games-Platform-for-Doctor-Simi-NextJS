@@ -65,16 +65,12 @@
       .container-news{
         display: flex;
         justify-content: space-between;
-        background: linear-gradient(
-          to bottom, 
-          rgba(106, 90, 224, 1) 0%,    /* #6A5AE0 a 100% de opacidad */
-          rgba(255, 253, 253, 0.2) 100% /* #FFFDFD a 20% de opacidad */        
-        );
-
+        background-color: #000E41;
         min-height: 25vh;
         border-radius: 0.6rem;
         padding: var(--spacing-lg);
         margin-bottom: var(--spacing-lg);
+        border: 1px solid #FF00DD;
         // Left-News
         .left-news{
             width: 70%;
@@ -155,15 +151,21 @@
       }
 
       .block-posicion{
-        background-color: #41D773;
+        // background-color: #41D773;
+        background-color: #000E41;
+        border: 1px solid #FF00DD;
       }
 
       .block-best-score{
-       background-color: #965BB0; 
+       background-color: #000E41; 
+       border: 1px solid #FF00DD;
+
       }
 
       .block-cantidad-partidas{
-        background-color: #CFB372;
+        background-color: #000E41;
+        border: 1px solid #FF00DD;
+
       }
     }
 
@@ -173,7 +175,8 @@
       width: 49%;
       padding: var(--spacing-md);
       border-radius: 0.6rem;
-      background-color: #6A5AE0;
+      background-color: var(--background-color-4);
+      border: 1px solid  #FF00DD;
       height: 100%;
       
       // Title Ranking
@@ -193,10 +196,10 @@
       // Container User Ranking
 
       .container-user-ranking{
-        background-color: var(--background-color-2);
+        background-color: rgba(106, 90, 224, 0.2);
         border-radius: 1rem;
-    
-
+        margin-top: var(--spacing-xxl);
+        color: var(--color-primary);
         .row-user{
           width: 100%;
           display: flex;
@@ -216,7 +219,7 @@
             }
             .corona-number{
               font-family: var(--font-press);
-              color: var(--color-secondary);
+              color: var(--color-primary);
             }
           }
 
@@ -230,12 +233,14 @@
               color: var(--color-secondary);
               text-align: center;
               font-weight: 700;
+              color: var(--color-primary);
             }
 
             span{
               color: var(--color-secondary);
               text-align: center;
               font-weight: 700;
+              color: var(--color-primary);
             }
           }
 
@@ -248,6 +253,7 @@
             p{
               color: var(--color-secondary);
               font-weight: 800;
+              color: var(--color-primary);
             }
 
             img{
@@ -293,8 +299,7 @@
         // Container News
         .container-news{
           flex-direction: column;
-
-          // Left
+w          // Left
           .left-news{
             width: 100%;
 

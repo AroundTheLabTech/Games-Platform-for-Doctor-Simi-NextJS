@@ -1,5 +1,3 @@
-const BACKEND_BASE_URL = 'https://gametropolis-back-api-214230919331.us-central1.run.app'
-// const BACKEND_BASE_URL = 'http://localhost:8080'
 
 export const getGameCard = async (uid) => {
   try {
@@ -14,7 +12,7 @@ export const getGameCard = async (uid) => {
       },
     };
 
-    const response = await fetch(`${BACKEND_BASE_URL}/users/user_game_card/${uid}`, requestOptions);
+    const response = await fetch(`/api/users/user_game_card/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -40,7 +38,7 @@ export const getUserInformation = async (uid) => {
       },
     };
 
-    const response = await fetch(`${BACKEND_BASE_URL}/users/user_information/${uid}`, requestOptions);
+    const response = await fetch(`/api/users/user_information/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -66,7 +64,7 @@ export const getUserPicture = async (uid) => {
       },
     };
 
-    const response = await fetch(`${BACKEND_BASE_URL}/users/user_profile_picture/${uid}`, requestOptions);
+    const response = await fetch(`api/users/user_profile_picture/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -92,7 +90,7 @@ export const getUserProfilePictures = async (uid) => {
       },
     };
 
-    const response = await fetch(`${BACKEND_BASE_URL}/users/profile_pictures/${uid}`, requestOptions);
+    const response = await fetch(`/api/users/profile_pictures/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);

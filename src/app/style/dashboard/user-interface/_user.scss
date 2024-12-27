@@ -1,10 +1,14 @@
 @use '../../mixins' as *;
 
+.expanded {
+    min-height: fit-content;
+}
+
 .user-container {
     padding: var(--spacing-xl);
     color: var(--color-secondary);
     padding-top: 7vh;
-    @include responsive-spacing(padding, 0.5rem, 1rem, 1.5rem, 1rem, 2.5rem);
+    @include responsive-size(padding, (1.5rem, 2rem, 2rem, 3rem, 1rem, 1rem, 1rem, 1rem, 1.5rem, 2.5rem));
 
     .card-user {
         padding: var(--spacing-md);
@@ -21,6 +25,7 @@
             justify-content: center;
             align-items: center;
             height: 5vh;
+            @include responsive-size(height, (5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 6vh, 8vh));
 
             img {
                 width: 50%;
@@ -30,6 +35,7 @@
                 /* Añade una sombra */
                 position: relative;
                 top: -4vh;
+                @include responsive-size(top, (-4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -3vh, -2vh));
             }
         }
 
@@ -107,7 +113,7 @@
                     font-family: var(--font-secondary);
                     font-weight: 500;
                     cursor: pointer;
-                    @include responsive-text-size(font-size, 1.5rem, 0.8rem, 1rem, 1.5rem, 2rem);
+                    @include responsive-size(font-size, (1.5rem, 0.8rem, 1rem, 1.5rem, 0.6rem, 0.7rem, 1rem, 1rem, 1.5rem, 2.5rem));
                 }
 
                 img {
@@ -130,12 +136,15 @@
         justify-content: center;
         align-items: center;
         margin-top: var(--spacing-xxl);
+        @include responsive-size(margin-top, (0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw));
 
         h3 {
             text-align: center;
             font-weight: 600;
             font-family: var(--font-secondary);
             margin-bottom: var(--spacing-xl);
+            @include responsive-size(font-size, (0.9rem, 0.8rem, 1rem, 1.1rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 1rem, 1.5rem));
+            @include responsive-size(margin-bottom, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1.5rem, 2rem));
         }
 
         .container-toggle-score {
@@ -145,10 +154,10 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: var(--spacing-lg);
-            @include responsive-spacing(gap, 2px, 5px, 10px, 10px, 20px);
+            @include responsive-size(gap, (10px, 15px, 20px, 8px, 5px, 5px, 5px, 5px, 5px, 5px));
 
             .score-apuesta {
-                @include responsive-width(width, 35%, 35%, 35%, 35%, 35%);
+                @include responsive-size(width, (35%, 35%, 35%, 40%, 35%, 35%, 35%, 35%, 35%, 35%));
                 background-color: var(--background-color-2);
                 border-radius: 0.8rem;
                 display: flex;
@@ -157,26 +166,29 @@
                 padding: var(--spacing-sm);
                 flex: 6;
                 align-items: center;
+                @include responsive-size(flex, (4, 4, 6, 4, 4, 4, 4, 4, 4, 4));
 
                 p {
                     color: var(--color-secondary);
                     font-family: var(--font-secondary);
                     font-weight: 600;
-                    @include responsive-text-size(font-size, 0.2rem, 0.3rem, 0.6rem, 1rem, 1.5rem);
+                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw));
                 }
 
                 img {
-                    @include responsive-width(width, 1.5rem, 0.8rem, 1rem, 0.7rem, 1.5rem);
+                    @include responsive-size(width, (1.5rem, 1.5rem, 1rem, 0.7rem, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw));
                 }
             }
 
             .bottom-score {
                 flex: 2;
+                @include responsive-size(flex, (2, 2, 2, 2, 2, 2, 2, 2, 2, 2));
+
                 p {
                     font-weight: 400;
                     font-family: var(--font-secondary);
                     cursor: pointer;
-                    @include responsive-text-size(font-size, 0.2rem, 0.3rem, 0.6rem, 1rem, 1.5rem);
+                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.4vw));
                 }
             }
 
@@ -197,11 +209,11 @@
             align-items: center;
             cursor: pointer;
             width: 100%;
-            @include responsive-spacing(padding, 0.2rem, 0.5rem, 0.8rem, 1rem, 1.5rem);
-            @include responsive-text-size(font-size, 0.4rem, 0.6rem, 0.8rem, 1rem, 1.5rem);
+            @include responsive-size(padding, (0.2rem, 0.5rem, 0.8rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem));
+            @include responsive-size(font-size, (1rem, 1rem, 0.8rem, 1rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.4vw));
 
             img {
-                @include responsive-spacing(padding, --spacing-sm, --spacing-md, --spacing-lg, --spacing-xl, --spacing-xl);
+                @include responsive-size(padding, (--spacing-sm, --spacing-md, --spacing-lg, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl));
             }
         }
     }
@@ -243,7 +255,7 @@
         padding: 0.5rem 0.8rem 0.5rem 0.8rem;
         font-weight: 600;
         font-family: var(--font-secondary);
-        @include responsive-text-size(font-size, 0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8rem);
+        @include responsive-size(font-size, (0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw));
     }
 }
 
@@ -279,10 +291,6 @@
         .invite-container {
             margin-top: 1vh;
             padding: 1rem;
-
-            h3 {
-                font-size: 2vh;
-            }
         }
     }
 }
@@ -330,7 +338,7 @@
     }
 
     .user-container.expanded {
-        min-height: 115vh;
+        // min-height: 115vh;
 
         .nav-container {
             display: block !important;

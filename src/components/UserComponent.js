@@ -155,9 +155,15 @@ export default function UserComponent() {
                 {
                   userInformation && Object.entries(userInformation).map(([key, value]) => {
                     console.log(`${key}: ${value}`);
-                    return (
-                      <td key={key} >{value}</td>
-                    )
+
+                    if (key === 'name' || key === 'email' || key === 'state' || key === 'age') {
+
+                      return (
+                        <td key={key} >{value}</td>
+                      )
+                    } else {
+                      return null;
+                    }
                   })
                 }
               </tr>

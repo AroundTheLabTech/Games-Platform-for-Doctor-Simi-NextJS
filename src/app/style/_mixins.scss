@@ -1,109 +1,23 @@
-@mixin responsive-spacing($property, $space-sm, $space-md, $space-ls, $width-lg, $width-xl) {
-  & {
-    #{$property}: $space-sm;
-  }
-
-  @media (min-width: 600px) {
-    #{$property}: $space-md;
-  }
-
-  @media (min-width: 768px) {
-    #{$property}: $space-ls;
-  }
-
-  @media (min-width: 972px) {
-    #{$property}: $width-lg;
-  }
-
-  @media (min-width: 1200px) {
-    #{$property}: $width-xl;
-  }
-}
-
-@mixin responsive-width(
+@mixin responsive-size(
   $property,
-  $width-xs,
-  $width-sm,
-  $width-md,
-  $width-lg,
-  $width-xl
+  $values,
+  $breakpoints: (320px, 375px, 425px, 600px, 602px, 768px, 1024px, 1440px, 2560px)
 ) {
-  & {
-    #{$property}: $width-xs;
+  @if length($values) != (length($breakpoints) + 1) {
+    @error "The number of values must be one more than the number of breakpoints.";
   }
 
-  @media (min-width: 576px) {
-    #{$property}: $width-sm;
-  }
+  #{$property}: nth($values, 1);
 
-  @media (min-width: 768px) {
-    #{$property}: $width-md;
-  }
-
-  @media (min-width: 992px) {
-    #{$property}: $width-lg;
-  }
-
-  @media (min-width: 1200px) {
-    #{$property}: $width-xl;
+  @for $i from 1 through length($breakpoints) {
+    @media (min-width: nth($breakpoints, $i)) {
+      #{$property}: nth($values, $i + 1);
+    }
   }
 }
 
-@mixin responsive-height(
-  $property,
-  $height-xs,
-  $height-sm,
-  $height-md,
-  $height-lg,
-  $height-xl
-) {
-  & {
-    #{$property}: $height-xs;
-  }
-
-  @media (min-width: 576px) {
-    #{$property}: $height-sm;
-  }
-
-  @media (min-width: 768px) {
-    #{$property}: $height-md;
-  }
-
-  @media (min-width: 992px) {
-    #{$property}: $height-lg;
-  }
-
-  @media (min-width: 1200px) {
-    #{$property}: $height-xl;
-  }
-}
-
-
-@mixin responsive-text-size(
-  $property, 
-  $font-size-1, 
-  $font-size-2, 
-  $font-size-3, 
-  $font-size-4, 
-  $font-size-5
-) {
-  & {
-    #{$property}: $font-size-1;
-  }
-
-  @media (min-width: 576px) {
-    #{$property}: $font-size-2;
-  }
-
-  @media (min-width: 768px) {
-    #{$property}: $font-size-3;
-  }
-
-  @media (min-width: 992px) {
-    #{$property}: $font-size-4;
-  }
-
-  @media (min-width: 1200px) {
-    #{$property}: $font-size-5;
+@mixin responsive-custom-size($measure, $measure-value, $property, $property-value) {
+  @media (#{$measure}: $measure-value) {
+    #{$property}: $property-value;
   }
 }

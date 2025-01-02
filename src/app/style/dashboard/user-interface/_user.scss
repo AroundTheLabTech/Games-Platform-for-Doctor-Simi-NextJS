@@ -24,8 +24,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 5vh;
-            @include responsive-size(height, (5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 5vh, 6vh, 8vh));
+            @include responsive-size(height, (2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 10rem));
 
             img {
                 width: 50%;
@@ -34,8 +33,7 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 /* Añade una sombra */
                 position: relative;
-                top: -4vh;
-                @include responsive-size(top, (-4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -4vh, -3vh, -2vh));
+                @include responsive-size(top, (-1.5rem, -1.5rem, -1.5rem, -1.5rem, -1.5rem, -1.5rem, -1.5rem, -1.5rem, -1.5rem, -2rem));
             }
         }
 
@@ -89,6 +87,7 @@
     .nav-container {
         padding: var(--spacing-md);
         margin-top: var(--spacing-xl);
+        @include responsive-size(margin-top, (1.5rem, 0.8rem, 1rem, 1.5rem, 0.6rem, 0.6rem, 0.3rem, 1rem, 2rem, 3rem));
 
         ul {
             display: flex;
@@ -105,6 +104,7 @@
                 flex-direction: row;
                 width: 100%;
                 cursor: pointer;
+                @include responsive-size(margin-bottom, (1.5rem, 0.8rem, 1rem, 1.5rem, 0.6rem, 0.6rem, 0.3rem, 0.5rem, 0.8rem, 1.5rem));
 
                 button {
                     background: none;
@@ -113,7 +113,7 @@
                     font-family: var(--font-secondary);
                     font-weight: 500;
                     cursor: pointer;
-                    @include responsive-size(font-size, (1.5rem, 0.8rem, 1rem, 1.5rem, 0.6rem, 0.7rem, 1rem, 1rem, 1.5rem, 2.5rem));
+                    @include responsive-size(font-size, (1.5rem, 0.8rem, 1rem, 1.5rem, 0.6rem, 0.7rem, 0.8rem, 1rem, 1.5rem, 2rem));
                 }
 
                 img {
@@ -135,15 +135,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        justify-items: center;
         margin-top: var(--spacing-xxl);
-        @include responsive-size(margin-top, (0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw));
+        @include responsive-size(margin-top, (0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1vw));
 
         h3 {
             text-align: center;
             font-weight: 600;
             font-family: var(--font-secondary);
             margin-bottom: var(--spacing-xl);
-            @include responsive-size(font-size, (0.9rem, 0.8rem, 1rem, 1.1rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 1rem, 1.5rem));
+            @include responsive-size(font-size, (1rem, 1rem, 1.2rem, 1.1rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 1rem, 2rem));
             @include responsive-size(margin-bottom, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1.5rem, 2rem));
         }
 
@@ -164,15 +165,26 @@
                 flex-direction: row;
                 justify-content: space-between;
                 padding: var(--spacing-sm);
-                flex: 6;
                 align-items: center;
-                @include responsive-size(flex, (4, 4, 6, 4, 4, 4, 4, 4, 4, 4));
+                @include responsive-size(padding,
+                    (0.5rem 0.8rem,
+                        0.5rem 0.8rem,
+                        0.5rem 0.8rem,
+                        0.5rem 0.8rem,
+                        0.3rem,
+                        0.3rem,
+                        0.3rem,
+                        0.3rem,
+                        0.5rem,
+                        1rem 1.2rem));
+                @include responsive-size(border-radius, (0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.3rem, 0.3rem, 0.5rem, 0.5rem, 0.8rem, 1.5rem));
+                @include responsive-size(flex, (2, 3, 2, 2, 3, 3, 2.5, 4, 2.5, 2));
 
                 p {
                     color: var(--color-secondary);
                     font-family: var(--font-secondary);
                     font-weight: 600;
-                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw));
+                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.4vw, 1.2vw));
                 }
 
                 img {
@@ -188,7 +200,11 @@
                     font-weight: 400;
                     font-family: var(--font-secondary);
                     cursor: pointer;
-                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.4vw));
+                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 0.8rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.2vw));
+                }
+
+                .right {
+                    text-align: right;
                 }
             }
 
@@ -208,13 +224,19 @@
             justify-content: space-around;
             align-items: center;
             cursor: pointer;
-            width: 100%;
-            @include responsive-size(padding, (0.2rem, 0.5rem, 0.8rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem));
-            @include responsive-size(font-size, (1rem, 1rem, 0.8rem, 1rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.4vw));
-
-            img {
-                @include responsive-size(padding, (--spacing-sm, --spacing-md, --spacing-lg, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl, --spacing-xl));
-            }
+            @include responsive-size(padding,
+                (0.5rem 0.8rem,
+                0.5rem 0.8rem,
+                0.5rem 0.8rem,
+                0.5rem 0.8rem,
+                    0.5rem,
+                    0.5rem,
+                    0.5rem,
+                    0.5rem,
+                    0.5rem,
+                    0.5rem));
+            @include responsive-size(gap, (0.5rem, 0.5rem, 0.5rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem));
+            @include responsive-size(font-size, (1rem, 1rem, 0.8rem, 1rem, 1.3vw, 1.3vw, 1.3vw, 1.3vw, 1.4vw, 1.2vw));
         }
     }
 
@@ -243,6 +265,7 @@
     align-items: flex-end;
     margin-bottom: var(--spacing-xs);
     margin-top: var(--spacing-xxl);
+    @include responsive-size(margin-top, (4rem, 4rem, 2rem, 3rem, 3vw, 1.8vw, 4vw, 6vw, 5vw, 3vw));
 
 
     button {
@@ -255,7 +278,19 @@
         padding: 0.5rem 0.8rem 0.5rem 0.8rem;
         font-weight: 600;
         font-family: var(--font-secondary);
-        @include responsive-size(font-size, (0.5rem, 0.85rem, 1.15rem, 1.5rem, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw, 1.8vw));
+        @include responsive-size(padding,
+            (0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                0.5rem 0.8rem 0.5rem 0.8rem,
+                1rem 1.5rem 1rem 1.5rem));
+        @include responsive-size(border-radius, (0.4rem, 0.4rem, 0.4rem, 0.4rem, 0.4rem, 0.4rem, 0.4rem, 0.4rem, 0.6rem, 1rem));
+        @include responsive-size(font-size, (0.8rem, 0.85rem, 1.15rem, 1rem, 1.5vw, 1.8vw, 1.8vw, 1.2vw, 1.2vw, 1.4vw));
     }
 }
 
@@ -272,16 +307,6 @@
 
         .card-user {
             width: 100%;
-        }
-
-        .text-user {
-            h3 {
-                font-size: 2.3vh;
-            }
-
-            p {
-                font-size: 2vh;
-            }
         }
 
         .nav-container {

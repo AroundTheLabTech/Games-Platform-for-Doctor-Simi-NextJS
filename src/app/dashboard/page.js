@@ -290,6 +290,7 @@ export default function Dashboard() {
                       </div>
                       <div className="bottom-score">
                         <p
+                          className="right"
                           onClick={() => updateBetScore(+100)}
                         >+100</p>
                       </div>

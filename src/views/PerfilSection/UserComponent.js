@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { getGameCard, getUserInformation, getUserProfilePictures } from "@/services/backend";
 
-import { auth } from "../../lib/firebase";
+import { auth } from "../../../lib/firebase";
 
 function formarGameCardNumber(number) {
 

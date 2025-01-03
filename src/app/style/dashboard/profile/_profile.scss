@@ -167,9 +167,40 @@
         @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 4rem, 4rem));
 
         .personal-information-title {
+            display: flex;
+            justify-content: space-between;
+
             h3 {
                 color: black;
                 @include responsive-size(font-size, (1rem, 1.2rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1.5rem, 1.5rem, 2rem, 4rem));
+            }
+
+            .edit-button {
+                button {
+                    background-color: transparent;
+                    border: none;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .save-and-cancel-buttons {
+                display: flex;
+                gap: 10px;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: black;
+                    font-weight: bold;
+                    @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+                }
+
+                button:hover {
+                    cursor: pointer;
+                }
             }
         }
 
@@ -188,6 +219,15 @@
                     font-weight: bold;
                     padding-right: 10px;
                     @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+
+                    input {
+                        width: 100%;
+                        border: none;
+                        background-color: transparent;
+                        color: black;
+                        font-weight: bold;
+                        @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+                    }
                 }
             }
         }
@@ -222,6 +262,35 @@
                     width: 80px;
                     @include responsive-size(width, (60px, 70px, 70px, 80px, 80px, 80px, 70px, 100px, 150px, 250px));
                 }
+
+                img:hover {
+                    cursor: pointer;
+                }
+
+                .img-selected {
+                    border: 1px solid black;
+                    border-radius: 100%;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .update-button {
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                background-color: #6A5AE0;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 10px;
+                @include responsive-size(padding, (0.25rem, 0.25rem, 0.25rem, 0.4rem, 0.4rem, 0.4rem, 0.5rem, 0.75rem, 1rem, 1.5rem));
+                @include responsive-size(font-size, (0.3rem, 0.4rem, 0.4rem, 0.6rem, 0.6rem, 0.6rem, 0.8rem, 1.2rem, 1.5rem, 2rem));
+            }
+
+            button:hover {
+                cursor: pointer;
             }
         }
     }

@@ -1712,9 +1712,6 @@ form .select-gender option {
     cursor: pointer;
     padding-top: 1vh;
   }
-  .user-container.expanded {
-    min-height: 975px;
-  }
   .user-container.expanded .nav-container {
     display: block !important;
   }
@@ -1746,6 +1743,8 @@ form .select-gender option {
 }
 .games-container {
   background-image: url("/img/background/background-games.png");
+  background-size: cover;
+  background-position: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2382,7 +2381,7 @@ form .select-gender option {
   justify-content: center;
   align-items: center;
 }
-.games-container .selector-games .information-game .container-button button {
+.games-container .selector-games .information-game .container-button button button {
   all: unset;
   cursor: pointer;
   border: 3px #B46DA9 solid;
@@ -2393,60 +2392,60 @@ form .select-gender option {
   font-size: 2.4vw;
 }
 @media (min-width: 320px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 0.8rem;
   }
 }
 @media (min-width: 375px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 0.6rem;
   }
 }
 @media (min-width: 425px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 0.8rem;
   }
 }
 @media (min-width: 600px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1.2vw;
   }
 }
 @media (min-width: 602px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1.2vw;
   }
 }
 @media (min-width: 768px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1vw;
   }
 }
 @media (min-width: 1024px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1.1vw;
   }
 }
 @media (min-width: 1440px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1.1vw;
   }
 }
 @media (min-width: 2560px) {
-  .games-container .selector-games .information-game .container-button button {
+  .games-container .selector-games .information-game .container-button button button {
     font-size: 1.5vw;
   }
 }
-.games-container .selector-games .information-game .container-controles {
+.games-container .selector-games .information-game .container-button .container-controles {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.games-container .selector-games .information-game .container-controles img {
+.games-container .selector-games .information-game .container-button .container-controles img img {
   width: 100%;
 }
-.games-container .container-information {
+.games-container .selector-games .information-game .container-information {
   width: 47%;
   display: flex;
   justify-content: center;
@@ -2593,20 +2592,24 @@ form .select-gender option {
   justify-content: space-around;
   align-items: center;
   background-color: rgba(63, 120, 250, 0.6);
+  background-color: rgba(63, 120, 250, 0.6);
   padding: var(--spacing-lg);
   border-radius: 10px;
   cursor: pointer;
 }
-.catalog-games .game-selector img {
+.catalog-games .game-selector img img {
   color: #fff !important;
   width: 100%;
 }
 
 .game-selector-active {
   background-color: rgb(63, 120, 250) !important;
+  filter: drop-shadow(0px 0px 10px rgb(0, 255, 255));
 }
-
-#arcade {
+.game-selector-active .game-selector-active {
+  background-color: rgb(63, 120, 250) !important;
+}
+.game-selector-active #arcade {
   filter: drop-shadow(0px 0px 10px rgb(0, 255, 255));
 }
 
@@ -2618,7 +2621,7 @@ form .select-gender option {
     width: 5rem;
     height: 5rem;
   }
-  .responsive-mobile h3 {
+  .responsive-mobile h3 h3 {
     font-size: 0.4rem !important;
   }
 }
@@ -2666,7 +2669,15 @@ form .select-gender option {
     /* Habilita el desplazamiento horizontal */
     scroll-snap-type: x mandatory;
     /* Opcional: activa el scroll snapping horizontal */
+    overflow-x: auto;
+    /* Habilita el desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    /* Opcional: activa el scroll snapping horizontal */
     /* Oculta la barra de desplazamiento en algunos navegadores (opcional) */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
     -ms-overflow-style: none;
     /* IE y Edge */
     scrollbar-width: none;
@@ -2676,8 +2687,22 @@ form .select-gender option {
   .games-container .catalog-games .games-container-catalog::-webkit-scrollbar {
     display: none;
     /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
   }
   .games-container .catalog-games .games-container-catalog > div {
+    flex: 0 0 auto;
+    /* Evita que los elementos se estiren */
+    width: 200px;
+    /* Establece el ancho deseado para cada elemento */
+    margin-right: 16px;
+    /* Espacio entre los elementos */
+    scroll-snap-align: start;
+    /* Opcional: alinea el inicio de cada elemento al hacer scroll */
+    /* Otros estilos para los elementos */
+    /* ... */
+  }
+  .games-container .catalog-games .games-container-catalog > div > div {
     flex: 0 0 auto;
     /* Evita que los elementos se estiren */
     width: 200px;

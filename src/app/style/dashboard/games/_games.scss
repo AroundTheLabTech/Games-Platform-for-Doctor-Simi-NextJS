@@ -4,11 +4,15 @@
     background-image: url('/img/background/background-games.png');
     background-size: cover;
     background-position: center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    .selector-games {
 
     .selector-games {
         display: flex;
@@ -19,6 +23,7 @@
         margin-bottom: var(--spacing-xxl);
 
         .arcade-game {
+        .arcade-game {
             width: 47%;
             display: flex;
             flex-direction: column;
@@ -26,11 +31,14 @@
             align-items: center;
 
             img {
+
+            img {
                 width: 93%;
                 height: auto;
             }
         }
 
+        .information-game {
         .information-game {
             width: 70%;
             background-color: var(--background-color-1);
@@ -44,6 +52,7 @@
 
             //  Information Game Header
             .information-game-header {
+            .information-game-header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -51,6 +60,7 @@
                 @include responsive-size(gap, (1rem, 2rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 1rem, 1.5rem, 3rem));
 
                 // Container Puntos
+                .container-puntos {
                 .container-puntos {
                     background-color: var(--background-color-2);
                     padding: 0.7rem 1rem 0.7rem 1rem;
@@ -69,17 +79,23 @@
                     }
 
                     p {
+
+                    p {
                         color: var(--color-secondary);
                         font-family: var(--font-press);
                         @include responsive-size(font-size, (3vw, 4vw, 3.5vw, 3.8vw, 1vw, 1vw, 1vw, 1vw, 1vw, 1vw));
                     }
                 }
 
+
                 // Container Saber Más
+                .container-saber-mas {
                 .container-saber-mas {
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
+
+                    p {
 
                     p {
                         font-family: var(--font-press);
@@ -89,8 +105,10 @@
                     }
                 }
             }
+            }
 
             // Container Text
+            .container-text {
             .container-text {
                 display: flex;
                 justify-content: center;
@@ -107,11 +125,15 @@
                 }
             }
 
+
             // Container Button
+            .container-button {
             .container-button {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                button {
 
                 button {
                     all: unset;
@@ -125,12 +147,16 @@
                 }
             }
 
+
             // Container Controles
+            .container-controles {
             .container-controles {
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                img {
 
                 img {
                     width: 100%;
@@ -139,6 +165,7 @@
         }
     }
 
+    .container-information {
     .container-information {
         width: 47%;
         display: flex;
@@ -149,10 +176,13 @@
 }
 
 .text-boton-jugar {
+.text-boton-jugar {
     font-size: var(--font-size-xs) !important;
     font-family: var(--font-press);
 }
+}
 
+.container-boton-jugar {
 .container-boton-jugar {
     display: flex;
     flex-direction: column;
@@ -165,6 +195,7 @@
 // Catalogos de Juegos
 
 .catalog-games {
+.catalog-games {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -173,6 +204,7 @@
     border-radius: 10px;
 
     // Title
+    .title-games {
     .title-games {
         width: 100%;
         display: flex;
@@ -189,13 +221,19 @@
     }
 
     .games-container-catalog {
-        display: flex;
-        justify-content: space-evenly;
-        background-color: var(--background-color-1);
 
+    .games-container-catalog {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: var(--background-color-1);
+        gap: 20px;
+        row-gap: 20px;
     }
 
+
     // Games Card Selector
+    .game-selector {
     .game-selector {
         width: 20%;
         display: flex;
@@ -203,9 +241,12 @@
         justify-content: space-around;
         align-items: center;
         background-color: rgb(63, 120, 250, 0.6);
+        background-color: rgb(63, 120, 250, 0.6);
         padding: var(--spacing-lg);
         border-radius: 10px;
         cursor: pointer;
+
+        img {
 
         img {
             color: #fff !important;
@@ -213,9 +254,13 @@
         }
 
 
+
+
     }
 }
 
+.game-selector-active {
+    background-color: rgb(63, 120, 250, 1) !important;
 .game-selector-active {
     background-color: rgb(63, 120, 250, 1) !important;
 }
@@ -223,8 +268,15 @@
 #arcade {
     filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 1));
 }
+    filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 1));
+}
 
 // Horizontal
+@media only screen and (max-width: 970px) {
+    .games-container {
+        .selector-games {
+            .information-game {
+                p {
 @media only screen and (max-width: 970px) {
     .games-container {
         .selector-games {
@@ -237,8 +289,11 @@
     }
 
     .responsive-mobile {
+    .responsive-mobile {
         width: 5rem;
         height: 5rem;
+
+        h3 {
 
         h3 {
             font-size: 0.4rem !important;
@@ -249,8 +304,11 @@
 // Vertical
 @media only screen and (max-width:600px) {
     .games-container {
+@media only screen and (max-width:600px) {
+    .games-container {
         flex-direction: column;
 
+        .container-information {
         .container-information {
             width: 100%;
             justify-content: center;
@@ -258,16 +316,23 @@
         }
 
         .selector-games {
+        .selector-games {
             flex-direction: column;
             width: 100%;
+
+            .arcade-game {
 
             .arcade-game {
                 width: 100%;
 
                 img {
+
+                img {
                     width: 40%;
                 }
             }
+
+            .information-game {
 
             .information-game {
                 display: flex;
@@ -277,9 +342,11 @@
                 align-items: center;
 
                 img {
+                img {
                     margin-bottom: var(--spacing-md);
                 }
 
+                .information-game-header {
                 .information-game-header {
                     width: 100%;
 
@@ -288,14 +355,23 @@
         }
 
         .catalog-games {
+        .catalog-games {
             flex-direction: column;
+
+            div {
 
             div {
                 width: 100%;
             }
 
+
             .games-container-catalog {
                 display: flex;
+                overflow-x: auto;
+                /* Habilita el desplazamiento horizontal */
+                scroll-snap-type: x mandatory;
+                /* Opcional: activa el scroll snapping horizontal */
+
                 overflow-x: auto;
                 /* Habilita el desplazamiento horizontal */
                 scroll-snap-type: x mandatory;
@@ -307,10 +383,18 @@
                 scrollbar-width: none;
 
                 /* Firefox */
+                -ms-overflow-style: none;
+                /* IE y Edge */
+                scrollbar-width: none;
+
+                /* Firefox */
                 &::-webkit-scrollbar {
                     display: none;
                     /* Chrome, Safari y Opera */
+                    display: none;
+                    /* Chrome, Safari y Opera */
                 }
+
 
                 /* Estilos para los elementos hijos */
                 &>div {
@@ -325,7 +409,20 @@
 
                     /* Otros estilos para los elementos */
                     /* ... */
+                &>div {
+                    flex: 0 0 auto;
+                    /* Evita que los elementos se estiren */
+                    width: 200px;
+                    /* Establece el ancho deseado para cada elemento */
+                    margin-right: 16px;
+                    /* Espacio entre los elementos */
+                    scroll-snap-align: start;
+                    /* Opcional: alinea el inicio de cada elemento al hacer scroll */
+
+                    /* Otros estilos para los elementos */
+                    /* ... */
                 }
+            }
             }
         }
     }

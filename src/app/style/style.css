@@ -577,7 +577,7 @@ form .select-gender option {
     padding-top: 1vh;
   }
   .user-container.expanded {
-    min-height: 115vh;
+    min-height: 975px;
   }
   .user-container.expanded .nav-container {
     display: block !important;
@@ -760,8 +760,11 @@ form .select-gender option {
 }
 .catalog-games .games-container-catalog {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: var(--background-color-1);
+  gap: 20px;
+  row-gap: 20px;
 }
 .catalog-games .game-selector {
   width: 20%;
@@ -839,21 +842,30 @@ form .select-gender option {
   }
   .games-container .catalog-games .games-container-catalog {
     display: flex;
-    overflow-x: auto; /* Habilita el desplazamiento horizontal */
-    scroll-snap-type: x mandatory; /* Opcional: activa el scroll snapping horizontal */
+    overflow-x: auto;
+    /* Habilita el desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    /* Opcional: activa el scroll snapping horizontal */
     /* Oculta la barra de desplazamiento en algunos navegadores (opcional) */
-    -ms-overflow-style: none; /* IE y Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
     /* Estilos para los elementos hijos */
   }
   .games-container .catalog-games .games-container-catalog::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
   }
   .games-container .catalog-games .games-container-catalog > div {
-    flex: 0 0 auto; /* Evita que los elementos se estiren */
-    width: 200px; /* Establece el ancho deseado para cada elemento */
-    margin-right: 16px; /* Espacio entre los elementos */
-    scroll-snap-align: start; /* Opcional: alinea el inicio de cada elemento al hacer scroll */
+    flex: 0 0 auto;
+    /* Evita que los elementos se estiren */
+    width: 200px;
+    /* Establece el ancho deseado para cada elemento */
+    margin-right: 16px;
+    /* Espacio entre los elementos */
+    scroll-snap-align: start;
+    /* Opcional: alinea el inicio de cada elemento al hacer scroll */
     /* Otros estilos para los elementos */
     /* ... */
   }
@@ -1941,6 +1953,36 @@ form .select-gender option {
   border: 2px #000 solid;
   border-radius: 0.3rem;
 }
+.modal-content-competition .competition-container, .modal-content-notificaciones .competition-container {
+  width: 100%;
+}
+.modal-content-competition .competition-container .active-competition-title, .modal-content-notificaciones .competition-container .active-competition-title {
+  color: var(--color-secondary);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-secondary);
+}
+.modal-content-competition .competition-container .active-competition-content, .modal-content-notificaciones .competition-container .active-competition-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.modal-content-competition .competition-container .active-competition-content .show-more, .modal-content-notificaciones .competition-container .active-competition-content .show-more {
+  color: var(--color-secondary);
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-secondary);
+}
+.modal-content-competition .competition-container .active-competition-content .competition-card-container, .modal-content-notificaciones .competition-container .active-competition-content .competition-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 210px;
+  min-height: auto;
+}
 
 .modal-content-competition button, .modal-content-notificaciones button {
   padding: 0.6rem 2rem;
@@ -2111,4 +2153,82 @@ form .select-gender option {
   .boton-guardar .text-boton {
     font-size: 1.6vh !important;
   }
+}
+.container {
+  width: 100%;
+  height: 50px;
+}
+.container .informationContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+}
+.container .informationContainer .profilePicture {
+  flex: 1.8;
+  border-radius: 50%;
+}
+.container .informationContainer .userCompetition {
+  display: flex;
+  flex: 14;
+  gap: 10px;
+  justify-content: space-between;
+  /* Status Colors */
+}
+.container .informationContainer .userCompetition .username {
+  font-weight: 700;
+  color: #000000;
+}
+.container .informationContainer .userCompetition .competitionPointsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .informationContainer .userCompetition .competitionPointsContainer .competitionPoints {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  font-family: var(--font-press);
+}
+.container .informationContainer .userCompetition .statusDefault {
+  color: #6c757d;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusWait {
+  color: #cccccc;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusAccepted {
+  color: #007bff;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusRejected {
+  color: #ff4d4d;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusDraw {
+  color: #ffc107;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusWon {
+  color: #28a745;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .informationContainer .userCompetition .statusLost {
+  color: #6c757d;
+  font-family: var(--font-press);
+  font-size: 12px;
+}
+.container .baseline {
+  border-top: 1px solid #6c757d;
+  margin-left: 16%;
+  margin-right: 5%;
 }/*# sourceMappingURL=style.css.map */

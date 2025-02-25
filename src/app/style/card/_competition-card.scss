@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  height: 50px;
+
+  .informationContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+
+    .profilePicture {
+      flex: 1.8;
+      border-radius: 50%;
+    }
+
+    .userCompetition {
+      display: flex;
+      flex: 14;
+      gap: 10px;
+      justify-content: space-between;
+
+      .username {
+        font-weight: 700;
+        color: #000000;
+      }
+
+      .competitionPointsContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .competitionPoints {
+          font-size: 12px;
+          font-weight: bold;
+          color: #000000;
+          font-family: var(--font-press);
+        }
+      }
+
+      /* Status Colors */
+      .statusDefault {
+        color: #6c757d;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusWait {
+        color: #cccccc;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusAccepted {
+        color: #007bff;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusRejected {
+        color: #ff4d4d;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusDraw {
+        color: #ffc107;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusWon {
+        color: #28a745;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+
+      .statusLost {
+        color: #6c757d;
+        font-family: var(--font-press);
+        font-size: 12px;
+      }
+    }
+  }
+
+  .baseline {
+    border-top: 1px solid #6c757d;
+    margin-left: 16%;
+    margin-right: 5%;
+  }
+}

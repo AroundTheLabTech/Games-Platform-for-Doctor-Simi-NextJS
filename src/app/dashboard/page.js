@@ -48,6 +48,8 @@ export default function Dashboard() {
     //Mostrar Modal de Competencia: 
     const [showModal, setShowModal] = useState(false); // Controlamos la visibilidad del modal
 
+    const [isCreateCompetition, setIsCreateCompetition] = useState(false);
+
     // Función para aumentar o disminuir el betScore
     const updateBetScore = (change) => {
     setBetScore((prevBet) => {
@@ -62,6 +64,7 @@ export default function Dashboard() {
     
     // Condiciones: No menor a 100 y no mayor a totalScore
     if (newBet < 100) return 100; 
+    if (newBet > totalScore) return prevBet;
     return newBet;
   });
     };
@@ -74,7 +77,12 @@ export default function Dashboard() {
 
     const handleCloseModal = () => {
       setShowModal(false); // Cerrar modal
+      setIsCreateCompetition(false)
     };
+
+    const updateCreateCompetition = () => {
+      setIsCreateCompetition(true)
+    }
 
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -169,7 +177,7 @@ export default function Dashboard() {
       });
     
       return () => unsubscribe();
-    }, [router]);
+    }, [router, isCreateCompetition]);
     
   // -- DropDown---
 
@@ -318,7 +326,8 @@ export default function Dashboard() {
           </div>
 
         {/* //Modal de Competicion */}
-        {showModal && <BetModal betScore={betScore} updateBetScore={updateBetScore} onClose={handleCloseModal} userUID={user.uid} />}
+        {console.log(betScore)}
+        {showModal && <BetModal betScore={betScore} updateBetScore={updateBetScore} onClose={handleCloseModal} userUID={user.uid} userEmail={user.email} updateCreateCompetition={updateCreateCompetition} />}
 
         {/* Modal de Premios */}
         {showPremiosModal && (

@@ -1,0 +1,344 @@
+.dashboard-user-container{
+    padding: var(--spacing-md);
+    background-image: url('/img/background/background-games.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;      
+    flex-direction: column;
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        padding: var(--spacing-md);
+        justify-content: space-between;
+        font-family: var(--font-secondary);
+        width: 100%;
+        align-items: center;
+
+        h2{
+            font-size: var(--font-size-xl);
+        }
+        div{
+            padding: var(--spacing-md);
+        }
+        .container-racha{
+            background-color: rgba(0, 0, 0, 0.3); // Fondo negro con 30% de transparencia
+            border-radius: var(--spacing-md);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 23%;
+            align-items: center;
+
+            img{
+                margin-right: var(--spacing-md);
+                width: 10%;
+            }
+            p{
+                font-family: var(--font-secondary);
+                font-weight: 600;
+                width: 76%;
+                text-align: right;
+                font-size: var(--font-size-lg);
+            }
+        }
+    }
+
+    .container-general-dashboard{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md);
+
+
+    }
+    // Container-Info-Dashboard
+
+    .container-info-dashboard{
+      width: 49%;
+      height: 100%;
+      
+      // Bloque de Noticias de Temporada
+      .container-news{
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(
+          to bottom, 
+          rgba(106, 90, 224, 1) 0%,    /* #6A5AE0 a 100% de opacidad */
+          rgba(255, 253, 253, 0.2) 100% /* #FFFDFD a 20% de opacidad */        
+        );
+
+        min-height: 25vh;
+        border-radius: 0.6rem;
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+        // Left-News
+        .left-news{
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .title-news{
+              width: 100%;
+              h3{
+                font-size: 3.5vh;
+                line-height: 5vh;
+                span{
+                  font-family: var(--font-press);
+                  font-size: 3.5vh;
+                }
+              }
+            }
+
+            button{
+              all: unset;
+              cursor: pointer;
+              padding: 1rem 1.5rem 1rem 1.5rem;
+              background-color: var(--background-color-2);
+              border-radius: 0.6rem;
+              color: var(--color-secondary);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-weight: 600;
+              font-family: var(--font-secondary);
+              width: 40%;
+            }
+          
+        }
+
+        // Right News
+
+        .right-news{
+          width: 20%;
+          img{
+            position: relative;
+            top: -5vh;
+          }
+        }
+      }
+
+      // Bloque De Posición
+
+      .block-dashboard{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-radius: 0.4rem;
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        .text-image{
+          width: 60%;
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 2vh;
+          }
+          p{
+            font-family: var(--font-secondary);
+            font-weight: 600;
+          }
+        }
+
+        .pointer-block{
+          width: 40%;
+          display: flex;
+          align-items: center;
+          font-size: 2.5vh;
+          p{
+            font-family: var(--font-press);
+          }
+        }
+      }
+
+      .block-posicion{
+        background-color: #41D773;
+      }
+
+      .block-best-score{
+       background-color: #965BB0; 
+      }
+
+      .block-cantidad-partidas{
+        background-color: #CFB372;
+      }
+    }
+
+    // ---Ranking Mundial---
+
+    .ranking-mundial{
+      width: 49%;
+      padding: var(--spacing-md);
+      border-radius: 0.6rem;
+      background-color: #6A5AE0;
+      height: 100%;
+      
+      // Title Ranking
+      .title-ranking{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+          font-family: var(--font-secondary);
+          font-size: 5vh;
+          text-align: center;
+          margin-top: var(--spacing-md);
+        }
+      }
+
+      // Container User Ranking
+
+      .container-user-ranking{
+        background-color: var(--background-color-2);
+        border-radius: 1rem;
+    
+
+        .row-user{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem 1rem 2rem;
+          margin-top: var(--spacing-md);
+
+          // Corona
+          .container-corona{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            img{
+              width: 50%;
+            }
+            .corona-number{
+              font-family: var(--font-press);
+              color: var(--color-secondary);
+            }
+          }
+
+          // Usuario Informacion
+
+          .container-user-information{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            p{
+              color: var(--color-secondary);
+              text-align: center;
+              font-weight: 700;
+            }
+
+            span{
+              color: var(--color-secondary);
+              text-align: center;
+              font-weight: 700;
+            }
+          }
+
+          // Moneda Score
+
+          .container-puntajes-premios{
+            width: 20% ;
+            display: flex;
+            align-items: center;
+            p{
+              color: var(--color-secondary);
+              font-weight: 800;
+            }
+
+            img{
+              margin-right: 1vh;
+            }
+          }
+        }
+      }
+    }
+}
+
+
+
+
+// Celulares
+
+@media screen and (max-width: 600px){
+  .dashboard-user-container 
+  
+    .header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+      h2{
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+      }
+
+      .container-racha{
+        width: 100%;
+      }
+    }
+
+    // Container General Dashboard
+    .container-general-dashboard{
+      flex-direction: column;
+      // Container Info Dashboard
+
+      .container-info-dashboard{
+        width: 100%;
+
+        // Container News
+        .container-news{
+          flex-direction: column;
+
+          // Left
+          .left-news{
+            width: 100%;
+
+            .title-news{
+              h3{
+                span{
+                  font-size: 3vh;
+                }
+                font-size: 2.2vh;
+              }
+            }
+            margin-bottom: var(--spacing-lg);
+          }
+
+          .right-news{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+              position: static;
+            }
+          }
+        }
+        
+        // Block Dashboard
+        .block-dashboard{
+          .pointer-block{
+            display: flex;
+            justify-content: flex-end;
+            p{
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    // Ranking-Mundial
+
+    .ranking-mundial{
+      width: 100% !important;
+    }
+  
+}
+
+

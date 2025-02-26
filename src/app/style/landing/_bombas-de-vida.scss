@@ -1,0 +1,405 @@
+
+.container-landing{
+    background-color: var(--background-color-1);
+    flex: 1; // Abarque todo lo posible
+    padding: var(--spacing-lg);
+   
+    .title-bombas{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        img{
+            width: 100%;
+        }
+    }
+
+    .init-image{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-xxl);
+        padding-top: 0;
+        img{
+            width: 100%;
+        }
+    }
+
+    .section-intervenir{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: var(--spacing-xxl);
+        padding-bottom: 0;
+        padding-top: 0;
+
+        .text{
+            font-size: var(--font-size-sxxl);
+            .dr-simi{
+                color: #4886CD;
+            }
+
+            .simi-planeta{
+                color: #3BB285;
+            }
+        }
+    }
+
+    .simple-idea{
+        display: flex;
+        width: 100%;
+        padding: var(--spacing-xxl);
+        padding-top: 0;
+        align-items: center;
+        justify-content: space-between;
+        .text{
+            font-size: var(--font-size-sxxl);
+            font-weight: 570;
+            width: 50%;
+        }
+
+        .image{
+            width: 40%;
+            img{
+                width: 100%;
+            }
+        }
+
+    }
+
+    .section-green{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 100%;
+        }
+    }
+
+    .green-section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #D4EEDE;
+
+        .montain-green{
+            display: flex;
+            justify-content: space-between;
+            padding: var(--font-size-sxxl);
+            margin-top: var(--spacing-lg);
+            .image{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 80%;
+                }
+            }
+
+            .text{
+                color: var(--color-secondary);
+                font-family: var(--font-primary);
+                font-weight: bold;
+                font-size: var(--font-size-sxxl);
+                align-items: center;
+                width: 40%;
+                display: flex;
+
+                p{
+                    color: var(--color-secondary);
+                }
+                span{
+                    color: #3BB285;
+                }
+            }
+        }
+        
+        // Nacimiento Proyecto
+
+        .nacimiento-proyecto{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-xxl);
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .text{
+                width: 40%;
+                p{
+                    margin-bottom: var(--spacing-xl);
+                }
+            }
+
+            p{
+                color: var(--color-secondary);
+                font-weight: 600;
+                font-size: var(--font-size-xxl);
+                width: 100%;
+                br{
+                    margin-top: var(--spacing-sm);
+                }
+                span{
+                    font-family: var(--font-press);
+                    color: var(--color-secondary);
+                }
+            }
+
+            img{
+                width: 50%;
+            }
+        }
+
+        .section-subtitle{
+            padding: var(--spacing-xxl);
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p{
+                color: var(--color-secondary);
+                font-family: var(--font-primary);
+                font-weight: 500;
+                text-align: center;
+                font-size: var(--font-size-xxl);
+                margin-top: var(--spacing-lg);
+                width: 80%;
+                b{
+                    font-weight: 800;
+                    color: var(--color-secondary);
+                }
+
+            }
+        }
+
+        .avion-section{
+            padding: var(--spacing-xxl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    
+            .image{
+                width: 60%;
+                img{
+                    width: 100%;
+                }
+            }
+            .text{
+                width: 50%;
+                    
+                h3{
+                    color: var(--color-secondary);
+                    text-align: center;
+                    margin-bottom: var(--spacing-lg);
+                    font-size: var(--font-size-xxxl);
+                }
+            }
+
+        }
+
+        // tv-section
+
+        .tv-section{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-xxxl);
+            padding-top: 0;
+            padding-bottom: 0;
+            
+
+            .text{
+                width: 50%;
+                color: var(--color-secondary);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h2{
+                    color: var(--color-secondary);
+                    font-size: var(--font-size-xxxxl);
+                    text-align: center;
+
+                }
+                h3{
+                    color: var(--color-secondary);
+                    font-size: var(--font-size-sxxl);
+                    text-align: center;
+                    font-weight: 600;
+                }
+
+                button{
+                    all: unset;
+                    width: 20%;
+                    cursor: pointer;
+                    background-color: var(--background-color-1);
+                    color: var(--color-primary);
+                    border-radius: 0.4rem;
+                    padding: 0.4rem 1rem 0.4rem 1rem;
+                    margin-top: var(--spacing-lg);
+                    text-align: center;
+                }
+            }
+        }
+
+        // Redes
+
+        .redes{
+            width: 100%;
+            display: flex;
+            flex-direction:row;
+            justify-content: center;
+            align-items: center;
+            margin-top: var(--spacing-lg);
+            img{
+                width: 70%;
+            }
+        }
+
+}
+
+}
+
+#montainGreenImg {
+    opacity: 0;
+  }
+
+@media only screen and (max-width:600px){
+    .container-landing{
+        padding: 0;
+        .init-image{
+            padding: 0;
+            padding: var(--spacing-lg);
+        }
+
+        .section-intervenir{
+            padding: var(--spacing-lg);
+            flex-direction: column;
+            .text{
+                margin-top: var(--spacing-lg);
+                h3{
+                    font-size: var(--font-size-xxl);
+                    text-align: center;
+                }
+            }
+
+            .image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 60%;
+                }
+            }
+        }
+
+        .simple-idea{
+            flex-direction: column;
+            padding: var(--spacing-lg);
+            .image{
+                width: 100%;
+            }
+
+            .text{
+                width: 100%;
+                margin-bottom: var(--spacing-xl);
+                h3{
+                    font-size: var(--font-size-xxl);
+                    text-align: center;
+                }
+            }
+        }
+
+        .green-section{
+            .montain-green{
+                flex-direction: column;
+                .image{
+                    width: 100%;
+
+                }
+
+                .text{
+                    width: 100%;
+
+                }
+            }
+
+            .nacimiento-proyecto{
+                flex-direction: column;
+                padding: var(--spacing-lg);
+                .text{
+                    width: 100%;
+                }
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .section-subtitle{
+                padding: var(--spacing-lg);
+                p{
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+
+            .avion-section{
+                padding: var(--spacing-lg);
+                flex-direction: column;
+                .image{
+                    width: 100%;
+                    
+                }
+
+                .text{
+                    width: 100%;
+                    h3{
+                        margin-bottom: var(--spacing-xxl);
+                    }
+                }
+            }
+
+            .tv-section{
+                flex-direction: column;
+                padding: var(--spacing-lg);
+
+                .text{
+                    width: 100%;
+                    h2{
+                        font-size: var(--font-size-xxl);
+                    }
+                }
+
+                .tv{
+                    width: 90%;
+                    margin-top: var(--spacing-lg);
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            .redes{
+                margin-bottom: var(--spacing-xxl);
+                img{
+                    width: 90%;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+

@@ -1,0 +1,252 @@
+.modal-overlay-competition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content-competition {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: var(--color-secondary);
+        font-family: var(--font-secondary);
+        width: 70%;
+        margin-bottom: var(--spacing-md);
+    }
+
+    p {
+        color: var(--color-secondary);
+    }
+
+    .nav-competition {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        img {
+            width: 5%;
+            cursor: pointer;
+        }
+    }
+
+    .container-email-competencia {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: var(--spacing-xl);
+
+        h3 {
+            color: var(--color-secondary);
+            font-family: var(--font-press);
+            font-size: var(--font-size-xs);
+            margin-bottom: var(--spacing-md);
+        }
+
+        input {
+            all: unset;
+            border: 2px #000 solid;
+            width: 100%;
+            border-radius: 0.3rem;
+            color: var(--color-secondary);
+            display: flex;
+            padding: var(--spacing-sm);
+            font-family: var(--font-secondary);
+            text-align: left;
+        }
+    }
+
+
+    .container-toggle-score {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: var(--spacing-lg);
+
+        .bottom-score {
+            background-color: var(--background-color-1);
+            border-radius: 0.4rem;
+            padding: var(--spacing-sm);
+            font-family: var(--font-secondary);
+            cursor: pointer;
+
+            p {
+                color: var(--color-primary);
+            }
+        }
+
+        .score-apuesta {
+            display: flex;
+            flex-direction: row;
+            padding: var(--spacing-sm);
+            justify-content: space-evenly;
+            align-items: center;
+            border: 2px #000 solid;
+            border-radius: 0.3rem;
+        }
+    }
+
+    .competition-container {
+        width: 100%;
+
+        .active-competition-title {
+            color: var(--color-secondary);
+            font-size: var(--font-size-md);
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-secondary);
+        }
+
+        .active-competition-content {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+
+            width: 100%;
+
+            .show-more {
+                color: var(--color-secondary);
+                font-size: var(--font-size-xs);
+                margin-bottom: var(--spacing-md);
+                font-family: var(--font-secondary);
+            }
+
+            .competition-card-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                max-height: 210px;
+                min-height: auto;
+            }
+        }
+    }
+
+
+}
+
+//-- Boton Competir -- 
+
+.modal-content-competition button {
+    padding: 0.6rem 2rem;
+    background-color: var(--background-color-1);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    margin-top: var(--spacing-xl);
+    font-family: var(--font-press);
+    font-size: var(--font-size-sm);
+}
+
+.modal-content-competition button:hover {
+    background-color: #0056b3;
+}
+
+
+//   -- Validaciones Modal
+.correo-valido input {
+    border: 2px solid green !important;
+}
+
+.correo-invalido input {
+    border: 2px solid red !important;
+}
+
+
+
+// ---- Modal Notificaciones --- 
+
+.modal-content-notificaciones {
+    @extend .modal-content-competition;
+
+    h2 {
+        font-family: var(--font-secondary);
+    }
+
+    .notificacion-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .row-notificacion {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+
+            .image-notificacion {
+                width: 10%;
+
+                img {
+                    width: 100%;
+                    border-radius: 1rem;
+                }
+            }
+
+            .informacion-notificacion {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                h3 {
+                    color: var(--color-secondary);
+                    font-size: var(--font-size-md);
+                    font-family: var(--font-secondary);
+                }
+
+                p {
+                    font-family: var(--font-secondary);
+                    font-size: var(--font-size-sm);
+                }
+            }
+
+            .action-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 15%;
+            }
+
+
+        }
+    }
+}
+
+.container-message-competition {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-competition-creada {
+    h3 {
+        color: var(--color-secondary);
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+    }
+}

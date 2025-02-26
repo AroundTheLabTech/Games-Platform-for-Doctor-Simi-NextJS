@@ -1,0 +1,44 @@
+// Principal Dashboard
+
+.dashboard-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    .user-container{
+        width: 20%;
+        background-color: var(--color-third);
+    }
+    
+    .main-container{
+        width: 80%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 970px){
+    
+    .dashboard-container{
+        .user-container{
+            width:25%;
+        }
+    }
+ 
+}
+@media only screen and (max-width: 600px){
+    .dashboard-container{
+        flex-direction: column;
+
+        .user-container{
+            width: 100%;
+        }
+
+        .main-container{
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+}
+
+

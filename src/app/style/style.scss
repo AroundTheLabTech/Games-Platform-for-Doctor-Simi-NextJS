@@ -1,0 +1,25 @@
+
+@import 'login';
+@import 'media/botones';
+@import 'dashboard/dashboard';
+@import 'dashboard/user-interface/user';
+@import 'dashboard/games/games';
+@import 'dashboard/profile/profile';
+@import 'interface-media/interface-media';
+@import 'dashboard/dashboard-user/dashboardComponentStyle';
+@import 'dashboard/profile/profile';
+//Botone
+
+
+//Landing
+
+@import 'landing/bombas-de-vida';
+
+//Modal 
+
+@import 'modal/modal-competition.scss';
+@import 'modal/modal-premios';
+@import 'modal/modal-instrucciones';
+
+// Card
+@import 'card/competition-card'

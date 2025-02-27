@@ -124,7 +124,7 @@ export default function Game() {
 
         console.log(competitionSession)
 
-        if(competitionSession.message) {
+        if (competitionSession.message) {
           console.log(competitionSession.message);
         }
       });
@@ -189,8 +189,10 @@ export default function Game() {
         return "Simi Slash";
       case "juego4":
         return "Simi Life";
-      case "juego4":
+      case "juego5":
         return "Simi Globo";
+      case "juego6":
+        return "Tower Defense";
       default:
         return "Juego Desconocido";
     }
@@ -207,6 +209,8 @@ export default function Game() {
       case "juego4":
         return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
       case "juego5":
+        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+      case "juego6":
         return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
       default:
         return "Pronto vendras más";
@@ -225,6 +229,8 @@ export default function Game() {
         return "source-game/game-4/index.html";
       case "juego5":
         return "source-game/game-5/index.html";
+      case "juego6":
+        return "source-game/game-6/index.html";
       default:
         return "";
     }

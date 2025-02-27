@@ -143,6 +143,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
       titleSrc: "img/games/title/game-4.svg",
       description: "Usa la tecla para moverte por el cielo y esquivar cada peligro. Inspirado en el día del amor y la amistad, ¡pon a prueba tus reflejos y mantén tu globo intacto!",
     },
+    juego6: {
+      imageSrc: "img/games/arcade/game-4.png",
+      titleSrc: "img/games/title/game-4.svg",
+      description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+    },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];
@@ -305,11 +310,31 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                 setSelectedGame("juego5");
               }}            >
               <img src="img/games/portada/game-4.png" alt="Game 5" />
-              <button id="game-4"
+              <button id="game-5"
                 className="push--flat-small"
                 onClick={() => {
                   setActiveIndex(4);
                   setSelectedGame("juego5");
+                  handlePlayGame();
+                }}              >
+                <h3 className="text-boton game-selector-bottom"></h3>
+              </button>
+            </div>
+
+            {/* Game 6 */}
+            <div
+              className={`game-selector ${activeIndex === 5 ? "game-selector-active" : ""}`}
+              ref={(el) => gameSelectorRefs.current[5] = el}
+              onClick={() => {
+                setActiveIndex(5);
+                setSelectedGame("juego6");
+              }}            >
+              <img src="img/games/portada/game-4.png" alt="Game 6" />
+              <button id="game-6"
+                className="push--flat-small"
+                onClick={() => {
+                  setActiveIndex(5);
+                  setSelectedGame("juego6");
                   handlePlayGame();
                 }}              >
                 <h3 className="text-boton game-selector-bottom"></h3>

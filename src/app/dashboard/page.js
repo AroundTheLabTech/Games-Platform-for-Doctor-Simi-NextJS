@@ -24,6 +24,8 @@ import ModalPremios from "@/components/modal/ModalPremios";
 
 import DashboardContent from "../../views/Dashboard/DashboardView";
 
+import {getUserPoints} from "../../services/backend"
+
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -97,7 +99,15 @@ export default function Dashboard() {
 
           // Obtener el puntaje total del usuario
           const userScoreTotal = await GetScoreTotalService(user.uid);
+
           setTotalScore(userScoreTotal);
+
+          const userScore = await getUserPoints(user.uid)
+
+          if(userScore.score_total) {
+            setTotalScore(userScore.score_total);
+          }
+          
           if (userDoc.exists()) {
             setUserData(userDoc.data());
     
@@ -198,6 +208,10 @@ export default function Dashboard() {
       console.error("Error al cerrar sesión", error);
     }
   };
+
+  const changeSelectedView = (view) => {
+    setSelectedView(view)
+  }
 
   const handlePlayGame = () => {
     localStorage.setItem("selectedGame", selectedGame); // Guardar el juego seleccionado en localStorage
@@ -355,7 +369,7 @@ export default function Dashboard() {
         );
       } else if (selectedView === "dashboard") {
         return (
-          <DashboardContent streak={streak} userUID={user.uid} />
+          <DashboardContent streak={streak} userUID={user.uid} changeSelectedView={changeSelectedView} />
         );
       } else {
         return (

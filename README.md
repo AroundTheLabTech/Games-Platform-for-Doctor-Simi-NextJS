@@ -50,6 +50,11 @@ in the carpet of the submodule
       titleSrc: "img/games/title/game-4.svg",
       description: "Esta es la descripción de SimiSpace",
     },
+    juego5: {
+      imageSrc: "img/games/arcade/game-4.png",
+      titleSrc: "img/games/title/game-4.svg",
+      description: "Esta es la descripción de SimiSpace",
+    },
   };
 
 

@@ -194,6 +194,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               </div>
               {/* Texto e Información */}
               <div className="container-text">
+                <img src={titleSrc} alt="" />
                 <p ref={descriptionPRef}>{description}</p>
               </div>
 
@@ -219,127 +220,31 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
           </div>
           <div className="games-container-catalog">
 
-            {/* Game 1 */}
-            <div
-              className={`game-selector ${activeIndex === 0 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[0] = el}
-              onClick={() => {
-                setActiveIndex(0);
-                setSelectedGame("juego1");
-              }}
-            >
-              <img src="img/games/portada/game-1.png" alt="Game 1" />
-              <button id="game-1"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(0);
-                  setSelectedGame("juego1");
-                  handlePlayGame();
-                }}
-              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 2 */}
-            <div
-              className={`game-selector ${activeIndex === 1 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[1] = el}
-              onClick={() => {
-                setActiveIndex(1);
-                setSelectedGame("juego2");
-              }}
-            >
-
-              <img src="img/games/portada/game-2.png" alt="Game 2" />
-              <button id="game-2"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(1);
-                  setSelectedGame("juego2");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 3 */}
-            <div
-              className={`game-selector ${activeIndex === 2 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[2] = el}
-              onClick={() => {
-                setActiveIndex(2);
-                setSelectedGame("juego3");
-              }}
-            >
-              <img src="img/games/portada/game-3.png" alt="Game 3" />
-              <button id="game-3"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(2);
-                  setSelectedGame("juego3");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 4 */}
-            <div
-              className={`game-selector ${activeIndex === 3 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[3] = el}
-              onClick={() => {
-                setActiveIndex(3);
-                setSelectedGame("juego4");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 4" />
-              <button id="game-4"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(3);
-                  setSelectedGame("juego4");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-
-            {/* Game 5 */}
-            <div
-              className={`game-selector ${activeIndex === 4 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[4] = el}
-              onClick={() => {
-                setActiveIndex(4);
-                setSelectedGame("juego5");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 5" />
-              <button id="game-5"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(4);
-                  setSelectedGame("juego5");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-
-            {/* Game 6 */}
-            <div
-              className={`game-selector ${activeIndex === 5 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[5] = el}
-              onClick={() => {
-                setActiveIndex(5);
-                setSelectedGame("juego6");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 6" />
-              <button id="game-6"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(5);
-                  setSelectedGame("juego6");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
+              {Object.entries(gameData).map(([gameKey, game], index) => (
+                  <div
+                      key={gameKey}
+                      className={`game-selector ${activeIndex === index ? "game-selector-active" : ""}`}
+                      ref={(el) => gameSelectorRefs.current[index] = el}
+                      onClick={() => {
+                          setActiveIndex(index);
+                          setSelectedGame(gameKey);
+                      }}
+                  >
+                      <img src={`img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} />
+                      <img src={game.titleSrc} alt={`Game title ${index + 1}`} />
+                      <button
+                          id={`game-${index + 1}`}
+                          className="push--flat-small"
+                          onClick={() => {
+                              setActiveIndex(index);
+                              setSelectedGame(gameKey);
+                              handlePlayGame();
+                          }}
+                      >
+                          <h3 className="text-boton game-selector-bottom"></h3>
+                      </button>
+                  </div>
+              ))}
           </div>
         </div>
       </div>

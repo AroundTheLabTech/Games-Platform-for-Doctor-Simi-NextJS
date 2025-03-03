@@ -685,6 +685,7 @@ form .select-gender option {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: var(--spacing-xxl);
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
@@ -2298,4 +2299,4 @@ form .select-gender option {
   border-top: 1px solid #6c757d;
   margin-left: 16%;
   margin-right: 5%;
-}/*# sourceMappingURL=style.css.map */
+}

@@ -51,20 +51,22 @@
   justify-content: center;
   align-items: center;
   border: double var(--color-blue);
-  border-width: 0.6rem; /* Ajusta el grosor del borde según sea necesario */
-  margin: 0 var(--spacing-xl); // Cambiado margin-top por margin
-  height: auto; // Permitir que la altura se ajuste al contenido
-  max-height: 90%; // Evitar que sea demasiado alto
-  overflow-y: auto; // Por si el contenido es muy largo
+  border-width: 0.6rem;
+  margin: 0 var(--spacing-xl);
+  height: auto;
+  max-height: 90%;
+  overflow-y: auto;
+  width: 100%;
 
-  h1 {
+  h1, h2 {
     font-family: var(--font-press);
     text-align: center;
-    font-size: clamp(2rem, 5vw, var(--font-size-xxxxl)); // Ajuste adaptativo del tamaño
-    width: 100%; // Cambiado de 80% a 100%
-    word-wrap: break-word; // Asegura que las palabras largas se rompan
-    overflow-wrap: break-word; // Soporte adicional para navegadores
-    padding: 0 var(--spacing-md); // Añade un poco de padding horizontal
+    font-size: clamp(2rem, 5vw, var(--font-size-xxxxl));
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
   }
 }
 
@@ -89,28 +91,39 @@ form {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
+  width: 100%;
+  max-width: 600px;
 
   h2 {
     font-family: var(--font-press);
     font-size: var(--font-size-xxl);
+    margin-bottom: var(--spacing-xl);
   }
 
   input {
+    width: 100%;
     background: none;
     border: none;
+    border-bottom: 2px solid var(--color-blue);
     font-family: var(--font-press);
     margin-bottom: var(--spacing-xl);
     padding: var(--spacing-lg);
-    font-size: var(--font-size-lg);
+    font-size: clamp(1rem, 3vw, var(--font-size-lg));
     color: var(--color-primary);
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: var(--color-primary);
+    }
   }
 
   .inputs-container {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin-top: var(--spacing-xxl);
+    padding: 0 var(--spacing-xl);
   }
 
   .select-gender {

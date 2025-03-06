@@ -46,13 +46,14 @@
   justify-content: center;
   align-items: center;
   border: double var(--color-blue);
-  border-width: 0.6rem; /* Ajusta el grosor del borde según sea necesario */
+  border-width: 0.6rem;
   margin: 0 var(--spacing-xl);
   height: auto;
   max-height: 90%;
   overflow-y: auto;
+  width: 100%;
 }
-.container-center h1 {
+.container-center h1, .container-center h2 {
   font-family: var(--font-press);
   text-align: center;
   font-size: clamp(2rem, 5vw, var(--font-size-xxxxl));
@@ -60,6 +61,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   padding: 0 var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
 }
 
 .bottoms-container {
@@ -79,26 +81,36 @@ form {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 90%;
+  width: 100%;
+  max-width: 600px;
 }
 form h2 {
   font-family: var(--font-press);
   font-size: var(--font-size-xxl);
+  margin-bottom: var(--spacing-xl);
 }
 form input {
+  width: 100%;
   background: none;
   border: none;
+  border-bottom: 2px solid var(--color-blue);
   font-family: var(--font-press);
   margin-bottom: var(--spacing-xl);
   padding: var(--spacing-lg);
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 3vw, var(--font-size-lg));
   color: var(--color-primary);
+  transition: border-color 0.3s ease;
+}
+form input:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary);
 }
 form .inputs-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: var(--spacing-xxl);
+  padding: 0 var(--spacing-xl);
 }
 form .select-gender {
   font-family: var(--font-press);

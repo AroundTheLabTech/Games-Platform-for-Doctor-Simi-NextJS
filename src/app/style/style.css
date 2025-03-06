@@ -33,6 +33,10 @@
 }
 .container-login-game .login-center {
   width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .container-center {
@@ -43,15 +47,19 @@
   align-items: center;
   border: double var(--color-blue);
   border-width: 0.6rem; /* Ajusta el grosor del borde según sea necesario */
-  margin-top: var(--spacing-xl);
-  margin-right: var(--spacing-xl);
-  margin-left: var(--spacing-xl);
+  margin: 0 var(--spacing-xl);
+  height: auto;
+  max-height: 90%;
+  overflow-y: auto;
 }
 .container-center h1 {
   font-family: var(--font-press);
   text-align: center;
-  font-size: var(--font-size-xxxxl);
-  width: 80%;
+  font-size: clamp(2rem, 5vw, var(--font-size-xxxxl));
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 var(--spacing-md);
 }
 
 .bottoms-container {
@@ -180,10 +188,19 @@ form .select-gender option {
     margin: 0;
     height: 100%;
   }
+  .container-login .container-login-game .login-center .container-center h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, var(--font-size-xxxxl));
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 var(--spacing-md);
+  }
   .container-login .container-login-game .login-center .container-center .title-login {
-    width: 90%;
+    width: 100%;
     font-size: var(--font-size-xxl);
     line-height: 1.5;
+    padding: 0 var(--spacing-sm);
   }
   .container-login .container-login-game .login-center .container-center form h2 {
     text-align: center;
@@ -2300,3 +2317,5 @@ form .select-gender option {
   margin-left: 16%;
   margin-right: 5%;
 }
+
+/*# sourceMappingURL=style.css.map */

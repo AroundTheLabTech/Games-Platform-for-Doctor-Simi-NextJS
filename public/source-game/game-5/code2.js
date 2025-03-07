@@ -370,15 +370,20 @@ for (var i = 0, k = 0, l = gdjs.JugarCode.GDPlayerObjects2.length;i<l;++i) {
 gdjs.JugarCode.GDPlayerObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15182276);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15339052);
 }
 }
 }
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("FlatHeartBar"), gdjs.JugarCode.GDFlatHeartBarObjects2);
+/* Reuse gdjs.JugarCode.GDObstaculo1Objects2 */
+/* Reuse gdjs.JugarCode.GDObstaculo2Objects2 */
+/* Reuse gdjs.JugarCode.GDObstaculo3Objects2 */
 /* Reuse gdjs.JugarCode.GDPlayerObjects2 */
-{for(var i = 0, len = gdjs.JugarCode.GDPlayerObjects2.length ;i < len;++i) {
+/* Reuse gdjs.JugarCode.GDobtasculo4Objects2 */
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "woosh-230554.mp3", 2, false, 100, 1);
+}{for(var i = 0, len = gdjs.JugarCode.GDPlayerObjects2.length ;i < len;++i) {
     gdjs.JugarCode.GDPlayerObjects2[i].getBehavior("Health").Hit(1, true, true, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{for(var i = 0, len = gdjs.JugarCode.GDPlayerObjects2.length ;i < len;++i) {
@@ -391,6 +396,18 @@ gdjs.copyArray(runtimeScene.getObjects("FlatHeartBar"), gdjs.JugarCode.GDFlatHea
     gdjs.JugarCode.GDFlatHeartBarObjects2[i].SetValue((( gdjs.JugarCode.GDPlayerObjects2.length === 0 ) ? 0 :gdjs.JugarCode.GDPlayerObjects2[0].getBehavior("Health").Health((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{runtimeScene.getGame().getVariables().getFromIndex(0).sub(1);
+}{for(var i = 0, len = gdjs.JugarCode.GDObstaculo1Objects2.length ;i < len;++i) {
+    gdjs.JugarCode.GDObstaculo1Objects2[i].deleteFromScene(runtimeScene);
+}
+for(var i = 0, len = gdjs.JugarCode.GDObstaculo2Objects2.length ;i < len;++i) {
+    gdjs.JugarCode.GDObstaculo2Objects2[i].deleteFromScene(runtimeScene);
+}
+for(var i = 0, len = gdjs.JugarCode.GDObstaculo3Objects2.length ;i < len;++i) {
+    gdjs.JugarCode.GDObstaculo3Objects2[i].deleteFromScene(runtimeScene);
+}
+for(var i = 0, len = gdjs.JugarCode.GDobtasculo4Objects2.length ;i < len;++i) {
+    gdjs.JugarCode.GDobtasculo4Objects2[i].deleteFromScene(runtimeScene);
+}
 }}
 
 }
@@ -425,6 +442,7 @@ for(var i = 0, len = gdjs.JugarCode.GDobtasculo4Objects2.length ;i < len;++i) {
     gdjs.JugarCode.GDobtasculo4Objects2[i].deleteFromScene(runtimeScene);
 }
 }{runtimeScene.getGame().getVariables().getFromIndex(1).add(1);
+}{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "coin-recieved-230517.mp3", 3, false, 100, 1);
 }}
 
 }
@@ -438,9 +456,7 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(0).getAsNumber() <= 0);
 }
 if (isConditionTrue_0) {
-{runtimeScene.getGame().getVariables().getFromIndex(0).setNumber(1);
-}{runtimeScene.getGame().getVariables().getFromIndex(1).sub(1);
-}{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "game over", false);
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "game over", false);
 }}
 
 }
@@ -462,25 +478,51 @@ gdjs.copyArray(runtimeScene.getObjects("Puntos"), gdjs.JugarCode.GDPuntosObjects
 
 {
 
-gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.JugarCode.GDPlayerObjects1);
+gdjs.copyArray(runtimeScene.getObjects("Player"), gdjs.JugarCode.GDPlayerObjects2);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.JugarCode.GDPlayerObjects1.length;i<l;++i) {
-    if ( gdjs.JugarCode.GDPlayerObjects1[i].getBehavior("Health").IsJustDamaged((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
+for (var i = 0, k = 0, l = gdjs.JugarCode.GDPlayerObjects2.length;i<l;++i) {
+    if ( gdjs.JugarCode.GDPlayerObjects2[i].getBehavior("Health").IsJustDamaged((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) ) {
         isConditionTrue_0 = true;
-        gdjs.JugarCode.GDPlayerObjects1[k] = gdjs.JugarCode.GDPlayerObjects1[i];
+        gdjs.JugarCode.GDPlayerObjects2[k] = gdjs.JugarCode.GDPlayerObjects2[i];
         ++k;
     }
 }
-gdjs.JugarCode.GDPlayerObjects1.length = k;
+gdjs.JugarCode.GDPlayerObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15178284);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15343988);
 }
 }
 if (isConditionTrue_0) {
 }
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.storage.elementExistsInJSONFile("datos1", "MaxScore");
+if (isConditionTrue_0) {
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(0).getAsNumber() <= 0);
+}
+if (isConditionTrue_0) {
+{gdjs.evtTools.storage.writeNumberInJSONFile("datos1", "MaxScore", runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber());
+}}
 
 }
 
@@ -512,7 +554,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15253108);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15323404);
 }
 }
 }
@@ -553,7 +595,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.JugarCode.mapOfGDgdjs_9546JugarCode_9546GDMusicButtonObjects1Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14000852);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15325124);
 }
 }
 }
@@ -709,23 +751,7 @@ gdjs.JugarCode.eventsList7(runtimeScene);
 
 
 let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() >= 5);
-}
-if (isConditionTrue_0) {
-}
-
-}
-
-
 {
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() == 8);
-}
-if (isConditionTrue_0) {
 }
 
 }

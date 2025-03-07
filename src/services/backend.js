@@ -389,3 +389,30 @@ export const putCompetitionSession = async (competitionSession) => {
     return null;
   }
 };
+
+export const getUserPoints = async (uid) => {
+  try {
+    if (!uid) {
+      throw new Error('UID inválido');
+    }
+
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const response = await fetch(`api/scores/score_user/${uid}`, requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    // Alert.alert('Error', 'No se pudo obtener el puntaje del usuario');
+    return null;
+  }
+};

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import 'react-circular-progressbar/dist/styles.css';
 import { CompetitionService } from './application/CompetitionService.js';
 
-export default function DashboardComponent({userUID}) {
+export default function DashboardComponent({userUID, changeSelectedView}) {
   const [racha, setRacha] = useState(0);
 
   // Bloques de Información
@@ -58,11 +58,11 @@ export default function DashboardComponent({userUID}) {
             <div className="left-news">
               <div className="title-news">
                 <h3>
-                  <span>¡Simijuegos</span> <br />se visten de Navidad!
+                  <span>¡Simijuegos</span> <br />compite con estrategia!
                 </h3>
               </div>
               
-              <button>Jugar Ahora
+              <button onClick={() => changeSelectedView("games")} >Jugar Ahora
                 <img src="img/icons/play.svg" alt="" />
               </button>
             </div>
@@ -70,7 +70,9 @@ export default function DashboardComponent({userUID}) {
             {/* Right News */}
 
             <div className="right-news">
+              {/* 
               <img src="img/dashboard/arbolNavidad.svg" alt="" />
+              */}
             </div>
           </div>
           

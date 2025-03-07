@@ -207,7 +207,7 @@ export default function UserComponent() {
             </div>
           </div>
 
-          <div className="personality">
+          <div className="personality" style={{display: "none"}}>
 
             {/* Title */}
             <div className="title-personality">

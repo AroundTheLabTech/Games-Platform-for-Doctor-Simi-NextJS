@@ -10,39 +10,21 @@
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>GS</title>
-        <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
             overflow: hidden;
-            font-family: Arial, sans-serif; /* Aseguramos que la tipografía sea clara */
-        }
-
-        /* Aseguramos que el canvas se ajuste bien */
+		}
         #canvasArea {
-            display: block; /* Elimina el espacio debajo del canvas */
             margin-left: auto;
             margin-right: auto;
-            width: 100%; /* Se ajusta al 100% del ancho disponible */
-            height: 100vh; /* Se ajusta a la altura completa de la pantalla */
             overflow: hidden;
         }
 
-        /* Estilos de seguridad para pequeñas pantallas */
-        @media (max-width: 600px) {
-            body {
-                background-color: #111; /* Un color más suave en dispositivos pequeños */
-            }
-            #canvasArea {
-                height: auto; /* Evitamos el desbordamiento en pantallas más pequeñas */
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-
+        
+	</style>
     <!-- Libs and GDJS core files : -->
 		<script src="libs/jshashtable.js" crossorigin="anonymous"></script>
 	<script src="logger.js" crossorigin="anonymous"></script>

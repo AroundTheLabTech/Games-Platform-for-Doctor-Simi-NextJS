@@ -232,8 +232,8 @@ export default function Dashboard() {
           {/* Card User */}
 
             <div className="dropdown-indicator">
-                {isDropdownOpen ? "▲" : "▼"}
-            </div>`
+                {isDropdownOpen ? "≡" : "≡"}
+            </div>
 
             <div className="card-user">
               <div className="perfil-container">
@@ -334,7 +334,7 @@ export default function Dashboard() {
                   >
                     Cerrar Sesión
                   </button>            
-            </div>`
+            </div>
             
        
           </div>

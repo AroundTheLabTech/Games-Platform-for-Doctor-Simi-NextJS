@@ -3,9 +3,6 @@ gdjs.MenuCode.localVariables = [];
 gdjs.MenuCode.GDFondoAObjects1= [];
 gdjs.MenuCode.GDFondoAObjects2= [];
 gdjs.MenuCode.GDFondoAObjects3= [];
-gdjs.MenuCode.GDFondoBObjects1= [];
-gdjs.MenuCode.GDFondoBObjects2= [];
-gdjs.MenuCode.GDFondoBObjects3= [];
 gdjs.MenuCode.GDTitleObjects1= [];
 gdjs.MenuCode.GDTitleObjects2= [];
 gdjs.MenuCode.GDTitleObjects3= [];
@@ -15,9 +12,6 @@ gdjs.MenuCode.GDLogoObjects3= [];
 gdjs.MenuCode.GDMusicButtonObjects1= [];
 gdjs.MenuCode.GDMusicButtonObjects2= [];
 gdjs.MenuCode.GDMusicButtonObjects3= [];
-gdjs.MenuCode.GDSoundButtonObjects1= [];
-gdjs.MenuCode.GDSoundButtonObjects2= [];
-gdjs.MenuCode.GDSoundButtonObjects3= [];
 gdjs.MenuCode.GDBotonJugarObjects1= [];
 gdjs.MenuCode.GDBotonJugarObjects2= [];
 gdjs.MenuCode.GDBotonJugarObjects3= [];
@@ -26,8 +20,8 @@ gdjs.MenuCode.GDInstruccionesObjects2= [];
 gdjs.MenuCode.GDInstruccionesObjects3= [];
 
 
-gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDInstruccionesObjects1Objects = Hashtable.newFrom({"Instrucciones": gdjs.MenuCode.GDInstruccionesObjects1});
 gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDBotonJugarObjects1Objects = Hashtable.newFrom({"BotonJugar": gdjs.MenuCode.GDBotonJugarObjects1});
+gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDInstruccionesObjects1Objects = Hashtable.newFrom({"Instrucciones": gdjs.MenuCode.GDInstruccionesObjects1});
 gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDMusicButtonObjects1Objects = Hashtable.newFrom({"MusicButton": gdjs.MenuCode.GDMusicButtonObjects1});
 gdjs.MenuCode.eventsList0 = function(runtimeScene) {
 
@@ -78,31 +72,11 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15120868);
+}
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.window.setAdaptGameResolutionAtRuntime(runtimeScene, true);
-}{gdjs.evtTools.window.setFullScreen(runtimeScene, true, true);
-}{gdjs.evtTools.window.setGameResolutionResizeMode(runtimeScene, "adaptHeight");
-}{gdjs.evtTools.window.setGameResolutionResizeMode(runtimeScene, "adaptWidth");
-}}
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Instrucciones"), gdjs.MenuCode.GDInstruccionesObjects1);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDInstruccionesObjects1Objects, runtimeScene, true, false);
-}
-if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "instrucciones", false);
 }}
 
 }
@@ -128,6 +102,24 @@ if (isConditionTrue_0) {
 
 {
 
+gdjs.copyArray(runtimeScene.getObjects("Instrucciones"), gdjs.MenuCode.GDInstruccionesObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDInstruccionesObjects1Objects, runtimeScene, true, false);
+}
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "instrucciones", false);
+}}
+
+}
+
+
+{
+
 gdjs.copyArray(runtimeScene.getObjects("MusicButton"), gdjs.MenuCode.GDMusicButtonObjects1);
 
 let isConditionTrue_0 = false;
@@ -136,6 +128,11 @@ isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MenuCode.mapOfGDgdjs
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15123596);
+}
+}
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.toggleVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2));
@@ -155,9 +152,6 @@ runtimeScene.getOnceTriggers().startNewFrame();
 gdjs.MenuCode.GDFondoAObjects1.length = 0;
 gdjs.MenuCode.GDFondoAObjects2.length = 0;
 gdjs.MenuCode.GDFondoAObjects3.length = 0;
-gdjs.MenuCode.GDFondoBObjects1.length = 0;
-gdjs.MenuCode.GDFondoBObjects2.length = 0;
-gdjs.MenuCode.GDFondoBObjects3.length = 0;
 gdjs.MenuCode.GDTitleObjects1.length = 0;
 gdjs.MenuCode.GDTitleObjects2.length = 0;
 gdjs.MenuCode.GDTitleObjects3.length = 0;
@@ -167,9 +161,6 @@ gdjs.MenuCode.GDLogoObjects3.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects1.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects2.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects3.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects1.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects2.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects3.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects1.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects2.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects3.length = 0;
@@ -181,9 +172,6 @@ gdjs.MenuCode.eventsList1(runtimeScene);
 gdjs.MenuCode.GDFondoAObjects1.length = 0;
 gdjs.MenuCode.GDFondoAObjects2.length = 0;
 gdjs.MenuCode.GDFondoAObjects3.length = 0;
-gdjs.MenuCode.GDFondoBObjects1.length = 0;
-gdjs.MenuCode.GDFondoBObjects2.length = 0;
-gdjs.MenuCode.GDFondoBObjects3.length = 0;
 gdjs.MenuCode.GDTitleObjects1.length = 0;
 gdjs.MenuCode.GDTitleObjects2.length = 0;
 gdjs.MenuCode.GDTitleObjects3.length = 0;
@@ -193,9 +181,6 @@ gdjs.MenuCode.GDLogoObjects3.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects1.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects2.length = 0;
 gdjs.MenuCode.GDMusicButtonObjects3.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects1.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects2.length = 0;
-gdjs.MenuCode.GDSoundButtonObjects3.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects1.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects2.length = 0;
 gdjs.MenuCode.GDBotonJugarObjects3.length = 0;

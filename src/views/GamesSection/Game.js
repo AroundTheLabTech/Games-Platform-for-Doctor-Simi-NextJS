@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import Image from "next/image";
 
 // Registrar el plugin de texto con GSAP
 gsap.registerPlugin(TextPlugin);
@@ -118,34 +119,34 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
 
   const gameData = {
     juego1: {
-      imageSrc: "img/games/arcade/game-1.png",
-      titleSrc: "img/games/title/game-1.svg",
+      imageSrc: "/img/games/arcade/game-1.png",
+      titleSrc: "/img/games/title/game-1.svg",
       description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?"
       ,
     },
     juego2: {
-      imageSrc: "img/games/arcade/game-2.png",
-      titleSrc: "img/games/title/game-2.svg",
+      imageSrc: "/img/games/arcade/game-2.png",
+      titleSrc: "/img/games/title/game-2.svg",
       description: "¡Acompaña a Simi, recolecta monedas, esquiva obstáculos y desbloquea niveles! Demuestra tus skills en este épico desafío.",
     },
     juego3: {
-      imageSrc: "img/games/arcade/game-3.png",
-      titleSrc: "img/games/title/game-3.svg",
+      imageSrc: "/img/games/arcade/game-3.png",
+      titleSrc: "/img/games/title/game-3.svg",
       description: "¡No dejes caer ni una Rosca! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
     },
     juego4: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
+      imageSrc: "/img/games/arcade/game-4.png",
+      titleSrc: "/img/games/title/game-4.svg",
       description: "¡Pilota el avión del SimiFest, lanza Bombas de Vida y siembra esperanza! Conviértete en un héroe ecológico ahora.",
     },
     juego5: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
+      imageSrc: "/img/games/arcade/game-5.png",
+      titleSrc: "/img/games/title/game-5.svg",
       description: "Usa la tecla para moverte por el cielo y esquivar cada peligro. Inspirado en el día del amor y la amistad, ¡pon a prueba tus reflejos y mantén tu globo intacto!",
     },
     juego6: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
+      imageSrc: "/img/games/arcade/game-6.png",
+      titleSrc: "/img/games/title/game-6.svg",
       description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
     },
   };
@@ -174,7 +175,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
           {/* Imagen de Arcade */}
           <div className="arcade-game">
             {/* Arcade */}
-            <img id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" />
+            <Image id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" width={453} height={455} />
           </div>
           {/* Información del Juego -- MiniPantalla*/}
           <div className="container-information">
@@ -183,7 +184,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               <div className="information-game-header">
                 {/* Container Puntos */}
                 <div className="container-puntos">
-                  <img src="img/icons/monedaScore.svg" alt="" />
+                  <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
                   <p>+20</p>
                 </div>
 
@@ -194,7 +195,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               </div>
               {/* Texto e Información */}
               <div className="container-text">
-                <img src={titleSrc} alt="" />
+                <Image src={titleSrc} alt="" width={200} height={100} />
                 <p ref={descriptionPRef}>{description}</p>
               </div>
 
@@ -206,7 +207,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               </div>
 
               <div className="container-controles">
-                <img src="img/dashboard/controles.svg" alt="" />
+                <Image className="controls-icon" src="/img/dashboard/controles.svg" alt="" width={200} height={180} />
               </div>
             </div>
           </div>
@@ -230,8 +231,8 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                           setSelectedGame(gameKey);
                       }}
                   >
-                      <img src={`img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} />
-                      <img src={game.titleSrc} alt={`Game title ${index + 1}`} />
+                      <Image src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
+                      <Image src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
                       <button
                           id={`game-${index + 1}`}
                           className="push--flat-small"

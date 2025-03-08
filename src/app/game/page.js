@@ -14,6 +14,7 @@ export default function Game() {
   const [iframeVisible, setIframeVisible] = useState(true);
   const [showModal, setShowModal] = useState(true);
   const [showRotateScreen, setShowRotateScreen] = useState(false);
+  const [previusScore, setPreviusScore] = useState(0);
   const router = useRouter();
   const [user, setUser] = useState(null);
 
@@ -70,7 +71,30 @@ export default function Game() {
           setScoreWon(scoreValue)
         }
       } else if (selectedGame === "juego5") {
-        console.log(event.data)
+        if (event.data && event.data.type === "scoreUpdate") {
+
+          const scoreValue = Number(event.data.score);
+
+          if(scoreValue > 0) {
+            if(previusScore != scoreValue && scoreValue > previusScore) {
+              setCurrentScore(scoreValue);
+              setScoreWon(scoreValue);
+              setPreviusScore(scoreValue);
+            }
+          }
+        }
+      } else if (selectedGame === "juego6") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if(scoreValue > 0) {
+            if(previusScore != scoreValue && scoreValue > previusScore) {
+              setCurrentScore(scoreValue);
+              setScoreWon(scoreValue);
+              setPreviusScore(scoreValue);
+            }
+          }
+        }
       }
     };
 

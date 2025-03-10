@@ -23,7 +23,7 @@ gdjs.Pantalla_32Game_32OverCode.mapOfGDgdjs_9546Pantalla_959532Game_959532OverCo
 gdjs.Pantalla_32Game_32OverCode.mapOfGDgdjs_9546Pantalla_959532Game_959532OverCode_9546GDboton_95959595repetirObjects1Objects = Hashtable.newFrom({"boton_repetir": gdjs.Pantalla_32Game_32OverCode.GDboton_9595repetirObjects1});
 gdjs.Pantalla_32Game_32OverCode.mapOfGDgdjs_9546Pantalla_959532Game_959532OverCode_9546GDFondo_95959595negro2Objects1Objects = Hashtable.newFrom({"Fondo_negro2": gdjs.Pantalla_32Game_32OverCode.GDFondo_9595negro2Objects1});
 gdjs.Pantalla_32Game_32OverCode.mapOfGDgdjs_9546Pantalla_959532Game_959532OverCode_9546GDBoton_95959595guardarObjects1Objects = Hashtable.newFrom({"Boton_guardar": gdjs.Pantalla_32Game_32OverCode.GDBoton_9595guardarObjects1});
-gdjs.Pantalla_32Game_32OverCode.userFunc0xaafb30 = function GDJSInlineCode(runtimeScene) {
+gdjs.Pantalla_32Game_32OverCode.userFunc0xacdbe8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 
@@ -33,7 +33,7 @@ gdjs.Pantalla_32Game_32OverCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.Pantalla_32Game_32OverCode.userFunc0xaafb30(runtimeScene);
+gdjs.Pantalla_32Game_32OverCode.userFunc0xacdbe8(runtimeScene);
 
 }
 
@@ -163,7 +163,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13782340);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13784692);
 }
 }
 }

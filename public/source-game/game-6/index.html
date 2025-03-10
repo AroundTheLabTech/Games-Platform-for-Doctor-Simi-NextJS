@@ -24,6 +24,10 @@
       margin-right: auto;
       overflow: hidden;
     }
+
+    #watermark {
+      display: none !important;
+    }
   </style>
   <!-- Libs and GDJS core files : -->
   <script src="libs/jshashtable.js" crossorigin="anonymous"></script>
@@ -112,6 +116,7 @@
 
 
   <script>
+
     function sendScoreToParent(score) {
       window.parent.postMessage({ type: "scoreUpdate", score: score }, "*");
     }
@@ -132,8 +137,7 @@
 
         setInterval(function () {
           if (game && game.getVariables()) {
-            console.log("Score: " + game.getVariables().get("Score").getAsNumber());
-            var score = game.getVariables().get("Score").getAsNumber();
+            var score = game.getVariables().get("Monedas_Final").getAsNumber();
             sendScoreToParent(score);
           }
         }, 500);

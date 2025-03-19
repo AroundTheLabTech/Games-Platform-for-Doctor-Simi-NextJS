@@ -10,6 +10,7 @@ import {onAuthStateChanged} from "firebase/auth";
 
 // --Animations--
 import gsap from "gsap";
+import { putResetPassword } from '@/services/backend';
 
 export default function Home() {
   const router = useRouter(); // Inicializa useRouter para redireccionar
@@ -23,6 +24,7 @@ export default function Home() {
   const [age, setAge] = useState("");
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [showResetPasswordForm, setShowResetPasswordForm] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [showAvionImage, setShowAvionImage] = useState(true);
@@ -56,6 +58,14 @@ export default function Home() {
 
     return () => unsubscribe();
   }, [router]);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const mode = searchParams.get('mode');
+    if (mode === 'resetPassword') {
+      window.location.href = `/reset-password?oobCode=${searchParams.get('oobCode')}`;
+    }
+  }, []);
 
   // -- Animation Anuncio --
 
@@ -126,6 +136,19 @@ export default function Home() {
     }
   };
 
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    try {
+      await putResetPassword(email);
+      console.log('Password reset email sent');
+      setShowModal(true);
+      setModalMessage("Envío de correo exitoso. Por favor, revisa tu bandeja de entrada.");
+    } catch (error) {
+      console.error('Error sending password reset email:', error);
+      handleAuthError(error);
+    }
+  }
+
   const handleAuthError = (error) => {
     let message = "Ocurrió un error. Por favor, intenta de nuevo.";
     if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
@@ -148,6 +171,7 @@ export default function Home() {
     setShowLoginForm(true);
     setShowRegisterForm(false);
     setShowModal(false);
+    setShowResetPasswordForm(false);
   };
 
   const handleRegisterButtonClick = () => {
@@ -156,11 +180,23 @@ export default function Home() {
     setShowLoginForm(false);
   };
 
+  const handleResetPasswordButtonClick = () => {
+    playSound();
+    setShowResetPasswordForm(true);
+    setShowLoginForm(false);
+    setShowRegisterForm(false);
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
     if (modalMessage === "Registro exitoso. ¡Tu cuenta ha sido creada!") {
       setShowRegisterForm(false);
       setShowLoginForm(true);
+      setShowResetPasswordForm(false);
+    } else if (modalMessage === "Envío de correo exitoso. Por favor, revisa tu bandeja de entrada.") {
+      setShowResetPasswordForm(false);
+      setShowLoginForm(true);
+      setShowRegisterForm(false);
     }
   };
 
@@ -183,7 +219,7 @@ export default function Home() {
 
         <div className="login-center">
           <div className="container-center">
-            {!showLoginForm && !showRegisterForm && (
+            {!showLoginForm && !showRegisterForm && !showResetPasswordForm && (
               <>
                 <h1 className="title-login">
                   ¡GANAR NUNCA FUE MÁS DIVERTIDO!
@@ -220,6 +256,9 @@ export default function Home() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+                </div>
+                <div className="reset-password-container">
+                  <p className='reset-password' onClick={handleResetPasswordButtonClick} >¿Olvidaste tu contraseña?</p>
                 </div>
                 <div className="bottoms-container">
                   <button className="push--flat" type="submit">
@@ -286,6 +325,30 @@ export default function Home() {
                 </div>
               </form>
             )}
+
+            {
+              showResetPasswordForm && (
+                <form onSubmit={handleResetPassword}>
+                <h2 className='reset-password-title' >Restablecer contraseña</h2>
+                <div className="inputs-container">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="bottoms-container">
+                  <button className="push--flat" type="submit">
+                    <h3 className="text-boton reset-password-button-text">ENVIAR</h3>
+                  </button>
+                  <button className="push--flat-blue" onClick={handleLoginButtonClick}>
+                    <h3 className="text-boton-2">LOGIN</h3>
+                  </button>
+                </div>
+              </form>
+              )
+            }
           </div>
         </div>
 

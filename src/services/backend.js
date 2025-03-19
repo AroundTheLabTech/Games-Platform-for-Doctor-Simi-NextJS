@@ -84,7 +84,6 @@ export const updateUserInformation = async (uid, data) => {
   }
 }
 
-
 export const getUserPicture = async (uid) => {
   try {
     if (!uid) {
@@ -416,3 +415,49 @@ export const getUserPoints = async (uid) => {
     return null;
   }
 };
+
+export const putResetPassword = async (email) => {
+  try {
+    if (!email) {
+      throw new Error('Email inválido');
+    }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    };
+
+    const response = await fetch(`api/users/reset_password/${email}`, requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const applyNewPassword = async (oobCode, newPassword) => {
+  try {
+    const response = await fetch(`/api/users/apply_new_password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ oob_code: oobCode, new_password: newPassword }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+

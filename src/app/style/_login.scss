@@ -68,12 +68,20 @@
     padding: 0 var(--spacing-md);
     margin-bottom: var(--spacing-xl);
   }
+
+  .reset-password-title {
+    font-size: var(--font-size-xxl);
+  }
 }
 
 .bottoms-container {
   display: flex;
   flex-direction: row;
   margin-top: var(--spacing-xl);
+
+  .reset-password-button-text {
+    font-size: var(--font-size-xs);
+  }
 }
 
 .text-boton-2 {
@@ -141,6 +149,19 @@ form {
   }
 }
 
+.reset-password-container {
+  width: 100%;
+  padding: 0 var(--spacing-xl);
+
+  .reset-password {
+    font-family: var(--font-press);
+    font-size: var(--font-size-sm);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
 
 //Modal
 .modal {

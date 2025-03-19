@@ -63,11 +63,17 @@
   padding: 0 var(--spacing-md);
   margin-bottom: var(--spacing-xl);
 }
+.container-center .reset-password-title {
+  font-size: var(--font-size-xxl);
+}
 
 .bottoms-container {
   display: flex;
   flex-direction: row;
   margin-top: var(--spacing-xl);
+}
+.bottoms-container .reset-password-button-text {
+  font-size: var(--font-size-xs);
 }
 
 .text-boton-2 {
@@ -123,6 +129,18 @@ form .select-gender option {
   background-color: var(--color-secondary);
   padding: var(--spacing-md);
   margin-top: var(--spacing-md);
+}
+
+.reset-password-container {
+  width: 100%;
+  padding: 0 var(--spacing-xl);
+}
+.reset-password-container .reset-password {
+  font-family: var(--font-press);
+  font-size: var(--font-size-sm);
+}
+.reset-password-container .reset-password:hover {
+  cursor: pointer;
 }
 
 .modal {

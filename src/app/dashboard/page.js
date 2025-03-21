@@ -104,8 +104,10 @@ export default function Dashboard() {
 
           const userScore = await getUserPoints(user.uid)
 
-          if(userScore.score_total) {
+          if(userScore?.score_total) {
             setTotalScore(userScore.score_total);
+          } else {
+            setTotalScore(0);
           }
           
           if (userDoc.exists()) {

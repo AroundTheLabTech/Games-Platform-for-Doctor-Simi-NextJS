@@ -461,3 +461,26 @@ export const applyNewPassword = async (oobCode, newPassword) => {
   }
 };
 
+export const updateUserProfilePicture = async (uid, url) => {
+  try {
+    const response = await fetch(`api/users/update_profile_picture/${uid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        profile_picture_url: url,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al actualizar la foto de perfil');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};

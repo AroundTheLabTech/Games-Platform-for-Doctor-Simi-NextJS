@@ -38,6 +38,8 @@ export default function Dashboard() {
   const [betScore, setBetScore] = useState(100); // Inicializamos la apuesta con un valor de 1000
   const [totalScore, setTotalScore] = useState(0); // Almacena el puntaje Total
 
+  const [updateUserInformation, setUpdateUserInformation] = useState(false)
+
   //--- Premios---
 
   const [showPremiosModal, setShowPremiosModal] = useState(false);
@@ -89,6 +91,7 @@ export default function Dashboard() {
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, async (user) => {
         if (user) {
+
           setUser(user);
     
           const userDocRef = doc(db, "users", user.uid);
@@ -111,7 +114,13 @@ export default function Dashboard() {
           }
           
           if (userDoc.exists()) {
-            setUserData(userDoc.data());
+            const userCurrentData =userDoc.data()
+
+            console.log(userCurrentData)
+
+            setUserData(userCurrentData);
+
+            setUpdateUserInformation(false)
     
             // Sumar todos los campos en la colección scores
             const scoresDocRef = doc(db, "scores", user.uid);
@@ -189,7 +198,7 @@ export default function Dashboard() {
       });
     
       return () => unsubscribe();
-    }, [router, isCreateCompetition]);
+    }, [router, isCreateCompetition, updateUserInformation]);
     
   // -- DropDown---
 
@@ -210,6 +219,10 @@ export default function Dashboard() {
       console.error("Error al cerrar sesión", error);
     }
   };
+
+  const updateUserProfilePicture = () => {
+    setUpdateUserInformation(true)
+  }
 
   const changeSelectedView = (view) => {
     setSelectedView(view)
@@ -241,7 +254,7 @@ export default function Dashboard() {
               <div className="perfil-container">
 
                 <div className="container-photo">
-                <img src={userData.profileImage || "img/perfil/default.png"} className="img-photo" alt="Profile" />
+                <img src={userData.profile_picture || "img/perfil/default.png"} className="img-photo" alt="Profile" />
                 </div>
 
                 <div className="text-user">
@@ -368,7 +381,7 @@ export default function Dashboard() {
         );
       } else if (selectedView === "user") {
         return (
-          <UserComponent />
+          <UserComponent updateUserInformation={updateUserProfilePicture} />
         );
       } else if (selectedView === "dashboard") {
         return (

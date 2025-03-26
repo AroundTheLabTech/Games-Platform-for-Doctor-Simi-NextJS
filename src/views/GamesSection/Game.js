@@ -202,7 +202,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               {/* Button Container */}
               <div className="container-button">
                 <button
-                  onClick={handlePlayGame}>
+                  onClick={() => handlePlayGame(selectedGame)}>
                   START</button>
               </div>
 
@@ -221,31 +221,32 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
           </div>
           <div className="games-container-catalog">
 
-              {Object.entries(gameData).map(([gameKey, game], index) => (
-                  <div
-                      key={gameKey}
-                      className={`game-selector ${activeIndex === index ? "game-selector-active" : ""}`}
-                      ref={(el) => gameSelectorRefs.current[index] = el}
-                      onClick={() => {
-                          setActiveIndex(index);
-                          setSelectedGame(gameKey);
-                      }}
-                  >
-                      <Image src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
-                      <Image src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
-                      <button
-                          id={`game-${index + 1}`}
-                          className="push--flat-small"
-                          onClick={() => {
-                              setActiveIndex(index);
-                              setSelectedGame(gameKey);
-                              handlePlayGame();
-                          }}
-                      >
-                          <h3 className="text-boton game-selector-bottom"></h3>
-                      </button>
-                  </div>
-              ))}
+            {Object.entries(gameData).map(([gameKey, game], index) => (
+              <div
+                key={gameKey}
+                className={`game-selector ${activeIndex === index ? "game-selector-active" : ""}`}
+                ref={(el) => gameSelectorRefs.current[index] = el}
+                onClick={() => {
+                  setActiveIndex(index);
+                  setSelectedGame(gameKey);
+                }}
+              >
+                <Image src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
+                <Image src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
+                <button
+                  id={`game-${index + 1}`}
+                  className="push--flat-small"
+                  onClick={() => {
+                    localStorage.setItem("selectedGame", gameKey)
+                    setActiveIndex(index);
+                    setSelectedGame(gameKey);
+                    handlePlayGame(gameKey);
+                  }}
+                >
+                  <h3 className="text-boton game-selector-bottom"></h3>
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </div>

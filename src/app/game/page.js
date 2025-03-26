@@ -98,14 +98,6 @@ export default function Game() {
       }
     };
 
-
-    //Prueba 
-
-
-    //Necesito generar cambios 
-
-
-
     window.addEventListener("message", handlePostMessage);
 
     const handleOrientationChange = () => {

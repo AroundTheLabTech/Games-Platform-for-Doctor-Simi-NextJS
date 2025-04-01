@@ -10,6 +10,10 @@ gdjs.instruccionesCode.GDIniciarJuegoObjects1= [];
 gdjs.instruccionesCode.GDIniciarJuegoObjects2= [];
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects1= [];
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects2= [];
+gdjs.instruccionesCode.GDMusicButtonObjects1= [];
+gdjs.instruccionesCode.GDMusicButtonObjects2= [];
+gdjs.instruccionesCode.GDSoundButtonObjects1= [];
+gdjs.instruccionesCode.GDSoundButtonObjects2= [];
 
 
 gdjs.instruccionesCode.mapOfGDgdjs_9546instruccionesCode_9546GDIniciarJuegoObjects1Objects = Hashtable.newFrom({"IniciarJuego": gdjs.instruccionesCode.GDIniciarJuegoObjects1});
@@ -67,6 +71,10 @@ gdjs.instruccionesCode.GDIniciarJuegoObjects1.length = 0;
 gdjs.instruccionesCode.GDIniciarJuegoObjects2.length = 0;
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects1.length = 0;
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects2.length = 0;
+gdjs.instruccionesCode.GDMusicButtonObjects1.length = 0;
+gdjs.instruccionesCode.GDMusicButtonObjects2.length = 0;
+gdjs.instruccionesCode.GDSoundButtonObjects1.length = 0;
+gdjs.instruccionesCode.GDSoundButtonObjects2.length = 0;
 
 gdjs.instruccionesCode.eventsList0(runtimeScene);
 gdjs.instruccionesCode.GDOrangeBubbleButtonObjects1.length = 0;
@@ -79,6 +87,10 @@ gdjs.instruccionesCode.GDIniciarJuegoObjects1.length = 0;
 gdjs.instruccionesCode.GDIniciarJuegoObjects2.length = 0;
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects1.length = 0;
 gdjs.instruccionesCode.GDInstrucciones_9595simpelsObjects2.length = 0;
+gdjs.instruccionesCode.GDMusicButtonObjects1.length = 0;
+gdjs.instruccionesCode.GDMusicButtonObjects2.length = 0;
+gdjs.instruccionesCode.GDSoundButtonObjects1.length = 0;
+gdjs.instruccionesCode.GDSoundButtonObjects2.length = 0;
 
 
 return;

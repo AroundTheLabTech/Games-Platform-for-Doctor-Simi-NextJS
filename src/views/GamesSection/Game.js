@@ -149,6 +149,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
       titleSrc: "/img/games/title/game-6.svg",
       description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
     },
+    juego7: {
+      imageSrc: "/img/games/arcade/game-7.png",
+      titleSrc: "/img/games/title/game-7.svg",
+      description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+    },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];

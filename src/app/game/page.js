@@ -227,11 +227,11 @@ export default function Game() {
       case "juego4":
         return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
       case "juego5":
-        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+        return "¡Evita que Simi se choque con los obstaculos del cielo!";
       case "juego6":
-        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+        return "¡Instala torres para defender el hospital y trata a los enfermos!";
       case "juego7":
-        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+        return "¡Realiza conexiones entre los simis! Conecta a los simis de la misma forma para ganar puntos.";
       default:
         return "Pronto vendras más";
     }

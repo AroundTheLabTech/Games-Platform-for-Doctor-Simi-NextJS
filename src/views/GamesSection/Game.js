@@ -116,13 +116,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
   }, [selectedGame]);
 
 
-
   const gameData = {
     juego1: {
       imageSrc: "/img/games/arcade/game-1.png",
       titleSrc: "/img/games/title/game-1.svg",
-      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?"
-      ,
+      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?",
     },
     juego2: {
       imageSrc: "/img/games/arcade/game-2.png",
@@ -142,17 +140,17 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego5: {
       imageSrc: "/img/games/arcade/game-5.png",
       titleSrc: "/img/games/title/game-5.svg",
-      description: "Usa la tecla para moverte por el cielo y esquivar cada peligro. Inspirado en el día del amor y la amistad, ¡pon a prueba tus reflejos y mantén tu globo intacto!",
+      description: "Usa el joystick en pantalla para moverte por el cielo y esquivar cada peligro. ¡Pon a prueba tus reflejos y mantén tu globo intacto!",
     },
     juego6: {
       imageSrc: "/img/games/arcade/game-6.png",
       titleSrc: "/img/games/title/game-6.svg",
-      description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+      description: "Usa el click o el tap y coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
     },
     juego7: {
       imageSrc: "/img/games/arcade/game-7.png",
       titleSrc: "/img/games/title/game-7.svg",
-      description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+      description: "Usa el click o el tap y desliza para conectar tres o más gomas para crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
     },
   };
 
@@ -175,49 +173,6 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
   return (
     <div className="main-container">
       <div className="games-container">
-        {/* Selector de Juegos */}
-        <div className="selector-games">
-          {/* Imagen de Arcade */}
-          <div className="arcade-game">
-            {/* Arcade */}
-            <Image id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" width={453} height={455} />
-          </div>
-          {/* Información del Juego -- MiniPantalla*/}
-          <div className="container-information">
-            <div className="information-game">
-              {/* Header */}
-              <div className="information-game-header">
-                {/* Container Puntos */}
-                <div className="container-puntos">
-                  <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
-                  <p>+20</p>
-                </div>
-
-                {/* Saber más */}
-                <div className="container-saber-mas">
-                  <p>Saber más...</p>
-                </div>
-              </div>
-              {/* Texto e Información */}
-              <div className="container-text">
-                <Image src={titleSrc} alt="" width={200} height={100} />
-                <p ref={descriptionPRef}>{description}</p>
-              </div>
-
-              {/* Button Container */}
-              <div className="container-button">
-                <button
-                  onClick={() => handlePlayGame(selectedGame)}>
-                  START</button>
-              </div>
-
-              <div className="container-controles">
-                <Image className="controls-icon" src="/img/dashboard/controles.svg" alt="" width={200} height={180} />
-              </div>
-            </div>
-          </div>
-
-        </div>
         {/* Catalogo de Juegos */}
         <div className="catalog-games">
           {/* Title Games */}
@@ -236,8 +191,8 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                   setSelectedGame(gameKey);
                 }}
               >
-                <Image src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
-                <Image src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
+                <Image className="thumbnail" src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
+                <Image className="title-thumbnail" src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
                 <button
                   id={`game-${index + 1}`}
                   className="push--flat-small"
@@ -252,6 +207,49 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                 </button>
               </div>
             ))}
+          </div>
+        </div>
+        {/* Selector de Juegos */}
+        <div className="selector-games">
+          {/* Imagen de Arcade */}
+          <div className="arcade-game">
+            {/* Arcade */}
+            <Image id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" width={453} height={455} />
+          </div>
+          {/* Información del Juego -- MiniPantalla*/}
+          <div className="container-information">
+            <div className="information-game">
+              {/* Header */}
+              <div className="information-game-header">
+                {/* Container Puntos */}
+                <div className="container-puntos">
+                  <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
+                  <p>+20</p>
+                </div>
+
+                {/* Saber más }
+                <div className="container-saber-mas">
+                  <p>Saber más...</p>
+                </div>
+                */}
+                <Image className="game-title-image" src={titleSrc} alt="" width={200} height={100} />
+              </div>
+              {/* Texto e Información */}
+              <div className="container-text">
+                <p ref={descriptionPRef}>{description}</p>
+              </div>
+
+              {/* Button Container */}
+              <div className="container-button">
+                <button
+                  onClick={() => handlePlayGame(selectedGame)}>
+                  START</button>
+              </div>
+
+              <div className="container-controles">
+                <Image className="controls-icon" src="/img/dashboard/controles.svg" alt="" width={200} height={180} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

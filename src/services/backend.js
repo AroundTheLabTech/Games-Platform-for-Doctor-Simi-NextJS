@@ -52,6 +52,38 @@ export const getUserInformation = async (uid) => {
   }
 };
 
+export const updateUserInformation = async (uid, data) => {
+  try {
+    if (!uid) {
+      throw new Error('UID inválido');
+    }
+
+    if (!data) {
+      throw new Error('Data inválida');
+    }
+
+    const requestOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(`api/users/user_information/${uid}`, requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
+
 export const getUserPicture = async (uid) => {
   try {
     if (!uid) {
@@ -381,5 +413,74 @@ export const getUserPoints = async (uid) => {
   } catch (err) {
     // Alert.alert('Error', 'No se pudo obtener el puntaje del usuario');
     return null;
+  }
+};
+
+export const putResetPassword = async (email) => {
+  try {
+    if (!email) {
+      throw new Error('Email inválido');
+    }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    };
+
+    const response = await fetch(`api/users/reset_password/${email}`, requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const applyNewPassword = async (oobCode, newPassword) => {
+  try {
+    const response = await fetch(`/api/users/apply_new_password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ oob_code: oobCode, new_password: newPassword }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+export const updateUserProfilePicture = async (uid, url) => {
+  try {
+    const response = await fetch(`api/users/update_profile_picture/${uid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        profile_picture_url: url,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al actualizar la foto de perfil');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
   }
 };

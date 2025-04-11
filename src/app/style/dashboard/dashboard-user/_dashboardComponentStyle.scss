@@ -1,3 +1,5 @@
+@use '../../mixins' as *;
+
 .dashboard-user-container{
     padding: var(--spacing-md);
     background-image: url('/img/background/background-games.png');
@@ -17,9 +19,12 @@
         font-family: var(--font-secondary);
         width: 100%;
         align-items: center;
+        @include responsive-size(padding, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 2rem, 4rem));
+        @include responsive-size(padding-bottom, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem));
 
         h2{
             font-size: var(--font-size-xl);
+            @include responsive-size(font-size, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1.5rem, 2rem, 2.5rem));
         }
         div{
             padding: var(--spacing-md);
@@ -32,6 +37,7 @@
             justify-content: space-between;
             width: 23%;
             align-items: center;
+            @include responsive-size(width, (100%, 100%, 100%, 100%, 50%, 40%, 35%, 30%, 20%, 20%));
 
             img{
                 margin-right: var(--spacing-md);
@@ -43,6 +49,7 @@
                 width: 76%;
                 text-align: right;
                 font-size: var(--font-size-lg);
+                @include responsive-size(font-size, (1rem, 1.2rem, 1.4rem, 1.6rem, 0.8rem, 0.7rem, 0.8rem, 1rem, 1rem, 2rem));
             }
         }
     }
@@ -52,8 +59,8 @@
       justify-content: space-between;
       align-items: center;
       padding: var(--spacing-md);
-
-
+      @include responsive-size(padding, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 2rem, 4rem));
+      @include responsive-size(gap, (0, 0, 0, 0, 1rem, 1.2rem, 1.4rem, 2rem, 5rem, 10rem));
     }
     // Container-Info-Dashboard
 
@@ -75,23 +82,34 @@
         border-radius: 0.6rem;
         padding: var(--spacing-lg);
         margin-bottom: var(--spacing-lg);
+
+        @include responsive-size(flex-direction, (column, column, column, column, column, column, column, column, row, row));
+        @include responsive-size(gap, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1.5rem, 1.8rem, 1.8rem));
+        @include responsive-size(padding, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1.8rem, 2rem, 2.2rem));
         // Left-News
         .left-news{
             width: 70%;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+            @include responsive-size(justify-content, (space-between, space-between, space-between, space-between, flex-start, flex-start, flex-start, flex-start, flex-start, flex-start));
+            @include responsive-size(width, (70%, 70%, 70%, 70%, 100%, 100%, 100%, 100%, 100%, 100%));
             .title-news{
               width: 100%;
+              @include responsive-size(width, (100%, 100%, 100%, 100%, 50%, 100%, 100%, 100%, 100%, 60%));
               h3{
                 font-size: 3.5vh;
                 line-height: 5vh;
+                @include responsive-size(font-size, (0.8rem, 1rem, 1.1rem, 1.5rem, 0.8rem, 0.6rem, 0.8rem, 1.2rem, 1rem, 2rem));
+                @include responsive-size(line-height, (1rem, 1.2rem, 1.5rem, 1.8rem, 1rem, 0.8rem, 1rem, 1.5rem, 1.5rem, 2.2rem));
                 span{
                   font-family: var(--font-press);
                   font-size: 3.5vh;
+                  @include responsive-size(font-size, (1rem, 1.2rem, 1.4rem, 1.6rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 1.5rem, 2.4rem));
                 }
               }
             }
+            @include responsive-size(gap, (1rem, 1rem, 1.5rem, 1.5rem, 1rem, 1rem, 1rem, 1.5rem, 1.8rem, 1.8rem));
 
             button{
               all: unset;
@@ -106,6 +124,13 @@
               font-weight: 600;
               font-family: var(--font-secondary);
               width: 40%;
+              @include responsive-size(font-size, (1rem, 1rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.6rem, 1rem, 1rem, 1rem));
+              @include responsive-size(padding, (1rem, 1rem, 1rem, 1rem, 0.5rem, 0.5, 0.5rem, 1rem, 1rem, 1rem));
+              @include responsive-size(gap, (1rem, 1rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 1rem, 1rem, 1rem));
+              @include responsive-size(width, (40%, 40%, 40%, 40%, 30%, 45%, 40%, 40%, 60%, 50%));
+              img {
+                @include responsive-size(width, (40%, 40%, 40%, 40%, 20%, 15%, 15%, 15%, 15%, 15%));
+              }
             }
           
         }
@@ -114,9 +139,13 @@
 
         .right-news{
           width: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include responsive-size(width, (20%, 20%, 20%, 20%, 100%, 100%, 100%, 100%, 100%, 100%));
           img{
             position: relative;
-            top: -5vh;
+            @include responsive-size(width, (50%, 60%, 50%, 40%, 50%, 50%, 50%, 50%, 80%, 50%));
           }
         }
       }
@@ -130,16 +159,20 @@
         border-radius: 0.4rem;
         padding: var(--spacing-md);
         margin-bottom: var(--spacing-lg);
+        @include responsive-size(gap, (1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem, 1rem));
         .text-image{
           width: 60%;
           display: flex;
           align-items: center;
-          img{
-            margin-right: 2vh;
+          @include responsive-size(width, (60%, 60%, 60%, 60%, 80%, 70%, 60%, 60%, 60%, 60%));
+          @include responsive-size(gap, (2vh, 2vh, 2vh, 2vh, 0.5rem, 2vh, 2vh, 2vh, 2vh, 2vh));
+          img {
+            @include responsive-size(width, (60%, 60%, 60%, 60%, 40%, 40%, 100%, 100%, 60%, 40%));
           }
           p{
             font-family: var(--font-secondary);
             font-weight: 600;
+            @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.8rem, 1rem, 1.5rem, 2rem));
           }
         }
 
@@ -148,8 +181,10 @@
           display: flex;
           align-items: center;
           font-size: 2.5vh;
+          @include responsive-size(width, (40%, 40%, 40%, 40%, 20%, 30%, 30%, 40%, 40%, 40%));
           p{
             font-family: var(--font-press);
+            @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 0.8rem, 0.5rem, 0.5rem, 0.8rem, 1rem, 1.2rem, 2rem));
           }
         }
       }
@@ -175,6 +210,7 @@
       border-radius: 0.6rem;
       background-color: #6A5AE0;
       height: 100%;
+      @include responsive-size(padding, (1rem, 1.2rem, 1.4rem, 1.6rem, 1rem, 1rem, 1.5rem, 2rem, 2.5rem, 4rem));
       
       // Title Ranking
       .title-ranking{
@@ -187,6 +223,7 @@
           font-size: 5vh;
           text-align: center;
           margin-top: var(--spacing-md);
+          @include responsive-size(font-size, (1.5rem, 1.5rem, 2rem, 2rem, 1rem, 1rem, 1.5rem, 1.8rem, 3rem, 5rem));
         }
       }
 
@@ -204,6 +241,7 @@
           align-items: center;
           padding: 1rem 2rem 1rem 2rem;
           margin-top: var(--spacing-md);
+          @include responsive-size(padding, (0.5rem, 0.8rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 0.5rem, 2rem));
 
           // Corona
           .container-corona{
@@ -211,12 +249,15 @@
             justify-content: center;
             align-items: center;
             width: 30%;
+            @include responsive-size(width, (20%, 20%, 20%, 25%, 20%, 20%, 20%, 20%, 20%, 20%));
             img{
               width: 50%;
+              @include responsive-size(width, (50%, 50%, 50%, 50%, 80%, 80%, 80%, 80%, 60%, 60%));
             }
             .corona-number{
               font-family: var(--font-press);
               color: var(--color-secondary);
+              @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 1.2rem, 0.6rem, 0.6rem, 0.7rem, 0.8rem, 1.2rem, 2rem));
             }
           }
 
@@ -226,16 +267,19 @@
             width: 50%;
             display: flex;
             flex-direction: column;
+            @include responsive-size(width, (50%, 50%, 50%, 50%, 40%, 50%, 50%, 50%, 60%, 60%));
             p{
               color: var(--color-secondary);
               text-align: center;
               font-weight: 700;
+              @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.7rem, 0.8rem, 1.5rem, 2rem));
             }
 
             span{
               color: var(--color-secondary);
               text-align: center;
               font-weight: 700;
+              @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.7rem, 0.8rem, 1.2rem, 1.8rem));
             }
           }
 
@@ -245,13 +289,16 @@
             width: 20% ;
             display: flex;
             align-items: center;
+            @include responsive-size(width, (30%, 30%, 30%, 25%, 40%, 30%, 30%, 30%, 20%, 20%));
             p{
               color: var(--color-secondary);
               font-weight: 800;
+              @include responsive-size(font-size, (4vw, 0.8rem, 1rem, 1rem, 0.5rem, 0.5rem, 0.5rem, 0.8rem, 1.2rem, 2rem));
             }
 
             img{
               margin-right: 1vh;
+              @include responsive-size(width, (25%, 25%, 25%, 25%, 25%, 25%, 20%, 20%, 20%, 20%));
             }
           }
         }
@@ -276,10 +323,6 @@
         text-align: center;
         margin-bottom: var(--spacing-md);
       }
-
-      .container-racha{
-        width: 100%;
-      }
     }
 
     // Container General Dashboard
@@ -297,15 +340,6 @@
           // Left
           .left-news{
             width: 100%;
-
-            .title-news{
-              h3{
-                span{
-                  font-size: 3vh;
-                }
-                font-size: 2.2vh;
-              }
-            }
             margin-bottom: var(--spacing-lg);
           }
 

@@ -1,0 +1,23 @@
+@mixin responsive-size(
+  $property,
+  $values,
+  $breakpoints: (320px, 375px, 425px, 600px, 602px, 768px, 1024px, 1440px, 2560px)
+) {
+  @if length($values) != (length($breakpoints) + 1) {
+    @error "The number of values must be one more than the number of breakpoints.";
+  }
+
+  #{$property}: nth($values, 1);
+
+  @for $i from 1 through length($breakpoints) {
+    @media (min-width: nth($breakpoints, $i)) {
+      #{$property}: nth($values, $i + 1);
+    }
+  }
+}
+
+@mixin responsive-custom-size($measure, $measure-value, $property, $property-value) {
+  @media (#{$measure}: $measure-value) {
+    #{$property}: $property-value;
+  }
+}

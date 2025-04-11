@@ -1,9 +1,9 @@
 {
-  "name": "Glovito suvivor",
-  "short_name": "Glovito suvivor",
+  "name": "Glovito suvivor - Beta - Copy",
+  "short_name": "Glovito suvivor - Beta - Copy",
   "id": "com.lddiaz.globitosuvivor",
-  "description": "Globito Survivor: Evita que se rompa el globito. Temática del día del amor y la amistad. ",
-  "orientation": "landscape",
+  "description": "",
+  "orientation": "any",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "black",

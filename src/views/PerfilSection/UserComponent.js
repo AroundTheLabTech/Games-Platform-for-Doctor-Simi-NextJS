@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
-import { getGameCard, getUserInformation, getUserProfilePictures } from "@/services/backend";
+import { getGameCard, getUserInformation, getUserProfilePictures, updateUserInformation, updateUserProfilePicture } from "@/services/backend";
+
+import Image from 'next/image';
 
 import { auth } from "../../../lib/firebase";
 
@@ -24,13 +26,90 @@ function formarGameCardNumber(number) {
   return formattedString;
 }
 
-export default function UserComponent() {
+export default function UserComponent(props) {
 
   const [uid, setUid] = useState();
+
+  const showToaster = (message, type) => {
+    window.addToast(message, type);
+  }
 
   const [gameCard, setGameCard] = useState();
   const [profilePictures, setPofilePictures] = useState();
   const [userInformation, setUseInformation] = useState();
+
+  const [edit, setEdit] = useState(false);
+
+  const [name, setName] = useState();
+  const [age, setAge] = useState();
+  const [state, setState] = useState();
+
+  function handleEdit() {
+    setEdit(!edit);
+  }
+
+  function handleCancel() {
+    setEdit(false);
+  }
+
+  async function handleSave() {
+    if (!uid) {
+      return;
+    }
+    if (!name || !age || !state) {
+      return;
+    }
+
+    const data = {
+      name,
+      age,
+      ubication: state
+    }
+
+    const response = await updateUserInformation(uid, data);
+
+    if (response.message) {
+      const updatedData = {
+        ...userInformation,
+        name: data.name,
+        email: userInformation.email,
+        state: data.ubication,
+        age: data.age,
+      };
+
+      if (updatedData.ubication) {
+        delete updatedData.ubication;
+      }
+
+      showToaster('Información actualizada', 'success');
+
+      setUseInformation(updatedData);
+
+    }
+
+    setEdit(false);
+  }
+
+  async function handleUpdateProfile() {
+    if (!uid) {
+      return;
+    }
+
+    const response = await updateUserProfilePicture(uid, profilePictures.current_profile_picture_url);
+
+    if (response?.message) {
+      const updatedData = {
+        ...profilePictures,
+        current_profile_picture_url: profilePictures.current_profile_picture_url
+      };
+
+      showToaster('Foto de perfil actualizada', 'success');
+
+      setPofilePictures(updatedData);
+
+      props.updateUserInformation();
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -64,6 +143,18 @@ export default function UserComponent() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await getUserInformation(uid);
+
+      if (response) {
+        if (response.name) {
+          setName(response.name);
+        }
+        if (response.age) {
+          setAge(response.age);
+        }
+        if (response.state) {
+          setState(response.state);
+        }
+      }
 
       setUseInformation(response)
     }
@@ -115,7 +206,7 @@ export default function UserComponent() {
             </div>
           </div>
 
-          <div className="personality">
+          <div className="personality" style={{display: "none"}}>
 
             {/* Title */}
             <div className="title-personality">
@@ -140,6 +231,22 @@ export default function UserComponent() {
         <div className="personal-information" >
           <div className="personal-information-title" >
             <h3>Informacion personal</h3>
+            {
+              !edit ?
+                <div className="edit-button" >
+                  <button onClick={handleEdit} >
+                    <Image src="img/icons/edit.svg" alt="Editar" width={20} height={20} />
+                  </button>
+                </div> :
+                <div className="save-and-cancel-buttons" >
+                  <button onClick={handleCancel} >
+                    <Image src="img/icons/cancel.svg" alt="Guardar" width={20} height={20} />
+                  </button>
+                  <button onClick={handleSave} >
+                    <Image src="img/icons/save.svg" alt="Guardar" width={20} height={20} />
+                  </button>
+                </div>
+            }
           </div>
           <table className="information-table" >
             <thead>
@@ -154,10 +261,28 @@ export default function UserComponent() {
               <tr>
                 {
                   userInformation && Object.entries(userInformation).map(([key, value]) => {
-                    console.log(`${key}: ${value}`);
-                    return (
-                      <td key={key} >{value}</td>
-                    )
+                    const isFocused = key === 'name' && edit;
+
+                    if (key === 'name' || key === 'email' || key === 'state' || key === 'age') {
+
+                      return (
+                        <td key={key} >
+                          {edit && key !== 'email' ? <input autoFocus={isFocused} type="text" value={
+                            key === 'name' ? name : key === 'state' ? state : key === 'age' ? age : value
+                          } onChange={(e) => {
+                            if (key === 'name') {
+                              setName(e.target.value)
+                            } else if (key === 'state') {
+                              setState(e.target.value)
+                            } else if (key === 'age') {
+                              setAge(e.target.value)
+                            }
+                          }} /> : value}
+                        </td>
+                      )
+                    } else {
+                      return null;
+                    }
                   })
                 }
               </tr>
@@ -174,11 +299,21 @@ export default function UserComponent() {
               profilePictures?.list_profile_pictures_avalible && profilePictures?.list_profile_pictures_avalible?.map((picture, index) => {
                 return (
                   <div className="picture-container" key={index} >
-                    <img src={picture.image_url} alt={picture.title} />
+                    <img className={picture.image_url === profilePictures.current_profile_picture_url ? "img-selected" : ''} src={picture.image_url} alt={picture.title} onClick={() => {
+                      setPofilePictures({
+                        ...profilePictures,
+                        current_profile_picture_url: picture.image_url
+                      })
+                    }} />
                   </div>
                 )
               })
             }
+          </div>
+          <div className="update-button" >
+            <button onClick={handleUpdateProfile} >
+              Actualizar
+            </button>
           </div>
         </div>
       </div>

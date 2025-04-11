@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:scss": "sass src/app/style/style.scss src/app/style/style.css --no-source-map"
   },
   "dependencies": {
     "@mui/x-charts": "^7.14.0",
@@ -29,4 +30,3 @@
     "eslint-config-next": "14.2.5"
   }
 }
-  

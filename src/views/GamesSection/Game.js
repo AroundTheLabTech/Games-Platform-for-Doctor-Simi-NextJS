@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import Image from "next/image";
 
 // Registrar el plugin de texto con GSAP
 gsap.registerPlugin(TextPlugin);
@@ -115,38 +116,41 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
   }, [selectedGame]);
 
 
-
   const gameData = {
     juego1: {
-      imageSrc: "img/games/arcade/game-1.png",
-      titleSrc: "img/games/title/game-1.svg",
-      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?"
-      ,
+      imageSrc: "/img/games/arcade/game-1.png",
+      titleSrc: "/img/games/title/game-1.svg",
+      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?",
     },
     juego2: {
-      imageSrc: "img/games/arcade/game-2.png",
-      titleSrc: "img/games/title/game-2.svg",
+      imageSrc: "/img/games/arcade/game-2.png",
+      titleSrc: "/img/games/title/game-2.svg",
       description: "¡Acompaña a Simi, recolecta monedas, esquiva obstáculos y desbloquea niveles! Demuestra tus skills en este épico desafío.",
     },
     juego3: {
-      imageSrc: "img/games/arcade/game-3.png",
-      titleSrc: "img/games/title/game-3.svg",
+      imageSrc: "/img/games/arcade/game-3.png",
+      titleSrc: "/img/games/title/game-3.svg",
       description: "¡No dejes caer ni una Rosca! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
     },
     juego4: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
+      imageSrc: "/img/games/arcade/game-4.png",
+      titleSrc: "/img/games/title/game-4.svg",
       description: "¡Pilota el avión del SimiFest, lanza Bombas de Vida y siembra esperanza! Conviértete en un héroe ecológico ahora.",
     },
     juego5: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
-      description: "Usa la tecla para moverte por el cielo y esquivar cada peligro. Inspirado en el día del amor y la amistad, ¡pon a prueba tus reflejos y mantén tu globo intacto!",
+      imageSrc: "/img/games/arcade/game-5.png",
+      titleSrc: "/img/games/title/game-5.svg",
+      description: "Usa el joystick en pantalla para moverte por el cielo y esquivar cada peligro. ¡Pon a prueba tus reflejos y mantén tu globo intacto!",
     },
     juego6: {
-      imageSrc: "img/games/arcade/game-4.png",
-      titleSrc: "img/games/title/game-4.svg",
-      description: "Coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+      imageSrc: "/img/games/arcade/game-6.png",
+      titleSrc: "/img/games/title/game-6.svg",
+      description: "Usa el click o el tap y coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+    },
+    juego7: {
+      imageSrc: "/img/games/arcade/game-7.png",
+      titleSrc: "/img/games/title/game-7.svg",
+      description: "Usa el click o el tap y desliza para conectar tres o más gomas para crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
     },
   };
 
@@ -169,12 +173,48 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
   return (
     <div className="main-container">
       <div className="games-container">
+        {/* Catalogo de Juegos */}
+        <div className="catalog-games">
+          {/* Title Games */}
+          <div className="title-games">
+            <h3 ref={titleGamesRef}>Selector de Juegos!</h3>
+          </div>
+          <div className="games-container-catalog">
+
+            {Object.entries(gameData).map(([gameKey, game], index) => (
+              <div
+                key={gameKey}
+                className={`game-selector ${activeIndex === index ? "game-selector-active" : ""}`}
+                ref={(el) => gameSelectorRefs.current[index] = el}
+                onClick={() => {
+                  setActiveIndex(index);
+                  setSelectedGame(gameKey);
+                }}
+              >
+                <Image className="thumbnail" src={`/img/games/portada/game-${index + 1}.png`} alt={`Game ${index + 1}`} width={200} height={200} />
+                <Image className="title-thumbnail" src={game.titleSrc} alt={`Game title ${index + 1}`} width={200} height={100} />
+                <button
+                  id={`game-${index + 1}`}
+                  className="push--flat-small"
+                  onClick={() => {
+                    localStorage.setItem("selectedGame", gameKey)
+                    setActiveIndex(index);
+                    setSelectedGame(gameKey);
+                    handlePlayGame(gameKey);
+                  }}
+                >
+                  <h3 className="text-boton game-selector-bottom"></h3>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* Selector de Juegos */}
         <div className="selector-games">
           {/* Imagen de Arcade */}
           <div className="arcade-game">
             {/* Arcade */}
-            <img id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" />
+            <Image id="arcade" ref={arcadeRef} src={imageSrc} alt="Game Image" width={453} height={455} />
           </div>
           {/* Información del Juego -- MiniPantalla*/}
           <div className="container-information">
@@ -183,14 +223,16 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               <div className="information-game-header">
                 {/* Container Puntos */}
                 <div className="container-puntos">
-                  <img src="img/icons/monedaScore.svg" alt="" />
+                  <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
                   <p>+20</p>
                 </div>
 
-                {/* Saber más */}
+                {/* Saber más }
                 <div className="container-saber-mas">
                   <p>Saber más...</p>
                 </div>
+                */}
+                <Image className="game-title-image" src={titleSrc} alt="" width={200} height={100} />
               </div>
               {/* Texto e Información */}
               <div className="container-text">
@@ -200,145 +242,13 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
               {/* Button Container */}
               <div className="container-button">
                 <button
-                  onClick={handlePlayGame}>
+                  onClick={() => handlePlayGame(selectedGame)}>
                   START</button>
               </div>
 
               <div className="container-controles">
-                <img src="img/dashboard/controles.svg" alt="" />
+                <Image className="controls-icon" src="/img/dashboard/controles.svg" alt="" width={200} height={180} />
               </div>
-            </div>
-          </div>
-
-        </div>
-        {/* Catalogo de Juegos */}
-        <div className="catalog-games">
-          {/* Title Games */}
-          <div className="title-games">
-            <h3 ref={titleGamesRef}>Selector de Juegos!</h3>
-          </div>
-          <div className="games-container-catalog">
-
-            {/* Game 1 */}
-            <div
-              className={`game-selector ${activeIndex === 0 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[0] = el}
-              onClick={() => {
-                setActiveIndex(0);
-                setSelectedGame("juego1");
-              }}
-            >
-              <img src="img/games/portada/game-1.png" alt="Game 1" />
-              <button id="game-1"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(0);
-                  setSelectedGame("juego1");
-                  handlePlayGame();
-                }}
-              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 2 */}
-            <div
-              className={`game-selector ${activeIndex === 1 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[1] = el}
-              onClick={() => {
-                setActiveIndex(1);
-                setSelectedGame("juego2");
-              }}
-            >
-
-              <img src="img/games/portada/game-2.png" alt="Game 2" />
-              <button id="game-2"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(1);
-                  setSelectedGame("juego2");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 3 */}
-            <div
-              className={`game-selector ${activeIndex === 2 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[2] = el}
-              onClick={() => {
-                setActiveIndex(2);
-                setSelectedGame("juego3");
-              }}
-            >
-              <img src="img/games/portada/game-3.png" alt="Game 3" />
-              <button id="game-3"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(2);
-                  setSelectedGame("juego3");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-            {/* Game 4 */}
-            <div
-              className={`game-selector ${activeIndex === 3 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[3] = el}
-              onClick={() => {
-                setActiveIndex(3);
-                setSelectedGame("juego4");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 4" />
-              <button id="game-4"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(3);
-                  setSelectedGame("juego4");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-
-            {/* Game 5 */}
-            <div
-              className={`game-selector ${activeIndex === 4 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[4] = el}
-              onClick={() => {
-                setActiveIndex(4);
-                setSelectedGame("juego5");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 5" />
-              <button id="game-5"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(4);
-                  setSelectedGame("juego5");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
-            </div>
-
-            {/* Game 6 */}
-            <div
-              className={`game-selector ${activeIndex === 5 ? "game-selector-active" : ""}`}
-              ref={(el) => gameSelectorRefs.current[5] = el}
-              onClick={() => {
-                setActiveIndex(5);
-                setSelectedGame("juego6");
-              }}            >
-              <img src="img/games/portada/game-4.png" alt="Game 6" />
-              <button id="game-6"
-                className="push--flat-small"
-                onClick={() => {
-                  setActiveIndex(5);
-                  setSelectedGame("juego6");
-                  handlePlayGame();
-                }}              >
-                <h3 className="text-boton game-selector-bottom"></h3>
-              </button>
             </div>
           </div>
         </div>

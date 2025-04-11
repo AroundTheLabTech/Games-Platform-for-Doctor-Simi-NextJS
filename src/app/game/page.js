@@ -75,8 +75,8 @@ export default function Game() {
 
           const scoreValue = Number(event.data.score);
 
-          if(scoreValue > 0) {
-            if(previusScore != scoreValue && scoreValue > previusScore) {
+          if (scoreValue > 0) {
+            if (previusScore != scoreValue && scoreValue > previusScore) {
               setCurrentScore(scoreValue);
               setScoreWon(scoreValue);
               setPreviusScore(scoreValue);
@@ -87,8 +87,8 @@ export default function Game() {
         if (event.data && event.data.type === "scoreUpdate") {
           const scoreValue = Number(event.data.score);
 
-          if(scoreValue > 0) {
-            if(previusScore != scoreValue && scoreValue > previusScore) {
+          if (scoreValue > 0) {
+            if (previusScore != scoreValue && scoreValue > previusScore) {
               setCurrentScore(scoreValue);
               setScoreWon(scoreValue);
               setPreviusScore(scoreValue);
@@ -97,14 +97,6 @@ export default function Game() {
         }
       }
     };
-
-
-    //Prueba 
-
-
-    //Necesito generar cambios 
-
-
 
     window.addEventListener("message", handlePostMessage);
 
@@ -217,6 +209,8 @@ export default function Game() {
         return "Simi Globo";
       case "juego6":
         return "Tower Defense";
+      case "juego7":
+        return "Simi Gomitas";
       default:
         return "Juego Desconocido";
     }
@@ -233,9 +227,11 @@ export default function Game() {
       case "juego4":
         return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
       case "juego5":
-        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+        return "¡Evita que Simi se choque con los obstaculos del cielo!";
       case "juego6":
-        return "¡Evita que tu globo se rompa evadiendo los obstáculos que irán apareciendo!";
+        return "¡Instala torres para defender el hospital y trata a los enfermos!";
+      case "juego7":
+        return "¡Realiza conexiones entre los simis! Conecta a los simis de la misma forma para ganar puntos.";
       default:
         return "Pronto vendras más";
     }
@@ -255,6 +251,8 @@ export default function Game() {
         return "source-game/game-5/index.html";
       case "juego6":
         return "source-game/game-6/index.html";
+      case "juego7":
+        return "source-game/game-7/index.html";
       default:
         return "";
     }

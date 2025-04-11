@@ -26,7 +26,7 @@ function formarGameCardNumber(number) {
   return formattedString;
 }
 
-export default function UserComponent() {
+export default function UserComponent(props) {
 
   const [uid, setUid] = useState();
 
@@ -84,6 +84,7 @@ export default function UserComponent() {
       showToaster('Información actualizada', 'success');
 
       setUseInformation(updatedData);
+
     }
 
     setEdit(false);
@@ -94,21 +95,19 @@ export default function UserComponent() {
       return;
     }
 
-    const data = {
-      profile_picture_url: profilePictures.current_profile_picture_url
-    }
+    const response = await updateUserProfilePicture(uid, profilePictures.current_profile_picture_url);
 
-    const response = await updateUserProfilePicture(uid, data);
-
-    if (response.message) {
+    if (response?.message) {
       const updatedData = {
         ...profilePictures,
-        current_profile_picture_url: data.current_profile_picture_url
+        current_profile_picture_url: profilePictures.current_profile_picture_url
       };
 
       showToaster('Foto de perfil actualizada', 'success');
 
       setPofilePictures(updatedData);
+
+      props.updateUserInformation();
     }
   }
 

@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CommonUtils__ToLocaleString !== "undefined") {
 gdjs.evtsExt__CommonUtils__ToLocaleString = {};
 
 
-gdjs.evtsExt__CommonUtils__ToLocaleString.userFunc0xbffae8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CommonUtils__ToLocaleString.userFunc0x8550f8 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 eventsFunctionContext.returnValue = eventsFunctionContext.getArgument('locales').toLocaleString('en');
 
@@ -26,7 +26,7 @@ gdjs.evtsExt__CommonUtils__ToLocaleString.eventsList0 = function(runtimeScene, e
 {
 
 
-gdjs.evtsExt__CommonUtils__ToLocaleString.userFunc0xbffae8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CommonUtils__ToLocaleString.userFunc0x8550f8(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

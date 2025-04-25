@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__CommonUtils__ConsoleSceneVariable !== "undefined") {
 gdjs.evtsExt__CommonUtils__ConsoleSceneVariable = {};
 
 
-gdjs.evtsExt__CommonUtils__ConsoleSceneVariable.userFunc0xa04e08 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CommonUtils__ConsoleSceneVariable.userFunc0x967968 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 var tag = eventsFunctionContext.getArgument('tag');
 var svName = eventsFunctionContext.getArgument('svName');
@@ -31,7 +31,7 @@ gdjs.evtsExt__CommonUtils__ConsoleSceneVariable.eventsList0 = function(runtimeSc
 {
 
 
-gdjs.evtsExt__CommonUtils__ConsoleSceneVariable.userFunc0xa04e08(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CommonUtils__ConsoleSceneVariable.userFunc0x967968(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

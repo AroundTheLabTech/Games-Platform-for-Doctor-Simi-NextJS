@@ -14,6 +14,7 @@ export default function Game() {
   const [iframeVisible, setIframeVisible] = useState(true);
   const [showModal, setShowModal] = useState(true);
   const [showRotateScreen, setShowRotateScreen] = useState(false);
+  const [gameUnavalibleInMobile, setGameUnavalibleInMobile] = useState(false)
   const [previusScore, setPreviusScore] = useState(0);
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -21,6 +22,10 @@ export default function Game() {
   useEffect(() => {
     const game = localStorage.getItem("selectedGame");
     setSelectedGame(game);
+
+    if (game === 'juego8') {
+      setGameUnavalibleInMobile(true)
+    }
 
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -168,6 +173,7 @@ export default function Game() {
 
         console.log(currentScore)
 
+
         const gameNumber = selectedGame.replace('juego', '');
 
         const newGameSession = {
@@ -191,7 +197,13 @@ export default function Game() {
     }
   }; ''
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (e) => {
+
+    if (gameUnavalibleInMobile) {
+      setGameUnavalibleInMobile(false)
+      handleExit()
+    }
+
     setShowModal(false);
   };
 
@@ -211,6 +223,8 @@ export default function Game() {
         return "Tower Defense";
       case "juego7":
         return "Simi Gomitas";
+      case "juego8":
+        return "Simi Health Blocks";
       default:
         return "Juego Desconocido";
     }
@@ -232,6 +246,8 @@ export default function Game() {
         return "¡Instala torres para defender el hospital y trata a los enfermos!";
       case "juego7":
         return "¡Realiza conexiones entre los simis! Conecta a los simis de la misma forma para ganar puntos.";
+      case "juego8":
+        return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
       default:
         return "Pronto vendras más";
     }
@@ -253,6 +269,8 @@ export default function Game() {
         return "source-game/game-6/index.html";
       case "juego7":
         return "source-game/game-7/index.html";
+      case "juego8":
+        return "source-game/game-8/index.html";
       default:
         return "";
     }
@@ -270,6 +288,9 @@ export default function Game() {
             <div className="modal-content">
               <h2>Instrucciones</h2>
               <p>{getGameInstructions(selectedGame)}</p>
+              {gameUnavalibleInMobile &&
+                <p className="no-mobile-version" >¡Versión móvil en camino! <br></br> Por ahora solo disponible en PC. Muy pronto podrás jugar desde tu teléfono.</p>
+              }
               <button className="push--flat-blue" onClick={handleCloseModal}>
                 <h3>JUGAR</h3>
               </button>
@@ -279,7 +300,11 @@ export default function Game() {
 
         {showRotateScreen && (
           <div className="rotate-screen">
-            <p>Por favor, rota tu dispositivo</p>
+            {gameUnavalibleInMobile ?
+              <p>¡Versión móvil en camino! <br></br> Por ahora solo disponible en PC. Muy pronto podrás jugar desde tu teléfono.</p>
+              :
+              <p>Por favor, rota tu dispositivo</p>
+            }
           </div>
         )}
 

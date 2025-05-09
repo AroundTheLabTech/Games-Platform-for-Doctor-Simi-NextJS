@@ -10327,6 +10327,54 @@ form .select-gender option {
   color: var(--color-secondary);
   line-height: 2;
 }
+.container-game .modal-content .no-mobile-version {
+  font-size: 0.4rem;
+}
+@media (min-width: 320px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.4rem;
+  }
+}
+@media (min-width: 375px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 425px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 600px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 602px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 768px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 2560px) {
+  .container-game .modal-content .no-mobile-version {
+    font-size: 1rem;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .container-game .modal-content h2 {

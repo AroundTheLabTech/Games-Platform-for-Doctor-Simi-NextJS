@@ -152,6 +152,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
       titleSrc: "/img/games/title/game-7.svg",
       description: "Usa el click o el tap y desliza para conectar tres o más gomas para crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
     },
+    juego8: {
+      imageSrc: "/img/games/arcade/game-8.png",
+      titleSrc: "/img/games/title/game-8.svg",
+      description: "Inspirado en los clásicos juegos de puzzles, este divertido desafío te invita a ordenar las fichas de medicamentos que caen. Acomódalas estratégicamente para completar filas y mantener la farmacia en orden.",
+    },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];

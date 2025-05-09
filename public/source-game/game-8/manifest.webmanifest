@@ -1,0 +1,12 @@
+{
+  "name": "Enchanted Value (Tetris demo)",
+  "short_name": "Enchanted Value (Tetris demo)",
+  "id": "com.example.tetris",
+  "description": "",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

@@ -11,7 +11,6 @@ import UserComponent from "../../views/PerfilSection/UserComponent";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 //Services 
-import { FetchScoreTotal } from '../../services/FetchScoreTotal'; // Importa el servicio de Consulta de total de Puntaje
 import { GetTrophiesService } from '../../services/GetTrofiesService'; // Servicio para obtener trofeos
 import { GetScoreTotalService } from '../../services/GetScoreTotalService'; // Servicio para obtener el puntaje total
 
@@ -25,6 +24,7 @@ import ModalPremios from "@/components/modal/ModalPremios";
 import DashboardContent from "../../views/Dashboard/DashboardView";
 
 import { getUserPoints } from "../../services/backend"
+import Image from "next/image";
 
 
 export default function Dashboard() {
@@ -255,7 +255,7 @@ export default function Dashboard() {
           <div className="perfil-container">
 
             <div className="container-photo">
-              <img src={userData.profile_picture || "img/perfil/default.png"} className="img-photo" alt="Profile" />
+              <Image src={userData.profile_picture || "img/perfil/default.png"} width={100} height={100} className="img-photo" alt="Profile" />
             </div>
 
             <div className="text-user">
@@ -268,10 +268,12 @@ export default function Dashboard() {
             <div className="container-user-trofeos">
               {trophies.length > 0 ? (
                 trophies.map((medal) => (
-                  <img
+                  <Image
                     key={medal}
                     src={`img/medallas/${medal}.svg`}
                     alt={`Medalla ${medal}`}
+                    width={32}
+                    height={32}
                     className="medal-icon"
                   />
                 ))
@@ -283,7 +285,7 @@ export default function Dashboard() {
 
             <div className="container-user-total">
               <p>{totalScore.toLocaleString()}</p> {/* Muestra el puntaje total con formato */}
-              <img src="img/icons/monedaScore.svg" alt="Moneda" />
+              <Image src="img/icons/monedaScore.svg" width={20} height={20} alt="Moneda" />
             </div>
 
 
@@ -294,25 +296,23 @@ export default function Dashboard() {
         <div className="nav-container">
           <ul>
             <li>
-              <img src="img/icons/game.svg" />
+              <Image src="img/icons/game.svg" width={22} height={28} alt="Game icon" />
               <button onClick={() => setSelectedView("games")}>GAMES</button>
             </li>
 
             <li>
-              <img src="img/icons/dashboard.svg" />
+              <Image src="img/icons/dashboard.svg" width={22} height={28} alt="Dashboard icon" />
               <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
             </li>
             <li>
-              <img
-                src="img/icons/user.svg"
-              />
+              <Image src="img/icons/user.svg" width={22} height={28} alt="Profile icon" />
               <button onClick={() => setSelectedView("user")}>PERFIL</button>
             </li>
           </ul>
         </div>
 
         {/* Invita y Gana */}
-        <div className="invite-container">
+        <div style={{display: 'none'}} className="invite-container">
           <h3>COMPITE CON TU COMPAÑERO</h3>
           <div className="container-toggle-score">
             <div className="bottom-score">
@@ -322,9 +322,7 @@ export default function Dashboard() {
             </div>
             <div className="score-apuesta">
               <p>{betScore}</p>
-              <img
-                src="img/icons/monedaScore.svg"
-              />
+              <Image src="img/icons/monedaScore.svg" width={22} height={22} alt="Coin icon" />
             </div>
             <div className="bottom-score">
               <p
@@ -336,10 +334,7 @@ export default function Dashboard() {
           <button
             onClick={handleShowModal}
             className="bottom-competir">
-            <img
-              src="img/icons/invite.svg"
-              className="icon-invite"
-            ></img>
+            <Image src="img/icons/invite.svg" className="icon-invite" width={22} height={22} alt="Invite icon" />
             Competir</button>
         </div>
 

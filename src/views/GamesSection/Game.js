@@ -225,9 +225,9 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
           <div className="container-information">
             <div className="information-game">
               {/* Header */}
-              <div className="information-game-header">
+              <div className="information-game-header" style={{justifyContent: 'center'}}>
                 {/* Container Puntos */}
-                <div className="container-puntos">
+                <div style={{display: 'none'}} className="container-puntos">
                   <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
                   <p>+20</p>
                 </div>
@@ -239,6 +239,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                 */}
                 <Image className="game-title-image" src={titleSrc} alt="" width={200} height={100} />
               </div>
+              <br/>
               {/* Texto e Información */}
               <div className="container-text">
                 <p ref={descriptionPRef}>{description}</p>

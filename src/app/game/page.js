@@ -19,6 +19,8 @@ export default function Game() {
   const router = useRouter();
   const [user, setUser] = useState(null);
 
+  const [scoreHistory, setScoreHistory] = useState([]);
+
   useEffect(() => {
     const game = localStorage.getItem("selectedGame");
     setSelectedGame(game);
@@ -26,6 +28,8 @@ export default function Game() {
     if (game === 'juego8') {
       setGameUnavalibleInMobile(true)
     }
+
+    let initialScoreDb = 0;
 
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -35,6 +39,7 @@ export default function Game() {
         if (userDoc.exists() && userDoc.data()[game]) {
           const initialScore = Number(userDoc.data()[game]) || 0;
           setCurrentScore(initialScore);
+          initialScoreDb = initialScore;
           console.log("Puntaje inicial desde la base de datos:", initialScore);
         }
       } else {
@@ -59,36 +64,124 @@ export default function Game() {
 
           setScoreWon(scoreValue)
         }
-      } else if (selectedGame === "juego3" && event.data && typeof event.data.number !== 'undefined') {
+      }
+      else if (selectedGame === "juego2") {
+        if (event.data && typeof event.data.score !== 'undefined') {
+          const scoreValue = Number(event.data.score);
+          const newScore = scoreValue / 100 > 1 ? scoreValue / 100 : 1;
+
+          if (!scoreHistory.includes(newScore)) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, newScore];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+
+              setCurrentScore(prevScore => prevScore + updated[1]);
+
+              setScoreWon(updated[1]);
+
+              return updated;
+            });
+          }
+        }
+      }
+      else if (selectedGame === "juego3" && event.data && typeof event.data.number !== 'undefined') {
+        let newScore = Number(event.data.number);
+
         setCurrentScore((prevScore) => {
           const updatedScore = prevScore + 1;
-          console.log("Suma de +1 al puntaje actual (juego3):", updatedScore);
           return updatedScore;
         });
 
-        setScoreWon(1)
-      } else if (selectedGame === "juego4") {
+        setScoreWon(newScore);
+      }
+      else if (selectedGame === "juego4") {
         if (event.data && typeof event.data.score !== 'undefined') {
           const scoreValue = Number(event.data.score);
-          console.log("Valor recibido desde el postMessage (juego4):", scoreValue);
 
-          setCurrentScore(scoreValue); // Actualiza el puntaje actual
-          setScoreWon(scoreValue)
+          if (!scoreHistory.includes(scoreValue)) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+
+              if (updated[1] > 100) {
+                setCurrentScore((currentScore + (updated[1] - 10) / 100));
+                setScoreWon((updated[1] - 10) / 100);
+              } else {
+                setCurrentScore((currentScore + 1));
+                setScoreWon(1);
+              }
+
+              return updated;
+            });
+          }
         }
-      } else if (selectedGame === "juego5") {
+      }
+      else if (selectedGame === "juego5") {
         if (event.data && event.data.type === "scoreUpdate") {
 
           const scoreValue = Number(event.data.score);
 
-          if (scoreValue > 0) {
+          if (scoreValue > 0 && !isNaN(scoreValue)) {
             if (previusScore != scoreValue && scoreValue > previusScore) {
-              setCurrentScore(scoreValue);
-              setScoreWon(scoreValue);
-              setPreviusScore(scoreValue);
+
+              setScoreHistory((prevHistory) => {
+                const updated = [...prevHistory, scoreValue];
+
+                if (updated.length > 2) {
+                  updated.shift();
+                }
+
+                if (updated[1] > 0) {
+                  setCurrentScore(prev => prev + initialScoreDb + updated[1]);
+                  setScoreWon(updated[1]);
+                  setPreviusScore(updated[1]);
+                } else if (updated[1] == 0 || updated[1] == 1) {
+                  setCurrentScore(prev => prev + (initialScoreDb + 1));
+                  setScoreWon(1);
+                  setPreviusScore(1);
+                }
+
+                return updated;
+              });
             }
           }
         }
       } else if (selectedGame === "juego6") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if (scoreValue > 0) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+
+              if (updated[1] > 0) {
+                setCurrentScore(prev => prev + initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
+          }
+        }
+      } else if (selectedGame === "juego7") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if (scoreValue > 0) {
+            setCurrentScore(prev => prev + initialScoreDb + scoreValue);
+            setScoreWon(scoreValue);
+          }
+        }
+      } else if (selectedGame === "juego8") {
         if (event.data && event.data.type === "scoreUpdate") {
           const scoreValue = Number(event.data.score);
 
@@ -176,32 +269,48 @@ export default function Game() {
 
         const gameNumber = selectedGame.replace('juego', '');
 
-        const newGameSession = {
-          uid: user.uid,
-          score: Number(scoreWon),
-          numberGame: Number(gameNumber),
-        };
+        if (Math.ceil(Number(scoreWon)) > 0) {
+          const newGameSession = {
+            uid: user.uid,
+            score: Math.ceil(Number(scoreWon)),
+            numberGame: Number(gameNumber),
+          };
 
-        const response = await postSessionGame(newGameSession);
+          const response = await postSessionGame(newGameSession);
 
-        console.log("session?", response)
+          console.log("session?", response)
 
-        if (response.message && response.session_id) {
-          addCompetitionSession(response.session_id);
+          if (response.message && response.session_id) {
+            addCompetitionSession(response.session_id);
+          }
         }
+
+        setCurrentScore(0);
+        setPreviusScore(0);
+        setScoreWon(0);
+        setScoreHistory([]);
 
         router.push('/dashboard');
       } catch (error) {
         console.error("Error al guardar el score en Firestore", error);
       }
     }
-  }; ''
+  };
+
+  function isMobileDevice() {
+    return (
+      /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      window.innerWidth <= 768
+    );
+  }
 
   const handleCloseModal = (e) => {
 
     if (gameUnavalibleInMobile) {
-      setGameUnavalibleInMobile(false)
-      handleExit()
+      setGameUnavalibleInMobile(false);
+      if (isMobileDevice()) {
+        handleExit();
+      }
     }
 
     setShowModal(false);

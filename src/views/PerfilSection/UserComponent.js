@@ -187,7 +187,7 @@ export default function UserComponent(props) {
             {/* Header */}
             <div className="header-card">
               <h3>GAME-CARD</h3>
-              <img src="icons/profile-icons/icon-card.svg" alt="" />
+              <Image src="icons/profile-icons/icon-card.svg" alt="Card icon" width={70} height={70} />
             </div>
             {/* Nombre Usuario */}
             <div className="user-info">
@@ -200,7 +200,7 @@ export default function UserComponent(props) {
                 {gameCard?.card_number && formarGameCardNumber(gameCard.card_number)}
               </h3>
               <div>
-                <img src="img/icons/monedaScore.svg" alt="" /> &nbsp;
+                <Image src="img/icons/monedaScore.svg" alt="Coin icon" width={20} height={20} /> &nbsp;
                 <p>{gameCard?.score && gameCard.score.toLocaleString('en-ES')}</p>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function UserComponent(props) {
 
             <div className="container-personality-information" >
               <div className="container-personality-image">
-                <img src={profilePictures?.current_profile_picture_url && profilePictures.current_profile_picture_url} alt="" width={100} />
+                <Image src={profilePictures?.current_profile_picture_url && profilePictures.current_profile_picture_url} alt="Profile picture icon" width={100} height={100} />
               </div>
               <div className="container-description-personality" >
                 <div className="sub-title-personality">
@@ -299,12 +299,15 @@ export default function UserComponent(props) {
               profilePictures?.list_profile_pictures_avalible && profilePictures?.list_profile_pictures_avalible?.map((picture, index) => {
                 return (
                   <div className="picture-container" key={index} >
-                    <img className={picture.image_url === profilePictures.current_profile_picture_url ? "img-selected" : ''} src={picture.image_url} alt={picture.title} onClick={() => {
+                    <Image className={picture.image_url === profilePictures.current_profile_picture_url ? "img-selected" : ''} src={picture.image_url} alt={picture.title} onClick={() => {
                       setPofilePictures({
                         ...profilePictures,
                         current_profile_picture_url: picture.image_url
                       })
-                    }} />
+                    }}
+                    width={150}
+                    height={150}
+                    />
                   </div>
                 )
               })

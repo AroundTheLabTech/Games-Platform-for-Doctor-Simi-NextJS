@@ -12,7 +12,7 @@ pnpm dev
 # or
 bun dev
 ```
-
+ 
 ## Games And Submodules
 The games are inside Github submodules, to run them it is necessary to clone them:
 

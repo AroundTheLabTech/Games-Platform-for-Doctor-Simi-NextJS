@@ -333,7 +333,7 @@ gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.pro
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(88170988);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(89184604);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.prototype.doStepPreEventsContext.GDObjectObjects1);
@@ -370,7 +370,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__DrawSho
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(88173316);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(89186932);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.prototype.doStepPreEventsContext.GDObjectObjects1);
@@ -1371,7 +1371,7 @@ gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.pro
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(88196868);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(89210484);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.prototype.SetEndHeightContext.GDObjectObjects1);
@@ -1859,7 +1859,7 @@ gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.pro
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(88204252);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(89217868);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__DrawShockWaveEffect__DrawEllipseShockWave.DrawEllipseShockWave.prototype.ChangeTypeContext.GDObjectObjects1);

@@ -62,7 +62,7 @@ for (var i = 0, k = 0, l = gdjs.MainMenuCode.GDPlayButtonObjects2.length;i<l;++i
 gdjs.MainMenuCode.GDPlayButtonObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(88295508);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(89311108);
 }
 }
 }
@@ -111,7 +111,7 @@ for (var i = 0, k = 0, l = gdjs.MainMenuCode.GDPlayButtonObjects2.length;i<l;++i
 gdjs.MainMenuCode.GDPlayButtonObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(88296980);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(89312580);
 }
 }
 }
@@ -208,7 +208,7 @@ for (var i = 0, k = 0, l = gdjs.MainMenuCode.GDLoadingScreenObjects1.length;i<l;
 gdjs.MainMenuCode.GDLoadingScreenObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(88300156);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(89315756);
 }
 }
 }

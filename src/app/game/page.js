@@ -138,11 +138,11 @@ export default function Game() {
                 }
 
                 if (updated[1] > 0) {
-                  setCurrentScore(prev => prev + initialScoreDb + updated[1]);
+                  setCurrentScore(initialScoreDb + updated[1]);
                   setScoreWon(updated[1]);
                   setPreviusScore(updated[1]);
                 } else if (updated[1] == 0 || updated[1] == 1) {
-                  setCurrentScore(prev => prev + (initialScoreDb + 1));
+                  setCurrentScore((initialScoreDb + 1));
                   setScoreWon(1);
                   setPreviusScore(1);
                 }

@@ -78,7 +78,7 @@ export default function Game() {
                 updated.shift();
               }
 
-              setCurrentScore(prevScore => prevScore + updated[1]);
+              setCurrentScore(initialScoreDb + updated[1]);
 
               setScoreWon(updated[1]);
 
@@ -186,11 +186,18 @@ export default function Game() {
           const scoreValue = Number(event.data.score);
 
           if (scoreValue > 0) {
-            if (previusScore != scoreValue && scoreValue > previusScore) {
-              setCurrentScore(scoreValue);
-              setScoreWon(scoreValue);
-              setPreviusScore(scoreValue);
-            }
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+              if (updated[1] > 0) {
+                setCurrentScore(initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
           }
         }
       }

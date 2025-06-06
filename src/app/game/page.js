@@ -53,16 +53,21 @@ export default function Game() {
       if (selectedGame === "juego1") {
         if (event.data && typeof event.data.score !== 'undefined') {
           const scoreValue = Number(event.data.score);
-          console.log("Valor recibido desde el postMessage (juego1):", scoreValue);
 
-          setCurrentScore((prevScore) => {
-            const updatedScore = prevScore + scoreValue;
-            console.log("Nuevo puntaje acumulado (juego1):", updatedScore);
-            setIframeVisible(false); // Cerrar el iframe
-            return updatedScore;
-          });
+          if (scoreValue > 0) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
 
-          setScoreWon(scoreValue)
+              if (updated.length > 2) {
+                updated.shift();
+              }
+              if (updated[1] > 0) {
+                setCurrentScore(initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
+          }
         }
       }
       else if (selectedGame === "juego2") {

@@ -15,7 +15,7 @@ gdjs.evtsExt__CameraShake__SetDefaultShakingFrequency.eventsList0 = function(run
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultFrequency").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Frequency")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).setNumber(eventsFunctionContext.getArgument("Frequency"));
 }}
 
 }
@@ -79,6 +79,7 @@ if (argName === "Frequency") return Frequency;
 
 
 gdjs.evtsExt__CameraShake__SetDefaultShakingFrequency.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

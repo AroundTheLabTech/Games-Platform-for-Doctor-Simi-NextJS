@@ -15,7 +15,7 @@ gdjs.evtsExt__CameraShake__SetDefaultZoomAmplitude.eventsList0 = function(runtim
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeZoom").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeZoom")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(4).setNumber(eventsFunctionContext.getArgument("AmplitudeZoom"));
 }}
 
 }
@@ -79,6 +79,7 @@ if (argName === "AmplitudeZoom") return AmplitudeZoom;
 
 
 gdjs.evtsExt__CameraShake__SetDefaultZoomAmplitude.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

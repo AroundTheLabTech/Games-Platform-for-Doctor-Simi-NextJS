@@ -15,7 +15,7 @@ gdjs.evtsExt__CameraShake__SetDefaultRotationAmplitude.eventsList0 = function(ru
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeAngle").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeAngle")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(3).setNumber(eventsFunctionContext.getArgument("AmplitudeAngle"));
 }}
 
 }
@@ -79,6 +79,7 @@ if (argName === "AmplitudeAngle") return AmplitudeAngle;
 
 
 gdjs.evtsExt__CameraShake__SetDefaultRotationAmplitude.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

@@ -1,8 +1,8 @@
 {
-  "name": "Totalplay - Football Shotter",
-  "short_name": "Totalplay - Football Shotter",
+  "name": "SIMI DEFENCE V2",
+  "short_name": "SIMI DEFENCE V2",
   "id": "com.example.wavedefenseexample",
-  "description": "",
+  "description": "Create a wave defense game without coding, using GDevelop. This beginner-friendly example covers player movement, firing a bullet, enemy logic, leveling up character stats, mobile controls, and spawning the enemies.",
   "orientation": "landscape",
   "start_url": "./index.html",
   "display": "standalone",

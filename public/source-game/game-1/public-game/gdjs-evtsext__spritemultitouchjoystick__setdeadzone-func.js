@@ -15,7 +15,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__SetDeadZone.eventsList0 = function(runti
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__MultitouchJoystick").getChild("Controllers").getChild((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ControllerIdentifier")) || 0 : 0)).getChild("Joystick").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("JoystickIdentifier") : "")).getChild("DeadZone").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("DeadZoneRadius")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).getChild(eventsFunctionContext.getArgument("ControllerIdentifier")).getChild("Joystick").getChild(eventsFunctionContext.getArgument("JoystickIdentifier")).getChild("DeadZone").setNumber(eventsFunctionContext.getArgument("DeadZoneRadius"));
 }}
 
 }
@@ -81,6 +81,7 @@ if (argName === "DeadZoneRadius") return DeadZoneRadius;
 
 
 gdjs.evtsExt__SpriteMultitouchJoystick__SetDeadZone.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

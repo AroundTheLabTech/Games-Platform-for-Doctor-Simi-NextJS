@@ -8,29 +8,31 @@ if (typeof gdjs.evtsExt__CameraShake__onFirstSceneLoaded !== "undefined") {
 gdjs.evtsExt__CameraShake__onFirstSceneLoaded = {};
 
 
-gdjs.evtsExt__CameraShake__onFirstSceneLoaded.userFunc0xd31460 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__CameraShake__onFirstSceneLoaded.userFunc0x9d78d0 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
-gdjs._cameraShakeExtension = gdjs._cameraShakeExtension || {};
+if (gdjs._cameraShakeExtension) {
+    return;
+}
 
 /** Noise generator manager. */
-gdjs._cameraShakeExtension.NoiseManager = /** @class */ (function () {
+class NoiseManager {
     /**
      * Create the manager of noise generators.
      */
-    function NoiseManager() {
+    constructor() {
         this.seed = gdjs.randomInRange(1, Number.MAX_SAFE_INTEGER);
-        /** @type {Map<string, gdjs._cameraShakeExtension.NoiseGenerator>} */
+        /** @type {Map<string, NoiseGenerator>} */
         this.generators = new Map();
     }
 
     /**
      * @param name {string}
-     * @return {gdjs._cameraShakeExtension.NoiseGenerator}
+     * @return {NoiseGenerator}
      */
-    NoiseManager.prototype.getGenerator = function (name) {
+    getGenerator(name) {
         let generator = this.generators.get(name);
         if (!generator) {
-            generator = new gdjs._cameraShakeExtension.NoiseGenerator(name + this.seed);
+            generator = new NoiseGenerator(name + this.seed);
             this.generators.set(name, generator);
         }
         return generator;
@@ -39,35 +41,33 @@ gdjs._cameraShakeExtension.NoiseManager = /** @class */ (function () {
     /**
      * @param seed {number}
      */
-    NoiseManager.prototype.setSeed = function (seed) {
+    setSeed(seed) {
         this.seed = seed;
-        this.generators.forEach(generator => generator.setSeed(seed));
+        this.generators.forEach(generator => generator.setSeed(name + this.seed));
     }
 
     /**
      * @param name {string}
      */
-    NoiseManager.prototype.deleteGenerator = function (name) {
+    deleteGenerator(name) {
         this.generators.delete(name);
     }
 
     /**
      */
-    NoiseManager.prototype.deleteAllGenerators = function () {
+    deleteAllGenerators() {
         this.generators.clear();
     }
-
-    return NoiseManager;
-}());
+}
 
 /** Noise generator with octaves. */
-gdjs._cameraShakeExtension.NoiseGenerator = /** @class */ (function () {
+class NoiseGenerator {
     /**
      * Create a noise generator with a seed.
      * @param seed {string}
      */
-    function NoiseGenerator(seed) {
-        this.simplexNoise = new gdjs._cameraShakeExtension.SimplexNoise(seed);
+    constructor(seed) {
+        this.simplexNoise = new SimplexNoise(seed);
         this.frequency = 1;
         this.octaves = 1;
         this.persistence = 0.5;
@@ -79,8 +79,8 @@ gdjs._cameraShakeExtension.NoiseGenerator = /** @class */ (function () {
     /**
      * @param seed {string}
      */
-    NoiseGenerator.prototype.setSeed = function(seed) {
-        this.simplexNoise = new gdjs._cameraShakeExtension.SimplexNoise(seed);
+    setSeed(seed) {
+        this.simplexNoise = new SimplexNoise(seed);
     }
 
     /**
@@ -90,7 +90,7 @@ gdjs._cameraShakeExtension.NoiseGenerator = /** @class */ (function () {
      * @param w {float} optionnal
      * @return {float}
      */
-    NoiseGenerator.prototype.noise = function (x, y, z, w) {
+    noise(x, y, z, w) {
         if (this.xLoopPeriod && this.yLoopPeriod) {
             const circleRatioX = 2 * Math.PI / this.xLoopPeriod;
             const circleRatioY = 2 * Math.PI / this.yLoopPeriod;
@@ -105,7 +105,7 @@ gdjs._cameraShakeExtension.NoiseGenerator = /** @class */ (function () {
             const circleRatio = 2 * Math.PI / this.xLoopPeriod;
             const angleX = circleRatio * x;
             w = z;
-            z = y; 
+            z = y;
             x = Math.cos(angleX) / circleRatio;
             y = Math.sin(angleX) / circleRatio;
         }
@@ -137,9 +137,7 @@ gdjs._cameraShakeExtension.NoiseGenerator = /** @class */ (function () {
         }
         return noiseSum / amplitudeSum;
     }
-
-    return NoiseGenerator;
-}());
+}
 
 /*
 A fast javascript implementation of simplex noise by Jonas Wagner
@@ -198,15 +196,90 @@ const grad4 = new Float32Array([0, 1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, 
     1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, -1, 0,
     -1, 1, 1, 0, -1, 1, -1, 0, -1, -1, 1, 0, -1, -1, -1, 0]);
 
+
+/**
+ * Builds a random permutation table.
+ * This is exported only for (internal) testing purposes.
+ * Do not rely on this export.
+ * @param {() => number} random
+ * @private
+ */
+function buildPermutationTable(random) {
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) {
+        p[i] = i;
+    }
+    for (let i = 0; i < 255; i++) {
+        const r = i + ~~(random() * (256 - i));
+        const aux = p[i];
+        p[i] = p[r];
+        p[r] = aux;
+    }
+    return p;
+}
+
+/*
+The ALEA PRNG and masher code used by simplex-noise.js
+is based on code by Johannes Baagøe, modified by Jonas Wagner.
+See alea.md for the full license.
+@param {string|number} seed
+*/
+function alea(seed) {
+    let s0 = 0;
+    let s1 = 0;
+    let s2 = 0;
+    let c = 1;
+    const mash = masher();
+    s0 = mash(' ');
+    s1 = mash(' ');
+    s2 = mash(' ');
+    s0 -= mash(seed);
+    if (s0 < 0) {
+        s0 += 1;
+    }
+    s1 -= mash(seed);
+    if (s1 < 0) {
+        s1 += 1;
+    }
+    s2 -= mash(seed);
+    if (s2 < 0) {
+        s2 += 1;
+    }
+    return function () {
+        const t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
+        s0 = s1;
+        s1 = s2;
+        return s2 = t - (c = t | 0);
+    };
+}
+
+function masher() {
+    let n = 0xefc8249d;
+    return function (data) {
+        data = data.toString();
+        for (let i = 0; i < data.length; i++) {
+            n += data.charCodeAt(i);
+            let h = 0.02519603282416938 * n;
+            n = h >>> 0;
+            h -= n;
+            h *= n;
+            n = h >>> 0;
+            h -= n;
+            n += h * 0x100000000; // 2^32
+        }
+        return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
+    };
+}
+
 /** Deterministic simplex noise generator suitable for 2D, 3D and 4D spaces. */
-gdjs._cameraShakeExtension.SimplexNoise = /** @class */ (function () {
+class SimplexNoise {
     /**
      * Creates a new `SimplexNoise` instance.
      * This involves some setup. You can save a few cpu cycles by reusing the same instance.
      * @param {(() => number)|string|number} randomOrSeed A random number generator or a seed (string|number).
      * Defaults to Math.random (random irreproducible initialization).
      */
-    function SimplexNoise(randomOrSeed) {
+    constructor(randomOrSeed) {
         if (randomOrSeed === void 0) { randomOrSeed = Math.random; }
         const random = typeof randomOrSeed == 'function' ? randomOrSeed : alea(randomOrSeed);
         this.p = buildPermutationTable(random);
@@ -224,7 +297,7 @@ gdjs._cameraShakeExtension.SimplexNoise = /** @class */ (function () {
      * @param {number} y
      * @returns a number in the interval [-1, 1]
      */
-    SimplexNoise.prototype.noise2D = function (x, y) {
+    noise2D(x, y) {
         const permMod12 = this.permMod12;
         const perm = this.perm;
         let n0 = 0; // Noise contributions from the three corners
@@ -291,7 +364,7 @@ gdjs._cameraShakeExtension.SimplexNoise = /** @class */ (function () {
      * @param {number} z
      * @returns a number in the interval [-1, 1]
      */
-    SimplexNoise.prototype.noise3D = function (x, y, z) {
+    noise3D(x, y, z) {
         const permMod12 = this.permMod12;
         const perm = this.perm;
         let n0, n1, n2, n3; // Noise contributions from the four corners
@@ -425,7 +498,7 @@ gdjs._cameraShakeExtension.SimplexNoise = /** @class */ (function () {
      * @param {number} z
      * @returns a number in the interval [-1, 1]
      */
-    SimplexNoise.prototype.noise4D = function (x, y, z, w) {
+    noise4D(x, y, z, w) {
         const perm = this.perm;
         let n0, n1, n2, n3, n4; // Noise contributions from the five corners
         // Skew the (x,y,z,w) space to determine which cell of 24 simplices we're in
@@ -564,91 +637,19 @@ gdjs._cameraShakeExtension.SimplexNoise = /** @class */ (function () {
         // Sum up and scale the result to cover the range [-1,1]
         return 27.0 * (n0 + n1 + n2 + n3 + n4);
     };
+}
 
-    /**
-     * Builds a random permutation table.
-     * This is exported only for (internal) testing purposes.
-     * Do not rely on this export.
-     * @param {() => number} random
-     * @private
-     */
-    function buildPermutationTable(random) {
-        const p = new Uint8Array(256);
-        for (let i = 0; i < 256; i++) {
-            p[i] = i;
-        }
-        for (let i = 0; i < 255; i++) {
-            const r = i + ~~(random() * (256 - i));
-            const aux = p[i];
-            p[i] = p[r];
-            p[r] = aux;
-        }
-        return p;
-    }
+gdjs._cameraShakeExtension = {
+    noiseManager: new NoiseManager(),
+};
 
-    /*
-    The ALEA PRNG and masher code used by simplex-noise.js
-    is based on code by Johannes Baagøe, modified by Jonas Wagner.
-    See alea.md for the full license.
-    @param {string|number} seed
-    */
-    function alea(seed) {
-        let s0 = 0;
-        let s1 = 0;
-        let s2 = 0;
-        let c = 1;
-        const mash = masher();
-        s0 = mash(' ');
-        s1 = mash(' ');
-        s2 = mash(' ');
-        s0 -= mash(seed);
-        if (s0 < 0) {
-            s0 += 1;
-        }
-        s1 -= mash(seed);
-        if (s1 < 0) {
-            s1 += 1;
-        }
-        s2 -= mash(seed);
-        if (s2 < 0) {
-            s2 += 1;
-        }
-        return function () {
-            const t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
-            s0 = s1;
-            s1 = s2;
-            return s2 = t - (c = t | 0);
-        };
-    }
-
-    function masher() {
-        let n = 0xefc8249d;
-        return function (data) {
-            data = data.toString();
-            for (let i = 0; i < data.length; i++) {
-                n += data.charCodeAt(i);
-                let h = 0.02519603282416938 * n;
-                n = h >>> 0;
-                h -= n;
-                h *= n;
-                n = h >>> 0;
-                h -= n;
-                n += h * 0x100000000; // 2^32
-            }
-            return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
-        };
-    }
-    return SimplexNoise;
-}());
-
-gdjs._cameraShakeExtension.noiseManager = new gdjs._cameraShakeExtension.NoiseManager();
 };
 gdjs.evtsExt__CameraShake__onFirstSceneLoaded.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-gdjs.evtsExt__CameraShake__onFirstSceneLoaded.userFunc0xd31460(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__CameraShake__onFirstSceneLoaded.userFunc0x9d78d0(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
@@ -710,6 +711,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
 
 
 gdjs.evtsExt__CameraShake__onFirstSceneLoaded.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

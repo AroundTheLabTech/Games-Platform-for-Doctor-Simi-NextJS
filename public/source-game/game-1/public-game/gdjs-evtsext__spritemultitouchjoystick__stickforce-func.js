@@ -15,7 +15,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__StickForce.eventsList0 = function(runtim
 
 let isConditionTrue_0 = false;
 {
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__MultitouchJoystick").getChild("Controllers").getChild((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ControllerIdentifier")) || 0 : 0)).getChild("Joystick").getChild((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("JoystickIdentifier") : "")).getChild("Force")); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = Math.max(0, eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).getChild(eventsFunctionContext.getArgument("ControllerIdentifier")).getChild("Joystick").getChild(eventsFunctionContext.getArgument("JoystickIdentifier")).getChild("Force").getAsNumber() - gdjs.evtsExt__SpriteMultitouchJoystick__DeadZone.func(runtimeScene, eventsFunctionContext.getArgument("ControllerIdentifier"), eventsFunctionContext.getArgument("JoystickIdentifier"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) / (1 - gdjs.evtsExt__SpriteMultitouchJoystick__DeadZone.func(runtimeScene, eventsFunctionContext.getArgument("ControllerIdentifier"), eventsFunctionContext.getArgument("JoystickIdentifier"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))); }}}
 
 }
 
@@ -79,6 +79,7 @@ if (argName === "JoystickIdentifier") return JoystickIdentifier;
 
 
 gdjs.evtsExt__SpriteMultitouchJoystick__StickForce.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

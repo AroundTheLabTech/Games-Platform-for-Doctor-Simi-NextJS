@@ -442,11 +442,7 @@ define("scripts/main.js", function(exports){
 	
 	    [ timeline, sence, control ].invoke( "init" );
 	
-	    log( "Cargando espada de corte " );
-	    log( "Cargando ingredientes" );
-		log( "Chefs cocinando" );
-	    log( "Dr.Simi en camino" );
-	    log( "Inicializando" );
+	    
 		log( "iniciando el juego..." );
 	    log.clear();
 	
@@ -666,14 +662,16 @@ define("scripts/sence.js", function(exports){
 		
 	    peach = fruit.create( "peach", 137, 333, true );
 		sandia = fruit.create("sandia", centerX+40, centerY+40, true);
-		boom = info;
-		boom = fruit.create( "boom", 552, 367, true, 2500 );
 
+
+	    
+
+	    
 	
 
 		//[peach, sandie, boom]
-	    [sandia, boom].forEach(function( f ){ f.isHomeMenu = 1; });
-	    peach.isDojoIcon = sandia.isNewGameIcon = boom.isQuitIcon = 1;
+	    [sandia].forEach(function( f ){ f.isHomeMenu = 1; });
+	    peach.isDojoIcon = sandia.isNewGameIcon = 1;
 	
 	    var group = [
 	    	[ homeMask, 0 ], 
@@ -683,14 +681,14 @@ define("scripts/sence.js", function(exports){
 	    	[ homeDesc, 1500, ], 
 			[ info, 2000 ],
 	    	[ dojo, 2000 ], 
-	    	[ newGame, 2000 ], 
+	    	[ newGame, 3000 ], 
 	    	[ quit, 2000 ],
 	        
 	        [ newSign, 2000 ],
 	
 	        // [ peach, 2000 ],
 	        [ sandia, 2000 ]
-	        // [ boom, 2000 ]
+	       
 	    ];
 	
 	    group.invoke( "show" );
@@ -698,13 +696,16 @@ define("scripts/sence.js", function(exports){
 	
 	    menuSnd.play();
 	    setTimeout( callback, 2500 );
+
+
+ 
 	};
 	
 	// to exit home page menu
 	exports.hideMenu = function( callback ){
 	    [ newSign, dojo, newGame, quit ].invoke( "hide" );
 	    [ homeMask, logo, ninja, info, homeDesc ].invoke( "hide" );
-	    [ peach, sandia, boom ].invoke( "fallOff", 150 );
+	    [ peach, sandia ].invoke( "fallOff", 150 );
 	
 	    menuSnd.stop();
 	    setTimeout( callback, fruit.getDropTimeSetting() );
@@ -718,6 +719,7 @@ define("scripts/sence.js", function(exports){
 	    
 	    gameStartSnd.play();
 	    setTimeout( callback, 1000 );
+	    	   
 	};
 	
 	// to exit game body
@@ -1272,7 +1274,7 @@ define("scripts/factory/fruit.js", function(exports){
 		peach: [ "images/fruit/peach.png", 62, 59, 37, -50, 0, "#e6c731" ],
 		sandia: [ "images/fruit/sandia.png", 98, 85, 38, -100, 0, "#c00" ],
 		apple: [ "images/fruit/apple.png", 66, 66, 31, -54, 0, "#c8e925" ],
-		banana: [ "images/fruit/banana.png", 126, 50, 43, 90, 0, null ],
+		banana: [ "images/fruit/banana.png", 68, 72, 32, -135, 0, "#c00" ],
 		basaha: [ "images/fruit/basaha.png", 68, 72, 32, -135, 0, "#c00" ]
 	};
 	
@@ -4923,13 +4925,13 @@ define("scripts/object/new-game.js", function(exports){
 	var tween = require("scripts/lib/tween");
 	
 	
-	// Porcentajes deseados para las dimensiones de la imagen
-	//Tiene que tener una diferencia de 
-	var imageWidthPercentage = 0.234; 
-	var imageHeightPercentage = 0.504; 
-	// Dimensiones de la imagen calculadas en función de los porcentajes
-	var imageWidth = containerWidth * imageWidthPercentage;
-	var imageHeight = containerHeight * imageHeightPercentage;
+// Calcula el tamaño basado en el contenedor más pequeño para mantener la proporción 1:1
+var imageSize = Math.min(containerWidth, containerHeight) * 0.234; // Ajusta el 0.234 según el tamaño deseado
+
+var imageWidth = imageSize;
+var imageHeight = imageSize; // Igual al ancho para asegurar proporción 1:1
+
+
 
 	// Calcula las coordenadas para centrar la imagen
 	var centerX = (containerWidth - imageWidth) / 2;
@@ -4959,9 +4961,10 @@ define("scripts/object/new.js", function(exports){
 	
 	exports.anims = [];
 	
-	exports.set = function(){
-	    image = layer.createImage( "default", "images/new.png", sx, sy, sw, sh );
-	};
+exports.set = function() {
+    var imageSize = Math.min(containerWidth, containerHeight) * 0.400; // Tamaño proporcional
+    image = layer.createImage("default", "images/new.png", sx, sy, imageSize, imageSize);
+};
 	
 	exports.unset = function(){
 	    
@@ -4996,14 +4999,15 @@ define("scripts/object/new.js", function(exports){
 	exports.onShowStart = function(){
 	};
 	
-	exports.onShowing = function( time, sx, ex, sy, ey, sw, ew, sh, eh ){
-	    image.attr({ 
-	    	x: showAnim( time, sx, ex - sx, 500 ), 
-	    	y: showAnim( time, sy, ey - sy, 500 ),
-	    	width: showAnim( time, sw, ew - sw, 500 ),
-	    	height: showAnim( time, sh, eh - sh, 500 )
-	    });
-	};
+exports.onShowing = function(time, sx, ex, sy, ey, sw, ew, sh, eh) {
+    var size = showAnim(time, sw, ew - sw, 500); // Asegura que el ancho y el alto sean iguales
+    image.attr({
+        x: showAnim(time, sx, ex - sx, 500),
+        y: showAnim(time, sy, ey - sy, 500),
+        width: size,
+        height: size
+    });
+};
 	
 	exports.onShowEnd = function(){
 	    this.jump();
@@ -5086,7 +5090,7 @@ define("scripts/object/score.js", function(exports){
 	var image, text1, text2, animLength = 500;;
 	
 	var imageSx = containerWidth * -0.1, imageEx = containerWidth * imageScoreSxPorcentaje; // 10% a la izquierda y 6% a la derecha del ancho del contenedor
-	var text1Sx = containerWidth * 0.1, text1Ex = containerWidth *	scoreFontSizeSxPorcentaje; // 6% a la izquierda y 41% a la derecha del ancho del contenedor
+	var text1Sx = containerWidth * 0.2, text1Ex = containerWidth *	scoreFontSizeSxPorcentaje; // 6% a la izquierda y 41% a la derecha del ancho del contenedor
 	var text2Sx = containerWidth * -0.1, text2Ex = containerWidth * 0.07; // 10% a la izquierda y 7% a la derecha del ancho del contenedor
 	
 	// Posición Y 
@@ -5112,11 +5116,20 @@ define("scripts/object/score.js", function(exports){
 
 
 
-	exports.set = function(){
+exports.set = function(){
 		image = layer.createImage("default", "images/score.png", imageSx, imageSy, imageWidthScore, imageHeightScore).hide();
-	    text1 = layer.createText("default", "0", text1Sx, text1Sy, "90-#fc7f0c-#ffec53", text1FontSize).hide();
-		text2 = layer.createText("default", "Mejor 999", text2Sx, 48, "#af7c05", text2FontSize).hide();
+	    text1 = layer.createText("default", "0", text1Sx, text1Sy, "#fff", text1FontSize)
+    .attr({
+        "font-family": "calibri", // Una alternativa moderna a Comic Sans
+        "fill": "#fff", // Color rojo
+        "font-weight": "bold", // Estilo bold (si está disponible)
+        "x": 200,  // mueve a la derecha o izquierda
+    "y": 30,   // sube o baja
+    })
+    .hide();
+		text2 = layer.createText("default", "Mejor 999", text2Sx, 48, "#4a0404", text2FontSize).hide();
 	};
+
 	
 	exports.show = function( start ){
 		timeline.createTask({
@@ -5137,6 +5150,18 @@ define("scripts/object/score.js", function(exports){
 	exports.number = function( number ){
 	    text1.attr( "text", number || 0 );
 	    image.scale( 1.2, 1.2 );
+	    
+	        // Lógica para mostrar imágenes en múltiplos de 10
+    if (number % 10 === 0) {
+        if (number === 10) {
+            // Mostrar "game-over.png" cuando el puntaje sea 10
+            showImageForDuration("images/secret.png", 5000);
+        } else {
+            // Mostrar "codigo.png" para otros múltiplos de 10
+            showImageForDuration("images/secret.png", 5000);
+        }
+    }
+	    
 	    setTimeout(function(){
 	        image.scale( 1, 1 );
 	    }, 60);
@@ -5145,11 +5170,29 @@ define("scripts/object/score.js", function(exports){
 		console.log(number);
 	};
 	
+	// Función utilitaria para mostrar imágenes por un tiempo específico
+function showImageForDuration(imagePath, duration) {
+    var imageWidth = 490; // Ancho de la imagen
+    var imageHeight = 85; // Alto de la imagen
+
+    var centerX = (containerWidth - imageWidth) / 2;
+    var centerY = (containerHeight - imageHeight) / 2;
+
+    // Crear y mostrar la imagen
+    var tempImage = layer.createImage("default", imagePath, centerX, centerY, imageWidth, imageHeight).show();
+
+    // Ocultar la imagen después del tiempo especificado
+    setTimeout(function() {
+        tempImage.hide();
+    }, duration);
+}
 // Mostrar/Ocultar relacionado	
 	exports.onTimeUpdate = function( time, mode, isx, iex, t1sx, t1ex, t2sx, t2ex ){
 	    image.attr( "x", anim( time, isx, iex - isx, animLength ) );
 	    text1.attr( "x", anim( time, t1sx, t1ex - t1sx, animLength ) );
 	    text2.attr( "x", anim( time, t2sx, t2ex - t2sx, animLength ) );
+	    
+	    
 	};
 	
 	exports.onTimeStart = function( mode ){

@@ -15,9 +15,9 @@ gdjs.evtsExt__CameraShake__StartShaking.eventsList0 = function(runtimeScene, eve
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Time").setNumber(0);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber(1234567890);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StartEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("EaseDuration")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(9).setNumber(0);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(1234567890);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).setNumber(eventsFunctionContext.getArgument("EaseDuration"));
 }}
 
 }
@@ -81,6 +81,7 @@ if (argName === "EaseDuration") return EaseDuration;
 
 
 gdjs.evtsExt__CameraShake__StartShaking.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

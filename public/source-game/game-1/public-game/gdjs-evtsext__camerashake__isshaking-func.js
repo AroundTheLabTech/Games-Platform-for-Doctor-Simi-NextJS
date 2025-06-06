@@ -15,7 +15,8 @@ gdjs.evtsExt__CameraShake__IsShaking.eventsList0 = function(runtimeScene, events
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Time")) < gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration"));
+{isConditionTrue_0 = (eventsFunctionContext.sceneVariablesForExtension.getFromIndex(9).getAsNumber() < eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).getAsNumber());
+}
 if (isConditionTrue_0) {
 {if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}
 
@@ -79,6 +80,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
 
 
 gdjs.evtsExt__CameraShake__IsShaking.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return !!eventsFunctionContext.returnValue;
 }

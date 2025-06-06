@@ -20,6 +20,8 @@ gdjs.LoseCode.GDNewSprite4Objects1= [];
 gdjs.LoseCode.GDNewSprite4Objects2= [];
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects1= [];
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects2= [];
+gdjs.LoseCode.GDNewSprite5Objects1= [];
+gdjs.LoseCode.GDNewSprite5Objects2= [];
 gdjs.LoseCode.GDNewPanelSpriteObjects1= [];
 gdjs.LoseCode.GDNewPanelSpriteObjects2= [];
 gdjs.LoseCode.GDCuadro_9595BlancoObjects1= [];
@@ -44,6 +46,22 @@ for (var i = 0, k = 0, l = gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects1.length
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects1.length = k;
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Init", false);
+}}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("puntaje_variable"), gdjs.LoseCode.GDpuntaje_9595variableObjects1);
+{for(var i = 0, len = gdjs.LoseCode.GDpuntaje_9595variableObjects1.length ;i < len;++i) {
+    gdjs.LoseCode.GDpuntaje_9595variableObjects1[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(14).getAsString());
+}
 }}
 
 }
@@ -74,6 +92,8 @@ gdjs.LoseCode.GDNewSprite4Objects1.length = 0;
 gdjs.LoseCode.GDNewSprite4Objects2.length = 0;
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects1.length = 0;
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects2.length = 0;
+gdjs.LoseCode.GDNewSprite5Objects1.length = 0;
+gdjs.LoseCode.GDNewSprite5Objects2.length = 0;
 gdjs.LoseCode.GDNewPanelSpriteObjects1.length = 0;
 gdjs.LoseCode.GDNewPanelSpriteObjects2.length = 0;
 gdjs.LoseCode.GDCuadro_9595BlancoObjects1.length = 0;
@@ -100,6 +120,8 @@ gdjs.LoseCode.GDNewSprite4Objects1.length = 0;
 gdjs.LoseCode.GDNewSprite4Objects2.length = 0;
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects1.length = 0;
 gdjs.LoseCode.GDBoton_9595JugarDeNuevoObjects2.length = 0;
+gdjs.LoseCode.GDNewSprite5Objects1.length = 0;
+gdjs.LoseCode.GDNewSprite5Objects2.length = 0;
 gdjs.LoseCode.GDNewPanelSpriteObjects1.length = 0;
 gdjs.LoseCode.GDNewPanelSpriteObjects2.length = 0;
 gdjs.LoseCode.GDCuadro_9595BlancoObjects1.length = 0;

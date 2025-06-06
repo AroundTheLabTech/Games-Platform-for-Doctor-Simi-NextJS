@@ -15,8 +15,8 @@ gdjs.evtsExt__CameraShake__SetDefaultTranslationAmplitude.eventsList0 = function
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeX").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeX")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeY").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeY")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(1).setNumber(eventsFunctionContext.getArgument("AmplitudeX"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(2).setNumber(eventsFunctionContext.getArgument("AmplitudeY"));
 }}
 
 }
@@ -81,6 +81,7 @@ if (argName === "AmplitudeY") return AmplitudeY;
 
 
 gdjs.evtsExt__CameraShake__SetDefaultTranslationAmplitude.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

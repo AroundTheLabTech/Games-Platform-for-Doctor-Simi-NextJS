@@ -16,10 +16,6 @@ gdjs.evtsExt__CameraShake__onSceneLoaded.eventsList0 = function(runtimeScene, ev
 let isConditionTrue_0 = false;
 {
 {gdjs.evtsExt__CameraShake__SetLayerShakable.func(runtimeScene, true, "", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}{gdjs.evtsExt__CameraShake__SetDefaultShakingFrequency.func(runtimeScene, 12, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}{gdjs.evtsExt__CameraShake__SetDefaultTranslationAmplitude.func(runtimeScene, 4, 4, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}{gdjs.evtsExt__CameraShake__SetDefaultRotationAmplitude.func(runtimeScene, 0, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}{gdjs.evtsExt__CameraShake__SetDefaultZoomAmplitude.func(runtimeScene, 1, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -82,6 +78,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
 
 
 gdjs.evtsExt__CameraShake__onSceneLoaded.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

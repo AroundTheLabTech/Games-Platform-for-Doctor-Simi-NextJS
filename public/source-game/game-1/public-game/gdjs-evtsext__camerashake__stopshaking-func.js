@@ -15,9 +15,9 @@ gdjs.evtsExt__CameraShake__StopShaking.eventsList0 = function(runtimeScene, even
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Time").setNumber(0);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("EaseDuration")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StopEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("EaseDuration")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(9).setNumber(0);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(eventsFunctionContext.getArgument("EaseDuration"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).setNumber(eventsFunctionContext.getArgument("EaseDuration"));
 }}
 
 }
@@ -81,6 +81,7 @@ if (argName === "EaseDuration") return EaseDuration;
 
 
 gdjs.evtsExt__CameraShake__StopShaking.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

@@ -15,7 +15,8 @@ gdjs.evtsExt__SpriteMultitouchJoystick__IsButtonReleased.eventsList0 = function(
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).getChild(eventsFunctionContext.getArgument("ControllerIdentifier")).getChild("Buttons").getChild(eventsFunctionContext.getArgument("Button")).getChild("State")) == "Released";
+{isConditionTrue_0 = (eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).getChild(eventsFunctionContext.getArgument("ControllerIdentifier")).getChild("Buttons").getChild(eventsFunctionContext.getArgument("Button")).getChild("State").getAsString() == "Released");
+}
 if (isConditionTrue_0) {
 {if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}
 

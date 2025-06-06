@@ -15,7 +15,7 @@ gdjs.evtsExt__CameraShake__SetLayerTranslationAmplitude.eventsList0 = function(r
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName").setString((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : ""));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).setString(eventsFunctionContext.getArgument("NewLayerName"));
 }}
 
 }
@@ -26,10 +26,10 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : "") == "");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("NewLayerName") == "");
 }
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName").setString("__BaseLayer");
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).setString("__BaseLayer");
 }}
 
 }
@@ -40,8 +40,8 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Layers").getChild(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName"))).getChild("AmplitudeX").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeX")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Layers").getChild(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName"))).getChild("AmplitudeY").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeY")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(6).getChild(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).getAsString()).getChild("AmplitudeX").setNumber(eventsFunctionContext.getArgument("AmplitudeX"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(6).getChild(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).getAsString()).getChild("AmplitudeY").setNumber(eventsFunctionContext.getArgument("AmplitudeY"));
 }}
 
 }
@@ -49,7 +49,7 @@ let isConditionTrue_0 = false;
 
 };
 
-gdjs.evtsExt__CameraShake__SetLayerTranslationAmplitude.func = function(runtimeScene, AmplitudeX, AmplitudeY, Layer, parentEventsFunctionContext) {
+gdjs.evtsExt__CameraShake__SetLayerTranslationAmplitude.func = function(runtimeScene, AmplitudeX, AmplitudeY, NewLayerName, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -99,7 +99,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
   getArgument: function(argName) {
 if (argName === "AmplitudeX") return AmplitudeX;
 if (argName === "AmplitudeY") return AmplitudeY;
-if (argName === "Layer") return Layer;
+if (argName === "NewLayerName") return NewLayerName;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
@@ -107,6 +107,7 @@ if (argName === "Layer") return Layer;
 
 
 gdjs.evtsExt__CameraShake__SetLayerTranslationAmplitude.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

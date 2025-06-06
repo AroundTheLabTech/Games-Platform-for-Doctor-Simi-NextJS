@@ -15,10 +15,10 @@ gdjs.evtsExt__CameraShake__ShakeCamera.eventsList0 = function(runtimeScene, even
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Time").setNumber(0);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Duration")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StartEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StartEaseDuration")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StopEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StopEaseDuration")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(9).setNumber(0);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(eventsFunctionContext.getArgument("NewDuration"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).setNumber(eventsFunctionContext.getArgument("NewStartEaseDuration"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).setNumber(eventsFunctionContext.getArgument("NewStopEaseDuration"));
 }}
 
 }
@@ -29,10 +29,11 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration")) < gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StartEaseDuration")) + gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StopEaseDuration"));
+{isConditionTrue_0 = (eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).getAsNumber() < eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).getAsNumber() + eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).getAsNumber());
+}
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StartEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StartEaseDuration")) || 0 : 0) * gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration")) / ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StartEaseDuration")) || 0 : 0) + (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StopEaseDuration")) || 0 : 0)));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StopEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StopEaseDuration")) || 0 : 0) * gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration")) / ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StartEaseDuration")) || 0 : 0) + (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("StopEaseDuration")) || 0 : 0)));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).setNumber(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).getAsNumber() * eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).getAsNumber() / (eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).getAsNumber() + eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).getAsNumber()));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).setNumber(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).getAsNumber() * eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).getAsNumber() / (eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).getAsNumber() + eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).getAsNumber()));
 }}
 
 }
@@ -40,7 +41,7 @@ if (isConditionTrue_0) {
 
 };
 
-gdjs.evtsExt__CameraShake__ShakeCamera.func = function(runtimeScene, Duration, StartEaseDuration, StopEaseDuration, parentEventsFunctionContext) {
+gdjs.evtsExt__CameraShake__ShakeCamera.func = function(runtimeScene, NewDuration, NewStartEaseDuration, NewStopEaseDuration, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -88,9 +89,9 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "Duration") return Duration;
-if (argName === "StartEaseDuration") return StartEaseDuration;
-if (argName === "StopEaseDuration") return StopEaseDuration;
+if (argName === "NewDuration") return NewDuration;
+if (argName === "NewStartEaseDuration") return NewStartEaseDuration;
+if (argName === "NewStopEaseDuration") return NewStopEaseDuration;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
@@ -98,6 +99,7 @@ if (argName === "StopEaseDuration") return StopEaseDuration;
 
 
 gdjs.evtsExt__CameraShake__ShakeCamera.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

@@ -51,6 +51,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider = class Slider extends gdjs.Runti
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.Value !== undefined)
       this._behaviorData.Value = networkSyncData.props.Value;
@@ -127,8 +128,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.eventsList
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getValue()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getValue(); }}}
 
 }
 
@@ -201,6 +201,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectOb
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.ValueContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -228,7 +231,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjec
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setValue(gdjs.evtTools.common.clamp((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0), (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue()), (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue())));
+    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setValue(gdjs.evtTools.common.clamp(eventsFunctionContext.getArgument("Value"), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue()));
 }
 }}
 
@@ -252,7 +255,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjec
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setValue(gdjs.evtTools.common.clamp(Math.round((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0) / (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize())) * (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize()), (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue()), (gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue())));
+    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setValue(gdjs.evtTools.common.clamp(Math.round(eventsFunctionContext.getArgument("Value") / eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize()) * eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue()));
 }
 }}
 
@@ -328,6 +331,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjec
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetValueContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -343,8 +349,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.eventsL
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMinValue(); }}}
 
 }
 
@@ -417,6 +422,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjec
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MinValueContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -434,7 +442,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setMinValue((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setMinValue(eventsFunctionContext.getArgument("Value"));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetValue((gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).Value((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -513,6 +521,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDOb
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMinValueContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -528,8 +539,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.eventsL
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getMaxValue(); }}}
 
 }
 
@@ -602,6 +612,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjec
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.MaxValueContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -619,7 +632,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setMaxValue((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setMaxValue(eventsFunctionContext.getArgument("Value"));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetValue((gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).Value((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -698,6 +711,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDOb
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetMaxValueContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -787,6 +803,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SizeContext.GDObjectObj
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SizeContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SizeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SizeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SizeContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -802,8 +821,7 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.eventsL
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getStepSize(); }}}
 
 }
 
@@ -876,6 +894,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjec
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.StepSizeContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -893,7 +914,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setStepSize((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setStepSize(eventsFunctionContext.getArgument("Value"));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetValue((gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).Value((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -972,6 +993,9 @@ gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDOb
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__Slider.Slider.prototype.SetStepSizeContext.GDObjectObjects2.length = 0;
+
 
 return;
 }

@@ -15,10 +15,10 @@ gdjs.evtsExt__CameraShake__CameraShake.eventsList0 = function(runtimeScene, even
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ShakePeriod")) || 0 : 0) != 0);
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("ShakePeriod") != 0);
 }
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultFrequency").setNumber(1 / (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ShakePeriod")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).setNumber(1 / eventsFunctionContext.getArgument("ShakePeriod"));
 }}
 
 }
@@ -29,10 +29,10 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ShakePeriod")) || 0 : 0) == 0);
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("ShakePeriod") == 0);
 }
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultFrequency").setNumber(1 / 0.08);
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(0).setNumber(1 / 0.08);
 }}
 
 }
@@ -45,8 +45,8 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 {
-{gdjs.evtTools.variable.variableClearChildren(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Layers"));
-}{gdjs.evtsExt__CameraShake__SetLayerShakable.func(runtimeScene, true, (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+{gdjs.evtTools.variable.variableClearChildren(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(6));
+}{gdjs.evtsExt__CameraShake__SetLayerShakable.func(runtimeScene, true, eventsFunctionContext.getArgument("Layer"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -57,15 +57,15 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Time").setNumber(0);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Layer").setString((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : ""));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Duration")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StartEaseDuration").setNumber(0);
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("StopEaseDuration").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Duration")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeX").setNumber(Math.abs((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeX")) || 0 : 0)));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeY").setNumber(Math.abs((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeY")) || 0 : 0)));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeAngle").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeAngle")) || 0 : 0));
-}{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("DefaultAmplitudeZoom").setNumber(1 + (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeZoom")) || 0 : 0) / 100);
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(9).setNumber(0);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(7).setString(eventsFunctionContext.getArgument("Layer"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(eventsFunctionContext.getArgument("Duration"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(10).setNumber(0);
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(11).setNumber(eventsFunctionContext.getArgument("Duration"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(1).setNumber(Math.abs(eventsFunctionContext.getArgument("AmplitudeX")));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(2).setNumber(Math.abs(eventsFunctionContext.getArgument("AmplitudeY")));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(3).setNumber(eventsFunctionContext.getArgument("AmplitudeAngle"));
+}{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(4).setNumber(1 + eventsFunctionContext.getArgument("AmplitudeZoom") / 100);
 }
 { //Subevents
 gdjs.evtsExt__CameraShake__CameraShake.eventsList0(runtimeScene, eventsFunctionContext);} //End of subevents
@@ -89,7 +89,7 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = (typeof eventsFunctionContext !== 'undefined' ? !!eventsFunctionContext.getArgument("ShakeForever") : false);
 }
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber(1234567890);
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(1234567890);
 }}
 
 }
@@ -107,9 +107,10 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration")) == 0;
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("Duration") == 0);
+}
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Duration").setNumber(0.5);
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(5).setNumber(0.5);
 }}
 
 }
@@ -190,6 +191,7 @@ if (argName === "ShakeForever") return ShakeForever;
 
 
 gdjs.evtsExt__CameraShake__CameraShake.eventsList2(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

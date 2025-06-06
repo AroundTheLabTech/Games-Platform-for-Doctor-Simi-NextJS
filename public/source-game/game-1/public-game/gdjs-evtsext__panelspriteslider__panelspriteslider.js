@@ -407,6 +407,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.o
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onCreatedContext.GDBackgroundObjects2.length = 0;
+
 gdjs.CustomRuntimeObject.prototype.onCreated.call(this);
 
 return;
@@ -560,6 +571,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.o
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.onHotReloadingContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -887,6 +909,49 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.d
 {
 
 
+{
+const variables = new gdjs.VariablesContainer();
+{
+const variable = new gdjs.Variable();
+variable.setNumber(0);
+variables._declare("Width", variable);
+}
+{
+const variable = new gdjs.Variable();
+variable.setNumber(0);
+variables._declare("Height", variable);
+}
+eventsFunctionContext.localVariables.push(variables);
+}
+let isConditionTrue_0 = false;
+{
+/* Reuse gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1 */
+/* Reuse gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1 */
+{eventsFunctionContext.localVariables[0].getFromIndex(0).setNumber((( gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[0].getWidth()));
+}{eventsFunctionContext.localVariables[0].getFromIndex(1).setNumber((( gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[0].getHeight()));
+}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[i].setScale(1);
+}
+}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].setWidth(eventsFunctionContext.localVariables[0].getFromIndex(0).getAsNumber());
+}
+}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].setHeight(eventsFunctionContext.localVariables[0].getFromIndex(1).getAsNumber());
+}
+}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[i].UpdateLayout((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+}}
+eventsFunctionContext.localVariables.pop();
+
+}
+
+
+};gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList5 = function(runtimeScene, eventsFunctionContext) {
+
+{
+
+
 
 }
 
@@ -972,32 +1037,15 @@ gdjs.copyArray(gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSli
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1 */
-/* Reuse gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1 */
-{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].returnVariable(gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].getVariables().get("Width")).setNumber((( gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[0].getWidth()));
+
+{ //Subevents
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList4(runtimeScene, eventsFunctionContext);} //End of subevents
 }
-}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].returnVariable(gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].getVariables().get("Height")).setNumber((( gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[0].getHeight()));
-}
-}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[i].setScale(1);
-}
-}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].setWidth((gdjs.RuntimeObject.getVariableNumber(gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].getVariables().get("Width"))));
-}
-}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].setHeight((gdjs.RuntimeObject.getVariableNumber(gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1[i].getVariables().get("Height"))));
-}
-}{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1[i].UpdateLayout((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}
-}}
 
 }
 
 
-};gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList5 = function(runtimeScene, eventsFunctionContext) {
+};gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList6 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
@@ -1009,7 +1057,7 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.d
 {
 
 
-gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList4(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList5(runtimeScene, eventsFunctionContext);
 }
 
 
@@ -1025,7 +1073,7 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.d
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20534260);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(18797620);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1);
@@ -1134,7 +1182,23 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.d
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects2.length = 0;
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects3.length = 0;
 
-gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList5(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.eventsList6(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDLabelObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDThumbObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDFillBarObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.doStepPostEventsContext.GDBackgroundObjects3.length = 0;
+
 
 return;
 }
@@ -1325,6 +1389,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.I
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsBeingDraggedContext.GDBackgroundObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -1444,6 +1519,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.V
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ValueContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1470,7 +1556,7 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(eventsFunctionContext.getObjects("FillBar"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects1);
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetValue((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetValue(eventsFunctionContext.getArgument("Value"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDObjectObjects1[i].UpdateThumbPosition((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -1571,6 +1657,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetValueContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -1690,6 +1787,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.M
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MinValueContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1716,7 +1824,7 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(eventsFunctionContext.getObjects("FillBar"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects1);
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetMinValue((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetMinValue(eventsFunctionContext.getArgument("Value"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDObjectObjects1[i].UpdateLayout((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -1820,6 +1928,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMinValueContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -1939,6 +2058,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.M
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.MaxValueContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1965,7 +2095,7 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(eventsFunctionContext.getObjects("FillBar"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects1);
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetMaxValue((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetMaxValue(eventsFunctionContext.getArgument("Value"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDObjectObjects1[i].UpdateLayout((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -2069,6 +2199,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetMaxValueContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -2188,6 +2329,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.StepSizeContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -2213,7 +2365,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("FillBar"), gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetStepSize((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Slider")).SetStepSize(eventsFunctionContext.getArgument("Value"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }}
 
@@ -2311,6 +2463,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetStepSizeContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -2439,6 +2602,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.I
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsLabelShownContext.GDBackgroundObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -2590,6 +2764,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.S
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.SetLabelShownContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -2717,6 +2902,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.U
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateLayoutContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -2921,6 +3117,22 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.U
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDBackgroundObjects3.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.eventsList1(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDLabelObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDThumbObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDFillBarObjects3.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDBackgroundObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateThumbPositionContext.GDBackgroundObjects3.length = 0;
+
 
 return;
 }
@@ -3040,6 +3252,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.F
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarLeftContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3160,6 +3383,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.F
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarRightContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3280,6 +3514,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.F
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.FullBarWidthContext.GDBackgroundObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3415,6 +3660,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.U
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.UpdateSliderConfigurationContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -3570,6 +3826,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.A
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.ActivateContext.GDBackgroundObjects2.length = 0;
+
 
 return;
 }
@@ -3698,6 +3965,17 @@ gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.I
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDBackgroundObjects2.length = 0;
 
 gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDLabelObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDLabelObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDThumbObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDThumbObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDFillBarObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDFillBarObjects2.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDBackgroundObjects1.length = 0;
+gdjs.evtsExt__PanelSpriteSlider__PanelSpriteSlider.PanelSpriteSlider.prototype.IsActivatedContext.GDBackgroundObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }

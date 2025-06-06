@@ -63,6 +63,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick = 
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.ControllerIdentifier !== undefined)
       this._behaviorData.ControllerIdentifier = networkSyncData.props.ControllerIdentifier;
@@ -164,7 +165,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1);
-{gdjs.evtsExt__SpriteMultitouchJoystick__SetDeadZone.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+{gdjs.evtsExt__SpriteMultitouchJoystick__SetDeadZone.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius(), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }{for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).Reset((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
@@ -241,6 +242,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onCreatedContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -333,6 +337,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onDeActivateContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onDeActivateContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onDeActivateContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.onDeActivateContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -364,7 +371,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4.length;i<l;++i) {
-    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].isCollidingWithPoint(gdjs.evtTools.input.getTouchX(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0)) ) {
+    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].isCollidingWithPoint(gdjs.evtTools.input.getTouchX(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0)) ) {
         isConditionTrue_0 = true;
         gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i];
         ++k;
@@ -375,7 +382,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4 */
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTouchId(gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTouchId(gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()));
 }
 }}
 
@@ -447,13 +454,12 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 {
 
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()));
+isConditionTrue_0 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId());
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1 */
+gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
     gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).Reset((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
@@ -481,10 +487,10 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetJoystickAngle(gdjs.evtTools.common.angleBetweenPositions((gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterXInScene()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterYInScene()), gdjs.evtTools.input.getTouchX(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetJoystickAngle(gdjs.evtTools.common.angleBetweenPositions((gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterXInScene()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterYInScene()), gdjs.evtTools.input.getTouchX(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId(), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId(), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0)), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }{for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetJoystickForce(gdjs.evtTools.common.clamp(2 * gdjs.evtTools.common.distanceBetweenPositions((gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterXInScene()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterYInScene()), gdjs.evtTools.input.getTouchX(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0)) / (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getWidth()), 0, 1), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetJoystickForce(gdjs.evtTools.common.clamp(2 * gdjs.evtTools.common.distanceBetweenPositions((gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterXInScene()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getCenterYInScene()), gdjs.evtTools.input.getTouchX(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId(), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId(), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getLayer()), 0)) / (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1[i].getWidth()), 0, 1), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 }}
 
@@ -594,6 +600,12 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects5.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.eventsList4(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects4.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.doStepPreEventsContext.GDObjectObjects5.length = 0;
+
 
 return;
 }
@@ -609,8 +621,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = Math.max(0, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce() - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()) / (1 - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()); }}}
 
 }
 
@@ -683,6 +694,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickForceContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -700,9 +714,9 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickForce((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickForce(eventsFunctionContext.getArgument("Value"));
 }
-}{gdjs.evtsExt__SpriteMultitouchJoystick__SetJoystickForce.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce()), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}{gdjs.evtsExt__SpriteMultitouchJoystick__SetJoystickForce.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce(), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -777,6 +791,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickForceContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -792,8 +809,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle(); }}}
 
 }
 
@@ -866,6 +882,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickAngleContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -883,9 +902,9 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickAngle((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickAngle(eventsFunctionContext.getArgument("Value"));
 }
-}{gdjs.evtsExt__SpriteMultitouchJoystick__SetJoystickAngle.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle()), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}{gdjs.evtsExt__SpriteMultitouchJoystick__SetJoystickAngle.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle(), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -960,6 +979,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickAngleContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1049,6 +1071,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceXContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceXContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceXContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceXContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1138,6 +1163,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceYContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceYContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceYContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.StickForceYContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1155,7 +1183,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteM
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1.length;i<l;++i) {
-    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce() > (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()) ) {
+    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).JoystickForce((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) > 0 ) {
         isConditionTrue_0 = true;
         gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[i];
         ++k;
@@ -1164,7 +1192,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoy
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsAngleIn4WayDirection.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).JoystickAngle((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Direction") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsAngleIn4WayDirection.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle(), eventsFunctionContext.getArgument("Direction"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 if (isConditionTrue_0) {
 {if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}
@@ -1241,6 +1269,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed4WayContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -1258,7 +1289,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteM
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1.length;i<l;++i) {
-    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickForce() > (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()) ) {
+    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).JoystickForce((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)) > 0 ) {
         isConditionTrue_0 = true;
         gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[i];
         ++k;
@@ -1267,7 +1298,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoy
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsAngleIn8WayDirection.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).JoystickAngle((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Direction") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsAngleIn8WayDirection.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickAngle(), eventsFunctionContext.getArgument("Direction"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
 if (isConditionTrue_0) {
 {if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = true; }}}
@@ -1344,6 +1375,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsDirectionPushed8WayContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -1442,6 +1476,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsPressedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsPressedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsPressedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.IsPressedContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -1537,6 +1574,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ResetContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ResetContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ResetContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ResetContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1552,8 +1592,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(); }}}
 
 }
 
@@ -1626,6 +1665,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ControllerIdentifierContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1643,7 +1685,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setControllerIdentifier((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setControllerIdentifier(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1719,6 +1761,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetControllerIdentifierContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1734,8 +1779,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier(); }}}
 
 }
 
@@ -1808,6 +1852,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.JoystickIdentifierContext.GDObjectObjects2.length = 0;
+
 
 return "" + eventsFunctionContext.returnValue;
 }
@@ -1825,7 +1872,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickIdentifier((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Value") : ""));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJoystickIdentifier(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1901,6 +1948,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetJoystickIdentifierContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1916,8 +1966,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getDeadZoneRadius(); }}}
 
 }
 
@@ -1990,6 +2039,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.DeadZoneRadiusContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -2007,8 +2059,9 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setDeadZoneRadius((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setDeadZoneRadius(eventsFunctionContext.getArgument("Value"));
 }
+}{gdjs.evtsExt__SpriteMultitouchJoystick__SetDeadZone.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJoystickIdentifier(), eventsFunctionContext.getArgument("Value"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -2083,6 +2136,105 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.pr
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.SetDeadZoneRadiusContext.GDObjectObjects2.length = 0;
+
+
+return;
+}
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext = {};
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1= [];
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects2= [];
+
+
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1);
+{for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1.length ;i < len;++i) {
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTouchId(eventsFunctionContext.getArgument("Value"));
+}
+}}
+
+}
+
+
+};
+
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressing = function(Value, parentEventsFunctionContext) {
+
+var that = this;
+var runtimeScene = this._runtimeScene;
+var thisObjectList = [this.owner];
+var Object = Hashtable.newFrom({Object: thisObjectList});
+var Behavior = this.name;
+var eventsFunctionContext = {
+  _objectsMap: {
+"Object": Object
+},
+  _objectArraysMap: {
+"Object": thisObjectList
+},
+  _behaviorNamesMap: {
+"Behavior": Behavior
+},
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("SpriteMultitouchJoystick"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("SpriteMultitouchJoystick"),
+  localVariables: [],
+  getObjects: function(objectName) {
+    return eventsFunctionContext._objectArraysMap[objectName] || [];
+  },
+  getObjectsLists: function(objectName) {
+    return eventsFunctionContext._objectsMap[objectName] || null;
+  },
+  getBehaviorName: function(behaviorName) {
+    return eventsFunctionContext._behaviorNamesMap[behaviorName] || behaviorName;
+  },
+  createObject: function(objectName) {
+    const objectsList = eventsFunctionContext._objectsMap[objectName];
+    if (objectsList) {
+      const object = parentEventsFunctionContext ?
+        parentEventsFunctionContext.createObject(objectsList.firstKey()) :
+        runtimeScene.createObject(objectsList.firstKey());
+      if (object) {
+        objectsList.get(objectsList.firstKey()).push(object);
+        eventsFunctionContext._objectArraysMap[objectName].push(object);
+      }
+      return object;    }
+    return null;
+  },
+  getInstancesCountOnScene: function(objectName) {
+    const objectsList = eventsFunctionContext._objectsMap[objectName];
+    let count = 0;
+    if (objectsList) {
+      for(const objectName in objectsList.items)
+        count += parentEventsFunctionContext ?
+parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
+        runtimeScene.getInstancesCountOnScene(objectName);
+    }
+    return count;
+  },
+  getLayer: function(layerName) {
+    return runtimeScene.getLayer(layerName);
+  },
+  getArgument: function(argName) {
+if (argName === "Value") return Value;
+    return "";
+  },
+  getOnceTriggers: function() { return that._onceTriggers; }
+};
+
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects2.length = 0;
+
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchJoystick.MultitouchJoystick.prototype.ForceStartPressingContext.GDObjectObjects2.length = 0;
+
 
 return;
 }

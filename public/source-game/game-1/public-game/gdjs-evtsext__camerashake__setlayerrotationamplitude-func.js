@@ -15,7 +15,7 @@ gdjs.evtsExt__CameraShake__SetLayerRotationAmplitude.eventsList0 = function(runt
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName").setString((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : ""));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).setString(eventsFunctionContext.getArgument("NewLayerName"));
 }}
 
 }
@@ -26,10 +26,10 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Layer") : "") == "");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("NewLayerName") == "");
 }
 if (isConditionTrue_0) {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName").setString("__BaseLayer");
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).setString("__BaseLayer");
 }}
 
 }
@@ -40,7 +40,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().get("__CameraShake").getChild("Layers").getChild(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().get("__CameraShake").getChild("LayerName"))).getChild("AmplitudeAngle").setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("AmplitudeAngle")) || 0 : 0));
+{eventsFunctionContext.sceneVariablesForExtension.getFromIndex(6).getChild(eventsFunctionContext.sceneVariablesForExtension.getFromIndex(8).getAsString()).getChild("AmplitudeAngle").setNumber(eventsFunctionContext.getArgument("AmplitudeAngle"));
 }}
 
 }
@@ -48,7 +48,7 @@ let isConditionTrue_0 = false;
 
 };
 
-gdjs.evtsExt__CameraShake__SetLayerRotationAmplitude.func = function(runtimeScene, AmplitudeAngle, Layer, parentEventsFunctionContext) {
+gdjs.evtsExt__CameraShake__SetLayerRotationAmplitude.func = function(runtimeScene, AmplitudeAngle, NewLayerName, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -97,7 +97,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
   },
   getArgument: function(argName) {
 if (argName === "AmplitudeAngle") return AmplitudeAngle;
-if (argName === "Layer") return Layer;
+if (argName === "NewLayerName") return NewLayerName;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
@@ -105,6 +105,7 @@ if (argName === "Layer") return Layer;
 
 
 gdjs.evtsExt__CameraShake__SetLayerRotationAmplitude.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return;
 }

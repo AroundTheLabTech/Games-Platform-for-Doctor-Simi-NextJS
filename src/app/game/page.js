@@ -157,7 +157,8 @@ export default function Game() {
             }
           }
         }
-      } else if (selectedGame === "juego6") {
+      }
+      else if (selectedGame === "juego6") {
         if (event.data && event.data.type === "scoreUpdate") {
           const scoreValue = Number(event.data.score);
 
@@ -177,7 +178,8 @@ export default function Game() {
             });
           }
         }
-      } else if (selectedGame === "juego7") {
+      }
+      else if (selectedGame === "juego7") {
         if (event.data && event.data.type === "scoreUpdate") {
           const scoreValue = Number(event.data.score);
 
@@ -186,7 +188,28 @@ export default function Game() {
             setScoreWon(scoreValue);
           }
         }
-      } else if (selectedGame === "juego8") {
+      }
+      else if (selectedGame === "juego8") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if (scoreValue > 0) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+              if (updated[1] > 0) {
+                setCurrentScore(initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
+          }
+        }
+      }
+      else if (selectedGame === "juego9") {
         if (event.data && event.data.type === "scoreUpdate") {
           const scoreValue = Number(event.data.score);
 
@@ -346,6 +369,8 @@ export default function Game() {
         return "Simi Gomitas";
       case "juego8":
         return "Simi Health Blocks";
+      case "juego9":
+        return "Simirama";
       default:
         return "Juego Desconocido";
     }
@@ -369,6 +394,8 @@ export default function Game() {
         return "¡Realiza conexiones entre los simis! Conecta a los simis de la misma forma para ganar puntos.";
       case "juego8":
         return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
+      case "juego9":
+        return "Haz tap o click en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
       default:
         return "Pronto vendras más";
     }
@@ -392,6 +419,8 @@ export default function Game() {
         return "source-game/game-7/index.html";
       case "juego8":
         return "source-game/game-8/index.html";
+      case "juego9":
+        return "source-game/game-9/index.html";
       default:
         return "";
     }

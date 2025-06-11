@@ -157,6 +157,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
       titleSrc: "/img/games/title/game-8.svg",
       description: "Inspirado en los clásicos juegos de puzzles, este divertido desafío te invita a ordenar las fichas de medicamentos que caen. Acomódalas estratégicamente para completar filas y mantener la farmacia en orden.",
     },
+    juego9: {
+      imageSrc: "/img/games/arcade/game-9.png",
+      titleSrc: "/img/games/title/game-9.svg",
+      description: "Usa el click o el tap para interactuar con el juego. Gira las piezas para encontrar su pareja y completar todos los pares. ¡Pon a prueba tu memoria y agilidad mental!",
+    },
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];
@@ -225,9 +230,9 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
           <div className="container-information">
             <div className="information-game">
               {/* Header */}
-              <div className="information-game-header" style={{justifyContent: 'center'}}>
+              <div className="information-game-header" style={{ justifyContent: 'center' }}>
                 {/* Container Puntos */}
-                <div style={{display: 'none'}} className="container-puntos">
+                <div style={{ display: 'none' }} className="container-puntos">
                   <Image src="/img/icons/monedaScore.svg" alt="" width={20} height={20} />
                   <p>+20</p>
                 </div>
@@ -239,7 +244,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
                 */}
                 <Image className="game-title-image" src={titleSrc} alt="" width={200} height={100} />
               </div>
-              <br/>
+              <br />
               {/* Texto e Información */}
               <div className="container-text">
                 <p ref={descriptionPRef}>{description}</p>

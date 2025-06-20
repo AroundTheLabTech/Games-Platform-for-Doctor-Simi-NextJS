@@ -1,297 +1,305 @@
 @use '../../mixins' as *;
 
 .profile-container {
-    padding: var(--spacing-md);
-    background-image: url('/img/background/background-games.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 6rem));
-    @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 6rem));
+  padding: var(--spacing-md);
+  background-image: url('/img/background/background-games.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 6rem));
+  @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 6rem));
 
-    .container-information-app {
+  .container-information-app {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include responsive-size(flex-direction, (column, column, column, column, column, column, row, row, row, row));
+    @include responsive-size(gap, (1rem, 1rem, 1rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 6rem));
+
+    // Card Game
+    .card-game {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      background-color: #6A5AE0;
+      padding: var(--spacing-md);
+      border-radius: 1rem;
+      @include responsive-size(width, (100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%));
+      @include responsive-size(padding, (1rem, 0.8rem, 1rem, 1.2rem, 1rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
+
+      // Header Card
+      .header-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          font-family: var(--font-press);
+          @include responsive-size(font-size, (1rem, 1rem, 1.2rem, 1.4rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
+        }
+
+        img {
+          width: 15%;
+        }
+      }
+
+      // Nombre Usuario
+      .user-info {
+        p {
+          font-size: var(--font-size-xl);
+          font-weight: 600;
+          @include responsive-size(font-size, (0.8rem, 0.8rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
+        }
+      }
+
+      // Número Tarjeta - Puntaje
+      .number-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: var(--spacing-lg);
+
+        h3 {
+          font-size: var(--font-size-md);
+          @include responsive-size(font-size, (0.8rem, 0.8rem, 0.9rem, 1rem, 0.8rem, 0.8rem, 0.6rem, 0.9rem, 1.3rem, 2.5rem));
+        }
+
+        div {
+          display: flex;
+          padding: var(--spacing-md);
+          background-color: var(--background-color-2);
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 0.4rem;
+          @include responsive-size(padding, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 0.3rem, 0.5rem, 1rem, 1.5rem));
+          @include responsive-size(gap, (0.1rem, 0.1rem, 0.2rem, 0.2rem, 0.3rem, 0.3rem, 0.3rem, 0.2rem, 0.5rem, 0.5rem));
+
+          img {
+            @include responsive-size(width, (20%, 20%, 20%, 20%, 20%, 20%, 20%, 20%, 20%, 30%));
+          }
+
+          p {
+            color: var(--color-secondary);
+            font-family: var(--font-press);
+            font-size: var(--font-size-sm);
+            @include responsive-size(width, (80%, 80%, 80%, 80%, 80%, 80%, 80%, 80%, 80%, 70%));
+            @include responsive-size(font-size, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 0.5rem, 0.6rem, 1rem, 1.8rem));
+          }
+        }
+      }
+    }
+
+    //Personalidad
+    .personality {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      background-color: #ffffff;
+      padding: var(--spacing-md);
+      border-radius: 1rem;
+      @include responsive-size(width, (100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%));
+      @include responsive-size(gap, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
+      @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 4rem, 3rem));
+
+      .title-personality {
+        h3 {
+          color: black;
+          @include responsive-size(font-size, (1rem, 1rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 4rem));
+        }
+      }
+
+      .container-personality-information {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        @include responsive-size(flex-direction, (column, column, column, column, column, column, row, row, row, row));
-        @include responsive-size(gap, (1rem, 1rem, 1rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 6rem));
 
-        // Card Game
-        .card-game {
-            display: flex;
-            flex-direction: column;
-            width: 45%;
-            background-color: #6A5AE0;
-            padding: var(--spacing-md);
-            border-radius: 1rem;
-            @include responsive-size(width, (100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%));
-            @include responsive-size(padding, (1rem, 0.8rem, 1rem, 1.2rem, 1rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
+        .container-personality-image {
+          flex: 1;
+          width: 100%;
+          display: flex;
+          align-self: center;
+          justify-content: center;
 
-            // Header Card
-            .header-card {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                h3 {
-                    font-family: var(--font-press);
-                    @include responsive-size(font-size, (1rem, 1rem, 1.2rem, 1.4rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
-                }
-
-                img {
-                    width: 15%;
-                }
-            }
-
-            // Nombre Usuario
-            .user-info {
-                p {
-                    font-size: var(--font-size-xl);
-                    font-weight: 600;
-                    @include responsive-size(font-size, (0.8rem, 0.8rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
-                }
-            }
-
-            // Número Tarjeta - Puntaje
-            .number-card {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: var(--spacing-lg);
-
-                h3 {
-                    font-size: var(--font-size-md);
-                    @include responsive-size(font-size, (0.8rem, 0.8rem, 0.9rem, 1rem, 0.8rem, 0.8rem, 0.6rem, 0.9rem, 1.3rem, 2.5rem));
-                }
-
-                div {
-                    display: flex;
-                    padding: var(--spacing-md);
-                    background-color: var(--background-color-2);
-                    justify-content: space-between;
-                    align-items: center;
-                    border-radius: 0.4rem;
-                    @include responsive-size(padding, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 0.3rem, 0.5rem, 1rem, 1.5rem));
-                    @include responsive-size(gap, (0.1rem, 0.1rem, 0.2rem, 0.2rem, 0.3rem, 0.3rem, 0.3rem, 0.2rem, 0.5rem, 0.5rem));
-
-                    img {
-                        @include responsive-size(width, (20%, 20%, 20%, 20%, 20%, 20%, 20%, 20%, 20%, 30%));
-                    }
-
-                    p {
-                        color: var(--color-secondary);
-                        font-family: var(--font-press);
-                        font-size: var(--font-size-sm);
-                        @include responsive-size(width, (80%, 80%, 80%, 80%, 80%, 80%, 80%, 80%, 80%, 70%));
-                        @include responsive-size(font-size, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 0.5rem, 0.6rem, 1rem, 1.8rem));
-                    }
-                }
-            }
+          img {
+            width: 50%;
+          }
         }
 
-        //Personalidad
-        .personality {
-            display: flex;
-            flex-direction: column;
-            width: 45%;
-            background-color: #ffffff;
-            padding: var(--spacing-md);
-            border-radius: 1rem;
-            @include responsive-size(width, (100%, 100%, 100%, 100%, 100%, 100%, 50%, 50%, 50%, 50%));
-            @include responsive-size(gap, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 2.5rem));
-            @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 4rem, 3rem));
+        .container-description-personality {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+          width: 100%;
+          gap: 10px;
 
-            .title-personality {
-                h3 {
-                    color: black;
-                    @include responsive-size(font-size, (1rem, 1rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 4rem));
-                }
-            }
-
-            .container-personality-information {
-                display: flex;
-                flex-direction: row;
-
-                .container-personality-image {
-                    flex: 1;
-                    width: 100%;
-                    display: flex;
-                    align-self: center;
-                    justify-content: center;
-
-                    img {
-                        width: 50%;
-                    }
-                }
-
-                .container-description-personality {
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-items: center;
-                    width: 100%;
-                    gap: 10px;
-
-                    .sub-title-personality {
-                        h3 {
-                            color: black;
-                            font-family: var(--font-press);
-                            font-size: var(--font-size-sm);
-                            @include responsive-size(font-size, (0.8rem, 0.8rem, 0.8rem, 1rem, 0.8rem, 0.8rem, 0.7rem, 1rem, 1.5rem, 2.5rem));
-                        }
-                    }
-
-                    .personality-description-container {
-                        p {
-                            color: black;
-                            @include responsive-size(font-size, (0.7rem, 0.7rem, 0.7rem, 0.9rem, 0.8rem, 0.8rem, 0.6rem, 0.8rem, 1rem, 2rem));
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .personal-information {
-        display: flex;
-        flex-direction: column;
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 15px 20px;
-        gap: 10px;
-        @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 4rem, 4rem));
-
-        .personal-information-title {
-            display: flex;
-            justify-content: space-between;
-
+          .sub-title-personality {
             h3 {
-                color: black;
-                @include responsive-size(font-size, (1rem, 1.2rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1.5rem, 1.5rem, 2rem, 4rem));
+              color: black;
+              font-family: var(--font-press);
+              font-size: var(--font-size-sm);
+              @include responsive-size(font-size, (0.8rem, 0.8rem, 0.8rem, 1rem, 0.8rem, 0.8rem, 0.7rem, 1rem, 1.5rem, 2.5rem));
             }
+          }
 
-            .edit-button {
-                button {
-                    background-color: transparent;
-                    border: none;
-                }
-
-                button:hover {
-                    cursor: pointer;
-                }
+          .personality-description-container {
+            p {
+              color: black;
+              @include responsive-size(font-size, (0.7rem, 0.7rem, 0.7rem, 0.9rem, 0.8rem, 0.8rem, 0.6rem, 0.8rem, 1rem, 2rem));
             }
-
-            .save-and-cancel-buttons {
-                display: flex;
-                gap: 10px;
-
-                button {
-                    background-color: transparent;
-                    border: none;
-                    color: black;
-                    font-weight: bold;
-                    @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
-                }
-
-                button:hover {
-                    cursor: pointer;
-                }
-            }
+          }
         }
-
-        .information-table {
-            tr {
-                th {
-                    color: black;
-                    font-weight: normal;
-                    text-align: start;
-                    padding-right: 10px;
-                    @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
-                }
-
-                td {
-                    color: black;
-                    font-weight: bold;
-                    padding-right: 10px;
-                    @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
-
-                    input {
-                        width: 100%;
-                        border: none;
-                        background-color: transparent;
-                        color: black;
-                        font-weight: bold;
-                        @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
-                    }
-                }
-            }
-        }
+      }
     }
+  }
 
-    .personal-pictures {
+  .personal-information {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    gap: 10px;
+    @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 4rem, 4rem));
+
+    .personal-information-title {
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        color: black;
+        @include responsive-size(font-size, (1rem, 1.2rem, 1rem, 1.2rem, 0.8rem, 0.8rem, 1.5rem, 1.5rem, 2rem, 4rem));
+      }
+
+      .edit-button {
+        button {
+          background-color: transparent;
+          border: none;
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+      }
+
+      .save-and-cancel-buttons {
         display: flex;
-        flex-direction: column;
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 15px 20px;
         gap: 10px;
-        @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 4rem));
-        @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 1rem, 2rem, 4rem, 4rem));
 
-        .pictures-title {
-            h3 {
-                color: black;
-                @include responsive-size(font-size, (1rem, 1.5rem, 1rem, 1.5rem, 0.8rem, 0.8rem, 1.5rem, 1.5rem, 2rem, 4rem));
-            }
+        button {
+          background-color: transparent;
+          border: none;
+          color: black;
+          font-weight: bold;
+          @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
         }
 
-        .pictures-list-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 15px;
-            @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 1rem, 2rem, 2rem, 3rem));
-
-            .picture-container {
-                img {
-                    width: 80px;
-                    @include responsive-size(width, (60px, 70px, 70px, 80px, 80px, 80px, 70px, 100px, 150px, 250px));
-                }
-
-                img:hover {
-                    cursor: pointer;
-                }
-
-                .img-selected {
-                    border: 1px solid black;
-                    border-radius: 100%;
-                    padding: 10px;
-                }
-            }
+        button:hover {
+          cursor: pointer;
         }
-
-        .update-button {
-            display: flex;
-            justify-content: flex-end;
-
-            button {
-                background-color: #6A5AE0;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 10px;
-                @include responsive-size(padding, (0.25rem, 0.25rem, 0.25rem, 0.4rem, 0.4rem, 0.4rem, 0.5rem, 0.75rem, 1rem, 1.5rem));
-                @include responsive-size(font-size, (0.3rem, 0.4rem, 0.4rem, 0.6rem, 0.6rem, 0.6rem, 0.8rem, 1.2rem, 1.5rem, 2rem));
-            }
-
-            button:hover {
-                cursor: pointer;
-            }
-        }
+      }
     }
+
+    .information-table {
+      tr {
+        th {
+          color: black;
+          font-weight: normal;
+          text-align: start;
+          padding-right: 10px;
+          @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+        }
+
+        td {
+          color: black;
+          font-weight: bold;
+          padding-right: 10px;
+          @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+
+          input {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            color: black;
+            font-weight: bold;
+            @include responsive-size(font-size, (0.5rem, 0.6rem, 0.6rem, 0.8rem, 0.8rem, 0.8rem, 1rem, 1.5rem, 2rem, 3rem));
+          }
+        }
+      }
+    }
+  }
+
+  .personal-pictures {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    gap: 10px;
+    @include responsive-size(padding, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 2rem, 3rem, 4rem, 4rem));
+    @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 1rem, 2rem, 4rem, 4rem));
+
+    .pictures-title {
+      h3 {
+        color: black;
+        @include responsive-size(font-size, (1rem, 1.5rem, 1rem, 1.5rem, 0.8rem, 0.8rem, 1.5rem, 1.5rem, 2rem, 4rem));
+      }
+    }
+
+    .pictures-list-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 15px;
+      @include responsive-size(gap, (1rem, 1.5rem, 2rem, 2rem, 2rem, 2rem, 1rem, 2rem, 2rem, 3rem));
+
+      .picture-container {
+        img {
+          width: 80px;
+          @include responsive-size(width, (60px, 70px, 70px, 80px, 80px, 80px, 70px, 100px, 150px, 250px));
+        }
+
+        img:hover {
+          cursor: pointer;
+        }
+
+        .img-selected {
+          border: 1px solid black;
+          border-radius: 100%;
+          padding: 10px;
+        }
+      }
+
+      .images-loader {
+        h4 {
+          color: black;
+          font-size: var(--font-size-md);
+          @include responsive-size(font-size, (0.5rem, 0.5rem, 0.5rem, 0.8rem, 0.8rem, 0.8rem, 0.5rem, 0.6rem, 1rem, 1.8rem));
+        }
+      }
+    }
+
+    .update-button {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        background-color: #6A5AE0;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        @include responsive-size(padding, (0.25rem, 0.25rem, 0.25rem, 0.4rem, 0.4rem, 0.4rem, 0.5rem, 0.75rem, 1rem, 1.5rem));
+        @include responsive-size(font-size, (0.3rem, 0.4rem, 0.4rem, 0.6rem, 0.6rem, 0.6rem, 0.8rem, 1.2rem, 1.5rem, 2rem));
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

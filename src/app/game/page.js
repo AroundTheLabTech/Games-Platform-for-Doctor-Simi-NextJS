@@ -171,7 +171,7 @@ export default function Game() {
               }
 
               if (updated[1] > 0) {
-                setCurrentScore(prev => prev + initialScoreDb + updated[1]);
+                setCurrentScore(initialScoreDb + updated[1]);
                 setScoreWon(updated[1]);
               }
               return updated;

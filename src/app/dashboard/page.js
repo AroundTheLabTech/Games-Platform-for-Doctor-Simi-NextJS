@@ -255,7 +255,7 @@ export default function Dashboard() {
           <div className="perfil-container">
 
             <div className="container-photo">
-              <Image src={userData.profile_picture || "img/perfil/default.png"} width={100} height={100} className="img-photo" alt="Profile" />
+              <Image src={userData.profile_picture || `${process.env.NEXT_PUBLIC_BASE_URL || ""}/img/perfil/default.png`} width={100} height={100} className="img-photo" alt="Profile" />
             </div>
 
             <div className="text-user">

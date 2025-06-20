@@ -206,7 +206,7 @@ export default function UserComponent(props) {
             </div>
           </div>
 
-          <div className="personality" style={{display: "none"}}>
+          <div className="personality" style={{ display: "none" }}>
 
             {/* Title */}
             <div className="title-personality">
@@ -296,7 +296,7 @@ export default function UserComponent(props) {
 
           <div className="pictures-list-container" >
             {
-              profilePictures?.list_profile_pictures_avalible && profilePictures?.list_profile_pictures_avalible?.map((picture, index) => {
+              profilePictures?.list_profile_pictures_avalible ? profilePictures?.list_profile_pictures_avalible?.map((picture, index) => {
                 return (
                   <div className="picture-container" key={index} >
                     <Image className={picture.image_url === profilePictures.current_profile_picture_url ? "img-selected" : ''} src={picture.image_url} alt={picture.title} onClick={() => {
@@ -305,12 +305,16 @@ export default function UserComponent(props) {
                         current_profile_picture_url: picture.image_url
                       })
                     }}
-                    width={150}
-                    height={150}
+                      width={150}
+                      height={150}
                     />
                   </div>
                 )
               })
+                :
+                <div className="images-loader">
+                  <h4>Cargando imagenes...</h4>
+                </div>
             }
           </div>
           <div className="update-button" >

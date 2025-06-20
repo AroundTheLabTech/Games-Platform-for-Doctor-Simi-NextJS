@@ -1,5 +1,10 @@
 import { validateObjectValues } from "../utils/helpers";
 
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://gametropolis-back-api-214230919331.us-central1.run.app'
+    : '/api';
+
 export const getGameCard = async (uid) => {
   try {
     if (!uid) {
@@ -219,7 +224,7 @@ export const postSessionGame = async (gameSession) => {
 
     console.log(requestOptions);
 
-    const response = await fetch(`/api/games/`, requestOptions);
+    const response = await fetch(`${baseUrl}/games/`, requestOptions);
 
     console.log(response);
 

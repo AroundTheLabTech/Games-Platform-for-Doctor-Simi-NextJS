@@ -70,7 +70,7 @@ export const updateUserInformation = async (uid, data) => {
       body: JSON.stringify(data),
     };
 
-    const response = await fetch(`api/users/user_information/${uid}`, requestOptions);
+    const response = await fetch(`/api/users/user_information/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -97,7 +97,7 @@ export const getUserPicture = async (uid) => {
       },
     };
 
-    const response = await fetch(`api/users/user_profile_picture/${uid}`, requestOptions);
+    const response = await fetch(`/api/users/user_profile_picture/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -145,7 +145,7 @@ export const getCompetitionSessions = async (userUid, opponentUid, competitionId
       },
     };
 
-    const response = await fetch(`api/competition/competition_plays/${userUid}/${opponentUid}/${competitionId}`, requestOptions);
+    const response = await fetch(`/api/competition/competition_plays/${userUid}/${opponentUid}/${competitionId}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -167,7 +167,7 @@ export const getListCompetitionNotification = async (uid) => {
       },
     };
 
-    const response = await fetch(`api/competition/competitions/${uid}`, requestOptions);
+    const response = await fetch(`/api/competition/competitions/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -189,7 +189,7 @@ export const getAllCompetition = async (userUid) => {
       },
     };
 
-    const response = await fetch(`api/competition/all_competition/${userUid}`, requestOptions);
+    const response = await fetch(`/api/competition/all_competition/${userUid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -219,7 +219,7 @@ export const postSessionGame = async (gameSession) => {
 
     console.log(requestOptions);
 
-    const response = await fetch(`api/games/`, requestOptions);
+    const response = await fetch(`/api/games/`, requestOptions);
 
     console.log(response);
 
@@ -265,7 +265,7 @@ export const getCompetitiveStatus = async (userUid, opponentUid, uniqueId) => {
       },
     };
 
-    const response = await fetch(`api/competition/competitive_status/${userUid}/${opponentUid}/${uniqueId}`, requestOptions);
+    const response = await fetch(`/api/competition/competitive_status/${userUid}/${opponentUid}/${uniqueId}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -293,7 +293,7 @@ export const postCreateCompetition = async (newCompetition) => {
       body: JSON.stringify(newCompetition),
     };
 
-    const response = await fetch(`api/competition/create`, requestOptions);
+    const response = await fetch(`/api/competition/create`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -311,7 +311,7 @@ export const putRejectCompetition = async (uid, competitionUid, id) => {
     if (!uid) {
       throw new Error('UID inválido');
     }
-    const response = await fetch(`api/competition/reject/${uid}/${competitionUid}/${id}`, {
+    const response = await fetch(`/api/competition/reject/${uid}/${competitionUid}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -336,7 +336,7 @@ export const putAcceptCompetition = async (uid, competitionUid, id) => {
     if (!uid) {
       throw new Error('UID inválido');
     }
-    const response = await fetch(`api/competition/accept/${uid}/${competitionUid}/${id}`, {
+    const response = await fetch(`/api/competition/accept/${uid}/${competitionUid}/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -365,7 +365,7 @@ export const putCompetitionSession = async (competitionSession) => {
       throw new Error('Objecto no valido');
     }
 
-    const response = await fetch(`api/competition/competition_session`, {
+    const response = await fetch(`/api/competition/competition_session`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -402,7 +402,7 @@ export const getUserPoints = async (uid) => {
       },
     };
 
-    const response = await fetch(`api/scores/score_user/${uid}`, requestOptions);
+    const response = await fetch(`/api/scores/score_user/${uid}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -430,7 +430,7 @@ export const putResetPassword = async (email) => {
       body: JSON.stringify({}),
     };
 
-    const response = await fetch(`api/users/reset_password/${email}`, requestOptions);
+    const response = await fetch(`/api/users/reset_password/${email}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status}`);
@@ -463,7 +463,7 @@ export const applyNewPassword = async (oobCode, newPassword) => {
 
 export const updateUserProfilePicture = async (uid, url) => {
   try {
-    const response = await fetch(`api/users/update_profile_picture/${uid}`, {
+    const response = await fetch(`/api/users/update_profile_picture/${uid}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

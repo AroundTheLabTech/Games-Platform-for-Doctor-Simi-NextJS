@@ -5430,6 +5430,56 @@ form .select-gender option {
   border-radius: 100%;
   padding: 10px;
 }
+.profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+  color: black;
+  font-size: var(--font-size-md);
+  font-size: 0.5rem;
+}
+@media (min-width: 320px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 375px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 425px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 600px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 602px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 1440px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 2560px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 1.8rem;
+  }
+}
 .profile-container .personal-pictures .update-button {
   display: flex;
   justify-content: flex-end;
@@ -9474,6 +9524,56 @@ form .select-gender option {
   border: 1px solid black;
   border-radius: 100%;
   padding: 10px;
+}
+.profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+  color: black;
+  font-size: var(--font-size-md);
+  font-size: 0.5rem;
+}
+@media (min-width: 320px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 375px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 425px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 600px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 602px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 1440px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 2560px) {
+  .profile-container .personal-pictures .pictures-list-container .images-loader h4 {
+    font-size: 1.8rem;
+  }
 }
 .profile-container .personal-pictures .update-button {
   display: flex;

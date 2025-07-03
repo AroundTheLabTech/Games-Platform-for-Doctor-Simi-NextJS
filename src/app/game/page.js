@@ -229,6 +229,26 @@ export default function Game() {
           }
         }
       }
+      else if (selectedGame === "juego10") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if (scoreValue > 0) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+              if (updated[1] > 0) {
+                setCurrentScore(initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
+          }
+        }
+      }
     };
 
     window.addEventListener("message", handlePostMessage);
@@ -371,6 +391,8 @@ export default function Game() {
         return "Simi Health Blocks";
       case "juego9":
         return "Simirama";
+      case "juego10":
+        return "SimiShip";
       default:
         return "Juego Desconocido";
     }
@@ -383,7 +405,7 @@ export default function Game() {
       case "juego2":
         return "¡No Ganas Hasta Llegar al Zócalo de CDMX!, salta, esquiva y recolecta monedas para llegar al final del nivel. Y obtendrás una medalla de oro";
       case "juego3":
-        return "¡No Cortes al Simi! Corta las roscas de reyes lo más rápido posible.";
+        return "¡No Cortes al Simi! Corta los implementos medicos lo más rápido posible.";
       case "juego4":
         return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
       case "juego5":
@@ -396,6 +418,8 @@ export default function Game() {
         return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
       case "juego9":
         return "Haz tap o click en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
+      case "juego10":
+        return "Usando las fehcas del teclado y el espacio, o los botones en pantalla, mueve al simi entre los satelites y llevalo hasta el planeta. ¡Evita caer en el espacio!";
       default:
         return "Pronto vendras más";
     }
@@ -421,6 +445,8 @@ export default function Game() {
         return "source-game/game-8/index.html";
       case "juego9":
         return "source-game/game-9/index.html";
+      case "juego10":
+        return "source-game/game-10/index.html";
       default:
         return "";
     }

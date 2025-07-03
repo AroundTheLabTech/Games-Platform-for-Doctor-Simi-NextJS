@@ -52,7 +52,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18846868);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15079956);
 }
 }
 if (isConditionTrue_0) {
@@ -71,7 +71,7 @@ isConditionTrue_0 = false;
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18847356);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15080924);
 }
 }
 if (isConditionTrue_0) {
@@ -207,7 +207,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDBotonJugarObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18850700);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15085988);
 }
 }
 }
@@ -231,7 +231,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.MenuCode.mapOfGDgdjs_9546MenuCode_9546GDInstruccionesObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18852452);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15087812);
 }
 }
 }
@@ -254,7 +254,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.isMouseButtonPressed(runtimeScene, "Left");
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(18853420);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15088876);
 }
 }
 }

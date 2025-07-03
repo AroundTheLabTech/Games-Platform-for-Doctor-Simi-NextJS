@@ -120,17 +120,17 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego1: {
       imageSrc: "/img/games/arcade/game-1.png",
       titleSrc: "/img/games/title/game-1.svg",
-      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvar?",
+      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvarlo?",
     },
     juego2: {
       imageSrc: "/img/games/arcade/game-2.png",
       titleSrc: "/img/games/title/game-2.svg",
-      description: "¡Acompaña a Simi, recolecta monedas, esquiva obstáculos y desbloquea niveles! Demuestra tus skills en este épico desafío.",
+      description: "¡Acompaña a Simi, recolecta monedas, esquiva obstáculos y desbloquea niveles! Demuestra tus habilidades en este épico desafío.",
     },
     juego3: {
       imageSrc: "/img/games/arcade/game-3.png",
       titleSrc: "/img/games/title/game-3.svg",
-      description: "¡No dejes caer ni un implemento medico! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
+      description: "¡No dejes caer ni un implemento médico! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
     },
     juego4: {
       imageSrc: "/img/games/arcade/game-4.png",
@@ -145,12 +145,12 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego6: {
       imageSrc: "/img/games/arcade/game-6.png",
       titleSrc: "/img/games/title/game-6.svg",
-      description: "Usa el click o el tap y coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+      description: "Usa el clic o el tap y coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
     },
     juego7: {
       imageSrc: "/img/games/arcade/game-7.png",
       titleSrc: "/img/games/title/game-7.svg",
-      description: "Usa el click o el tap y desliza para conectar tres o más gomas para crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
+      description: "Usa el clic o el tap y desliza para conectar tres o más gomas y crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
     },
     juego8: {
       imageSrc: "/img/games/arcade/game-8.png",
@@ -160,12 +160,12 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego9: {
       imageSrc: "/img/games/arcade/game-9.png",
       titleSrc: "/img/games/title/game-9.svg",
-      description: "Usa el click o el tap para interactuar con el juego. Gira las piezas para encontrar su pareja y completar todos los pares. ¡Pon a prueba tu memoria y agilidad mental!",
+      description: "Usa el clic o el tap para interactuar con el juego. Gira las piezas para encontrar su pareja y completar todos los pares. ¡Pon a prueba tu memoria y agilidad mental!",
     },
     juego10: {
       imageSrc: "/img/games/arcade/game-10.png",
       titleSrc: "/img/games/title/game-10.svg",
-      description: "Usa los botones en pantalla o las teclas del teclado para moverte y saltar. Recoge monedas, evita caer al vacio y lleva al simi al planeta saltando entre los satelites. ¡Demuestra tus habilidades de plataforma!",
+      description: "Usa los botones en pantalla o las teclas del teclado para moverte y saltar. Recoge monedas, evita caer al vacío y lleva al Simi al planeta saltando entre los satélites. ¡Demuestra tus habilidades de plataforma!",
     }
   };
 

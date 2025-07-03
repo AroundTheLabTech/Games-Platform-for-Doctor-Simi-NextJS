@@ -19,10 +19,10 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("ToSaveObject"), gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].returnVariable(gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position").getChild("X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))).setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("CoordinateX")) || 0 : 0));
+    gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].returnVariable(gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position").getChild("X" + eventsFunctionContext.getArgument("CheckpointName"))).setNumber(eventsFunctionContext.getArgument("CoordinateX"));
 }
 }{for(var i = 0, len = gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].returnVariable(gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position").getChild("Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))).setNumber((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("CoordinateY")) || 0 : 0));
+    gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].returnVariable(gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position").getChild("Y" + eventsFunctionContext.getArgument("CheckpointName"))).setNumber(eventsFunctionContext.getArgument("CoordinateY"));
 }
 }}
 
@@ -93,6 +93,9 @@ gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1.length = 0;
 gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects2.length = 0;
 
 gdjs.evtsExt__Checkpoints__SaveCheckpoint.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects1.length = 0;
+gdjs.evtsExt__Checkpoints__SaveCheckpoint.GDToSaveObjectObjects2.length = 0;
+
 
 return;
 }

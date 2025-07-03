@@ -95,6 +95,9 @@ gdjs.evtsExt__Player__TriggerDeath.GDPlayerObjects1.length = 0;
 gdjs.evtsExt__Player__TriggerDeath.GDPlayerObjects2.length = 0;
 
 gdjs.evtsExt__Player__TriggerDeath.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Player__TriggerDeath.GDPlayerObjects1.length = 0;
+gdjs.evtsExt__Player__TriggerDeath.GDPlayerObjects2.length = 0;
+
 
 return;
 }

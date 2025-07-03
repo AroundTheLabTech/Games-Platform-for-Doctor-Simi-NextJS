@@ -116,6 +116,11 @@ gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDTargetObjects1.length = 0;
 gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDTargetObjects2.length = 0;
 
 gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDSourceObjects1.length = 0;
+gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDSourceObjects2.length = 0;
+gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDTargetObjects1.length = 0;
+gdjs.evtsExt__VolumeFalloff__SetVolumeFalloff.GDTargetObjects2.length = 0;
+
 
 return;
 }

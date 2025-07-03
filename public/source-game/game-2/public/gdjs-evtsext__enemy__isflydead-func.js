@@ -93,6 +93,9 @@ gdjs.evtsExt__Enemy__IsFlyDead.GDFlyObjects1.length = 0;
 gdjs.evtsExt__Enemy__IsFlyDead.GDFlyObjects2.length = 0;
 
 gdjs.evtsExt__Enemy__IsFlyDead.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Enemy__IsFlyDead.GDFlyObjects1.length = 0;
+gdjs.evtsExt__Enemy__IsFlyDead.GDFlyObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }

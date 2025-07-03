@@ -12,14 +12,15 @@ gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects1= [];
 gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects2= [];
 
 
-gdjs.evtsExt__Player__AnimateFallingIntoPortal.asyncCallback22613268 = function (runtimeScene, eventsFunctionContext, asyncObjectsList) {
+gdjs.evtsExt__Player__AnimateFallingIntoPortal.asyncCallback21435500 = function (runtimeScene, eventsFunctionContext, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(eventsFunctionContext.localVariables);
 gdjs.copyArray(asyncObjectsList.getObjects("Player"), gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects2);
 
 {for(var i = 0, len = gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects2.length ;i < len;++i) {
     gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Tween")).addObjectScaleTween2("ShrinkIntoPortal", 0.01, 0.01, "easeInSine", 1, true, true);
 }
-}}
+}eventsFunctionContext.localVariables.length = 0;
+}
 gdjs.evtsExt__Player__AnimateFallingIntoPortal.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
@@ -30,7 +31,7 @@ gdjs.evtsExt__Player__AnimateFallingIntoPortal.eventsList0 = function(runtimeSce
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(eventsFunctionContext.localVariables);
 for (const obj of gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects1) asyncObjectsList.addObject("Player", obj);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.75), (runtimeScene) => (gdjs.evtsExt__Player__AnimateFallingIntoPortal.asyncCallback22613268(runtimeScene, eventsFunctionContext, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.75), (runtimeScene) => (gdjs.evtsExt__Player__AnimateFallingIntoPortal.asyncCallback21435500(runtimeScene, eventsFunctionContext, asyncObjectsList)));
 }
 }
 
@@ -126,6 +127,11 @@ gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects1.length = 0;
 gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects2.length = 0;
 
 gdjs.evtsExt__Player__AnimateFallingIntoPortal.eventsList1(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects1.length = 0;
+gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPlayerObjects2.length = 0;
+gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects1.length = 0;
+gdjs.evtsExt__Player__AnimateFallingIntoPortal.GDPortalObjects2.length = 0;
+
 
 return;
 }

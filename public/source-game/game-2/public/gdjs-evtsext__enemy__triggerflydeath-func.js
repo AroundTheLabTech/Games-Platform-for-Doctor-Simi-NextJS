@@ -105,6 +105,9 @@ gdjs.evtsExt__Enemy__TriggerFlyDeath.GDFlyObjects1.length = 0;
 gdjs.evtsExt__Enemy__TriggerFlyDeath.GDFlyObjects2.length = 0;
 
 gdjs.evtsExt__Enemy__TriggerFlyDeath.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Enemy__TriggerFlyDeath.GDFlyObjects1.length = 0;
+gdjs.evtsExt__Enemy__TriggerFlyDeath.GDFlyObjects2.length = 0;
+
 
 return;
 }

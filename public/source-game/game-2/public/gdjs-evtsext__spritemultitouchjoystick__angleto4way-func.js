@@ -15,7 +15,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__AngleTo4Way.eventsList0 = function(runti
 
 let isConditionTrue_0 = false;
 {
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.common.mod(Math.round((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Angle")) || 0 : 0) * 4 / 360), 4); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.common.mod(Math.round(eventsFunctionContext.getArgument("Angle") * 4 / 360), 4); }}}
 
 }
 
@@ -78,6 +78,7 @@ if (argName === "Angle") return Angle;
 
 
 gdjs.evtsExt__SpriteMultitouchJoystick__AngleTo4Way.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

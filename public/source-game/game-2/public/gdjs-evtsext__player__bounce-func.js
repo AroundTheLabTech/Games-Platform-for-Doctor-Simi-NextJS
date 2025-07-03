@@ -91,6 +91,9 @@ gdjs.evtsExt__Player__Bounce.GDPlayerObjects1.length = 0;
 gdjs.evtsExt__Player__Bounce.GDPlayerObjects2.length = 0;
 
 gdjs.evtsExt__Player__Bounce.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Player__Bounce.GDPlayerObjects1.length = 0;
+gdjs.evtsExt__Player__Bounce.GDPlayerObjects2.length = 0;
+
 
 return;
 }

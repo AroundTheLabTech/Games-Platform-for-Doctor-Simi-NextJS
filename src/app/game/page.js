@@ -401,27 +401,27 @@ export default function Game() {
   const getGameInstructions = (game) => {
     switch (game) {
       case "juego1":
-        return "¡No permitas que lleguen al centro! Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos, para subir los niveles de ataque, defensa y velocidad.";
+        return "¡No permitas que lleguen al centro! Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos para subir los niveles de ataque, defensa y velocidad.";
       case "juego2":
-        return "¡No Ganas Hasta Llegar al Zócalo de CDMX!, salta, esquiva y recolecta monedas para llegar al final del nivel. Y obtendrás una medalla de oro";
+        return "¡No ganas hasta llegar al Zócalo de la CDMX! Salta, esquiva y recolecta monedas para llegar al final del nivel y obtendrás una medalla de oro.";
       case "juego3":
-        return "¡No Cortes al Simi! Corta los implementos medicos lo más rápido posible.";
+        return "¡No cortes al Simi! Corta los implementos médicos lo más rápido posible.";
       case "juego4":
-        return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen";
+        return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen.";
       case "juego5":
-        return "¡Evita que Simi se choque con los obstaculos del cielo!";
+        return "¡Evita que Simi choque con los obstáculos del cielo!";
       case "juego6":
         return "¡Instala torres para defender el hospital y trata a los enfermos!";
       case "juego7":
-        return "¡Realiza conexiones entre los simis! Conecta a los simis de la misma forma para ganar puntos.";
+        return "¡Realiza conexiones entre los Simis! Conecta a los Simis de la misma forma para ganar puntos.";
       case "juego8":
         return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
       case "juego9":
-        return "Haz tap o click en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
+        return "Haz tap o clic en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
       case "juego10":
-        return "Usando las fehcas del teclado y el espacio, o los botones en pantalla, mueve al simi entre los satelites y llevalo hasta el planeta. ¡Evita caer en el espacio!";
+        return "Usando las flechas del teclado y el espacio, o los botones en pantalla, mueve al Simi entre los satélites y llévalo hasta el planeta. ¡Evita caer en el espacio!";
       default:
-        return "Pronto vendras más";
+        return "Pronto vendrán más.";
     }
   };
 

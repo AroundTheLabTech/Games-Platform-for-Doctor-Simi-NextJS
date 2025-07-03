@@ -136,10 +136,13 @@
             const scene = game._sceneStack?._stack?.[0];
             if (!scene) return;
 
+            let currentScore = 0;
+
             const coins = scene.getVariables().get("Monedas")?.getAsNumber() || 0;
 
             if( coins > 100) {
-              sendScoreToParent(5);
+              currentScore += 5;
+              sendScoreToParent(currentScore);
               
             }
           } catch (err) {

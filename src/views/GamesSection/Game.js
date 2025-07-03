@@ -130,7 +130,7 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
     juego3: {
       imageSrc: "/img/games/arcade/game-3.png",
       titleSrc: "/img/games/title/game-3.svg",
-      description: "¡No dejes caer ni una Rosca! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
+      description: "¡No dejes caer ni un implemento medico! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
     },
     juego4: {
       imageSrc: "/img/games/arcade/game-4.png",
@@ -162,6 +162,11 @@ export default function Games({ selectedGame, setSelectedGame, handlePlayGame })
       titleSrc: "/img/games/title/game-9.svg",
       description: "Usa el click o el tap para interactuar con el juego. Gira las piezas para encontrar su pareja y completar todos los pares. ¡Pon a prueba tu memoria y agilidad mental!",
     },
+    juego10: {
+      imageSrc: "/img/games/arcade/game-10.png",
+      titleSrc: "/img/games/title/game-10.svg",
+      description: "Usa los botones en pantalla o las teclas del teclado para moverte y saltar. Recoge monedas, evita caer al vacio y lleva al simi al planeta saltando entre los satelites. ¡Demuestra tus habilidades de plataforma!",
+    }
   };
 
   const { imageSrc, titleSrc, description } = gameData[selectedGame];

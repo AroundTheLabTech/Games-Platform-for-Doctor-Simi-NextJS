@@ -21,7 +21,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("ToCheckObject"), gdjs.evtsExt__
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1.length;i<l;++i) {
-    if ( gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")) ) {
+    if ( gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + eventsFunctionContext.getArgument("CheckpointName")) ) {
         isConditionTrue_0 = true;
         gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[k] = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i];
         ++k;
@@ -31,7 +31,7 @@ gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1.length;i<l;++i) {
-    if ( gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")) ) {
+    if ( gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + eventsFunctionContext.getArgument("CheckpointName")) ) {
         isConditionTrue_0 = true;
         gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[k] = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1[i];
         ++k;
@@ -58,7 +58,7 @@ isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("ToCheckObject"), gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2);
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2.length;i<l;++i) {
-    if ( !(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))) ) {
+    if ( !(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + eventsFunctionContext.getArgument("CheckpointName"))) ) {
         isConditionTrue_1 = true;
         gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[k] = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i];
         ++k;
@@ -76,7 +76,7 @@ if(isConditionTrue_1) {
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("ToCheckObject"), gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2);
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2.length;i<l;++i) {
-    if ( !(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))) ) {
+    if ( !(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + eventsFunctionContext.getArgument("CheckpointName"))) ) {
         isConditionTrue_1 = true;
         gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[k] = gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2[i];
         ++k;
@@ -163,6 +163,9 @@ gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1.length = 0;
 gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2.length = 0;
 
 gdjs.evtsExt__Checkpoints__CheckpointExist.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects1.length = 0;
+gdjs.evtsExt__Checkpoints__CheckpointExist.GDToCheckObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }

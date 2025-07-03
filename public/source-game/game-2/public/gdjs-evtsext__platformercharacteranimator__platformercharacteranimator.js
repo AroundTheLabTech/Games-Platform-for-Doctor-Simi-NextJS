@@ -75,6 +75,7 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.EnableAnimationChanges !== undefined)
       this._behaviorData.EnableAnimationChanges = networkSyncData.props.EnableAnimationChanges;
@@ -229,7 +230,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28185428);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20581284);
 }
 }
 }
@@ -269,7 +270,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28187668);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20580932);
 }
 }
 }
@@ -327,13 +328,13 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28194204);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20586444);
 }
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getRunAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getRunAnimationName());
 }
 }}
 
@@ -356,13 +357,13 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28195956);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20586892);
 }
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getIdleAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getIdleAnimationName());
 }
 }}
 
@@ -376,13 +377,13 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28197916);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20588732);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2, gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3);
 
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getClimbAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getClimbAnimationName());
 }
 }}
 
@@ -406,7 +407,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28199644);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20589588);
 }
 }
 if (isConditionTrue_0) {
@@ -435,7 +436,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28201172);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20590532);
 }
 }
 if (isConditionTrue_0) {
@@ -467,13 +468,13 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28190084);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20584212);
 }
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJumpAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJumpAnimationName());
 }
 }}
 
@@ -497,13 +498,13 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28191620);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20585116);
 }
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getFallAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getFallAnimationName());
 }
 }}
 
@@ -574,7 +575,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__PlatformerCharacterAnimator__Platformer
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(28202508);
+{isConditionTrue_0 = eventsFunctionContext.getOnceTriggers().triggerOnce(20591588);
 }
 }
 if (isConditionTrue_0) {
@@ -701,6 +702,11 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects4.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.eventsList6(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.doStepPreEventsContext.GDObjectObjects4.length = 0;
+
 
 return;
 }
@@ -823,7 +829,7 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getRunAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getRunAnimationName());
 }
 }}
 
@@ -847,7 +853,7 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getIdleAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getIdleAnimationName());
 }
 }}
 
@@ -864,7 +870,7 @@ let isConditionTrue_0 = false;
 gdjs.copyArray(gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2, gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3);
 
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getClimbAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getClimbAnimationName());
 }
 }}
 
@@ -940,7 +946,7 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJumpAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getJumpAnimationName());
 }
 }}
 
@@ -965,7 +971,7 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2 */
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName((gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getFallAnimationName()));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2[i].getBehavior(eventsFunctionContext.getBehaviorName("Animation")).setAnimationName(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getFallAnimationName());
 }
 }}
 
@@ -1158,6 +1164,11 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects4.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.eventsList6(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.onActivateContext.GDObjectObjects4.length = 0;
+
 
 return;
 }
@@ -1187,7 +1198,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (typeof eventsFunctionContext !== 'undefined' ? !!eventsFunctionContext.getArgument("EnableAnimationChanges") : false);
+{isConditionTrue_0 = (typeof eventsFunctionContext !== 'undefined' ? !!eventsFunctionContext.getArgument("Value") : false);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimationsContext.GDObjectObjects1);
@@ -1201,7 +1212,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimations = function(EnableAnimationChanges, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimations = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1261,7 +1272,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "EnableAnimationChanges") return EnableAnimationChanges;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1271,6 +1282,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimationsContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimationsContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimationsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableChangingAnimationsContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1300,7 +1314,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (typeof eventsFunctionContext !== 'undefined' ? !!eventsFunctionContext.getArgument("EnableHorizontalFlipping") : false);
+{isConditionTrue_0 = (typeof eventsFunctionContext !== 'undefined' ? !!eventsFunctionContext.getArgument("Value") : false);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlippingContext.GDObjectObjects1);
@@ -1314,7 +1328,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlipping = function(EnableHorizontalFlipping, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlipping = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1374,7 +1388,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "EnableHorizontalFlipping") return EnableHorizontalFlipping;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1384,6 +1398,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlippingContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlippingContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlippingContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.EnableHorizontalFlippingContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1401,7 +1418,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setIdleAnimationName((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("AnimationName") : ""));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setIdleAnimationName(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1410,7 +1427,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationName = function(AnimationName, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationName = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1470,7 +1487,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "AnimationName") return AnimationName;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1480,6 +1497,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetIdleAnimationNameContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1497,7 +1517,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setRunAnimationName((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("AnimationName") : ""));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setRunAnimationName(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1506,7 +1526,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationName = function(AnimationName, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationName = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1566,7 +1586,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "AnimationName") return AnimationName;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1576,6 +1596,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetMoveAnimationNameContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1593,7 +1616,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJumpAnimationName((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("AnimationName") : ""));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setJumpAnimationName(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1602,7 +1625,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationName = function(AnimationName, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationName = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1662,7 +1685,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "AnimationName") return AnimationName;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1672,6 +1695,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetJumpAnimationNameContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1689,7 +1715,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setFallAnimationName((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("AnimationName") : ""));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setFallAnimationName(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1698,7 +1724,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationName = function(AnimationName, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationName = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1758,7 +1784,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "AnimationName") return AnimationName;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1768,6 +1794,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetFallAnimationNameContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1785,7 +1814,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setClimbAnimationName((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("AnimationName") : ""));
+    gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setClimbAnimationName(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1794,7 +1823,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Platfor
 
 };
 
-gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationName = function(AnimationName, parentEventsFunctionContext) {
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationName = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -1854,7 +1883,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "AnimationName") return AnimationName;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -1864,6 +1893,9 @@ gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.Platforme
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__PlatformerCharacterAnimator__PlatformerCharacterAnimator.PlatformerCharacterAnimator.prototype.SetClimbAnimationNameContext.GDObjectObjects2.length = 0;
+
 
 return;
 }

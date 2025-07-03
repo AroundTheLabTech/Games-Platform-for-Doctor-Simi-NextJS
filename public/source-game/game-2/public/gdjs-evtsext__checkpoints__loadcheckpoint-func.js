@@ -35,7 +35,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("ToLoadObject"), gdjs.evtsExt__C
 {let isConditionTrue_2 = false;
 isConditionTrue_2 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2.length;i<l;++i) {
-    if ( gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")) ) {
+    if ( gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + eventsFunctionContext.getArgument("CheckpointName")) ) {
         isConditionTrue_2 = true;
         gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[k] = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i];
         ++k;
@@ -45,7 +45,7 @@ gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2.length = k;
 if (isConditionTrue_2) {
 isConditionTrue_2 = false;
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2.length;i<l;++i) {
-    if ( gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")) ) {
+    if ( gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + eventsFunctionContext.getArgument("CheckpointName")) ) {
         isConditionTrue_2 = true;
         gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[k] = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2[i];
         ++k;
@@ -68,7 +68,7 @@ gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2.length = 0;
 
 {let isConditionTrue_2 = false;
 isConditionTrue_2 = false;
-{isConditionTrue_2 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("SetIgnoreUndefined") : "") != "true");
+{isConditionTrue_2 = ((eventsFunctionContext.getArgument("SetIgnoreUndefined") ? "true" : "false") != "true");
 }
 if (isConditionTrue_2) {
 isConditionTrue_2 = false;
@@ -78,7 +78,7 @@ isConditionTrue_2 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("ToLoadObject"), gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3);
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3.length;i<l;++i) {
-    if ( !(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))) ) {
+    if ( !(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].getVariables().get("__Checkpoints").getChild("Position"), "Y" + eventsFunctionContext.getArgument("CheckpointName"))) ) {
         isConditionTrue_3 = true;
         gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[k] = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i];
         ++k;
@@ -96,7 +96,7 @@ if(isConditionTrue_3) {
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("ToLoadObject"), gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3);
 for (var i = 0, k = 0, l = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3.length;i<l;++i) {
-    if ( !(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : ""))) ) {
+    if ( !(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].variableChildExists(gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i].getVariables().get("__Checkpoints").getChild("Position"), "X" + eventsFunctionContext.getArgument("CheckpointName"))) ) {
         isConditionTrue_3 = true;
         gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[k] = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3[i];
         ++k;
@@ -134,7 +134,7 @@ if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1 */
 gdjs.copyArray(eventsFunctionContext.getObjects("ToMoveObject"), gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects1[i].setPosition((gdjs.RuntimeObject.getVariableNumber(((gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1[0].getVariables()).get("__Checkpoints").getChild("Position").getChild("X" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")))),(gdjs.RuntimeObject.getVariableNumber(((gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1[0].getVariables()).get("__Checkpoints").getChild("Position").getChild("Y" + (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("CheckpointName") : "")))));
+    gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects1[i].setPosition((gdjs.RuntimeObject.getVariableNumber(((gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1[0].getVariables()).get("__Checkpoints").getChild("Position").getChild("X" + eventsFunctionContext.getArgument("CheckpointName")))),(gdjs.RuntimeObject.getVariableNumber(((gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1.length === 0 ) ? gdjs.VariablesContainer.badVariablesContainer : gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1[0].getVariables()).get("__Checkpoints").getChild("Position").getChild("Y" + eventsFunctionContext.getArgument("CheckpointName")))));
 }
 }}
 
@@ -210,6 +210,13 @@ gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects2.length = 0;
 gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects3.length = 0;
 
 gdjs.evtsExt__Checkpoints__LoadCheckpoint.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects1.length = 0;
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects2.length = 0;
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToLoadObjectObjects3.length = 0;
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects1.length = 0;
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects2.length = 0;
+gdjs.evtsExt__Checkpoints__LoadCheckpoint.GDToMoveObjectObjects3.length = 0;
+
 
 return;
 }

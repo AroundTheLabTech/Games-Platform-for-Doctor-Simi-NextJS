@@ -505,6 +505,19 @@ gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects5.
 gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects6.length = 0;
 
 gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.eventsList14(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects2.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects3.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects4.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects5.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDMovingObjectObjects6.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects2.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects3.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects4.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects5.length = 0;
+gdjs.evtsExt__RectangleMovement__MoveAlongBorderOfObject.GDCenterObjectObjects6.length = 0;
+
 
 return;
 }

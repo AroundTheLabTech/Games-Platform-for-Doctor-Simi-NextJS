@@ -47,6 +47,7 @@ gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax 
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.ParallaxFactor !== undefined)
       this._behaviorData.ParallaxFactor = networkSyncData.props.ParallaxFactor;
@@ -205,6 +206,9 @@ gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax.
 gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax.prototype.doStepPostEventsContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax.prototype.doStepPostEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__Parallax__VerticalTiledSpriteParallax.VerticalTiledSpriteParallax.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
+
 
 return;
 }

@@ -39,6 +39,7 @@ gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy = class MonsterEnemy extends gdjs
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.Animation !== undefined)
       this._behaviorData.Animation = networkSyncData.props.Animation;
@@ -179,6 +180,9 @@ gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.onCreatedContext.GDObje
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.onCreatedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.onCreatedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.onCreatedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.onCreatedContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -341,6 +345,9 @@ gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.doStepPreEventsContext.
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.doStepPreEventsContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.doStepPreEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -440,6 +447,9 @@ gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.IsOnFireContext.GDObjec
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.IsOnFireContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.IsOnFireContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.IsOnFireContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__Enemy__MonsterEnemy.MonsterEnemy.prototype.IsOnFireContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }

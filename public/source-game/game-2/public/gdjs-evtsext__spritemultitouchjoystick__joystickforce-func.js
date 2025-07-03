@@ -15,14 +15,14 @@ gdjs.evtsExt__SpriteMultitouchJoystick__JoystickForce.eventsList0 = function(run
 
 let isConditionTrue_0 = false;
 {
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtsExt__SpriteMultitouchJoystick__StickForce.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("ControllerIdentifier")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("JoystickIdentifier") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtsExt__SpriteMultitouchJoystick__StickForce.func(runtimeScene, eventsFunctionContext.getArgument("ControllerIdentifier"), eventsFunctionContext.getArgument("JoystickIdentifier"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)); }}}
 
 }
 
 
 };
 
-gdjs.evtsExt__SpriteMultitouchJoystick__JoystickForce.func = function(runtimeScene, ControllerIdentifier, JoystickIdentifier, parentEventsFunctionContext) {
+gdjs.evtsExt__SpriteMultitouchJoystick__JoystickForce.func = function(runtimeScene, ControllerIdentifier, JoystickIdentifier, Coucou, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -72,6 +72,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
   getArgument: function(argName) {
 if (argName === "ControllerIdentifier") return ControllerIdentifier;
 if (argName === "JoystickIdentifier") return JoystickIdentifier;
+if (argName === "Coucou") return Coucou;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
@@ -79,6 +80,7 @@ if (argName === "JoystickIdentifier") return JoystickIdentifier;
 
 
 gdjs.evtsExt__SpriteMultitouchJoystick__JoystickForce.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

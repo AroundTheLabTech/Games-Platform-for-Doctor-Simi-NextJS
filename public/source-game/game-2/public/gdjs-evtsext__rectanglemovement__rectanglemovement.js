@@ -87,6 +87,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement = class Rec
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.Width !== undefined)
       this._behaviorData.Width = networkSyncData.props.Width;
@@ -417,6 +418,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.o
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.onCreatedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.onCreatedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.onCreatedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.onCreatedContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -441,10 +445,10 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setLeft(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getX()) - (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getOldX())));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setLeft(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getX()) - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getOldX()));
 }
 }{for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTop(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getY()) - (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getOldY())));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTop(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getY()) - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getOldY()));
 }
 }}
 
@@ -465,7 +469,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].setPosition((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft()) + (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).DeltaX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))),(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop()) + (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).DeltaY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].setPosition(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft() + (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).DeltaX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))),eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop() + (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).DeltaY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
 }
 }}
 
@@ -564,6 +568,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.d
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -598,7 +605,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.d
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setProgress(gdjs.evtTools.common.mod((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress()) + gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene) / (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), 1));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setProgress(gdjs.evtTools.common.mod(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress() + gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene) / (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), 1));
 }
 }}
 
@@ -622,7 +629,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.d
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1 */
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setProgress(gdjs.evtTools.common.mod((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress()) - gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene) / (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), 1));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setProgress(gdjs.evtTools.common.mod(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress() - gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene) / (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), 1));
 }
 }}
 
@@ -697,6 +704,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.d
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.doStepPostEventsContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -712,7 +722,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Corner") : "") == "Top-left corner");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("Corner") == "Top-left corner");
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects1);
@@ -729,7 +739,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Rectang
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Corner") : "") == "Top-right corner");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("Corner") == "Top-right corner");
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects1);
@@ -746,7 +756,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Rectang
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Corner") : "") == "Bottom-right corner");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("Corner") == "Bottom-right corner");
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects1);
@@ -763,7 +773,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Rectang
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Corner") : "") == "Bottom-left corner");
+{isConditionTrue_0 = (eventsFunctionContext.getArgument("Corner") == "Bottom-left corner");
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects1);
@@ -844,6 +854,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TeleportToCornerContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -859,8 +872,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.P
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * (Math.abs((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth())) + Math.abs((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight()))); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * (Math.abs(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth()) + Math.abs(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight())); }}}
 
 }
 
@@ -933,6 +945,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.P
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.PerimeterContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -948,8 +963,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.L
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()) + (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration())); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * (eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration() + eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration()); }}}
 
 }
 
@@ -1022,6 +1036,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.L
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LoopDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1037,8 +1054,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration(); }}}
 
 }
 
@@ -1111,6 +1127,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HorizontalEdgeDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1126,8 +1145,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.V
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration(); }}}
 
 }
 
@@ -1200,6 +1218,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.V
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.VerticalEdgeDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1215,8 +1236,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.W
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth(); }}}
 
 }
 
@@ -1289,6 +1309,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.W
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.WidthContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1304,8 +1327,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight(); }}}
 
 }
 
@@ -1378,6 +1400,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HeightContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1393,8 +1418,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.L
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft(); }}}
 
 }
 
@@ -1467,6 +1491,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.L
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.LeftContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1482,8 +1509,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop(); }}}
 
 }
 
@@ -1556,6 +1582,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1571,8 +1600,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.R
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft()) + (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft() + eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth(); }}}
 
 }
 
@@ -1645,6 +1673,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.R
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.RightContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1660,8 +1691,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop()) + (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop() + eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight(); }}}
 
 }
 
@@ -1734,6 +1764,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -1751,10 +1784,10 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setWidth(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft()) - (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0)));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setWidth(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth() + (eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft() - eventsFunctionContext.getArgument("Value")));
 }
 }{for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setLeft((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setLeft(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1830,6 +1863,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetLeftContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1847,10 +1883,10 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHeight(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight() + ((gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop()) - (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0)));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHeight(gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight() + (eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop() - eventsFunctionContext.getArgument("Value")));
 }
 }{for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTop((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTop(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -1926,6 +1962,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetTopContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -1943,7 +1982,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setWidth((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0) - (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft()));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setWidth(eventsFunctionContext.getArgument("Value") - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getLeft());
 }
 }}
 
@@ -2019,6 +2058,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetRightContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2036,7 +2078,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHeight((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0) - (gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop()));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHeight(eventsFunctionContext.getArgument("Value") - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTop());
 }
 }}
 
@@ -2112,6 +2154,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetBottomContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2129,7 +2174,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHorizontalEdgeDuration((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setHorizontalEdgeDuration(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -2205,6 +2250,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetHorizontalEdgeDurationContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2222,7 +2270,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setVerticalEdgeDuration((typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("Value")) || 0 : 0));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setVerticalEdgeDuration(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -2298,6 +2346,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetVerticalEdgeDurationContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2411,6 +2462,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetClockwiseContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetClockwiseContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetClockwiseContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetClockwiseContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2428,7 +2482,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects1);
 {for(var i = 0, len = gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects1.length ;i < len;++i) {
-    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setEasing((typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("Value") : ""));
+    gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects1[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setEasing(eventsFunctionContext.getArgument("Value"));
 }
 }}
 
@@ -2437,7 +2491,7 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Rectang
 
 };
 
-gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasing = function(Easing, parentEventsFunctionContext) {
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasing = function(Value, parentEventsFunctionContext) {
 
 var that = this;
 var runtimeScene = this._runtimeScene;
@@ -2494,7 +2548,7 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "Easing") return Easing;
+if (argName === "Value") return Value;
     return "";
   },
   getOnceTriggers: function() { return that._onceTriggers; }
@@ -2504,6 +2558,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.S
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.SetEasingContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2678,6 +2735,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.ToogleClockwiseContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.ToogleClockwiseContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.ToogleClockwiseContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.ToogleClockwiseContext.GDObjectObjects2.length = 0;
+
 
 return;
 }
@@ -2776,6 +2836,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingClockwiseContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingClockwiseContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingClockwiseContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingClockwiseContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -2916,6 +2979,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingLeftContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingLeftContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingLeftContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingLeftContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3056,6 +3122,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingUpContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingUpContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingUpContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingUpContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3196,6 +3265,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingRightContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingRightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingRightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingRightContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3336,6 +3408,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingDownContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingDownContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingDownContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsMovingDownContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3428,6 +3503,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnLeftContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnLeftContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnLeftContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnLeftContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3520,6 +3598,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnTopContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnTopContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnTopContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnTopContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3617,6 +3698,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnRightContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnRightContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnRightContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnRightContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3714,6 +3798,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.I
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnBottomContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnBottomContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnBottomContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.IsOnBottomContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -3729,8 +3816,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration(); }}}
 
 }
 
@@ -3803,6 +3889,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.T
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.TopRightDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3818,8 +3907,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()) + (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration() + eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration(); }}}
 
 }
 
@@ -3892,6 +3980,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomRightDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3907,8 +3998,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()) + (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = 2 * eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration() + eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration(); }}}
 
 }
 
@@ -3981,6 +4071,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.B
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.BottomLeftDurationContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -3997,7 +4090,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) / (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) / eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration(); }}}
 
 }
 
@@ -4008,11 +4101,11 @@ gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Rectang
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) >= Math.abs((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration())));
+{isConditionTrue_0 = ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) >= Math.abs(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()));
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1 */
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) - (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration())) / (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).HalfCurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) - eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHorizontalEdgeDuration()) / eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getVerticalEdgeDuration(); }}}
 
 }
 
@@ -4085,6 +4178,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeProgressContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4109,8 +4205,7 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects1 */
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth(); }}}
 
 }
 
@@ -4183,6 +4278,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginXContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4207,8 +4305,7 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects1 */
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight(); }}}
 
 }
 
@@ -4281,6 +4378,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeOriginYContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4305,8 +4405,7 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects1 */
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getHeight(); }}}
 
 }
 
@@ -4379,6 +4478,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetYContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4398,8 +4500,7 @@ isConditionTrue_0 = false;
 {isConditionTrue_0 = ((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).CurrentTime((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) < (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).BottomRightDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))));
 }
 if (isConditionTrue_0) {
-/* Reuse gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1 */
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth()); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getWidth(); }}}
 
 }
 
@@ -4472,6 +4573,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.E
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.EdgeTargetXContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4488,7 +4592,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.C
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress()) * (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress() * (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))); }}}
 
 }
 
@@ -4561,6 +4665,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.C
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.CurrentTimeContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4577,7 +4684,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) * gdjs.evtTools.common.mod((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress()), 0.5); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).LoopDuration((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))) * gdjs.evtTools.common.mod(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getProgress(), 0.5); }}}
 
 }
 
@@ -4650,6 +4757,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.H
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.HalfCurrentTimeContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4666,7 +4776,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.D
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.tween.ease((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getEasing()), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeOriginX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeTargetX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeProgress((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)))); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.tween.ease(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getEasing(), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeOriginX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeTargetX((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeProgress((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)))); }}}
 
 }
 
@@ -4739,6 +4849,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.D
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaXContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }
@@ -4755,7 +4868,7 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.D
 let isConditionTrue_0 = false;
 {
 gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1);
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.tween.ease((( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getEasing()), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeOriginY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeTargetY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeProgress((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)))); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.tween.ease(eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getEasing(), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeOriginY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeTargetY((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined))), (( gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).EdgeProgress((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)))); }}}
 
 }
 
@@ -4828,6 +4941,9 @@ gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.D
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__RectangleMovement.RectangleMovement.prototype.DeltaYContext.GDObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

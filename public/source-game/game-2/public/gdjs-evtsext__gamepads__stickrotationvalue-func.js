@@ -15,7 +15,7 @@ gdjs.evtsExt__Gamepads__StickRotationValue.eventsList0 = function(runtimeScene, 
 
 let isConditionTrue_0 = false;
 {
-{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtsExt__Gamepads__StickAngle.func(runtimeScene, (typeof eventsFunctionContext !== 'undefined' ? Number(eventsFunctionContext.getArgument("player_ID")) || 0 : 0), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("stick") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)); }}}
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtsExt__Gamepads__StickAngle.func(runtimeScene, eventsFunctionContext.getArgument("player_ID"), eventsFunctionContext.getArgument("stick"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)); }}}
 
 }
 
@@ -79,6 +79,7 @@ if (argName === "stick") return stick;
 
 
 gdjs.evtsExt__Gamepads__StickRotationValue.eventsList0(runtimeScene, eventsFunctionContext);
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

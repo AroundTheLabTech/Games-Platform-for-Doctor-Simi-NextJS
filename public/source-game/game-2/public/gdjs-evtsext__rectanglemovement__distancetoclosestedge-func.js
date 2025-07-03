@@ -271,6 +271,11 @@ gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDMovingObjectObjects1.le
 gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDMovingObjectObjects2.length = 0;
 
 gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDCenterObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDCenterObjectObjects2.length = 0;
+gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDMovingObjectObjects1.length = 0;
+gdjs.evtsExt__RectangleMovement__DistanceToClosestEdge.GDMovingObjectObjects2.length = 0;
+
 
 return Number(eventsFunctionContext.returnValue) || 0;
 }

@@ -21,6 +21,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton = clas
     this._behaviorData.TouchId = Number("0") || 0;
     this._behaviorData.TouchIndex = Number("") || 0;
     this._behaviorData.IsReleased = false;
+    this._behaviorData.Radius = behaviorData.Radius !== undefined ? behaviorData.Radius : Number("0") || 0;
   }
 
   // Hot-reload:
@@ -36,6 +37,8 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton = clas
       this._behaviorData.TouchIndex = newBehaviorData.TouchIndex;
     if (oldBehaviorData.IsReleased !== newBehaviorData.IsReleased)
       this._behaviorData.IsReleased = newBehaviorData.IsReleased;
+    if (oldBehaviorData.Radius !== newBehaviorData.Radius)
+      this._behaviorData.Radius = newBehaviorData.Radius;
 
     return true;
   }
@@ -51,10 +54,12 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton = clas
     TouchId: this._behaviorData.TouchId,
     TouchIndex: this._behaviorData.TouchIndex,
     IsReleased: this._behaviorData.IsReleased,
+    Radius: this._behaviorData.Radius,
       }
     };
   }
   updateFromNetworkSyncData(networkSyncData) {
+    super.updateFromNetworkSyncData(networkSyncData);
     
     if (networkSyncData.props.ControllerIdentifier !== undefined)
       this._behaviorData.ControllerIdentifier = networkSyncData.props.ControllerIdentifier;
@@ -66,6 +71,8 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton = clas
       this._behaviorData.TouchIndex = networkSyncData.props.TouchIndex;
     if (networkSyncData.props.IsReleased !== undefined)
       this._behaviorData.IsReleased = networkSyncData.props.IsReleased;
+    if (networkSyncData.props.Radius !== undefined)
+      this._behaviorData.Radius = networkSyncData.props.Radius;
   }
 
   // Properties:
@@ -103,6 +110,12 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton = clas
   _toggleIsReleased() {
     this._setIsReleased(!this._getIsReleased());
   }
+  _getRadius() {
+    return this._behaviorData.Radius !== undefined ? this._behaviorData.Radius : Number("0") || 0;
+  }
+  _setRadius(newValue) {
+    this._behaviorData.Radius = newValue;
+  }
 }
 
 /**
@@ -131,6 +144,8 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.getSha
 
 // Methods:
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext = {};
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final = [];
+
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1= [];
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects2= [];
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3= [];
@@ -146,18 +161,55 @@ gdjs.copyArray(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.Multitou
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3.length;i<l;++i) {
-    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].isCollidingWithPoint(gdjs.evtTools.input.getTouchX(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getLayer()), 0)) ) {
-        isConditionTrue_0 = true;
-        gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i];
+{gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final.length = 0;
+let isConditionTrue_1 = false;
+isConditionTrue_0 = false;
+{
+gdjs.copyArray(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1, gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4);
+
+for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length;i<l;++i) {
+    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].isCollidingWithPoint(gdjs.evtTools.input.getTouchX(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0)) ) {
+        isConditionTrue_1 = true;
+        gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i];
         ++k;
     }
 }
-gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3.length = k;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length; j < jLen ; ++j) {
+        if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final.indexOf(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[j]) === -1 )
+            gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final.push(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1, gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4);
+
+for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length;i<l;++i) {
+    if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getRadius() > gdjs.evtTools.common.distanceBetweenPositions((gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getCenterXInScene()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getCenterYInScene()), gdjs.evtTools.input.getTouchX(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0), gdjs.evtTools.input.getTouchY(runtimeScene, gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()), (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i].getLayer()), 0)) ) {
+        isConditionTrue_1 = true;
+        gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[k] = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[i];
+        ++k;
+    }
+}
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length = k;
+if(isConditionTrue_1) {
+    isConditionTrue_0 = true;
+    for (let j = 0, jLen = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length; j < jLen ; ++j) {
+        if ( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final.indexOf(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[j]) === -1 )
+            gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final.push(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4[j]);
+    }
+}
+}
+{
+gdjs.copyArray(gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3_1final, gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3);
+}
+}
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3 */
 {for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3.length ;i < len;++i) {
-    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTouchId(gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, (gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex())));
+    gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._setTouchId(gdjs.evtTools.input.getStartedTouchOrMouseIdentifier(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchIndex()));
 }
 }{for(var i = 0, len = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3.length ;i < len;++i) {
     gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3[i].getBehavior(eventsFunctionContext.getBehaviorName("Behavior")).SetButtonState("Pressed", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
@@ -278,7 +330,7 @@ for (var i = 0, k = 0, l = gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchBut
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId()));
+isConditionTrue_0 = gdjs.evtTools.input.hasTouchEnded(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getTouchId());
 }
 if (isConditionTrue_0) {
 /* Reuse gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1 */
@@ -366,6 +418,11 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.protot
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.eventsList2(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects2.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects3.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.doStepPreEventsContext.GDObjectObjects4.length = 0;
+
 
 return;
 }
@@ -464,6 +521,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.protot
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsReleasedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsReleasedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsReleasedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsReleasedContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -562,6 +622,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.protot
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsPressedContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsPressedContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsPressedContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.IsPressedContext.GDObjectObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }
@@ -577,8 +640,7 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.protot
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1);
-{gdjs.evtsExt__SpriteMultitouchJoystick__SetButtonState.func(runtimeScene, (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1.length === 0 ) ? 0 :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier()), (( gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1.length === 0 ) ? "" :gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getButtonIdentifier()), (typeof eventsFunctionContext !== 'undefined' ? "" + eventsFunctionContext.getArgument("ButtonState") : ""), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+{gdjs.evtsExt__SpriteMultitouchJoystick__SetButtonState.func(runtimeScene, eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getControllerIdentifier(), eventsFunctionContext.getObjects("Object")[0].getBehavior(eventsFunctionContext.getBehaviorName("Behavior"))._getButtonIdentifier(), eventsFunctionContext.getArgument("ButtonState"), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }}
 
 }
@@ -653,6 +715,9 @@ gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.protot
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects2.length = 0;
 
 gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects1.length = 0;
+gdjs.evtsExt__SpriteMultitouchJoystick__MultitouchButton.MultitouchButton.prototype.SetButtonStateContext.GDObjectObjects2.length = 0;
+
 
 return;
 }

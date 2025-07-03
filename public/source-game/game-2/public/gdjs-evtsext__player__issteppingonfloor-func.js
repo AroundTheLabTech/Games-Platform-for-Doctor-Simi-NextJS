@@ -155,6 +155,9 @@ gdjs.evtsExt__Player__IsSteppingOnFloor.GDPlayerObjects1.length = 0;
 gdjs.evtsExt__Player__IsSteppingOnFloor.GDPlayerObjects2.length = 0;
 
 gdjs.evtsExt__Player__IsSteppingOnFloor.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Player__IsSteppingOnFloor.GDPlayerObjects1.length = 0;
+gdjs.evtsExt__Player__IsSteppingOnFloor.GDPlayerObjects2.length = 0;
+
 
 return !!eventsFunctionContext.returnValue;
 }

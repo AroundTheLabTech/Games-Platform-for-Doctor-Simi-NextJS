@@ -8,7 +8,7 @@ import { db } from "../../../lib/firebase";
 import { getListAvalibleCompetition, putCompetitionSession, postSessionGame } from "../../services/backend"
 import { analytics } from "../../../lib/firebase";
 import { lastGamePlayedEvent } from "../../services/analytics";
-import { getGameTitle } from "../../utils/helpers";
+import { getGameTitle, getGameInstructions, getIframeSrc } from "../../utils/helpers";
 
 export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
@@ -252,6 +252,26 @@ export default function Game() {
           }
         }
       }
+      else if (selectedGame === "juego11") {
+        if (event.data && event.data.type === "scoreUpdate") {
+          const scoreValue = Number(event.data.score);
+
+          if (scoreValue > 0) {
+            setScoreHistory((prevHistory) => {
+              const updated = [...prevHistory, scoreValue];
+
+              if (updated.length > 2) {
+                updated.shift();
+              }
+              if (updated[1] > 0) {
+                setCurrentScore(initialScoreDb + updated[1]);
+                setScoreWon(updated[1]);
+              }
+              return updated;
+            });
+          }
+        }
+      }
     };
 
     window.addEventListener("message", handlePostMessage);
@@ -377,60 +397,6 @@ export default function Game() {
     }
 
     setShowModal(false);
-  };
-
-  const getGameInstructions = (game) => {
-    switch (game) {
-      case "juego1":
-        return "¡No permitas que lleguen al centro! Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos para subir los niveles de ataque, defensa y velocidad.";
-      case "juego2":
-        return "¡No ganas hasta llegar al Zócalo de la CDMX! Salta, esquiva y recolecta monedas para llegar al final del nivel y obtendrás una medalla de oro.";
-      case "juego3":
-        return "¡No cortes al Simi! Corta los implementos médicos lo más rápido posible.";
-      case "juego4":
-        return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen.";
-      case "juego5":
-        return "¡Evita que Simi choque con los obstáculos del cielo!";
-      case "juego6":
-        return "¡Instala torres para defender el hospital y trata a los enfermos!";
-      case "juego7":
-        return "¡Realiza conexiones entre los Simis! Conecta a los Simis de la misma forma para ganar puntos.";
-      case "juego8":
-        return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
-      case "juego9":
-        return "Haz tap o clic en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
-      case "juego10":
-        return "Usando las flechas del teclado y el espacio, o los botones en pantalla, mueve al Simi entre los satélites y llévalo hasta el planeta. ¡Evita caer en el espacio!";
-      default:
-        return "Pronto vendrán más.";
-    }
-  };
-
-  const getIframeSrc = (game) => {
-    switch (game) {
-      case "juego1":
-        return "source-game/game-1/public-game/index.html";
-      case "juego2":
-        return "source-game/game-2/public/index.html";
-      case "juego3":
-        return "source-game/game-3/release/index.html";
-      case "juego4":
-        return "source-game/game-4/index.html";
-      case "juego5":
-        return "source-game/game-5/index.html";
-      case "juego6":
-        return "source-game/game-6/index.html";
-      case "juego7":
-        return "source-game/game-7/index.html";
-      case "juego8":
-        return "source-game/game-8/index.html";
-      case "juego9":
-        return "source-game/game-9/index.html";
-      case "juego10":
-        return "source-game/game-10/index.html";
-      default:
-        return "";
-    }
   };
 
   if (!selectedGame) {

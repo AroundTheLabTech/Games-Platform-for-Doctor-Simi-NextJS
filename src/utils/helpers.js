@@ -21,11 +21,127 @@ export function getGameTitle(game) {
     case "juego10":
       return "SimiShip";
     // case "juego11":
-      // return "SimiPlaneta";
+    // return "SimiPlaneta";
     default:
       return "Juego Desconocido";
   }
 };
+
+export function getGameInstructions(game) {
+  switch (game) {
+    case "juego1":
+      return "¡No permitas que lleguen al centro! Lanza medicamentos a los virus para eliminarlos. Acumula los puntos que dejan al ser destruidos para subir los niveles de ataque, defensa y velocidad.";
+    case "juego2":
+      return "¡No ganas hasta llegar al Zócalo de la CDMX! Salta, esquiva y recolecta monedas para llegar al final del nivel y obtendrás una medalla de oro.";
+    case "juego3":
+      return "¡No cortes al Simi! Corta los implementos médicos lo más rápido posible.";
+    case "juego4":
+      return "¡Usa las teclas para moverte entre el bosque! No dejes que te toquen.";
+    case "juego5":
+      return "¡Evita que Simi choque con los obstáculos del cielo!";
+    case "juego6":
+      return "¡Instala torres para defender el hospital y trata a los enfermos!";
+    case "juego7":
+      return "¡Realiza conexiones entre los Simis! Conecta a los Simis de la misma forma para ganar puntos.";
+    case "juego8":
+      return "Mueve las fichas usando las flechas del teclado y usa la barra espaciadora para soltarlas rápidamente. ¡Completa filas para sumar puntos y no dejes que se acumulen!";
+    case "juego9":
+      return "Haz tap o clic en las cartas para girarlas y juntar los pares. ¡Completa todos los pares antes de que se acabe el tiempo!";
+    case "juego10":
+      return "Usando las flechas del teclado y el espacio, o los botones en pantalla, mueve al Simi entre los satélites y llévalo hasta el planeta. ¡Evita caer en el espacio!";
+    case "juego11":
+      return "Usando las flechas del teblado (derecha e izquierda) o las de pantalla, mueve al Simi atrapa los erizos y evita los peces. !Recoge los erizos para sumar puntos y no dejes que los peces te toquen o perderas vidas.";
+    default:
+      return "Pronto vendrán más.";
+  }
+};
+
+export function getIframeSrc(game) {
+  switch (game) {
+    case "juego1":
+      return "source-game/game-1/public-game/index.html";
+    case "juego2":
+      return "source-game/game-2/public/index.html";
+    case "juego3":
+      return "source-game/game-3/release/index.html";
+    case "juego4":
+      return "source-game/game-4/index.html";
+    case "juego5":
+      return "source-game/game-5/index.html";
+    case "juego6":
+      return "source-game/game-6/index.html";
+    case "juego7":
+      return "source-game/game-7/index.html";
+    case "juego8":
+      return "source-game/game-8/index.html";
+    case "juego9":
+      return "source-game/game-9/index.html";
+    case "juego10":
+      return "source-game/game-10/index.html";
+    case "juego11":
+      return "source-game/game-11/index.html";
+    default:
+      return "";
+  }
+};
+
+export const gameData = {
+    juego1: {
+      imageSrc: "/img/games/arcade/game-1.png",
+      titleSrc: "/img/games/title/game-1.svg",
+      description: "¡Defiende el Centro como un pro! Mejora ataque, defensa y velocidad mientras enfrentas olas brutales. ¿Listo para salvarlo?",
+    },
+    juego2: {
+      imageSrc: "/img/games/arcade/game-2.png",
+      titleSrc: "/img/games/title/game-2.svg",
+      description: "¡Acompaña a Simi, recolecta monedas, esquiva obstáculos y desbloquea niveles! Demuestra tus habilidades en este épico desafío.",
+    },
+    juego3: {
+      imageSrc: "/img/games/arcade/game-3.png",
+      titleSrc: "/img/games/title/game-3.svg",
+      description: "¡No dejes caer ni un implemento médico! Corta todo, evita la mecha del Simi y rompe récords con cada jugada épica.",
+    },
+    juego4: {
+      imageSrc: "/img/games/arcade/game-4.png",
+      titleSrc: "/img/games/title/game-4.svg",
+      description: "¡Pilota el avión del SimiFest, lanza Bombas de Vida y siembra esperanza! Conviértete en un héroe ecológico ahora.",
+    },
+    juego5: {
+      imageSrc: "/img/games/arcade/game-5.png",
+      titleSrc: "/img/games/title/game-5.svg",
+      description: "Usa el joystick en pantalla para moverte por el cielo y esquivar cada peligro. ¡Pon a prueba tus reflejos y mantén tu globo intacto!",
+    },
+    juego6: {
+      imageSrc: "/img/games/arcade/game-6.png",
+      titleSrc: "/img/games/title/game-6.svg",
+      description: "Usa el clic o el tap y coloca defensas estratégicas para proteger el hospital de invasores virales. Construye y mejora torres médicas para detener las oleadas enemigas y salvar a los enfermos. ¡Defiende la salud con inteligencia y estrategia!",
+    },
+    juego7: {
+      imageSrc: "/img/games/arcade/game-7.png",
+      titleSrc: "/img/games/title/game-7.svg",
+      description: "Usa el clic o el tap y desliza para conectar tres o más gomas y crear combinaciones explosivas. ¡Completa la meta con el menor número de movimientos y demuestra tu agilidad mental!",
+    },
+    juego8: {
+      imageSrc: "/img/games/arcade/game-8.png",
+      titleSrc: "/img/games/title/game-8.svg",
+      description: "Inspirado en los clásicos juegos de puzzles, este divertido desafío te invita a ordenar las fichas de medicamentos que caen. Acomódalas estratégicamente para completar filas y mantener la farmacia en orden.",
+    },
+    juego9: {
+      imageSrc: "/img/games/arcade/game-9.png",
+      titleSrc: "/img/games/title/game-9.svg",
+      description: "Usa el clic o el tap para interactuar con el juego. Gira las piezas para encontrar su pareja y completar todos los pares. ¡Pon a prueba tu memoria y agilidad mental!",
+    },
+    juego10: {
+      imageSrc: "/img/games/arcade/game-10.png",
+      titleSrc: "/img/games/title/game-10.svg",
+      description: "Usa los botones en pantalla o las teclas del teclado para moverte y saltar. Recoge monedas, evita caer al vacío y lleva al Simi al planeta saltando entre los satélites. ¡Demuestra tus habilidades de plataforma!",
+    },
+    juego11: {
+      imageSrc: "/img/games/arcade/game-11.png",
+      titleSrc: "/img/games/title/game-11.svg",
+      description: "¡Atrapa erizos y evita los peces! Usa las flechas del teclado o las de pantalla para moverte y recoge erizos para sumar puntos. ¡No dejes que los peces te toquen o perderás vidas!",
+    }
+  };
 
 export function validateObjectValues(obj) {
   for (const key in obj) {

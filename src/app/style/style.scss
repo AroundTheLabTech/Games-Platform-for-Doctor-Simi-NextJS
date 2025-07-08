@@ -9,6 +9,7 @@
 @import 'dashboard/profile/profile';
 @import 'privacy-policy/privacy-policy';
 @import 'terms-and-conditions/terms-and-conditions';
+@import 'analytics/analytics-page';
 //Botone
 
 //Landing
@@ -23,3 +24,8 @@
 
 // Card
 @import 'card/competition-card';
+
+// Analytics
+@import 'analytics/top-games-chart/top-games-chart';
+@import 'analytics/user-login-chart/user-login-chart';
+@import 'analytics/user-registrations-chart/user-registrations-chart';

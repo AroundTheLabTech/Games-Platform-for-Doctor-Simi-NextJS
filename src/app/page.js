@@ -1,12 +1,13 @@
 "use client";
 
-import {useRouter} from 'next/navigation'; // Importa useRouter para la redirección
-import {auth} from "../../lib/firebase";
-import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
-import {doc, setDoc, updateDoc, serverTimestamp} from "firebase/firestore"; // Importar Firestore
-import {db} from "../../lib/firebase"; // Importar la instancia de Firestore configurada en firebase.js
-import {useState, useEffect, useRef} from "react";
-import {onAuthStateChanged} from "firebase/auth";
+import { useRouter } from 'next/navigation'; // Importa useRouter para la redirección
+import { auth } from "../../lib/firebase";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc, updateDoc, serverTimestamp,getDoc } from "firebase/firestore"; // Importar Firestore
+import { db } from "../../lib/firebase"; // Importar la instancia de Firestore configurada en firebase.js
+import { useState, useEffect, useRef } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { loginEvent, registerEvent } from '../services/analytics';
 
 // --Animations--
 import gsap from "gsap";
@@ -40,20 +41,41 @@ export default function Home() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      if (currentUser) {
-        console.log('Usuario autenticado:', currentUser);
-
-        // Actualizar last_session en Firestore
-        await updateDoc(doc(db, "users", currentUser.uid), {
-          last_session: serverTimestamp(), // Guardar la fecha y hora actual
-        });
-
-        // Redirigir al dashboard
-        router.push('/dashboard');
-      } else {
-        console.log('No hay usuario autenticado');
+      if (!currentUser) {
+        console.log("No hay usuario autenticado");
         setLoading(false);
+        return;
       }
+
+      console.log("Usuario autenticado:", currentUser);
+
+      const userRef = doc(db, "users", currentUser.uid);
+      const userSnap = await getDoc(userRef);
+
+      if (userSnap.exists()) {
+        const userData = userSnap.data();
+
+        const updates = {
+          last_session: serverTimestamp(),
+        };
+
+        // Si no tiene campo `registered_at`, lo agregamos ahora
+        if (!userData.registered_at) {
+          updates.registered_at = serverTimestamp();
+        }
+
+        await updateDoc(userRef, updates);
+      } else {
+        // Esto es por si algún usuario viejo no tiene doc. Podés omitir si siempre debería existir.
+        await setDoc(userRef, {
+          email: currentUser.email,
+          registered_at: serverTimestamp(),
+          last_session: serverTimestamp(),
+        });
+      }
+
+      loginEvent(currentUser.uid, currentUser.email);
+      router.push("/dashboard");
     });
 
     return () => unsubscribe();
@@ -73,7 +95,7 @@ export default function Home() {
     if (showAvionImage) {
       gsap.fromTo(
         "#fotoAvionImg",
-        {scale: 0, rotation: -90, opacity: 0, x: 100, y: -100},
+        { scale: 0, rotation: -90, opacity: 0, x: 100, y: -100 },
         {
           scale: 1,
           rotation: 0,
@@ -89,23 +111,33 @@ export default function Home() {
 
 
   if (loading) {
-    return null; // O puedes mostrar un componente de carga si lo prefieres
+    return null; 
   }
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('User logged in:', userCredential.user);
+      const user = userCredential.user;
 
-      // Actualizar last_session en Firestore
-      await updateDoc(doc(db, "users", userCredential.user.uid), {
-        last_session: serverTimestamp(), // Guardar la fecha y hora actual
-      });
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
 
-      // Redirigir a /dashboard después de iniciar sesión exitosamente
-      router.push('/dashboard');
+      if (userSnap.exists()) {
+        const userData = userSnap.data();
+        const updates = {
+          last_session: serverTimestamp(),
+        };
 
+        if (!userData.registered_at) {
+          updates.registered_at = serverTimestamp();
+        }
+
+        await updateDoc(userRef, updates);
+      }
+
+      loginEvent(user.uid, user.email);
+      router.push("/dashboard");
     } catch (error) {
       console.error('Error logging in:', error);
       handleAuthError(error);
@@ -126,7 +158,10 @@ export default function Home() {
         gender: gender,
         age: age,
         last_session: serverTimestamp(), // Guardar la fecha y hora actual
+        registered_at: serverTimestamp(),
       });
+
+      registerEvent(userCredential.user.uid, userCredential.user.email);
 
       setShowModal(true);
       setModalMessage("Registro exitoso. ¡Tu cuenta ha sido creada!");
@@ -227,12 +262,12 @@ export default function Home() {
 
                 <div className="bottoms-container">
                   <button className="push--flat"
-                          onClick={handleLoginButtonClick}
+                    onClick={handleLoginButtonClick}
                   >
                     <h3 className="text-boton">LOGIN</h3>
                   </button>
                   <button className="push--flat-blue"
-                          onClick={handleRegisterButtonClick}
+                    onClick={handleRegisterButtonClick}
                   >
                     <h3 className="text-boton-2">REGISTER</h3>
                   </button>
@@ -329,24 +364,24 @@ export default function Home() {
             {
               showResetPasswordForm && (
                 <form onSubmit={handleResetPassword}>
-                <h2 className='reset-password-title' >Restablecer contraseña</h2>
-                <div className="inputs-container">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="bottoms-container">
-                  <button className="push--flat" type="submit">
-                    <h3 className="text-boton reset-password-button-text">ENVIAR</h3>
-                  </button>
-                  <button className="push--flat-blue" onClick={handleLoginButtonClick}>
-                    <h3 className="text-boton-2">LOGIN</h3>
-                  </button>
-                </div>
-              </form>
+                  <h2 className='reset-password-title' >Restablecer contraseña</h2>
+                  <div className="inputs-container">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="bottoms-container">
+                    <button className="push--flat" type="submit">
+                      <h3 className="text-boton reset-password-button-text">ENVIAR</h3>
+                    </button>
+                    <button className="push--flat-blue" onClick={handleLoginButtonClick}>
+                      <h3 className="text-boton-2">LOGIN</h3>
+                    </button>
+                  </div>
+                </form>
               )
             }
           </div>

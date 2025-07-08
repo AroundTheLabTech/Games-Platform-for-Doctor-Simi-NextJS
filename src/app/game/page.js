@@ -6,6 +6,9 @@ import { auth } from "../../../lib/firebase";
 import { doc, getDoc, setDoc, collection, addDoc, serverTimestamp } from "firebase/firestore"; // Importar funciones necesarias
 import { db } from "../../../lib/firebase";
 import { getListAvalibleCompetition, putCompetitionSession, postSessionGame } from "../../services/backend"
+import { analytics } from "../../../lib/firebase";
+import { lastGamePlayedEvent } from "../../services/analytics";
+import { getGameTitle } from "../../utils/helpers";
 
 export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
@@ -335,6 +338,11 @@ export default function Game() {
 
           console.log("session?", response)
 
+          console.log("Analytics:", analytics);
+
+          lastGamePlayedEvent(user.uid, gameNumber, selectedGame);
+
+
           if (response.message && response.session_id) {
             addCompetitionSession(response.session_id);
           }
@@ -369,33 +377,6 @@ export default function Game() {
     }
 
     setShowModal(false);
-  };
-
-  const getGameTitle = (game) => {
-    switch (game) {
-      case "juego1":
-        return "Doctor Simi Invade";
-      case "juego2":
-        return "Doctor Simi Run";
-      case "juego3":
-        return "Simi Slash";
-      case "juego4":
-        return "Simi Life";
-      case "juego5":
-        return "Simi Globo";
-      case "juego6":
-        return "Tower Defense";
-      case "juego7":
-        return "Simi Gomitas";
-      case "juego8":
-        return "Simi Health Blocks";
-      case "juego9":
-        return "Simirama";
-      case "juego10":
-        return "SimiShip";
-      default:
-        return "Juego Desconocido";
-    }
   };
 
   const getGameInstructions = (game) => {

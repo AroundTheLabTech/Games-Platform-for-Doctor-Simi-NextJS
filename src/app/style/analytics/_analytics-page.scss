@@ -1,0 +1,31 @@
+@use '../mixins' as *;
+
+.analytics-container {
+  padding: var(--spacing-md);
+  background-image: url('/img/background/background-games.png');
+  background-color: rgb(75 53 155);
+  @include responsive-size(background, (rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), rgb(108 84 210), url('/img/background/background-games.png'), url('/img/background/background-games.png')));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  @include responsive-size(height, (auto, auto, auto, auto, auto, auto, auto, auto, 100%, 100%));
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .charts-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    @include responsive-size(flex-direction, (column, column, column, column, column, column, column, column, row, row));
+    gap: 20px;
+    margin-top: 20px;
+  }
+}

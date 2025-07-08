@@ -1,3 +1,32 @@
+export function getGameTitle(game) {
+  switch (game) {
+    case "juego1":
+      return "Doctor Simi Invade";
+    case "juego2":
+      return "Doctor Simi Run";
+    case "juego3":
+      return "Simi Slash";
+    case "juego4":
+      return "Simi Life";
+    case "juego5":
+      return "Simi Globo";
+    case "juego6":
+      return "Tower Defense";
+    case "juego7":
+      return "Simi Gomitas";
+    case "juego8":
+      return "Simi Health Blocks";
+    case "juego9":
+      return "Simirama";
+    case "juego10":
+      return "SimiShip";
+    // case "juego11":
+      // return "SimiPlaneta";
+    default:
+      return "Juego Desconocido";
+  }
+};
+
 export function validateObjectValues(obj) {
   for (const key in obj) {
     const value = obj[key];

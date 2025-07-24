@@ -251,7 +251,7 @@ form .select-gender option {
 
 .push--flat {
   background-color: hsl(10, 90%, 40%);
-  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.7), inset 0 0 0 1.4545454545rem hsl(10, 90%, 40%), inset 0 3.2rem 1.0666666667rem #aa2409, inset 0 0 0.8rem 1.3333333333rem #911f08, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.25rem 0 hsl(10, 90%, 45%), inset 0 -0.25rem 0 hsl(10, 90%, 35%), inset 0 0 0 0.25rem hsl(10, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem hsl(10, 90%, 20%), inset 0 0 0 0.8695652174rem hsl(10, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(10, 90%, 70%, 0.7), inset 0 0 0 1.4545454545rem hsl(10, 90%, 40%), inset 0 3.2rem 1.0666666667rem hsl(10, 90%, 35%), inset 0 0 0.8rem 1.3333333333rem hsl(10, 90%, 30%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat:after {
   content: "";
@@ -267,8 +267,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat:active, .push--flat.is-pushed {
-  box-shadow: inset 0 0.25rem 0 #da2e0b, inset 0 -0.25rem 0 #aa2409, inset 0 0 0 0.25rem #b32609, inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem #611405, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(247, 133, 110, 0.2), inset 0 0 0 1.4545454545rem #b32609, inset 0 3.2rem 1.0666666667rem #9b2108, inset 0 0 0.8rem 1.3333333333rem #791a06, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
-  background-color: #b8270a;
+  box-shadow: inset 0 0.25rem 0 hsl(10, 90%, 45%), inset 0 -0.25rem 0 hsl(10, 90%, 35%), inset 0 0 0 0.25rem hsl(10, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(10, 90%, 40%), inset 0 0 0 0.8rem hsl(10, 90%, 20%), inset 0 0 0 0.9411764706rem hsl(10, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(10, 90%, 70%, 0.2), inset 0 0 0 1.4545454545rem hsl(10, 90%, 37%), inset 0 3.2rem 1.0666666667rem hsl(10, 90%, 32%), inset 0 0 0.8rem 1.3333333333rem hsl(10, 90%, 25%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(10, 90%, 38%);
 }
 .push--flat:active:after, .push--flat.is-pushed:after {
   bottom: 0.9333333333rem;
@@ -277,7 +277,7 @@ form .select-gender option {
 
 .push--flat-blue {
   background-color: hsl(210, 90%, 40%);
-  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.8695652174rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.7), inset 0 0 0 1.4545454545rem hsl(210, 90%, 40%), inset 0 3.2rem 1.0666666667rem #0959aa, inset 0 0 0.8rem 1.3333333333rem #084d91, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.25rem 0 hsl(210, 90%, 45%), inset 0 -0.25rem 0 hsl(210, 90%, 35%), inset 0 0 0 0.25rem hsl(210, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem hsl(210, 90%, 20%), inset 0 0 0 0.8695652174rem hsl(210, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(210, 90%, 70%, 0.7), inset 0 0 0 1.4545454545rem hsl(210, 90%, 40%), inset 0 3.2rem 1.0666666667rem hsl(210, 90%, 35%), inset 0 0 0.8rem 1.3333333333rem hsl(210, 90%, 30%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat-blue:after {
   content: "";
@@ -293,8 +293,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat-blue:active, .push--flat-blue.is-pushed {
-  box-shadow: inset 0 0.25rem 0 #0b73da, inset 0 -0.25rem 0 #0959aa, inset 0 0 0 0.25rem #095eb3, inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem #053361, inset 0 0 0 0.9411764706rem black, inset 0 0 0 1.0666666667rem rgba(110, 179, 247, 0.2), inset 0 0 0 1.4545454545rem #095eb3, inset 0 3.2rem 1.0666666667rem #08529b, inset 0 0 0.8rem 1.3333333333rem #064079, 0 0.4rem 0 rgba(0, 0, 0, 0.3);
-  background-color: #0a61b8;
+  box-shadow: inset 0 0.25rem 0 hsl(210, 90%, 45%), inset 0 -0.25rem 0 hsl(210, 90%, 35%), inset 0 0 0 0.25rem hsl(210, 90%, 37%), inset 0 0 0 0.6666666667rem hsl(210, 90%, 40%), inset 0 0 0 0.8rem hsl(210, 90%, 20%), inset 0 0 0 0.9411764706rem hsl(210, 90%, 0%), inset 0 0 0 1.0666666667rem hsla(210, 90%, 70%, 0.2), inset 0 0 0 1.4545454545rem hsl(210, 90%, 37%), inset 0 3.2rem 1.0666666667rem hsl(210, 90%, 32%), inset 0 0 0.8rem 1.3333333333rem hsl(210, 90%, 25%), 0 0.4rem 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(210, 90%, 38%);
 }
 .push--flat-blue:active:after, .push--flat-blue.is-pushed:after {
   bottom: 0.9333333333rem;
@@ -305,7 +305,7 @@ form .select-gender option {
   width: 3em;
   height: 3em;
   background-color: hsl(10, 90%, 40%);
-  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3260869565em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.7), inset 0 0 0 0.5454545455em hsl(10, 90%, 40%), inset 0 1.2em 0.4em #aa2409, inset 0 0 0.3em 0.5em #911f08, 0 0.15em 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.09375em 0 hsl(10, 90%, 45%), inset 0 -0.09375em 0 hsl(10, 90%, 35%), inset 0 0 0 0.09375em hsl(10, 90%, 37%), inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em hsl(10, 90%, 20%), inset 0 0 0 0.3260869565em hsl(10, 90%, 0%), inset 0 0 0 0.4em hsla(10, 90%, 70%, 0.7), inset 0 0 0 0.5454545455em hsl(10, 90%, 40%), inset 0 1.2em 0.4em hsl(10, 90%, 35%), inset 0 0 0.3em 0.5em hsl(10, 90%, 30%), 0 0.15em 0 rgba(0, 0, 0, 0.3);
 }
 .push--flat-small:after {
   content: "";
@@ -321,8 +321,8 @@ form .select-gender option {
   transition-duration: 200ms;
 }
 .push--flat-small:active, .push--flat-small.is-pushed {
-  box-shadow: inset 0 0.09375em 0 #da2e0b, inset 0 -0.09375em 0 #aa2409, inset 0 0 0 0.09375em #b32609, inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em #611405, inset 0 0 0 0.3529411765em black, inset 0 0 0 0.4em rgba(247, 133, 110, 0.2), inset 0 0 0 0.5454545455em #b32609, inset 0 1.2em 0.4em #9b2108, inset 0 0 0.3em 0.5em #791a06, 0 0.15em 0 rgba(0, 0, 0, 0.3);
-  background-color: #b8270a;
+  box-shadow: inset 0 0.09375em 0 hsl(10, 90%, 45%), inset 0 -0.09375em 0 hsl(10, 90%, 35%), inset 0 0 0 0.09375em hsl(10, 90%, 37%), inset 0 0 0 0.25em hsl(10, 90%, 40%), inset 0 0 0 0.3em hsl(10, 90%, 20%), inset 0 0 0 0.3529411765em hsl(10, 90%, 0%), inset 0 0 0 0.4em hsla(10, 90%, 70%, 0.2), inset 0 0 0 0.5454545455em hsl(10, 90%, 37%), inset 0 1.2em 0.4em hsl(10, 90%, 32%), inset 0 0 0.3em 0.5em hsl(10, 90%, 25%), 0 0.15em 0 rgba(0, 0, 0, 0.3);
+  background-color: hsl(10, 90%, 38%);
 }
 .push--flat-small:active:after, .push--flat-small.is-pushed:after {
   bottom: 0.35em;
@@ -525,12 +525,58 @@ form .select-gender option {
 }
 .user-container .card-user .container-photo img {
   width: 50%;
+  height: auto;
   padding: var(--spacing-xs);
   border-radius: 10rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* Añade una sombra */
   position: relative;
   top: -1.5rem;
+}
+@media (min-width: 320px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 375px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 425px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 600px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 602px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 1440px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
+}
+@media (min-width: 2560px) {
+  .user-container .card-user .container-photo img {
+    width: 50%;
+  }
 }
 @media (min-width: 320px) {
   .user-container .card-user .container-photo img {
@@ -1779,6 +1825,11 @@ form .select-gender option {
     padding: 1rem;
   }
 }
+@media only screen and (min-width: 1520px) and (max-width: 2560px) {
+  .user-container .card-user .container-photo img {
+    width: 120px !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   .dropdown-indicator {
     display: flex;
@@ -1841,6 +1892,10 @@ form .select-gender option {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .card-user .perfil-container .container-photo img {
+    max-width: 100px;
+    max-height: 100px;
   }
   .card-user .user-container .nav-container {
     margin-top: var(--spacing-md);

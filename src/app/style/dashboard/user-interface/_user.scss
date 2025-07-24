@@ -28,7 +28,8 @@
       @include responsive-size(height, (2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 2rem, 10rem));
 
       img {
-        width: 50%;
+        @include responsive-size(width, (50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%, 50%));
+        height: auto;
         padding: var(--spacing-xs);
         border-radius: 10rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -321,6 +322,18 @@
   }
 }
 
+@media only screen and (min-width:1520px) and (max-width: 2560px) {
+  .user-container {
+    .card-user {
+      .container-photo {
+        img {
+          width: 120px !important;
+        }
+      }
+    }
+  }
+}
+
 // Telefonos
 @media only screen and (max-width: 600px) {
 
@@ -342,6 +355,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img {
+          max-width: 100px;
+          max-height: 100px;
+        }
       }
     }
 

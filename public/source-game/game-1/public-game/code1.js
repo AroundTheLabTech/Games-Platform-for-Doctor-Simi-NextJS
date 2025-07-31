@@ -271,6 +271,7 @@ gdjs.copyArray(runtimeScene.getObjects("vignette"), gdjs.GameCode.GDvignetteObje
 }{for(var i = 0, len = gdjs.GameCode.GDTransitionObjects1.length ;i < len;++i) {
     gdjs.GameCode.GDTransitionObjects1[i].getBehavior("FlashTransitionPainter").PaintEffect("0;0;0", 1, "Circular", "Backward", 0, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 }
+}{gdjs.evtTools.sound.playMusic(runtimeScene, "a30eb696ead79283abce8b6f7c7040df03f46b5f73892edf61bbaee5e2fca40b_41 - Here a Captive Heart Busted.aac", false, 30, 1);
 }
 { //Subevents
 gdjs.GameCode.eventsList1(runtimeScene);} //End of subevents
@@ -358,7 +359,7 @@ gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDShadowObjects3Objects = Hashtable.n
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDDropObjects3Objects = Hashtable.newFrom({"Drop": gdjs.GameCode.GDDropObjects3});
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDSpiderEnemyObjects4Objects = Hashtable.newFrom({"SpiderEnemy": gdjs.GameCode.GDSpiderEnemyObjects4});
 gdjs.GameCode.mapOfGDgdjs_9546GameCode_9546GDHealthBar_95959595EnemyObjects4Objects = Hashtable.newFrom({"HealthBar_Enemy": gdjs.GameCode.GDHealthBar_9595EnemyObjects4});
-gdjs.GameCode.asyncCallback19655148 = function (runtimeScene, asyncObjectsList) {
+gdjs.GameCode.asyncCallback20699740 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 gdjs.copyArray(asyncObjectsList.getObjects("SpiderSpawnPoints"), gdjs.GameCode.GDSpiderSpawnPointsObjects4);
 
@@ -387,7 +388,7 @@ gdjs.GameCode.eventsList5 = function(runtimeScene) {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
 for (const obj of gdjs.GameCode.GDSpiderSpawnPointsObjects3) asyncObjectsList.addObject("SpiderSpawnPoints", obj);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.GameCode.asyncCallback19655148(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.GameCode.asyncCallback20699740(runtimeScene, asyncObjectsList)));
 }
 }
 

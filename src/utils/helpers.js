@@ -20,8 +20,10 @@ export function getGameTitle(game) {
       return "Simirama";
     case "juego10":
       return "SimiShip";
-    // case "juego11":
-    // return "SimiPlaneta";
+    case "juego11":
+      return "SimiPlaneta";
+     case "juego12":
+      return "Simi Brigada Verde";
     default:
       return "Juego Desconocido";
   }
@@ -51,6 +53,8 @@ export function getGameInstructions(game) {
       return "Usando las flechas del teclado y el espacio, o los botones en pantalla, mueve al Simi entre los satélites y llévalo hasta el planeta. ¡Evita caer en el espacio!";
     case "juego11":
       return "Usando las flechas del teblado (derecha e izquierda) o las de pantalla, mueve al Simi atrapa los erizos y evita los peces. !Recoge los erizos para sumar puntos y no dejes que los peces te toquen o perderas vidas.";
+    case "juego12":
+      return "Usando las flechas del teblado, el espacio o los controles en pantalla, mueve al Simi y usa la manguera para apagar las llamas. !Salva a los animales del fuego intenso y recolecta las semillas que dejan al ser apagados para sumar puntos!";
     default:
       return "Pronto vendrán más.";
   }
@@ -80,6 +84,8 @@ export function getIframeSrc(game) {
       return "source-game/game-10/index.html";
     case "juego11":
       return "source-game/game-11/index.html";
+    case "juego12":
+      return "source-game/game-12/index.html";
     default:
       return "";
   }
@@ -140,7 +146,12 @@ export const gameData = {
       imageSrc: "/img/games/arcade/game-11.png",
       titleSrc: "/img/games/title/game-11.svg",
       description: "¡Atrapa erizos y evita los peces! Usa las flechas del teclado o las de pantalla para moverte y recoge erizos para sumar puntos. ¡No dejes que los peces te toquen o perderás vidas!",
-    }
+    },
+    juego12: {
+      imageSrc: "/img/games/arcade/game-12.png",
+      titleSrc: "/img/games/title/game-12.svg",
+      description: "¡Usa las flechas del teclado, el espacio o los controles en pantalla para mover al Simi y apagar las llamas! Salva a los animales del fuego intenso y recoge las semillas que dejan al ser apagados para sumar puntos.",
+    },
   };
 
 export function validateObjectValues(obj) {

@@ -188,18 +188,18 @@ export const gameData = {
     description: "Usa las flechas del teclado o desliza en pantalla para mover al Simi. Esquiva desastres naturales y recoge suministros. ¡Gana puntos por cada suministro recolectado y sobrevive el mayor tiempo posible!",
   },
   juego14: {
-    imageSrc: "/img/games/arcade/game-default.png",
-    titleSrc: "/img/games/title/game-default.svg",
+    imageSrc: "/img/games/arcade/game-14.png",
+    titleSrc: "/img/games/title/game-14.svg",
     description: "Usa las flechas del teclado o desliza en pantalla para mover al Simi y esquivar los autos. ¡Recoge monedas, avanza en el recorrido y gana puntos por cada progreso mientras sobrevives el mayor tiempo posible!",
   },
   juego15: {
-    imageSrc: "/img/games/arcade/game-default.png",
-    titleSrc: "/img/games/title/game-default.svg",
+    imageSrc: "/img/games/arcade/game-15.png",
+    titleSrc: "/img/games/title/game-15.svg",
     description: "Usa las flechas del teclado o los controles en pantalla para mover al Simi, sortear obstáculos y recoger orbes. ¡Gana puntos por cada orbe recolectado y no te choques!",
   },
   juego16: {
-    imageSrc: "/img/games/arcade/game-default.png",
-    titleSrc: "/img/games/title/game-default.svg",
+    imageSrc: "/img/games/arcade/game-16.png",
+    titleSrc: "/img/games/title/game-16.svg",
     description: "Usa el clic o el tap para mover al Simi y esquivar los obstáculos. ¡Gana puntos por cada obstáculo sorteado y no te choques!",
   },
   juego17: {

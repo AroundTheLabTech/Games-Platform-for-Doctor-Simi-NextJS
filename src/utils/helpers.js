@@ -62,19 +62,19 @@ export function getGameInstructions(game) {
     case "juego10":
       return "Usando las flechas del teclado y el espacio, o los botones en pantalla, mueve al Simi entre los satélites y llévalo hasta el planeta. ¡Evita caer en el espacio!";
     case "juego11":
-      return "Usando las flechas del teblado (derecha e izquierda) o las de pantalla, mueve al Simi atrapa los erizos y evita los peces. !Recoge los erizos para sumar puntos y no dejes que los peces te toquen o perderas vidas.";
+      return "Usando las flechas del teclado (derecha e izquierda) o las de pantalla, mueve al Simi, atrapa los erizos y evita los peces. ¡Recoge los erizos para sumar puntos y no dejes que los peces te toquen o perderás vidas!";
     case "juego12":
-      return "Usando las flechas del teblado, el espacio o los controles en pantalla, mueve al Simi y usa la manguera para apagar las llamas. !Salva a los animales del fuego intenso y recolecta las semillas que dejan al ser apagados para sumar puntos!";
+      return "Usando las flechas del teclado, el espacio o los controles en pantalla, mueve al Simi y usa la manguera para apagar las llamas. ¡Salva a los animales del fuego intenso y recolecta las semillas que dejan al ser apagados para sumar puntos!";
     case "juego13":
-      return "Pronto vendrán más.";
+      return "Usando las flechas del teclado o deslizándote en pantalla, mueve al Simi para esquivar los desastres naturales y recoge los suministros. ¡Gana puntos por cada suministro recolectado y sobrevive el mayor tiempo posible!";
     case "juego14":
-      return "Pronto vendrán más.";
+      return "Usando las flechas del teclado o deslizándote en pantalla, mueve al Simi para esquivar los autos y recoge las monedas. ¡Gana puntos por cada avance en el recorrido y sobrevive el mayor tiempo posible!";
     case "juego15":
-      return "Pronto vendrán más.";
+      return "Usando las flechas del teclado o los controles en pantalla, mueve al Simi para sortear los obstáculos y recoger los orbes. ¡Gana puntos por cada orbe recolectado y no te choques!";
     case "juego16":
-      return "Pronto vendrán más.";
+      return "Usando el clic o el tap, mueve al Simi para esquivar los obstáculos. ¡Gana puntos por cada obstáculo sorteado y no te choques!";
     case "juego17":
-      return "Pronto vendrán más.";
+      return "Usa el clic o el tap para mover al Simi y esquivar y destruir los obstáculos. ¡Gana puntos por cada obstáculo destruido y no te choques!";
     default:
       return "Pronto vendrán más.";
   }
@@ -185,27 +185,27 @@ export const gameData = {
   juego13: {
     imageSrc: "/img/games/arcade/game-13.png",
     titleSrc: "/img/games/title/game-13.svg",
-    description: "Pronto vendrán más.",
+    description: "Usa las flechas del teclado o desliza en pantalla para mover al Simi. Esquiva desastres naturales y recoge suministros. ¡Gana puntos por cada suministro recolectado y sobrevive el mayor tiempo posible!",
   },
   juego14: {
     imageSrc: "/img/games/arcade/game-14.png",
     titleSrc: "/img/games/title/game-14.svg",
-    description: "Pronto vendrán más.",
+    description: "Usa las flechas del teclado o desliza en pantalla para mover al Simi y esquivar los autos. ¡Recoge monedas, avanza en el recorrido y gana puntos por cada progreso mientras sobrevives el mayor tiempo posible!",
   },
   juego15: {
     imageSrc: "/img/games/arcade/game-15.png",
     titleSrc: "/img/games/title/game-15.svg",
-    description: "Pronto vendrán más.",
+    description: "Usa las flechas del teclado o los controles en pantalla para mover al Simi, sortear obstáculos y recoger orbes. ¡Gana puntos por cada orbe recolectado y no te choques!",
   },
   juego16: {
     imageSrc: "/img/games/arcade/game-16.png",
     titleSrc: "/img/games/title/game-16.svg",
-    description: "Pronto vendrán más.",
+    description: "Usa el clic o el tap para mover al Simi y esquivar los obstáculos. ¡Gana puntos por cada obstáculo sorteado y no te choques!",
   },
   juego17: {
     imageSrc: "/img/games/arcade/game-17.png",
     titleSrc: "/img/games/title/game-17.svg",
-    description: "Pronto vendrán más.",
+    description: "Usa el clic o el tap para mover al Simi, esquivar y destruir los obstáculos. ¡Gana puntos por cada obstáculo destruido y no te choques!",
   },
 };
 

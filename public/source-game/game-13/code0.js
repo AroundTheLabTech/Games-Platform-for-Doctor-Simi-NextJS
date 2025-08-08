@@ -1877,6 +1877,11 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.playerAuthentication.isAuthenticated();
 if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(0).getAsNumber() == 10000000);
+}
+}
+if (isConditionTrue_0) {
 {gdjs.evtTools.leaderboards.saveConnectedPlayerScore(runtimeScene, "c03f2d77-3863-4bfd-91cc-82c44a57d8ee", runtimeScene.getScene().getVariables().getFromIndex(2).getAsNumber());
 }}
 
@@ -1889,6 +1894,11 @@ if (isConditionTrue_0) {
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.playerAuthentication.isAuthenticated());
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getScene().getVariables().getFromIndex(0).getAsNumber() == 10000000);
+}
+}
 if (isConditionTrue_0) {
 
 { //Subevents

@@ -1,0 +1,12 @@
+{
+  "name": "Cared Brick (3d road crosser)",
+  "short_name": "Cared Brick (3d road crosser)",
+  "id": "com.example.roadcrosser",
+  "description": "",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}

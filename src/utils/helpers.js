@@ -34,6 +34,8 @@ export function getGameTitle(game) {
       return "Simi Flyv";
     case "juego17":
       return "Simi Comando Lunar";
+    case "juego18":
+      return "Simi Pet";
     default:
       return "Juego Desconocido";
   }
@@ -75,6 +77,8 @@ export function getGameInstructions(game) {
       return "Usando el clic o el tap, mueve al Simi para esquivar los obstáculos. ¡Gana puntos por cada obstáculo sorteado y no te choques!";
     case "juego17":
       return "Usa el clic o el tap para mover al Simi y esquivar y destruir los obstáculos. ¡Gana puntos por cada obstáculo destruido y no te choques!";
+    case "juego18":
+      return "Usando las flechas del teclado o los controles en pantalla para moverte por el mapa, ingresa a los diferentes servicios y completa los desafíos que te esperan. ¡Gana puntos por cada servicio completado y demuestra tus habilidades!";
     default:
       return "Pronto vendrán más.";
   }
@@ -116,6 +120,8 @@ export function getIframeSrc(game) {
       return "source-game/game-16/index.html";
     case "juego17":
       return "source-game/game-17/index.html";
+    case "juego18":
+      return "source-game/game-18/index.html";
     default:
       return "";
   }
@@ -206,6 +212,11 @@ export const gameData = {
     imageSrc: "/img/games/arcade/game-17.png",
     titleSrc: "/img/games/title/game-17.svg",
     description: "Usa el clic o el tap para mover al Simi, esquivar y destruir los obstáculos. ¡Gana puntos por cada obstáculo destruido y no te choques!",
+  },
+  juego18: {
+    imageSrc: "/img/games/arcade/game-18.png",
+    titleSrc: "/img/games/title/game-18.svg",
+    description: "Usando las flechas del teclado o los controles en pantalla, mueve al Simi por el mapa, ingresa a los diferentes servicios y completa los desafíos que te esperan. ¡Gana puntos por cada servicio completado y demuestra tus habilidades en el cuidado de las mascotas!",
   },
 };
 

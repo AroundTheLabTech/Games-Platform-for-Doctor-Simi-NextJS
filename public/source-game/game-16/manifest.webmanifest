@@ -1,6 +1,6 @@
 {
-  "name": "Shiny Hands (Tappy plane)",
-  "short_name": "Shiny Hands (Tappy plane)",
+  "name": "simi fly",
+  "short_name": "simi fly",
   "id": "com.example.flappybird",
   "description": "Tap to keep your plane in the air and make your way through the cave system. Get as far as you can before you crash in to a wall, submit your score, and try again.",
   "orientation": "portrait",

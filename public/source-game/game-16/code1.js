@@ -100,7 +100,7 @@ if(isConditionTrue_1) {
 }
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13155428);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11960612);
 }
 }
 if (isConditionTrue_0) {
@@ -370,7 +370,7 @@ for(var i = 0, len = gdjs.GameCode.GDTopPillarObjects2.length ;i < len;++i) {
 }
 
 
-};gdjs.GameCode.asyncCallback13170340 = function (runtimeScene, asyncObjectsList) {
+};gdjs.GameCode.asyncCallback11975652 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 gdjs.copyArray(asyncObjectsList.getObjects("CurrentScore"), gdjs.GameCode.GDCurrentScoreObjects3);
 
@@ -392,7 +392,7 @@ gdjs.GameCode.eventsList8 = function(runtimeScene) {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
 for (const obj of gdjs.GameCode.GDCurrentScoreObjects2) asyncObjectsList.addObject("CurrentScore", obj);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs.GameCode.asyncCallback13170340(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5), (runtimeScene) => (gdjs.GameCode.asyncCallback11975652(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -481,7 +481,7 @@ for (var i = 0, k = 0, l = gdjs.GameCode.GDTopPillarObjects2.length;i<l;++i) {
 gdjs.GameCode.GDTopPillarObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13168244);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11973388);
 }
 }
 }
@@ -542,7 +542,7 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13159932);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11965116);
 }
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "pipe_spawn");
@@ -624,7 +624,7 @@ gdjs.copyArray(runtimeScene.getObjects("LeaderboardDialog"), gdjs.GameCode.GDLea
 }
 
 
-};gdjs.GameCode.asyncCallback13174132 = function (runtimeScene, asyncObjectsList) {
+};gdjs.GameCode.asyncCallback11979452 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 gdjs.copyArray(runtimeScene.getObjects("CurrentScore"), gdjs.GameCode.GDCurrentScoreObjects3);
 gdjs.copyArray(asyncObjectsList.getObjects("Flash"), gdjs.GameCode.GDFlashObjects3);
@@ -651,7 +651,7 @@ gdjs.GameCode.eventsList15 = function(runtimeScene) {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
 for (const obj of gdjs.GameCode.GDFlashObjects2) asyncObjectsList.addObject("Flash", obj);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.GameCode.asyncCallback13174132(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1), (runtimeScene) => (gdjs.GameCode.asyncCallback11979452(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -665,7 +665,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.1)
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13173564);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(11978884);
 }
 if (isConditionTrue_0) {
 gdjs.GameCode.GDFlashObjects2.length = 0;

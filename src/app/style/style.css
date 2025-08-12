@@ -9980,6 +9980,21 @@ form .select-gender option {
   display: flex;
   justify-content: center;
 }
+.analytics-container li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+.analytics-container li button {
+  background: none;
+  border: none;
+  font-size: var(--spacing-md);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
 .analytics-container .charts-container {
   display: flex;
   flex-direction: row;

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import TopGamesChart from "../../components/analytics/TopGamesChart";
 import UserRegistrationsChart from "../../components/analytics/UserRegistrationsChart";
 import UserLoginsChart from "../../components/analytics/UserLoginsChart";
+import Image from "next/image";
 
 export default function AnalyticsDashboard() {
   const [authorized, setAuthorized] = useState(false);
@@ -34,6 +35,12 @@ export default function AnalyticsDashboard() {
 
   return (
     <main className="analytics-container">
+      <li>
+        <Image src="img/icons/dashboard.svg" width={22} height={28} alt="Dashboard icon" />
+        <button onClick={() => {
+          router.push("/dashboard");
+        }}>DASHBOARD</button>
+      </li>
       <h2>Analíticas de Simijuegos</h2>
       <div className="charts-container" >
         <TopGamesChart />

@@ -211,6 +211,14 @@ export default function Dashboard() {
     setIsDropdownOpen((prev) => !prev);
   };
 
+  const listEmailAnalytics = [
+    "brayangaitan801@gmail.com",
+    "andres@aroundthelab.com",
+    "Admmurbina@fsimilares.com",
+    "Amdkcastilla@fsimilares.com",
+    "zaira@aroundthelab.com",
+    "otro@email.com"
+  ];
 
   const handleLogout = async () => {
     try {
@@ -308,11 +316,24 @@ export default function Dashboard() {
               <Image src="img/icons/user.svg" width={22} height={28} alt="Profile icon" />
               <button onClick={() => setSelectedView("user")}>PERFIL</button>
             </li>
+            {
+              listEmailAnalytics.includes(user.email) &&
+              <li>
+                <Image src="img/icons/analytics.svg" width={22} height={28} alt="Analytics icon" />
+                <button onClick={() => {
+                  if (listEmailAnalytics.includes(user.email)) {
+                    router.push('/analytics');
+                  } else {
+                    alert("No tienes acceso a esta sección");
+                  }
+                }}>ANALYTICS</button>
+              </li>
+            }
           </ul>
         </div>
 
         {/* Invita y Gana */}
-        <div style={{display: 'none'}} className="invite-container">
+        <div style={{ display: 'none' }} className="invite-container">
           <h3>COMPITE CON TU COMPAÑERO</h3>
           <div className="container-toggle-score">
             <div className="bottom-score">

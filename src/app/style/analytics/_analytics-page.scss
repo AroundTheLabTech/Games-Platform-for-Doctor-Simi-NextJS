@@ -20,6 +20,23 @@
     justify-content: center;
   }
 
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    
+    button {
+      background: none;
+      border: none;
+      font-size: var(--spacing-md);
+      font-family: var(--font-secondary);
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+  }
+
   .charts-container {
     display: flex;
     flex-direction: row;

@@ -212,12 +212,12 @@ export default function Dashboard() {
   };
 
   const listEmailAnalytics = [
+    "zaira@aroundthelab.com",
     "brayangaitan801@gmail.com",
     "andres@aroundthelab.com",
-    "Admmurbina@fsimilares.com",
-    "Amdkcastilla@fsimilares.com",
-    "zaira@aroundthelab.com",
-    "otro@email.com"
+    "admmurbina@fsimilares.com",
+    // "amdkcastilla@fsimilares.com",
+    // "otro@email.com"
   ];
 
   const handleLogout = async () => {

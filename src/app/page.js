@@ -3,11 +3,13 @@
 import { useRouter } from 'next/navigation'; // Importa useRouter para la redirección
 import { auth } from "../../lib/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc, updateDoc, serverTimestamp,getDoc } from "firebase/firestore"; // Importar Firestore
+import { doc, setDoc, updateDoc, serverTimestamp, getDoc } from "firebase/firestore"; // Importar Firestore
 import { db } from "../../lib/firebase"; // Importar la instancia de Firestore configurada en firebase.js
 import { useState, useEffect, useRef } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { loginEvent, registerEvent } from '../services/analytics';
+
+import { LOCAL_STORAGE_KEYS } from '../utils/constants';
 
 // --Animations--
 import gsap from "gsap";
@@ -33,6 +35,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
+  const [isGuest, setIsGuest] = useState(false);
+
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -43,6 +47,12 @@ export default function Home() {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (!currentUser) {
         console.log("No hay usuario autenticado");
+
+        if (isGuest) {
+          console.log("Accediendo como invitado");
+          router.push("/dashboard");
+        }
+
         setLoading(false);
         return;
       }
@@ -111,7 +121,7 @@ export default function Home() {
 
 
   if (loading) {
-    return null; 
+    return null;
   }
 
   const handleLogin = async (e) => {
@@ -215,6 +225,14 @@ export default function Home() {
     setShowLoginForm(false);
   };
 
+  const handleGuestButtonClick = () => {
+    playSound();
+    setIsGuest(true);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.IS_GUEST, "true");
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LAST_GUEST_LOGIN_TIME, new Date().toISOString());
+    router.push("/dashboard");
+  };
+
   const handleResetPasswordButtonClick = () => {
     playSound();
     setShowResetPasswordForm(true);
@@ -222,7 +240,7 @@ export default function Home() {
     setShowRegisterForm(false);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = async () => {
     setShowModal(false);
     if (modalMessage === "Registro exitoso. ¡Tu cuenta ha sido creada!") {
       setShowRegisterForm(false);
@@ -271,6 +289,11 @@ export default function Home() {
                   >
                     <h3 className="text-boton-2">REGISTER</h3>
                   </button>
+                  <button className="push--flat-blue"
+                    onClick={handleGuestButtonClick}
+                  >
+                    <h3 className="text-boton-2">INVITADO</h3>
+                  </button>
                 </div>
               </>
             )}
@@ -301,6 +324,11 @@ export default function Home() {
                   </button>
                   <button className="push--flat-blue" onClick={handleRegisterButtonClick}>
                     <h3 className="text-boton-2">REGISTER</h3>
+                  </button>
+                  <button className="push--flat-blue"
+                    onClick={handleGuestButtonClick}
+                  >
+                    <h3 className="text-boton-2">INVITADO</h3>
                   </button>
                 </div>
               </form>

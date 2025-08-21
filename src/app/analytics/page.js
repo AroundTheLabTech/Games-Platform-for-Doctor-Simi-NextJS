@@ -23,6 +23,19 @@ export default function AnalyticsDashboard() {
       const docSnap = await getDoc(docRef);
       if (!docSnap.exists()) return router.push("/dashboard");
 
+      /*
+      const email = currentUser.email;
+      const possibleIds = [email, email.toLowerCase()];
+
+      for (const id of possibleIds) {
+        const docRef = doc(db, "analytics_users", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          return router.push("/dashboard");
+        }
+      }
+      */
+
       setAuthorized(true);
       setLoading(false);
     });

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, use } from "react";
 import { useRouter } from 'next/navigation';
 import { auth, db } from "../../../lib/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -18,6 +18,7 @@ import { GetScoreTotalService } from '../../services/GetScoreTotalService'; // S
 
 import BetModal from '../../components/modal/ModalCompetition';
 import ModalPremios from "@/components/modal/ModalPremios";
+import CustomSimpleModal from "../../components/modal/CustomSimpleModal"; // Importar el modal personalizado
 
 //View 
 
@@ -26,6 +27,8 @@ import DashboardContent from "../../views/Dashboard/DashboardView";
 import { getUserPoints } from "../../services/backend"
 import Image from "next/image";
 
+
+import { LOCAL_STORAGE_KEYS } from '../../utils/constants';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -54,6 +57,9 @@ export default function Dashboard() {
   const [showModal, setShowModal] = useState(false); // Controlamos la visibilidad del modal
 
   const [isCreateCompetition, setIsCreateCompetition] = useState(false);
+
+  const [isGuest, setIsGuest] = useState(false);
+  const [guestScore, setGuestScore] = useState(0);
 
   // Función para aumentar o disminuir el betScore
   const updateBetScore = (change) => {
@@ -194,6 +200,17 @@ export default function Dashboard() {
           }
         }
       } else {
+
+        const isGuest = localStorage.getItem(LOCAL_STORAGE_KEYS.IS_GUEST) === "true";
+
+        if (isGuest) {
+          console.log("Accediendo como invitado");
+          setIsGuest(true);
+          const guestScore = localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_SCORE) || 0;
+          setGuestScore(parseInt(guestScore, 10));
+          return;
+        }
+
         router.push('/');
       }
     });
@@ -212,12 +229,12 @@ export default function Dashboard() {
   };
 
   const listEmailAnalytics = [
+    "zaira@aroundthelab.com",
     "brayangaitan801@gmail.com",
     "andres@aroundthelab.com",
-    "Admmurbina@fsimilares.com",
-    "Amdkcastilla@fsimilares.com",
-    "zaira@aroundthelab.com",
-    "otro@email.com"
+    "admmurbina@fsimilares.com",
+    // "amdkcastilla@fsimilares.com",
+    // "otro@email.com"
   ];
 
   const handleLogout = async () => {
@@ -228,6 +245,15 @@ export default function Dashboard() {
       console.error("Error al cerrar sesión", error);
     }
   };
+
+  const handleLogoutIsGuest = async () => {
+    try {
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.IS_GUEST);
+      router.push('/');
+    } catch (error) {
+      console.error("Error al cerrar sesión", error);
+    }
+  }
 
   const updateUserProfilePicture = () => {
     setUpdateUserInformation(true)
@@ -242,7 +268,134 @@ export default function Dashboard() {
     router.push('/game'); // Redirigir a la página del juego
   };
 
-  if (!user || !userData) {
+  const [modal, setModal] = useState({
+    open: false,
+    title: "",
+    message: "",
+    buttonText: "",
+    buttonType: "primary",
+    modalType: "info",
+    buttonProps: {},
+  });
+
+  const closeModal = useCallback(() => {
+    setModal(m => ({ ...m, open: false }));
+  }, []);
+
+  const showWarning = useCallback((option) => {
+    setModal({
+      open: true,
+      title: "Acceso Denegado",
+      message: `Los invitados no tienen acceso al ${option}.`,
+      buttonText: "Aceptar",
+      buttonType: "warning",
+      modalType: "warning",
+      buttonProps: {
+        style: {
+          background: "#ff9800", color: "#fff", border: "none",
+          padding: "10px 15px",
+          borderRadius: "10px"
+        }
+      },
+    });
+  }, []);
+
+  // Helpers (puedes moverlos a un utils)
+  function mergeGuestGames(games) {
+    const map = new Map();
+    for (const g of games || []) {
+      const id = String(g?.id ?? "").trim().toLowerCase();
+      if (!id) continue;
+      const prev = map.get(id);
+      map.set(id, { id, score: (prev?.score || 0) + Number(g?.score || 0) });
+    }
+    return Array.from(map.values());
+  }
+
+  async function migrateGuestData({
+    uid,
+    setIsGuest,
+    setGuestScore,
+  }) {
+    try {
+      const raw = localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_GAMES) || "[]";
+      const list = mergeGuestGames(JSON.parse(raw));
+
+      if (!list.length) return;
+
+      const MAX_SCORE = 100; // límite de seguridad
+
+      await Promise.all(list.map(async (g) => {
+        const numberGame = Number(String(g.id).replace("juego", "")) || 0;
+        let score = Math.ceil(Number(g.score || 0));
+
+        // Validar el límite
+        if (score > MAX_SCORE) score = MAX_SCORE;
+        if (score < 0 || Number.isNaN(score)) score = 0;
+
+        const payload = {
+          uid,
+          score,
+          numberGame,
+        };
+
+        if (typeof postSessionGame === "function") {
+          try {
+            const resp = await postSessionGame(payload);
+            if (resp?.message && resp?.session_id && typeof addCompetitionSession === "function") {
+              addCompetitionSession(resp.session_id);
+            }
+          } catch (e) {
+            console.error("postSessionGame failed", e);
+          }
+        }
+
+        if (typeof lastGamePlayedEvent === "function") {
+          try { lastGamePlayedEvent(uid, numberGame, g.id); } catch { }
+        }
+      }));
+
+      // Recalcular el total con límite aplicado
+      const total = list.reduce((acc, g) => {
+        const score = Math.min(MAX_SCORE, Math.max(0, Number(g.score || 0)));
+        return acc + score;
+      }, 0);
+
+      localStorage.setItem(LOCAL_STORAGE_KEYS.GUEST_SCORE, String(total));
+
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.IS_GUEST);
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.GUEST_GAMES);
+      localStorage.removeItem(LOCAL_STORAGE_KEYS.GUEST_GAMES_PLAYED);
+
+      setIsGuest(false);
+      setGuestScore(0);
+    } catch (e) {
+      console.error("Error migrando datos de invitado", e);
+    }
+  }
+
+
+  useEffect(() => {
+    async function fetchGuestData() {
+      if (!user) return;
+
+      const wasGuest = localStorage.getItem(LOCAL_STORAGE_KEYS.IS_GUEST) === "true";
+      const hasGames = !!localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_GAMES);
+
+      if (wasGuest && hasGames) {
+        await migrateGuestData({
+          uid: user.uid,
+          setIsGuest,
+          setGuestScore,
+        });
+      }
+    }
+
+    fetchGuestData();
+  }, [user]); // ← se ejecuta cuando ya hay user
+
+
+  if ((!user || !userData) && !isGuest) {
     return <p>Cargando...</p>; // Mostrar un mensaje de carga mientras se verifica la autenticación y se obtienen los datos
   }
 
@@ -262,14 +415,34 @@ export default function Dashboard() {
         <div className="card-user">
           <div className="perfil-container">
 
-            <div className="container-photo">
-              <Image src={userData.profile_picture || `${process.env.NEXT_PUBLIC_BASE_URL || ""}/img/perfil/default.png`} width={100} height={100} className="img-photo" alt="Profile" />
-            </div>
+            {
+              !isGuest ?
+                (
+                  <div className="container-photo">
+                    <Image src={userData.profile_picture || `${process.env.NEXT_PUBLIC_BASE_URL || ""}/img/perfil/default.png`} width={100} height={100} className="img-photo" alt="Profile" />
+                  </div>
+                )
+                : (
+                  <div className="container-photo">
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_URL || ""}/img/perfil/default.png`} width={100} height={100} className="img-photo" alt="Profile" />
+                  </div>
+                )
+            }
 
             <div className="text-user">
-              <p>
-                @{userData.display_name}
-              </p>
+              {
+                !isGuest ?
+                  (
+                    <p>
+                      @{userData.display_name}
+                    </p>
+                  )
+                  : (
+                    <p>
+                      @Invitado
+                    </p>
+                  )
+              }
 
             </div>
 
@@ -292,7 +465,11 @@ export default function Dashboard() {
 
 
             <div className="container-user-total">
-              <p>{totalScore.toLocaleString()}</p> {/* Muestra el puntaje total con formato */}
+              {!isGuest ? (
+                <p>{totalScore.toLocaleString()}</p> /* Muestra el puntaje total con formato */
+              ) : (
+                <p>{guestScore.toLocaleString()}</p> // Muestra el puntaje total del invitado con formato
+              )}
               <Image src="img/icons/monedaScore.svg" width={20} height={20} alt="Moneda" />
             </div>
 
@@ -310,14 +487,39 @@ export default function Dashboard() {
 
             <li>
               <Image src="img/icons/dashboard.svg" width={22} height={28} alt="Dashboard icon" />
-              <button onClick={() => setSelectedView("dashboard")}>DASHBOARD</button>
+              <button onClick={() => {
+                if (!isGuest) {
+                  setSelectedView("dashboard")
+                } else {
+                  showWarning("Dashboard");
+                }
+              }}>DASHBOARD</button>
             </li>
+
+            <CustomSimpleModal
+              open={modal.open}
+              onClose={closeModal}
+              title={modal.title}
+              message={modal.message}
+              buttonText={modal.buttonText}
+              buttonType={modal.buttonType}
+              buttonProps={modal.buttonProps}
+              modalType={modal.modalType}
+              showButton
+            />
+
             <li>
               <Image src="img/icons/user.svg" width={22} height={28} alt="Profile icon" />
-              <button onClick={() => setSelectedView("user")}>PERFIL</button>
+              <button onClick={() => {
+                if (!isGuest) {
+                  setSelectedView("user")
+                } else {
+                  showWarning("Perfil");
+                }
+              }}>PERFIL</button>
             </li>
             {
-              listEmailAnalytics.includes(user.email) &&
+              !isGuest && listEmailAnalytics.includes(user.email) &&
               <li>
                 <Image src="img/icons/analytics.svg" width={22} height={28} alt="Analytics icon" />
                 <button onClick={() => {
@@ -360,14 +562,30 @@ export default function Dashboard() {
         </div>
 
         {/* Configuration Footer */}
-        <div className="container-logout ">
-          <button
-            onClick={handleLogout}
+        {
+          !isGuest ?
+            (
+              <div className="container-logout ">
+                <button
+                  onClick={handleLogout}
 
-          >
-            Cerrar Sesión
-          </button>
-        </div>
+                >
+                  Cerrar Sesión
+                </button>
+              </div>
+            ) :
+            (
+              <div className="container-logout ">
+                <button
+                  onClick={handleLogoutIsGuest}
+
+                >
+                  Salir
+                </button>
+              </div>
+            )
+        }
+
 
 
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from 'next/navigation';
 import { auth } from "../../../lib/firebase";
 import { doc, getDoc, setDoc, collection, addDoc, serverTimestamp } from "firebase/firestore"; // Importar funciones necesarias
@@ -9,6 +9,9 @@ import { getListAvalibleCompetition, putCompetitionSession, postSessionGame } fr
 import { analytics } from "../../../lib/firebase";
 import { lastGamePlayedEvent } from "../../services/analytics";
 import { getGameTitle, getGameInstructions, getIframeSrc } from "../../utils/helpers";
+
+import { LOCAL_STORAGE_KEYS } from '../../utils/constants';
+import CustomSimpleModal from "../../components/modal/CustomSimpleModal"; // Importar el modal personalizado
 
 export default function Game() {
   const [selectedGame, setSelectedGame] = useState(null);
@@ -23,6 +26,8 @@ export default function Game() {
   const [user, setUser] = useState(null);
 
   const [scoreHistory, setScoreHistory] = useState([]);
+
+  const [isGuest, setIsGuest] = useState(false);
 
   useEffect(() => {
     const game = localStorage.getItem("selectedGame");
@@ -46,6 +51,12 @@ export default function Game() {
           console.log("Puntaje inicial desde la base de datos:", initialScore);
         }
       } else {
+
+        if (localStorage.getItem(LOCAL_STORAGE_KEYS.IS_GUEST) === "true") {
+          setIsGuest(true);
+          return;
+        }
+
         router.push('/');
       }
     });
@@ -415,6 +426,12 @@ export default function Game() {
   }, [selectedGame]);
 
   async function addCompetitionSession(sessionId) {
+
+    if (!user || !sessionId) {
+      console.error("Usuario o sessionId no disponible");
+      return;
+    }
+
     console.log(user.uid, sessionId);
     const activeCompetitions = await getListAvalibleCompetition(user.uid);
 
@@ -441,6 +458,40 @@ export default function Game() {
         }
       });
     }
+  }
+
+  function mergeGuestGames(games) {
+    const map = new Map();
+    for (const g of games) {
+      const id = String(g.id).trim().toLowerCase();
+      const prev = map.get(id);
+      map.set(id, { id, score: (prev?.score || 0) + Number(g.score || 0) });
+    }
+    return Array.from(map.values());
+  }
+
+  function upsertGuestGame({ currentGameId, currentScore }) {
+    const RAW = localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_GAMES) || "[]";
+    const list = mergeGuestGames(JSON.parse(RAW)); // limpia duplicados previos
+
+    const id = String(currentGameId).trim().toLowerCase();
+
+    const i = list.findIndex(g => g.id === id);
+
+    if (i !== -1) {
+      list[i].score += Number(currentScore || 0); // acumula
+    } else {
+      list.push({ id, score: Number(currentScore || 0) });
+    }
+
+    // Guardar array actualizado
+    localStorage.setItem(LOCAL_STORAGE_KEYS.GUEST_GAMES, JSON.stringify(list));
+
+    // Calcular suma total de scores y guardar como GUEST_SCORE
+    const totalScore = list.reduce((acc, game) => acc + game.score, 0);
+    localStorage.setItem(LOCAL_STORAGE_KEYS.GUEST_SCORE, String(totalScore));
+
+    return list;
   }
 
   const handleExit = async () => {
@@ -497,6 +548,35 @@ export default function Game() {
       } catch (error) {
         console.error("Error al guardar el score en Firestore", error);
       }
+    } else if (isGuest) {
+      try {
+        const game = localStorage.getItem("selectedGame");
+
+        console.log("game", game);
+
+        // 1) upsert del juego
+        upsertGuestGame({ currentGameId: game, currentScore });
+
+        // 2) opcional: mantener highscore global
+        const best = Number(localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_SCORE) || 0);
+        if (currentScore > best) {
+          localStorage.setItem(LOCAL_STORAGE_KEYS.GUEST_SCORE, String(currentScore));
+        }
+
+        // 3) contador de partidas
+        const played = Number(localStorage.getItem(LOCAL_STORAGE_KEYS.GUEST_GAMES_PLAYED) || 0);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.GUEST_GAMES_PLAYED, String(played + 1));
+
+        // 4) reset de estado
+        setCurrentScore(0);
+        setPreviusScore(0);
+        setScoreWon(0);
+        setScoreHistory([]);
+
+        router.push('/dashboard');
+      } catch (e) {
+        console.error("Error al guardar el score del invitado", e);
+      }
     }
   };
 
@@ -518,6 +598,39 @@ export default function Game() {
 
     setShowModal(false);
   };
+
+  const [modal, setModal] = useState({
+    open: false,
+    title: "",
+    message: "",
+    buttonText: "",
+    buttonType: "primary",
+    modalType: "info",
+    buttonProps: {},
+  });
+
+  const closeModal = useCallback(() => {
+    handleExit();
+    setModal(m => ({ ...m, open: false }));
+  }, []);
+
+  const showWarning = useCallback(() => {
+    setModal({
+      open: true,
+      title: "Parece que eres un invitado",
+      message: "Han pasado más de 10 minutos desde tu inicio de sesión como invitado. Por favor, inicia sesión o regístrate para guardar tu progreso.",
+      buttonText: "Aceptar",
+      buttonType: "info",
+      modalType: "info",
+      buttonProps: {
+        style: {
+          background: "#2196f3ff", color: "#fff", border: "none",
+          padding: "10px 15px",
+          borderRadius: "10px"
+        }
+      },
+    });
+  }, []);
 
   if (!selectedGame) {
     return <p>Cargando juego...</p>;
@@ -559,13 +672,48 @@ export default function Game() {
                 className="medal"
                 src="img/medallas/medal1.svg"
               />
-              <button className="push--flat boton-guardar" onClick={handleExit}>
+              <button className="push--flat boton-guardar" onClick={() => {
+
+                if (isGuest) {
+                  const lastLogin = localStorage.getItem(LOCAL_STORAGE_KEYS.LAST_GUEST_LOGIN_TIME);
+                  if (lastLogin) {
+                    const lastTime = new Date(lastLogin);
+                    const now = new Date();
+                    const diffMinutes = Math.floor((now - lastTime) / 60000); // diferencia en minutos
+
+                    if (diffMinutes >= 10) {
+                      showWarning();
+                      return;
+                    } else {
+                      handleExit();
+                    }
+                  } else {
+                    handleExit();
+                  }
+
+                } else {
+                  handleExit();
+                }
+
+              }}>
                 <h3 className="text-boton">
                   Guardar <br />
                   y <br />
                   Salir
                 </h3>
               </button>
+
+              <CustomSimpleModal
+                open={modal.open}
+                onClose={closeModal}
+                title={modal.title}
+                message={modal.message}
+                buttonText={modal.buttonText}
+                buttonType={modal.buttonType}
+                buttonProps={modal.buttonProps}
+                modalType={modal.modalType}
+                showButton
+              />
             </div>
             <div className="game-center">
               {iframeVisible && (
